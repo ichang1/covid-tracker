@@ -2,15 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import covidInfoRoutes from "./routes/covidInfo.js";
+import mapPlaceInfoRoutes from "./routes/mapPlaceInfo.js";
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/", "client/src/index.js");
-app.use("/", covidInfoRoutes);
+app.use("/", mapPlaceInfoRoutes);
 
 const PORT = process.env.PORT || 5000;
 

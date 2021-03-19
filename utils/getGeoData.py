@@ -1,7 +1,16 @@
 import requests
+from jsonToFile import jsonToText
 
 
-def getAllGeoData():
+def getAllGeoData(places):
+    geodata = {}
+    for place in places:
+        geodata[f'{place}'] = getGeoData(place)
+    print(len(places), len(geodata))
+    return geodata
+
+
+def getAllPlaces():
     places = []
     continents_res = requests.get("https://disease.sh/v3/covid-19/continents")
     for c in continents_res.json():
@@ -32,12 +41,7 @@ def getAllGeoData():
         province = p['province']
         if country != 'US' and province != None and province != 'Unknown' and 'Princess' not in province:
             places.append(p['province'])
-
-    geodata = {}
-    for place in places:
-        geodata[f'{place}'] = getGeoData(place)
-    print(len(places), len(geodata))
-    return geodata
+    return places
 
 
 def getGeoData(place):
@@ -62,3 +66,8 @@ def getGeoData(place):
     longitude = res.json()['data'][0]['longitude']
     data = {'latitude': latitude, 'longitude': longitude}
     return data
+
+
+jason = getAllGeoData()
+
+jsonToText('./placesGeodata.txt', jason)
