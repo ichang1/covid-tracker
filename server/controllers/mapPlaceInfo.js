@@ -14,6 +14,23 @@ export const getMapPlaceInfo = async (req, res) => {
     const { api, path } = locationsApi[formattedPlace];
     const response = await axios.get(path);
     const data = response.data;
-    res.send({ formattedPlace, api, path, data });
+    if (api === "Worldometers") {
+      res.send({ formattedPlace, api, path, data });
+    } else {
+      const placeData = data.filter((obj) => obj.province === formattedPlace);
+      if (placeData.length !== 1) {
+        res.status(400).send({
+          message: "Didn't find exact province",
+        });
+      } else {
+        const filteredData = placeData[0];
+        res.send({
+          formattedPlace,
+          api,
+          path,
+          data: filteredData,
+        });
+      }
+    }
   }
 };
