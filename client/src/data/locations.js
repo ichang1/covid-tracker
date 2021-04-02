@@ -1,3102 +1,1016 @@
 export const locations = {
-  "North America": {
-    latitude: 38.309135,
-    longitude: -101.32827,
-  },
-  "South America": {
-    latitude: -12.819233,
-    longitude: -50.657066,
-  },
-  Asia: {
-    latitude: 49.51248,
-    longitude: 94.46434,
-  },
-  Europe: {
-    latitude: 55.859135,
-    longitude: 39.579994,
-  },
-  Africa: {
-    latitude: 21.638472,
-    longitude: 3.924068,
-  },
-  "Australia/Oceania": {
-    latitude: -23.992437,
-    longitude: 134.05045,
-  },
-  California: {
-    latitude: 36.531544,
-    longitude: -119.58617,
-  },
-  Texas: {
-    latitude: 31.030973,
-    longitude: -98.32633,
-  },
-  Florida: {
-    latitude: 27.97762,
-    longitude: -81.76961,
-  },
-  "New York": {
-    latitude: 40.68295,
-    longitude: -73.9708,
-  },
-  Illinois: {
-    latitude: 40.26503,
-    longitude: -89.191574,
-  },
-  Georgia: {
-    latitude: 41.870087,
-    longitude: 43.735725,
-  },
-  Ohio: {
-    latitude: 40.26226,
-    longitude: -82.88345,
-  },
-  Pennsylvania: {
-    latitude: 40.8602,
-    longitude: -77.838615,
-  },
-  "North Carolina": {
-    latitude: 35.387363,
-    longitude: -78.455055,
-  },
-  "New Jersey": {
-    latitude: 39.66502,
-    longitude: -74.738205,
-  },
-  Arizona: {
-    latitude: 34.25515,
-    longitude: -111.62621,
-  },
-  Tennessee: {
-    latitude: 35.820244,
-    longitude: -86.343765,
-  },
-  Michigan: {
-    latitude: 43.924812,
-    longitude: -84.63311,
-  },
-  Indiana: {
-    latitude: 39.90449,
-    longitude: -86.25028,
-  },
-  Massachusetts: {
-    latitude: 42.358753,
-    longitude: -71.53149,
-  },
-  Virginia: {
-    latitude: 37.73086,
-    longitude: -78.376656,
-  },
-  Wisconsin: {
-    latitude: 44.356003,
-    longitude: -89.4662,
-  },
-  Missouri: {
-    latitude: 38.35314,
-    longitude: -92.747025,
-  },
-  "South Carolina": {
-    latitude: 33.702858,
-    longitude: -80.627525,
-  },
-  Alabama: {
-    latitude: 32.688053,
-    longitude: -86.810585,
-  },
-  Minnesota: {
-    latitude: 46.63636,
-    longitude: -94.57964,
-  },
-  Colorado: {
-    latitude: 38.996662,
-    longitude: -105.54782,
-  },
-  Louisiana: {
-    latitude: 30.5426,
-    longitude: -92.51441,
-  },
-  Oklahoma: {
-    latitude: 35.39376,
-    longitude: -97.602516,
-  },
-  Kentucky: {
-    latitude: 37.696823,
-    longitude: -84.924095,
-  },
-  Maryland: {
-    latitude: 39.03883,
-    longitude: -76.34672,
-  },
-  Utah: {
-    latitude: 39.099,
-    longitude: -111.878815,
-  },
-  Iowa: {
-    latitude: 42.039944,
-    longitude: -93.50007,
-  },
-  Washington: {
-    latitude: 38.82652,
-    longitude: -77.01712,
-  },
-  Arkansas: {
-    latitude: 34.755882,
-    longitude: -92.64056,
-  },
-  Mississippi: {
-    latitude: 32.92192,
-    longitude: -89.68712,
-  },
-  Kansas: {
-    latitude: 38.500328,
-    longitude: -98.38043,
-  },
-  Nevada: {
-    latitude: 39.44069,
-    longitude: -116.59857,
-  },
-  Connecticut: {
-    latitude: 41.580162,
-    longitude: -72.75663,
-  },
-  Nebraska: {
-    latitude: 41.499672,
-    longitude: -99.810074,
-  },
-  "New Mexico": {
-    latitude: 34.498623,
-    longitude: -106.10828,
-  },
-  Idaho: {
-    latitude: 43.764877,
-    longitude: -114.964264,
-  },
-  Oregon: {
-    latitude: 43.85418,
-    longitude: -120.52671,
-  },
-  "West Virginia": {
-    latitude: 38.72028,
-    longitude: -80.64943,
-  },
-  "Rhode Island": {
-    latitude: 41.587536,
-    longitude: -71.51474,
-  },
-  "South Dakota": {
-    latitude: 44.470715,
-    longitude: -100.22996,
-  },
-  Montana: {
-    latitude: 47.001266,
-    longitude: -109.64541,
-  },
-  "North Dakota": {
-    latitude: 47.471497,
-    longitude: -100.46909,
-  },
-  Delaware: {
-    latitude: 38.978848,
-    longitude: -75.46014,
-  },
-  "New Hampshire": {
-    latitude: 43.644386,
-    longitude: -71.58628,
-  },
-  Alaska: {
-    latitude: 64.72481,
-    longitude: -153.62962,
-  },
-  Wyoming: {
-    latitude: 41.47747,
-    longitude: -105.63666,
-  },
-  Maine: {
-    latitude: 45.24333,
-    longitude: -69.171074,
-  },
-  "District Of Columbia": {
-    latitude: 38.912098,
-    longitude: -77.01469,
-  },
-  Hawaii: {
-    latitude: 19.647635,
-    longitude: -155.53325,
-  },
-  Vermont: {
-    latitude: 44.211857,
-    longitude: -72.68124,
-  },
-  "Puerto Rico": {
-    latitude: 18.234669,
-    longitude: -66.481064,
-  },
-  Guam: {
-    latitude: 13.427861,
-    longitude: 144.73381,
-  },
-  "United States Virgin Islands": {
-    latitude: 17.73951,
-    longitude: -64.78359,
-  },
-  "Northern Mariana Islands": {
-    latitude: 15.193315,
-    longitude: 145.74821,
-  },
-  "American Samoa": {
-    latitude: -14.333216,
-    longitude: -170.77893,
-  },
-  "Navajo Nation": {
-    latitude: 35.36714,
-    longitude: -110.312546,
-  },
-  Afghanistan: {
-    latitude: 34.159325,
-    longitude: 66.51551,
-  },
-  Albania: {
-    latitude: 40.647186,
-    longitude: 20.127352,
-  },
-  Algeria: {
-    latitude: 27.89689,
-    longitude: 3.379277,
-  },
-  Andorra: {
-    latitude: 42.547077,
-    longitude: 1.576286,
-  },
-  Angola: {
-    latitude: -12.180859,
-    longitude: 17.996347,
-  },
-  Anguilla: {
-    latitude: 18.232136,
-    longitude: -63.042294,
-  },
-  "Antigua and Barbuda": {
-    latitude: 17.06938,
-    longitude: -61.80974,
-  },
-  Argentina: {
-    latitude: -29.53605,
-    longitude: -62.26363,
-  },
-  Armenia: {
-    latitude: 40.474724,
-    longitude: 44.80561,
-  },
-  Aruba: {
-    latitude: 12.517399,
-    longitude: -69.97279,
-  },
-  Australia: {
-    latitude: -23.992437,
-    longitude: 134.05045,
-  },
-  Austria: {
-    latitude: 47.522617,
-    longitude: 14.143702,
-  },
-  Azerbaijan: {
-    latitude: 40.402386,
-    longitude: 47.210995,
-  },
-  Bahamas: {
-    latitude: 24.669638,
-    longitude: -78.0185,
-  },
-  Bahrain: {
-    latitude: 26.0845,
-    longitude: 50.55067,
-  },
-  Bangladesh: {
-    latitude: 24.045958,
-    longitude: 90.03272,
-  },
-  Barbados: {
-    latitude: 13.144115,
-    longitude: -59.55573,
-  },
-  Belarus: {
-    latitude: 53.83226,
-    longitude: 28.43651,
-  },
-  Belgium: {
-    latitude: 50.78069,
-    longitude: 4.792712,
-  },
-  Belize: {
-    latitude: 17.206636,
-    longitude: -88.714485,
-  },
-  Benin: {
-    latitude: 9.30769,
-    longitude: 2.31583,
-  },
-  Bermuda: {
-    latitude: 32.2967,
-    longitude: -64.76434,
-  },
-  Bhutan: {
-    latitude: 27.454773,
-    longitude: 89.92561,
-  },
-  Bolivia: {
-    latitude: -16.640652,
-    longitude: -64.66193,
-  },
-  Bosnia: {
-    latitude: 44.091038,
-    longitude: 18.06843,
-  },
-  Botswana: {
-    latitude: -22.108313,
-    longitude: 24.191387,
-  },
-  Brazil: {
-    latitude: -11.928923,
-    longitude: -49.54245,
-  },
-  "British Virgin Islands": {
-    latitude: 18.42785,
-    longitude: -64.640816,
-  },
-  Brunei: {
-    latitude: 4.479716,
-    longitude: 114.57869,
-  },
-  Bulgaria: {
-    latitude: 42.50187,
-    longitude: 25.176846,
-  },
-  "Burkina Faso": {
-    latitude: 12.655182,
-    longitude: -1.473625,
-  },
-  Burundi: {
-    latitude: -3.397104,
-    longitude: 29.877804,
-  },
-  "Cabo Verde": {
-    latitude: 15.04732,
-    longitude: -23.618479,
-  },
-  Cambodia: {
-    latitude: 12.635759,
-    longitude: 104.48081,
-  },
-  Cameroon: {
-    latitude: 4.585076,
-    longitude: 12.473672,
-  },
-  Canada: {
-    latitude: 58.33747,
-    longitude: -112.38486,
-  },
-  "Caribbean Netherlands": {
-    latitude: 12.194274,
-    longitude: -68.24909,
-  },
-  "Cayman Islands": {
-    latitude: 19.319996,
-    longitude: -81.23074,
-  },
-  "Central African Republic": {
-    latitude: 6.986429,
-    longitude: 21.668827,
-  },
-  Chad: {
-    latitude: 15.21002,
-    longitude: 18.76924,
-  },
-  "Channel Islands": {
-    latitude: 54.519707,
-    longitude: -130.82115,
-  },
-  Chile: {
-    latitude: -38.165295,
-    longitude: -72.28808,
-  },
-  China: {
-    latitude: 32.529716,
-    longitude: 106.80287,
-  },
-  Colombia: {
-    latitude: 4.6,
-    longitude: -74.51667,
-  },
-  Comoros: {
-    latitude: -11.727683,
-    longitude: 43.318092,
-  },
-  Congo: {
-    latitude: -2.271721,
-    longitude: 23.513592,
-  },
-  "Costa Rica": {
-    latitude: 10.068183,
-    longitude: -84.02859,
-  },
-  Croatia: {
-    latitude: 45.805355,
-    longitude: 16.37514,
-  },
-  Cuba: {
-    latitude: 21.329613,
-    longitude: -77.96772,
-  },
-  Curaçao: {
-    latitude: 12.150201,
-    longitude: -68.93342,
-  },
-  Cyprus: {
-    latitude: 34.88185,
-    longitude: 33.01105,
-  },
-  Czechia: {
-    latitude: 49.88233,
-    longitude: 15.377705,
-  },
-  "Côte d'Ivoire": {
-    latitude: 7.568978,
-    longitude: -5.495164,
-  },
-  DRC: {
-    latitude: -2.271721,
-    longitude: 23.513592,
-  },
-  Denmark: {
-    latitude: 55.966965,
-    longitude: 9.018163,
-  },
-  Djibouti: {
-    latitude: 11.58901,
-    longitude: 43.14503,
-  },
-  Dominica: {
-    latitude: 15.460196,
-    longitude: -61.356842,
-  },
-  "Dominican Republic": {
-    latitude: 19.105936,
-    longitude: -70.80422,
-  },
-  Ecuador: {
-    latitude: -1.241567,
-    longitude: -78.322784,
-  },
-  Egypt: {
-    latitude: 26.42231,
-    longitude: 29.227089,
-  },
-  "El Salvador": {
-    latitude: 13.66845,
-    longitude: -89.27004,
-  },
-  "Equatorial Guinea": {
-    latitude: 1.586111,
-    longitude: 10.464682,
-  },
-  Eritrea: {
-    latitude: 15.817362,
-    longitude: 38.267403,
-  },
-  Estonia: {
-    latitude: 58.722855,
-    longitude: 25.86713,
-  },
-  Ethiopia: {
-    latitude: 7.996115,
-    longitude: 38.89678,
-  },
-  "Falkland Islands (Malvinas)": {
-    latitude: -51.651512,
-    longitude: -58.738304,
-  },
-  "Faroe Islands": {
-    latitude: 62.185604,
-    longitude: -7.058429,
-  },
-  Fiji: {
-    latitude: -17.834017,
-    longitude: 177.972,
-  },
-  Finland: {
-    latitude: 63.252357,
-    longitude: 27.276468,
-  },
-  France: {
-    latitude: 46.698483,
-    longitude: 2.549047,
-  },
-  "French Guiana": {
-    latitude: 3.999143,
-    longitude: -53.068214,
-  },
-  "French Polynesia": {
-    latitude: -17.642803,
-    longitude: -149.44388,
-  },
-  Gabon: {
-    latitude: -0.586328,
-    longitude: 11.547829,
-  },
-  Gambia: {
-    latitude: 13.505929,
-    longitude: -15.362493,
-  },
-  Germany: {
-    latitude: 50.970097,
-    longitude: 9.687096,
-  },
-  Ghana: {
-    latitude: 7.85125,
-    longitude: -0.982714,
-  },
-  Gibraltar: {
-    latitude: 36.129425,
-    longitude: -5.3467,
-  },
-  Greece: {
-    latitude: 39.78331,
-    longitude: 21.708534,
-  },
-  Greenland: {
-    latitude: 74.31938,
-    longitude: -39.33508,
-  },
-  Grenada: {
-    latitude: 12.11396,
-    longitude: -61.6885,
-  },
-  Guadeloupe: {
-    latitude: 16.24988,
-    longitude: -61.58365,
-  },
-  Guatemala: {
-    latitude: 14.989397,
-    longitude: -90.52241,
-  },
-  Guinea: {
-    latitude: 10.625075,
-    longitude: -9.951975,
-  },
-  "Guinea-Bissau": {
-    latitude: 12.157338,
-    longitude: -14.513869,
-  },
-  Guyana: {
-    latitude: 5.121996,
-    longitude: -58.912354,
-  },
-  Haiti: {
-    latitude: 19.251299,
-    longitude: -72.2947,
-  },
-  "Holy See (Vatican City State)": {
-    latitude: 41.90354,
-    longitude: 12.453083,
-  },
-  Honduras: {
-    latitude: 14.762778,
-    longitude: -86.9202,
-  },
-  "Hong Kong": {
-    latitude: 22.38113,
-    longitude: 114.135574,
-  },
-  Hungary: {
-    latitude: 47.086857,
-    longitude: 19.447899,
-  },
-  Iceland: {
-    latitude: 64.77926,
-    longitude: -18.673523,
-  },
-  India: {
-    latitude: 22.364292,
-    longitude: 79.029434,
-  },
-  Indonesia: {
-    latitude: -1.003189,
-    longitude: 101.97233,
-  },
-  Iran: {
-    latitude: 31.931398,
-    longitude: 55.245316,
-  },
-  Iraq: {
-    latitude: 33.115715,
-    longitude: 43.285187,
-  },
-  Ireland: {
-    latitude: 53.07873,
-    longitude: -7.798618,
-  },
-  "Isle of Man": {
-    latitude: 54.255203,
-    longitude: -4.49708,
-  },
-  Israel: {
-    latitude: 30.895128,
-    longitude: 34.874702,
-  },
-  Italy: {
-    latitude: 45.003227,
-    longitude: 11.083693,
-  },
-  Jamaica: {
-    latitude: 18.137123,
-    longitude: -77.31876,
-  },
-  Japan: {
-    latitude: 36.13793,
-    longitude: 138.4419,
-  },
-  Jordan: {
-    latitude: 30.802263,
-    longitude: 36.391525,
-  },
-  Kazakhstan: {
-    latitude: 48.51667,
-    longitude: 66.76667,
-  },
-  Kenya: {
-    latitude: 0.543716,
-    longitude: 37.91831,
-  },
-  Kuwait: {
-    latitude: 29.422226,
-    longitude: 47.330013,
-  },
-  Kyrgyzstan: {
-    latitude: 40.93749,
-    longitude: 73.36083,
-  },
-  "Lao People's Democratic Republic": {
-    latitude: 19.43535,
-    longitude: 102.56067,
-  },
-  Latvia: {
-    latitude: 57.06689,
-    longitude: 25.458464,
-  },
-  Lebanon: {
-    latitude: 34.09582,
-    longitude: 35.95655,
-  },
-  Lesotho: {
-    latitude: -29.51675,
-    longitude: 28.163744,
-  },
-  Liberia: {
-    latitude: 6.445025,
-    longitude: -9.449891,
-  },
-  "Libyan Arab Jamahiriya": {
-    latitude: 26.666956,
-    longitude: 18.030249,
-  },
-  Liechtenstein: {
-    latitude: 47.111404,
-    longitude: 9.559439,
-  },
-  Lithuania: {
-    latitude: 55.103703,
-    longitude: 24.089931,
-  },
-  Luxembourg: {
-    latitude: 49.75918,
-    longitude: 6.086636,
-  },
-  "MS Zaandam": {
-    latitude: 52.44386,
-    longitude: 4.829437,
-  },
-  Macao: {
-    latitude: 22.139833,
-    longitude: 113.56362,
-  },
-  Macedonia: {
-    latitude: 41.569244,
-    longitude: 21.547314,
-  },
-  Madagascar: {
-    latitude: -18.628414,
-    longitude: 46.704056,
-  },
-  Malawi: {
-    latitude: -13.404159,
-    longitude: 33.658497,
-  },
-  Malaysia: {
-    latitude: 2.521947,
-    longitude: 113.83357,
-  },
-  Maldives: {
-    latitude: -0.614771,
-    longitude: 73.09374,
-  },
-  Mali: {
-    latitude: 18.68321,
-    longitude: -2.015109,
-  },
-  Malta: {
-    latitude: 35.888973,
-    longitude: 14.431432,
-  },
-  "Marshall Islands": {
-    latitude: 8.710837,
-    longitude: 171.2373,
-  },
-  Martinique: {
-    latitude: 14.711978,
-    longitude: -61.055656,
-  },
-  Mauritania: {
-    latitude: 19.599264,
-    longitude: -9.737341,
-  },
-  Mauritius: {
-    latitude: -20.321974,
-    longitude: 57.534935,
-  },
-  Mayotte: {
-    latitude: -12.774755,
-    longitude: 45.151318,
-  },
-  Mexico: {
-    latitude: 19.371422,
-    longitude: -99.150345,
-  },
-  Micronesia: {
-    latitude: 6.881557,
-    longitude: 158.22113,
-  },
-  Moldova: {
-    latitude: 47.435,
-    longitude: 28.487904,
-  },
-  Monaco: {
-    latitude: 43.733784,
-    longitude: 7.418464,
-  },
-  Mongolia: {
-    latitude: 45.99339,
-    longitude: 104.15955,
-  },
-  Montenegro: {
-    latitude: 42.782845,
-    longitude: 19.157425,
-  },
-  Montserrat: {
-    latitude: 16.73717,
-    longitude: -62.18825,
-  },
-  Morocco: {
-    latitude: 31.649504,
-    longitude: -7.189711,
-  },
-  Mozambique: {
-    latitude: -15.03417,
-    longitude: 40.73583,
-  },
-  Myanmar: {
-    latitude: 21.576815,
-    longitude: 96.06596,
-  },
-  Namibia: {
-    latitude: -20.586348,
-    longitude: 17.11965,
-  },
-  Nepal: {
-    latitude: 27.15,
-    longitude: 85.9,
-  },
-  Netherlands: {
-    latitude: 52.554207,
-    longitude: 5.501896,
-  },
-  "New Caledonia": {
-    latitude: -21.097317,
-    longitude: 165.1272,
-  },
-  "New Zealand": {
-    latitude: -45.175323,
-    longitude: 169.23253,
-  },
-  Nicaragua: {
-    latitude: 12.793313,
-    longitude: -85.03954,
-  },
-  Niger: {
-    latitude: 17.431408,
-    longitude: 9.521564,
-  },
-  Nigeria: {
-    latitude: 9.404974,
-    longitude: 7.607418,
-  },
-  Norway: {
-    latitude: 61.356907,
-    longitude: 9.680372,
-  },
-  Oman: {
-    latitude: 22.11318,
-    longitude: 57.34568,
-  },
-  Pakistan: {
-    latitude: 29.329836,
-    longitude: 68.560265,
-  },
-  Palestine: {
-    latitude: 32.132393,
-    longitude: 35.262924,
-  },
-  Panama: {
-    latitude: 8.72491,
-    longitude: -80.338455,
-  },
-  "Papua New Guinea": {
-    latitude: -5.695438,
-    longitude: 143.91049,
-  },
-  Paraguay: {
-    latitude: -21.686079,
-    longitude: -60.13994,
-  },
-  Peru: {
-    latitude: -12.98078,
-    longitude: -72.87665,
-  },
-  Philippines: {
-    latitude: 16.932121,
-    longitude: 121.38795,
-  },
-  Poland: {
-    latitude: 51.99605,
-    longitude: 19.488789,
-  },
-  Portugal: {
-    latitude: 39.07088,
-    longitude: -8.22931,
-  },
-  Qatar: {
-    latitude: 25.208492,
-    longitude: 51.155983,
-  },
-  Romania: {
-    latitude: 45.72747,
-    longitude: 24.984652,
-  },
-  Russia: {
-    latitude: 63.3144,
-    longitude: 93.88402,
-  },
-  Rwanda: {
-    latitude: -1.89815,
-    longitude: 30.095066,
-  },
-  Réunion: {
-    latitude: -21.06667,
-    longitude: 55.26667,
-  },
-  "S. Korea": {
-    latitude: 36.38219,
-    longitude: 128.124,
-  },
-  "Saint Kitts and Nevis": {
-    latitude: 17.340311,
-    longitude: -62.767597,
-  },
-  "Saint Lucia": {
-    latitude: 13.896235,
-    longitude: -60.97493,
-  },
-  "Saint Martin": {
-    latitude: 18.04235,
-    longitude: -63.058384,
-  },
-  "Saint Pierre Miquelon": {
-    latitude: 46.83333,
-    longitude: -56.33333,
-  },
-  "Saint Vincent and the Grenadines": {
-    latitude: 13.23357,
-    longitude: -61.199574,
-  },
-  Samoa: {
-    latitude: -13.63914,
-    longitude: -172.43825,
-  },
-  "San Marino": {
-    latitude: 43.936245,
-    longitude: 12.447407,
-  },
-  "Sao Tome and Principe": {
-    latitude: 0.252119,
-    longitude: 6.600203,
-  },
-  "Saudi Arabia": {
-    latitude: 23.80189,
-    longitude: 44.708042,
-  },
-  Senegal: {
-    latitude: 15.13855,
-    longitude: -14.768082,
-  },
-  Serbia: {
-    latitude: 44.25179,
-    longitude: 20.589197,
-  },
-  Seychelles: {
-    latitude: -4.681046,
-    longitude: 55.482796,
-  },
-  "Sierra Leone": {
-    latitude: 8.616007,
-    longitude: -11.756202,
-  },
-  Singapore: {
-    latitude: 1.316382,
-    longitude: 103.83383,
-  },
-  "Sint Maarten": {
-    latitude: 18.04235,
-    longitude: -63.058384,
-  },
-  Slovakia: {
-    latitude: 48.752407,
-    longitude: 19.20181,
-  },
-  Slovenia: {
-    latitude: 46.068733,
-    longitude: 14.932759,
-  },
-  "Solomon Islands": {
-    latitude: -8.078523,
-    longitude: 159.24359,
-  },
-  Somalia: {
-    latitude: 3.568925,
-    longitude: 45.19238,
-  },
-  "South Africa": {
-    latitude: -31.3096,
-    longitude: 18.357,
-  },
-  "South Sudan": {
-    latitude: 7.170803,
-    longitude: 30.109512,
-  },
-  Spain: {
-    latitude: 40.09095,
-    longitude: -3.464618,
-  },
-  "Sri Lanka": {
-    latitude: 7.622919,
-    longitude: 80.68822,
-  },
-  "St. Barth": {
-    latitude: 17.900616,
-    longitude: -62.82575,
-  },
-  Sudan: {
-    latitude: 16.34997,
-    longitude: 29.381308,
-  },
-  Suriname: {
-    latitude: 4.165951,
-    longitude: -55.945507,
-  },
-  Swaziland: {
-    latitude: -26.574488,
-    longitude: 31.484913,
-  },
-  Sweden: {
-    latitude: 65.859146,
-    longitude: 19.017204,
-  },
-  Switzerland: {
-    latitude: 46.73022,
-    longitude: 7.509687,
-  },
-  "Syrian Arab Republic": {
-    latitude: 35.00845,
-    longitude: 38.28846,
-  },
-  Taiwan: {
-    latitude: 23.798532,
-    longitude: 120.95543,
-  },
-  Tajikistan: {
-    latitude: 38.18531,
-    longitude: 72.571945,
-  },
-  Tanzania: {
-    latitude: -5.869032,
-    longitude: 34.80073,
-  },
-  Thailand: {
-    latitude: 15.512883,
-    longitude: 101.301704,
-  },
-  "Timor-Leste": {
-    latitude: -8.801828,
-    longitude: 125.86605,
-  },
-  Togo: {
-    latitude: 8.846267,
-    longitude: 1.073832,
-  },
-  "Trinidad and Tobago": {
-    latitude: 10.435364,
-    longitude: -61.264793,
-  },
-  Tunisia: {
-    latitude: 33.687263,
-    longitude: 9.007775,
-  },
-  Turkey: {
-    latitude: 39.339546,
-    longitude: 34.51052,
-  },
-  "Turks and Caicos Islands": {
-    latitude: 21.81663,
-    longitude: -71.7527,
-  },
-  UAE: {
-    latitude: -6.230868,
-    longitude: 144.66472,
-  },
-  "United Kingdom": {
-    latitude: 52.41879,
-    longitude: -1.247349,
-  },
-  USA: {
-    latitude: 39.715958,
-    longitude: -96.999664,
-  },
-  Uganda: {
-    latitude: 0.90406,
-    longitude: 32.443764,
-  },
-  Ukraine: {
-    latitude: 49.219467,
-    longitude: 33.023453,
-  },
-  Uruguay: {
-    latitude: -32.48333,
-    longitude: -53.51667,
-  },
-  Uzbekistan: {
-    latitude: 37.23583,
-    longitude: 67.31111,
-  },
-  Vanuatu: {
-    latitude: -15.388977,
-    longitude: 166.88568,
-  },
-  Venezuela: {
-    latitude: 7.18646,
-    longitude: -64.5687,
-  },
-  Vietnam: {
-    latitude: 21.732569,
-    longitude: 105.396675,
-  },
-  "Wallis and Futuna": {
-    latitude: -14.289278,
-    longitude: -178.14095,
-  },
-  "Western Sahara": {
-    latitude: 23.966331,
-    longitude: -12.630321,
-  },
-  Yemen: {
-    latitude: 15.328226,
-    longitude: 45.874382,
-  },
-  Zambia: {
-    latitude: -14.936526,
-    longitude: 25.940825,
-  },
-  Zimbabwe: {
-    latitude: -20.26667,
-    longitude: 30.91667,
-  },
-  "Australian Capital Territory": {
-    latitude: -35.47006,
-    longitude: 148.95451,
-  },
-  "New South Wales": {
-    latitude: -32.49498,
-    longitude: 146.5869,
-  },
-  "Northern Territory": {
-    latitude: -19.488358,
-    longitude: 133.4387,
-  },
-  Queensland: {
-    latitude: -23.033709,
-    longitude: 144.41714,
-  },
-  "South Australia": {
-    latitude: -29.467957,
-    longitude: 135.91534,
-  },
-  Tasmania: {
-    latitude: -42.09828,
-    longitude: 146.56502,
-  },
-  Victoria: {
-    latitude: 22.38113,
-    longitude: 114.135574,
-  },
-  "Western Australia": {
-    latitude: -26.471619,
-    longitude: 122.06598,
-  },
-  Antwerp: {
-    latitude: 51.222805,
-    longitude: 4.655059,
-  },
-  Brussels: {
-    latitude: 50.84318,
-    longitude: 4.371755,
-  },
-  "East Flanders": {
-    latitude: 50.981155,
-    longitude: 3.856605,
-  },
-  "Flemish Brabant": {
-    latitude: 50.872856,
-    longitude: 4.575076,
-  },
-  Hainaut: {
-    latitude: 50.513412,
-    longitude: 3.92736,
-  },
-  Liege: {
-    latitude: 50.635754,
-    longitude: 5.554438,
-  },
-  Limburg: {
-    latitude: 51.23482,
-    longitude: 5.938683,
-  },
-  Namur: {
-    latitude: 50.465054,
-    longitude: 4.859976,
-  },
-  "Walloon Brabant": {
-    latitude: 50.65612,
-    longitude: 4.576695,
-  },
-  "West Flanders": {
-    latitude: 51.03718,
-    longitude: 3.066484,
-  },
-  Acre: {
-    latitude: -8.842391,
-    longitude: -71.446526,
-  },
-  Alagoas: {
-    latitude: -9.778524,
-    longitude: -36.51811,
-  },
-  Amapa: {
-    latitude: 2.04999,
-    longitude: -50.80001,
-  },
-  Amazonas: {
-    latitude: -4.249313,
-    longitude: -65.36288,
-  },
-  Bahia: {
-    latitude: -12.964413,
-    longitude: -38.421936,
-  },
-  Ceara: {
-    latitude: -3.739272,
-    longitude: -38.539074,
-  },
-  "Distrito Federal": {
-    latitude: 19.254766,
-    longitude: -99.14253,
-  },
-  "Espirito Santo": {
-    latitude: -19.23347,
-    longitude: -40.319912,
-  },
-  Goias: {
-    latitude: -15.938274,
-    longitude: -50.14562,
-  },
-  Maranhao: {
-    latitude: -2.527392,
-    longitude: -44.27719,
-  },
-  "Mato Grosso": {
-    latitude: -15.25,
-    longitude: -56.73333,
-  },
-  "Mato Grosso do Sul": {
-    latitude: -20.14709,
-    longitude: -54.91328,
-  },
-  "Minas Gerais": {
-    latitude: -18.509838,
-    longitude: -44.29183,
-  },
-  Para: {
-    latitude: -1.448755,
-    longitude: -48.487865,
-  },
-  Paraiba: {
-    latitude: -7.145337,
-    longitude: -36.00575,
-  },
-  Parana: {
-    latitude: -24.550884,
-    longitude: -52.007195,
-  },
-  Pernambuco: {
-    latitude: -8.78333,
-    longitude: -37.7,
-  },
-  Piaui: {
-    latitude: -8.062802,
-    longitude: -42.96889,
-  },
-  "Rio Grande do Norte": {
-    latitude: -5.763863,
-    longitude: -36.64673,
-  },
-  "Rio Grande do Sul": {
-    latitude: -29.653675,
-    longitude: -53.379288,
-  },
-  "Rio de Janeiro": {
-    latitude: -22.935024,
-    longitude: -43.518246,
-  },
-  Rondonia: {
-    latitude: -10.86667,
-    longitude: -61.95,
-  },
-  Roraima: {
-    latitude: 2.179221,
-    longitude: -61.35499,
-  },
-  "Santa Catarina": {
-    latitude: -27.494596,
-    longitude: -48.7136,
-  },
-  "Sao Paulo": {
-    latitude: -23.570534,
-    longitude: -46.66371,
-  },
-  Sergipe: {
-    latitude: -10.617799,
-    longitude: -37.35375,
-  },
-  Tocantins: {
-    latitude: -10.501041,
-    longitude: -48.368195,
-  },
-  Alberta: {
-    latitude: 55.44167,
-    longitude: -114.44693,
-  },
-  "British Columbia": {
-    latitude: 54.790276,
-    longitude: -124.557,
-  },
-  Manitoba: {
-    latitude: 55.614437,
-    longitude: -97.96039,
-  },
-  "New Brunswick": {
-    latitude: 46.595512,
-    longitude: -66.334854,
-  },
-  "Newfoundland and Labrador": {
-    latitude: 54.12507,
-    longitude: -61.783348,
-  },
-  "Northwest Territories": {
-    latitude: 66.14693,
-    longitude: -125.33571,
-  },
-  "Nova Scotia": {
-    latitude: 45.22699,
-    longitude: -63.509537,
-  },
-  Nunavut: {
-    latitude: 71.082,
-    longitude: -90.61016,
-  },
-  Ontario: {
-    latitude: 51.451405,
-    longitude: -85.83596,
-  },
-  "Prince Edward Island": {
-    latitude: 46.19656,
-    longitude: -62.735184,
-  },
-  Quebec: {
-    latitude: 46.855988,
-    longitude: -71.27627,
-  },
-  "Repatriated Travellers": {
-    latitude: 34.96894,
-    longitude: -82.44037,
-  },
-  Saskatchewan: {
-    latitude: 54.499058,
-    longitude: -105.95067,
-  },
-  Yukon: {
-    latitude: 63.50579,
-    longitude: -136.0938,
-  },
-  Antofagasta: {
-    latitude: -23.391472,
-    longitude: -69.09323,
-  },
-  Araucania: {
-    latitude: -38.6878,
-    longitude: -72.30048,
-  },
-  "Arica y Parinacota": {
-    latitude: -18.463305,
-    longitude: -70.29556,
-  },
-  Atacama: {
-    latitude: -27.328074,
-    longitude: -69.93442,
-  },
-  Aysen: {
-    latitude: -46.405273,
-    longitude: -72.61561,
-  },
-  Biobio: {
-    latitude: -36.813683,
-    longitude: -72.38342,
-  },
-  Coquimbo: {
-    latitude: -30.650787,
-    longitude: -70.92578,
-  },
-  "Los Lagos": {
-    latitude: -38.457882,
-    longitude: -72.41487,
-  },
-  "Los Rios": {
-    latitude: -1.523428,
-    longitude: -79.59244,
-  },
-  Magallanes: {
-    latitude: -52.407352,
-    longitude: -71.166985,
-  },
-  Maule: {
-    latitude: -35.617695,
-    longitude: -71.421974,
-  },
-  Metropolitana: {
-    latitude: -33.478992,
-    longitude: -70.6932,
-  },
-  Nuble: {
-    latitude: -36.716442,
-    longitude: -71.880936,
-  },
-  OHiggins: {
-    latitude: -34.48875,
-    longitude: -71.02711,
-  },
-  Tarapaca: {
-    latitude: -20.263433,
-    longitude: -69.414505,
-  },
-  Valparaiso: {
-    latitude: -32.49988,
-    longitude: -70.88132,
-  },
-  Anhui: {
-    latitude: 31.783382,
-    longitude: 117.18916,
-  },
-  Beijing: {
-    latitude: 39.937965,
-    longitude: 116.417595,
-  },
-  Chongqing: {
-    latitude: 29.565016,
-    longitude: 106.54824,
-  },
-  Fujian: {
-    latitude: 24.473793,
-    longitude: 118.420135,
-  },
-  Gansu: {
-    latitude: 35.15148,
-    longitude: 104.14507,
-  },
-  Guangdong: {
-    latitude: 23.76822,
-    longitude: 112.80027,
-  },
-  Guangxi: {
-    latitude: 23.619883,
-    longitude: 108.846146,
-  },
-  Guizhou: {
-    latitude: 26.34054,
-    longitude: 105.99283,
-  },
-  Hainan: {
-    latitude: 19.99916,
-    longitude: 110.34119,
-  },
-  Hebei: {
-    latitude: 40.65813,
-    longitude: 117.78211,
-  },
-  Heilongjiang: {
-    latitude: 47.014328,
-    longitude: 128.42752,
-  },
-  Henan: {
-    latitude: 33.78483,
-    longitude: 112.46077,
-  },
-  Hubei: {
-    latitude: 30.996328,
-    longitude: 112.53467,
-  },
-  Hunan: {
-    latitude: 27.958307,
-    longitude: 111.659256,
-  },
-  "Inner Mongolia": {
-    latitude: 44.570415,
-    longitude: 117.728455,
-  },
-  Jiangsu: {
-    latitude: 33.668774,
-    longitude: 119.47881,
-  },
-  Jiangxi: {
-    latitude: 28.13841,
-    longitude: 115.06969,
-  },
-  Jilin: {
-    latitude: 43.82056,
-    longitude: 126.53586,
-  },
-  Liaoning: {
-    latitude: 41.397648,
-    longitude: 123.52535,
-  },
-  Macau: {
-    latitude: 22.139833,
-    longitude: 113.56362,
-  },
-  Ningxia: {
-    latitude: 37.13654,
-    longitude: 105.91243,
-  },
-  Qinghai: {
-    latitude: 35.5001,
-    longitude: 94.67951,
-  },
-  Shaanxi: {
-    latitude: 34.040527,
-    longitude: 108.63049,
-  },
-  Shandong: {
-    latitude: 36.334087,
-    longitude: 117.75646,
-  },
-  Shanghai: {
-    latitude: 31.246027,
-    longitude: 121.48338,
-  },
-  Shanxi: {
-    latitude: 40.05662,
-    longitude: 113.28578,
-  },
-  Sichuan: {
-    latitude: 30.738865,
-    longitude: 102.69577,
-  },
-  Tianjin: {
-    latitude: 39.107353,
-    longitude: 117.18518,
-  },
-  Tibet: {
-    latitude: 32.088932,
-    longitude: 86.448395,
-  },
-  Xinjiang: {
-    latitude: 41.600616,
-    longitude: 85.94488,
-  },
-  Yunnan: {
-    latitude: 25.043509,
-    longitude: 102.71032,
-  },
-  Zhejiang: {
-    latitude: 29.059828,
-    longitude: 119.90275,
-  },
-  Antioquia: {
-    latitude: 6.25184,
-    longitude: -75.56359,
-  },
-  Arauca: {
-    latitude: 7.06852,
-    longitude: -70.77132,
-  },
-  Atlantico: {
-    latitude: 10.663115,
-    longitude: -74.98377,
-  },
-  Bolivar: {
-    latitude: 10.26667,
-    longitude: -75.46667,
-  },
-  Boyaca: {
-    latitude: 5.45372,
-    longitude: -73.3625,
-  },
-  Caldas: {
-    latitude: 5.285408,
-    longitude: -75.42332,
-  },
-  "Capital District": {
-    latitude: 10.486633,
-    longitude: -66.98225,
-  },
-  Caqueta: {
-    latitude: 0.65008,
-    longitude: -74.00104,
-  },
-  Casanare: {
-    latitude: 5.42627,
-    longitude: -71.60187,
-  },
-  Cauca: {
-    latitude: 2.57173,
-    longitude: -76.77979,
-  },
-  Cesar: {
-    latitude: 9.882069,
-    longitude: -73.42306,
-  },
-  Choco: {
-    latitude: 5.405297,
-    longitude: -76.78221,
-  },
-  Cordoba: {
-    latitude: -31.4135,
-    longitude: -64.18105,
-  },
-  Cundinamarca: {
-    latitude: 5.089656,
-    longitude: -74.34127,
-  },
-  Guainia: {
-    latitude: 2.727537,
-    longitude: -68.81112,
-  },
-  Guaviare: {
-    latitude: 1.96343,
-    longitude: -72.12706,
-  },
-  Huila: {
-    latitude: -14.708591,
-    longitude: 14.92005,
-  },
-  "La Guajira": {
-    latitude: 11.45007,
-    longitude: -72.44943,
-  },
-  Magdalena: {
-    latitude: 10.250191,
-    longitude: -74.44617,
-  },
-  Meta: {
-    latitude: 3.32996,
-    longitude: -73.433266,
-  },
-  Narino: {
-    latitude: 2.04312,
-    longitude: -77.32378,
-  },
-  "Norte de Santander": {
-    latitude: 8.188397,
-    longitude: -72.86853,
-  },
-  Putumayo: {
-    latitude: 0.418541,
-    longitude: -75.58503,
-  },
-  Quindio: {
-    latitude: 4.50643,
-    longitude: -75.711044,
-  },
-  Risaralda: {
-    latitude: 5.275739,
-    longitude: -75.98711,
-  },
-  "San Andres y Providencia": {
-    latitude: 12.537868,
-    longitude: -81.72055,
-  },
-  Santander: {
-    latitude: 6.676329,
-    longitude: -73.416145,
-  },
-  Sucre: {
-    latitude: 10.264831,
-    longitude: -64.23637,
-  },
-  Tolima: {
-    latitude: 3.54944,
-    longitude: -75.69278,
-  },
-  "Valle del Cauca": {
-    latitude: 3.679421,
-    longitude: -76.37882,
-  },
-  Vaupes: {
-    latitude: 0.78945,
-    longitude: -70.779526,
-  },
-  Vichada: {
-    latitude: 4.883522,
-    longitude: -69.23118,
-  },
-  Reunion: {
-    latitude: -21.06667,
-    longitude: 55.26667,
-  },
-  "Saint Barthelemy": {
-    latitude: 17.900616,
-    longitude: -62.82575,
-  },
-  "Saint Pierre and Miquelon": {
-    latitude: 47.042404,
-    longitude: -56.34943,
-  },
-  "St Martin": {
-    latitude: 18.04235,
-    longitude: -63.058384,
-  },
-  "Baden-Wurttemberg": {
-    latitude: 48.605915,
-    longitude: 9.147881,
-  },
-  Bayern: {
-    latitude: 48.76965,
-    longitude: 11.65861,
-  },
-  Berlin: {
-    latitude: 52.524933,
-    longitude: 13.407032,
-  },
-  Brandenburg: {
-    latitude: 52.421196,
-    longitude: 12.523106,
-  },
-  Bremen: {
-    latitude: 53.0296,
-    longitude: 8.731851,
-  },
-  Hamburg: {
-    latitude: 53.576157,
-    longitude: 10.007046,
-  },
-  Hessen: {
-    latitude: 50.756714,
-    longitude: 9.216672,
-  },
-  "Mecklenburg-Vorpommern": {
-    latitude: 53.78593,
-    longitude: 12.788244,
-  },
-  Niedersachsen: {
-    latitude: 52.5167,
-    longitude: 9.941233,
-  },
-  "Nordrhein-Westfalen": {
-    latitude: 51.512943,
-    longitude: 7.38701,
-  },
-  "Rheinland-Pfalz": {
-    latitude: 50.099567,
-    longitude: 7.268906,
-  },
-  Saarland: {
-    latitude: 49.41257,
-    longitude: 7.004529,
-  },
-  Sachsen: {
-    latitude: 51.042133,
-    longitude: 13.372536,
-  },
-  "Sachsen-Anhalt": {
-    latitude: 51.928745,
-    longitude: 11.68147,
-  },
-  "Schleswig-Holstein": {
-    latitude: 54.081696,
-    longitude: 9.794596,
-  },
-  Thuringen: {
-    latitude: 50.88813,
-    longitude: 11.003829,
-  },
-  "Andaman and Nicobar Islands": {
-    latitude: 13.21409,
-    longitude: 92.94347,
-  },
-  "Andhra Pradesh": {
-    latitude: 14.762005,
-    longitude: 78.874886,
-  },
-  "Arunachal Pradesh": {
-    latitude: 28.485128,
-    longitude: 94.678986,
-  },
-  Assam: {
-    latitude: 26.272528,
-    longitude: 92.87743,
-  },
-  Bihar: {
-    latitude: 25.708466,
-    longitude: 85.573395,
-  },
-  Chandigarh: {
-    latitude: 30.728092,
-    longitude: 76.7784,
-  },
-  Chhattisgarh: {
-    latitude: 21.65204,
-    longitude: 81.871414,
-  },
-  "Dadra and Nagar Haveli and Daman and Diu": {
-    latitude: 20.24168,
-    longitude: 73.0171,
-  },
-  Delhi: {
-    latitude: 28.557163,
-    longitude: 77.163666,
-  },
-  Goa: {
-    latitude: 15.353196,
-    longitude: 74.10439,
-  },
-  Gujarat: {
-    latitude: 23.361662,
-    longitude: 71.64895,
-  },
-  Haryana: {
-    latitude: 28.176846,
-    longitude: 76.71124,
-  },
-  "Himachal Pradesh": {
-    latitude: 31.90226,
-    longitude: 77.27476,
-  },
-  "Jammu and Kashmir": {
-    latitude: 34.02345,
-    longitude: 77.29637,
-  },
-  Jharkhand: {
-    latitude: 23.663786,
-    longitude: 85.143875,
-  },
-  Karnataka: {
-    latitude: 14.882195,
-    longitude: 75.57454,
-  },
-  Kerala: {
-    latitude: 9.791129,
-    longitude: 76.74673,
-  },
-  Ladakh: {
-    latitude: 34.09712,
-    longitude: 77.34688,
-  },
-  Lakshadweep: {
-    latitude: 11.277142,
-    longitude: 74.04303,
-  },
-  "Madhya Pradesh": {
-    latitude: 22.9526,
-    longitude: 78.35788,
-  },
-  Maharashtra: {
-    latitude: 19.405779,
-    longitude: 75.70204,
-  },
-  Manipur: {
-    latitude: 24.649937,
-    longitude: 93.810295,
-  },
-  Meghalaya: {
-    latitude: 25.500168,
-    longitude: 91.45721,
-  },
-  Mizoram: {
-    latitude: 23.543785,
-    longitude: 92.88472,
-  },
-  Nagaland: {
-    latitude: 26.098768,
-    longitude: 94.56369,
-  },
-  Odisha: {
-    latitude: 20.775803,
-    longitude: 84.637726,
-  },
-  Puducherry: {
-    latitude: 10.943987,
-    longitude: 79.796104,
-  },
-  Punjab: {
-    latitude: 31.110483,
-    longitude: 72.3846,
-  },
-  Rajasthan: {
-    latitude: 26.950687,
-    longitude: 73.78659,
-  },
-  Sikkim: {
-    latitude: 27.584538,
-    longitude: 88.46869,
-  },
-  "Tamil Nadu": {
-    latitude: 11.052213,
-    longitude: 78.40852,
-  },
-  Telangana: {
-    latitude: 18,
-    longitude: 79.5,
-  },
-  Tripura: {
-    latitude: 23.687391,
-    longitude: 91.58747,
-  },
-  "Uttar Pradesh": {
-    latitude: 26.87964,
-    longitude: 80.56982,
-  },
-  Uttarakhand: {
-    latitude: 30.209236,
-    longitude: 79.18205,
-  },
-  "West Bengal": {
-    latitude: 23.269974,
-    longitude: 87.815506,
-  },
-  Abruzzo: {
-    latitude: 42.22745,
-    longitude: 13.854871,
-  },
-  Basilicata: {
-    latitude: 40.49976,
-    longitude: 16.0818,
-  },
-  Calabria: {
-    latitude: 39.06757,
-    longitude: 16.347506,
-  },
-  Campania: {
-    latitude: 40.85979,
-    longitude: 14.840307,
-  },
-  "Emilia-Romagna": {
-    latitude: 44.525646,
-    longitude: 11.038147,
-  },
-  "Friuli Venezia Giulia": {
-    latitude: 46.151493,
-    longitude: 13.055577,
-  },
-  Lazio: {
-    latitude: 41.97999,
-    longitude: 12.766887,
-  },
-  Liguria: {
-    latitude: 44.26473,
-    longitude: 8.704667,
-  },
-  Lombardia: {
-    latitude: 45.620644,
-    longitude: 9.76908,
-  },
-  Marche: {
-    latitude: 43.348225,
-    longitude: 13.137791,
-  },
-  Molise: {
-    latitude: 41.63166,
-    longitude: 14.491629,
-  },
-  "P.A. Bolzano": {
-    latitude: 22.34023,
-    longitude: 103.84415,
-  },
-  "P.A. Trento": {
-    latitude: 22.34023,
-    longitude: 103.84415,
-  },
-  Piemonte: {
-    latitude: 45.06052,
-    longitude: 7.923222,
-  },
-  Puglia: {
-    latitude: 40.98444,
-    longitude: 16.619621,
-  },
-  Sardegna: {
-    latitude: 40.087837,
-    longitude: 9.030746,
-  },
-  Sicilia: {
-    latitude: 37.588524,
-    longitude: 14.146425,
-  },
-  Toscana: {
-    latitude: 43.450844,
-    longitude: 11.126243,
-  },
-  Umbria: {
-    latitude: 42.96591,
-    longitude: 12.490159,
-  },
-  "Valle d'Aosta": {
-    latitude: 45.73014,
-    longitude: 7.387347,
-  },
-  Veneto: {
-    latitude: 45.43816,
-    longitude: 10.86135,
-  },
-  Aichi: {
-    latitude: 35.04017,
-    longitude: 137.25943,
-  },
-  Akita: {
-    latitude: 39.76491,
-    longitude: 140.41513,
-  },
-  Aomori: {
-    latitude: 40.699467,
-    longitude: 140.96655,
-  },
-  Chiba: {
-    latitude: 35.614456,
-    longitude: 140.12784,
-  },
-  Ehime: {
-    latitude: 33.767776,
-    longitude: 132.907,
-  },
-  Fukui: {
-    latitude: 35.98444,
-    longitude: 136.23492,
-  },
-  Fukuoka: {
-    latitude: 33.568794,
-    longitude: 130.3966,
-  },
-  Fukushima: {
-    latitude: 37.37232,
-    longitude: 140.52103,
-  },
-  Gifu: {
-    latitude: 35.699486,
-    longitude: 137.06424,
-  },
-  Gunma: {
-    latitude: 36.5565,
-    longitude: 139.03503,
-  },
-  Hiroshima: {
-    latitude: 34.39783,
-    longitude: 132.45358,
-  },
-  Hokkaido: {
-    latitude: 43.44922,
-    longitude: 142.7771,
-  },
-  Hyogo: {
-    latitude: 35.034344,
-    longitude: 134.86514,
-  },
-  Ibaraki: {
-    latitude: 36.158024,
-    longitude: 140.30743,
-  },
-  Ishikawa: {
-    latitude: 36.343616,
-    longitude: 136.59027,
-  },
-  Iwate: {
-    latitude: 39.572697,
-    longitude: 141.3734,
-  },
-  Kagawa: {
-    latitude: 34.224037,
-    longitude: 133.97368,
-  },
-  Kagoshima: {
-    latitude: 31.718822,
-    longitude: 131.0614,
-  },
-  Kanagawa: {
-    latitude: 35.455658,
-    longitude: 139.29831,
-  },
-  Kochi: {
-    latitude: 9.956297,
-    longitude: 76.33249,
-  },
-  Kumamoto: {
-    latitude: 32.805965,
-    longitude: 130.73907,
-  },
-  Kyoto: {
-    latitude: 34.986534,
-    longitude: 135.74416,
-  },
-  Mie: {
-    latitude: 34.448956,
-    longitude: 136.41417,
-  },
-  Miyagi: {
-    latitude: 38.573864,
-    longitude: 140.8758,
-  },
-  Miyazaki: {
-    latitude: 32.27751,
-    longitude: 131.33784,
-  },
-  Nagano: {
-    latitude: 36.233925,
-    longitude: 138.05392,
-  },
-  Nagasaki: {
-    latitude: 32.925537,
-    longitude: 130.02718,
-  },
-  Nara: {
-    latitude: 34.32789,
-    longitude: 135.89175,
-  },
-  Niigata: {
-    latitude: 37.909527,
-    longitude: 139.04045,
-  },
-  Oita: {
-    latitude: 33.090763,
-    longitude: 131.42891,
-  },
-  Okayama: {
-    latitude: 34.65284,
-    longitude: 133.91066,
-  },
-  Okinawa: {
-    latitude: 26.59508,
-    longitude: 128.0739,
-  },
-  Osaka: {
-    latitude: 34.691803,
-    longitude: 135.50507,
-  },
-  "Port Quarantine": {
-    latitude: 12.023883,
-    longitude: -61.775246,
-  },
-  Saga: {
-    latitude: 33.293484,
-    longitude: 130.08875,
-  },
-  Saitama: {
-    latitude: 35.859413,
-    longitude: 139.60626,
-  },
-  Shiga: {
-    latitude: 35.212376,
-    longitude: 136.12816,
-  },
-  Shimane: {
-    latitude: 35.019794,
-    longitude: 132.5124,
-  },
-  Shizuoka: {
-    latitude: 34.994,
-    longitude: 138.41428,
-  },
-  Tochigi: {
-    latitude: 36.714325,
-    longitude: 139.82542,
-  },
-  Tokushima: {
-    latitude: 33.920017,
-    longitude: 134.2751,
-  },
-  Tokyo: {
-    latitude: 35.695126,
-    longitude: 139.7539,
-  },
-  Tottori: {
-    latitude: 35.408794,
-    longitude: 133.83893,
-  },
-  Toyama: {
-    latitude: 36.611897,
-    longitude: 137.2743,
-  },
-  Wakayama: {
-    latitude: 33.936214,
-    longitude: 135.41708,
-  },
-  Yamagata: {
-    latitude: 38.624157,
-    longitude: 140.13739,
-  },
-  Yamaguchi: {
-    latitude: 34.25277,
-    longitude: 131.56197,
-  },
-  Yamanashi: {
-    latitude: 35.636944,
-    longitude: 138.72757,
-  },
-  Aguascalientes: {
-    latitude: 21.88507,
-    longitude: -102.28483,
-  },
-  "Baja California": {
-    latitude: 32.49775,
-    longitude: -116.9623,
-  },
-  "Baja California Sur": {
-    latitude: 24.975946,
-    longitude: -111.56638,
-  },
-  Campeche: {
-    latitude: 19.835016,
-    longitude: -90.51952,
-  },
-  Chiapas: {
-    latitude: 16.371658,
-    longitude: -92.657906,
-  },
-  Chihuahua: {
-    latitude: 28.662926,
-    longitude: -106.09991,
-  },
-  "Ciudad de Mexico": {
-    latitude: 19.371422,
-    longitude: -99.150345,
-  },
-  Coahuila: {
-    latitude: 27.723206,
-    longitude: -102.24928,
-  },
-  Colima: {
-    latitude: 19.242918,
-    longitude: -103.70934,
-  },
-  Durango: {
-    latitude: 24.026913,
-    longitude: -104.65029,
-  },
-  Guanajuato: {
-    latitude: 21.017628,
-    longitude: -101.24009,
-  },
-  Guerrero: {
-    latitude: 17.714882,
-    longitude: -99.77913,
-  },
-  Hidalgo: {
-    latitude: 20.530811,
-    longitude: -99.05693,
-  },
-  Jalisco: {
-    latitude: 20.44883,
-    longitude: -103.64401,
-  },
-  Michoacan: {
-    latitude: 19.406546,
-    longitude: -101.754005,
-  },
-  Morelos: {
-    latitude: 19.539509,
-    longitude: -99.04633,
-  },
-  Nayarit: {
-    latitude: 21.83099,
-    longitude: -104.84109,
-  },
-  "Nuevo Leon": {
-    latitude: 25.68041,
-    longitude: -100.21724,
-  },
-  Oaxaca: {
-    latitude: 17.025593,
-    longitude: -96.81953,
-  },
-  Puebla: {
-    latitude: 19.0512,
-    longitude: -98.21211,
-  },
-  Queretaro: {
-    latitude: 20.604813,
-    longitude: -100.40699,
-  },
-  "Quintana Roo": {
-    latitude: 19.248142,
-    longitude: -88.42498,
-  },
-  "San Luis Potosi": {
-    latitude: 22.14266,
-    longitude: -100.98302,
-  },
-  Sinaloa: {
-    latitude: 24.799456,
-    longitude: -107.39945,
-  },
-  Sonora: {
-    latitude: 28.06722,
-    longitude: -110.53361,
-  },
-  Tabasco: {
-    latitude: 18.04312,
-    longitude: -92.6175,
-  },
-  Tamaulipas: {
-    latitude: 24.127808,
-    longitude: -98.61873,
-  },
-  Tlaxcala: {
-    latitude: 19.297607,
-    longitude: -98.24085,
-  },
-  Veracruz: {
-    latitude: 19.182945,
-    longitude: -96.15388,
-  },
-  Yucatan: {
-    latitude: 20.724817,
-    longitude: -88.921234,
-  },
-  Zacatecas: {
-    latitude: 22.732836,
-    longitude: -102.678055,
-  },
-  "Bonaire, Sint Eustatius and Saba": {
-    latitude: 12.194274,
-    longitude: -68.24909,
-  },
-  Curacao: {
-    latitude: 12.150201,
-    longitude: -68.93342,
-  },
-  Drenthe: {
-    latitude: 52.887875,
-    longitude: 6.657571,
-  },
-  Flevoland: {
-    latitude: 52.565887,
-    longitude: 5.547632,
-  },
-  Friesland: {
-    latitude: 53.154636,
-    longitude: 5.692145,
-  },
-  Gelderland: {
-    latitude: 52.10715,
-    longitude: 5.875753,
-  },
-  Groningen: {
-    latitude: 53.21333,
-    longitude: 6.562788,
-  },
-  "Noord-Brabant": {
-    latitude: 51.515507,
-    longitude: 5.353093,
-  },
-  "Noord-Holland": {
-    latitude: 52.827682,
-    longitude: 4.955985,
-  },
-  Overijssel: {
-    latitude: 52.429943,
-    longitude: 6.396928,
-  },
-  Utrecht: {
-    latitude: 52.09153,
-    longitude: 5.11733,
-  },
-  Zeeland: {
-    latitude: 51.491688,
-    longitude: 3.815516,
-  },
-  "Zuid-Holland": {
-    latitude: 51.94644,
-    longitude: 4.509113,
-  },
-  "Azad Jammu and Kashmir": {
-    latitude: 33.847687,
-    longitude: 73.80055,
-  },
-  Balochistan: {
-    latitude: 27.652246,
-    longitude: 65.154785,
-  },
-  "Gilgit-Baltistan": {
-    latitude: 35.982838,
-    longitude: 74.92082,
-  },
-  Islamabad: {
-    latitude: 33.72148,
-    longitude: 73.04329,
-  },
-  "Khyber Pakhtunkhwa": {
-    latitude: 34.955162,
-    longitude: 72.48451,
-  },
-  Sindh: {
-    latitude: 25.683735,
-    longitude: 68.73616,
-  },
-  Ancash: {
-    latitude: -9.36785,
-    longitude: -77.68467,
-  },
-  Apurimac: {
-    latitude: -14.031789,
-    longitude: -72.9582,
-  },
-  Arequipa: {
-    latitude: -16.39889,
-    longitude: -71.535,
-  },
-  Ayacucho: {
-    latitude: -13.175024,
-    longitude: -74.21995,
-  },
-  Cajamarca: {
-    latitude: -7.16378,
-    longitude: -78.50027,
-  },
-  Callao: {
-    latitude: -12.05658,
-    longitude: -77.11814,
-  },
-  Cusco: {
-    latitude: -13.551969,
-    longitude: -72.06917,
-  },
-  Huancavelica: {
-    latitude: -12.78542,
-    longitude: -74.97501,
-  },
-  Huanuco: {
-    latitude: -9.93062,
-    longitude: -76.24223,
-  },
-  Ica: {
-    latitude: -14.061322,
-    longitude: -75.74764,
-  },
-  Junin: {
-    latitude: -11.15895,
-    longitude: -75.99304,
-  },
-  "La Libertad": {
-    latitude: -8.062733,
-    longitude: -78.57836,
-  },
-  Lambayeque: {
-    latitude: -6.70111,
-    longitude: -79.90611,
-  },
-  Lima: {
-    latitude: -12.049141,
-    longitude: -77.02122,
-  },
-  Loreto: {
-    latitude: -3.850121,
-    longitude: -75.361015,
-  },
-  "Madre de Dios": {
-    latitude: -12.6,
-    longitude: -70.08333,
-  },
-  Moquegua: {
-    latitude: -17.19832,
-    longitude: -70.93567,
-  },
-  Pasco: {
-    latitude: -10.730998,
-    longitude: -76.15871,
-  },
-  Piura: {
-    latitude: -5.190249,
-    longitude: -80.625656,
-  },
-  Puno: {
-    latitude: -15.840646,
-    longitude: -70.02778,
-  },
-  "San Martin": {
-    latitude: 18.04235,
-    longitude: -63.058384,
-  },
-  Tacna: {
-    latitude: -18.00556,
-    longitude: -70.24833,
-  },
-  Tumbes: {
-    latitude: -3.56662,
-    longitude: -80.45863,
-  },
-  Ucayali: {
-    latitude: -10.223525,
-    longitude: -72.94055,
-  },
-  "Adygea Republic": {
-    latitude: 37.11868,
-    longitude: -93.47166,
-  },
-  "Altai Krai": {
-    latitude: 52.166344,
-    longitude: 82.23442,
-  },
-  "Altai Republic": {
-    latitude: 52.166344,
-    longitude: 82.23442,
-  },
-  "Amur Oblast": {
-    latitude: 53.290833,
-    longitude: 128.3681,
-  },
-  "Arkhangelsk Oblast": {
-    latitude: 63.57406,
-    longitude: 43.053417,
-  },
-  "Astrakhan Oblast": {
-    latitude: 46.899128,
-    longitude: 47.745926,
-  },
-  "Bashkortostan Republic": {
-    latitude: 54.698196,
-    longitude: 55.616707,
-  },
-  "Belgorod Oblast": {
-    latitude: 50.682285,
-    longitude: 38.01295,
-  },
-  "Bryansk Oblast": {
-    latitude: 53.091896,
-    longitude: 33.72885,
-  },
-  "Buryatia Republic": {
-    latitude: 37.11868,
-    longitude: -93.47166,
-  },
-  "Chechen Republic": {
-    latitude: 43.29137,
-    longitude: 45.672684,
-  },
-  "Chelyabinsk Oblast": {
-    latitude: 55.076702,
-    longitude: 60.957176,
-  },
-  "Chukotka Autonomous Okrug": {
-    latitude: 66.19611,
-    longitude: 171.7945,
-  },
-  "Chuvashia Republic": {
-    latitude: 55.549736,
-    longitude: 47.067444,
-  },
-  "Dagestan Republic": {
-    latitude: 42.465454,
-    longitude: 47.041145,
-  },
-  "Ingushetia Republic": {
-    latitude: 37.11868,
-    longitude: -93.47166,
-  },
-  "Irkutsk Oblast": {
-    latitude: 55.648106,
-    longitude: 105.56597,
-  },
-  "Ivanovo Oblast": {
-    latitude: 56.981663,
-    longitude: 41.525444,
-  },
-  "Jewish Autonomous Okrug": {
-    latitude: 61.604668,
-    longitude: 66.754524,
-  },
-  "Kabardino-Balkarian Republic": {
-    latitude: 43.414978,
-    longitude: 43.324383,
-  },
-  "Kaliningrad Oblast": {
-    latitude: 54.787636,
-    longitude: 21.265133,
-  },
-  "Kalmykia Republic": {
-    latitude: 46.541393,
-    longitude: 45.305286,
-  },
-  "Kaluga Oblast": {
-    latitude: 54.12804,
-    longitude: 35.258465,
-  },
-  "Kamchatka Krai": {
-    latitude: 56.46061,
-    longitude: 159.85745,
-  },
-  "Karachay-Cherkess Republic": {
-    latitude: 43.697964,
-    longitude: 41.873043,
-  },
-  "Karelia Republic": {
-    latitude: 63.548367,
-    longitude: 33.191895,
-  },
-  "Kemerovo Oblast": {
-    latitude: 55.084877,
-    longitude: 87.04001,
-  },
-  "Khabarovsk Krai": {
-    latitude: 50.719715,
-    longitude: 136.62515,
-  },
-  "Khakassia Republic": {
-    latitude: 53.44815,
-    longitude: 90.23188,
-  },
-  "Khanty-Mansi Autonomous Okrug": {
-    latitude: 61.604668,
-    longitude: 66.754524,
-  },
-  "Kirov Oblast": {
-    latitude: 58.094627,
-    longitude: 50.088955,
-  },
-  "Komi Republic": {
-    latitude: 63.99688,
-    longitude: 54.10099,
-  },
-  "Kostroma Oblast": {
-    latitude: 58.350357,
-    longitude: 43.794594,
-  },
-  "Krasnodar Krai": {
-    latitude: 45.911907,
-    longitude: 39.300243,
-  },
-  "Krasnoyarsk Krai": {
-    latitude: 66.79713,
-    longitude: 95.9815,
-  },
-  "Kurgan Oblast": {
-    latitude: 55.392166,
-    longitude: 64.19413,
-  },
-  "Kursk Oblast": {
-    latitude: 51.727448,
-    longitude: 36.104713,
-  },
-  "Leningrad Oblast": {
-    latitude: 60.129097,
-    longitude: 31.660969,
-  },
-  "Lipetsk Oblast": {
-    latitude: 52.750076,
-    longitude: 39.27036,
-  },
-  "Magadan Oblast": {
-    latitude: 63.240524,
-    longitude: 154.92543,
-  },
-  "Mari El Republic": {
-    latitude: 56.501526,
-    longitude: 48.35563,
-  },
-  "Mordovia Republic": {
-    latitude: 54.14487,
-    longitude: 44.239998,
-  },
-  Moscow: {
-    latitude: 55.74147,
-    longitude: 37.615562,
-  },
-  "Moscow Oblast": {
-    latitude: 55.313488,
-    longitude: 38.46336,
-  },
-  "Murmansk Oblast": {
-    latitude: 67.87945,
-    longitude: 35.019043,
-  },
-  "Nenets Autonomous Okrug": {
-    latitude: 67.820496,
-    longitude: 56.138588,
-  },
-  "Nizhny Novgorod Oblast": {
-    latitude: 56.056015,
-    longitude: 44.364765,
-  },
-  "North Ossetia - Alania Republic": {
-    latitude: 43.056454,
-    longitude: 44.35837,
-  },
-  "Novgorod Oblast": {
-    latitude: 58.266678,
-    longitude: 31.988722,
-  },
-  "Novosibirsk Oblast": {
-    latitude: 55.36082,
-    longitude: 78.8658,
-  },
-  "Omsk Oblast": {
-    latitude: 56.048306,
-    longitude: 73.34734,
-  },
-  "Orel Oblast": {
-    latitude: 52.93511,
-    longitude: 36.12654,
-  },
-  "Orenburg Oblast": {
-    latitude: 52.136612,
-    longitude: 54.356194,
-  },
-  "Penza Oblast": {
-    latitude: 53.187466,
-    longitude: 45.169487,
-  },
-  "Perm Krai": {
-    latitude: 58.975773,
-    longitude: 56.151554,
-  },
-  "Primorsky Krai": {
-    latitude: 45.237198,
-    longitude: 134.78606,
-  },
-  "Pskov Oblast": {
-    latitude: 57.197376,
-    longitude: 29.059061,
-  },
-  "Rostov Oblast": {
-    latitude: 47.53565,
-    longitude: 41.012115,
-  },
-  "Ryazan Oblast": {
-    latitude: 54.372948,
-    longitude: 40.59841,
-  },
-  "Saint Petersburg": {
-    latitude: 59.82113,
-    longitude: 30.388193,
-  },
-  "Sakha (Yakutiya) Republic": {
-    latitude: 64.813324,
-    longitude: 124.710014,
-  },
-  "Sakhalin Oblast": {
-    latitude: 50.17053,
-    longitude: 142.98828,
-  },
-  "Samara Oblast": {
-    latitude: 53.060966,
-    longitude: 50.621723,
-  },
-  "Saratov Oblast": {
-    latitude: 51.6304,
-    longitude: 46.79647,
-  },
-  "Smolensk Oblast": {
-    latitude: 54.75899,
-    longitude: 32.770798,
-  },
-  "Stavropol Krai": {
-    latitude: 44.932713,
-    longitude: 43.392105,
-  },
-  "Sverdlovsk Oblast": {
-    latitude: 58.720356,
-    longitude: 61.602867,
-  },
-  "Tambov Oblast": {
-    latitude: 52.670765,
-    longitude: 41.618782,
-  },
-  "Tatarstan Republic": {
-    latitude: 55.37135,
-    longitude: 50.572525,
-  },
-  "Tomsk Oblast": {
-    latitude: 58.44884,
-    longitude: 82.02158,
-  },
-  "Tula Oblast": {
-    latitude: 53.96345,
-    longitude: 37.80761,
-  },
-  "Tver Oblast": {
-    latitude: 57.07096,
-    longitude: 34.44876,
-  },
-  "Tyumen Oblast": {
-    latitude: 57.501312,
-    longitude: 68.6221,
-  },
-  "Tyva Republic": {
-    latitude: 51.5,
-    longitude: 95,
-  },
-  "Udmurt Republic": {
-    latitude: 57.466766,
-    longitude: 52.821533,
-  },
-  "Ulyanovsk Oblast": {
-    latitude: 54.055977,
-    longitude: 47.913982,
-  },
-  "Vladimir Oblast": {
-    latitude: 55.890793,
-    longitude: 40.836403,
-  },
-  "Volgograd Oblast": {
-    latitude: 49.677658,
-    longitude: 44.089973,
-  },
-  "Vologda Oblast": {
-    latitude: 59.65393,
-    longitude: 40.383987,
-  },
-  "Voronezh Oblast": {
-    latitude: 50.911327,
-    longitude: 40.197083,
-  },
-  "Yamalo-Nenets Autonomous Okrug": {
-    latitude: 65.032524,
-    longitude: 78.36025,
-  },
-  "Yaroslavl Oblast": {
-    latitude: 57.90754,
-    longitude: 39.274605,
-  },
-  "Zabaykalsky Krai": {
-    latitude: 52.223656,
-    longitude: 116.80359,
-  },
-  Andalusia: {
-    latitude: 37.46335,
-    longitude: -4.575609,
-  },
-  Aragon: {
-    latitude: 41.519527,
-    longitude: -0.659945,
-  },
-  Asturias: {
-    latitude: 43.32057,
-    longitude: -5.973707,
-  },
-  Baleares: {
-    latitude: 39.609283,
-    longitude: 2.964907,
-  },
-  "C. Valenciana": {
-    latitude: 39.40143,
-    longitude: -0.55473,
-  },
-  Canarias: {
-    latitude: 28.356152,
-    longitude: -14.031913,
-  },
-  Cantabria: {
-    latitude: 43.211452,
-    longitude: -4.020572,
-  },
-  "Castilla - La Mancha": {
-    latitude: 12.95,
-    longitude: 123.83333,
-  },
-  "Castilla y Leon": {
-    latitude: 41.754402,
-    longitude: -4.781899,
-  },
-  Catalonia: {
-    latitude: 41.79847,
-    longitude: 1.528745,
-  },
-  Ceuta: {
-    latitude: 35.889874,
-    longitude: -5.327588,
-  },
-  Extremadura: {
-    latitude: 39.191505,
-    longitude: -6.150732,
-  },
-  Galicia: {
-    latitude: 42.756935,
-    longitude: -7.910741,
-  },
-  "La Rioja": {
-    latitude: 42.30294,
-    longitude: -2.517555,
-  },
-  Madrid: {
-    latitude: 40.429913,
-    longitude: -3.669245,
-  },
-  Melilla: {
-    latitude: 35.287632,
-    longitude: -2.948249,
-  },
-  Murcia: {
-    latitude: 38.00211,
-    longitude: -1.485228,
-  },
-  Navarra: {
-    latitude: 42.71603,
-    longitude: -1.707935,
-  },
-  "Pais Vasco": {
-    latitude: 43.04366,
-    longitude: -2.61669,
-  },
-  Blekinge: {
-    latitude: 56.137245,
-    longitude: 15.518965,
-  },
-  Dalarna: {
-    latitude: 60.916637,
-    longitude: 14.158823,
-  },
-  Gavleborg: {
-    latitude: 61.384907,
-    longitude: 16.901787,
-  },
-  Gotland: {
-    latitude: 57.58438,
-    longitude: 18.671509,
-  },
-  Halland: {
-    latitude: 56.949116,
-    longitude: 12.618513,
-  },
-  "Jamtland Harjedalen": {
-    latitude: 62.09766,
-    longitude: 13.81853,
-  },
-  Jonkoping: {
-    latitude: 57.761406,
-    longitude: 14.161369,
-  },
-  Kalmar: {
-    latitude: 56.6827,
-    longitude: 16.34487,
-  },
-  Kronoberg: {
-    latitude: 56.803528,
-    longitude: 14.722244,
-  },
-  Norrbotten: {
-    latitude: 67.032875,
-    longitude: 21.043758,
-  },
-  Orebro: {
-    latitude: 59.278637,
-    longitude: 15.193617,
-  },
-  Ostergotland: {
-    latitude: 58.416363,
-    longitude: 15.662681,
-  },
-  Skane: {
-    latitude: 55.785847,
-    longitude: 13.534299,
-  },
-  Sormland: {
-    latitude: 58.755043,
-    longitude: 17.003363,
-  },
-  Stockholm: {
-    latitude: 59.275253,
-    longitude: 18.035164,
-  },
-  Uppsala: {
-    latitude: 59.85131,
-    longitude: 17.632732,
-  },
-  Varmland: {
-    latitude: 59.74425,
-    longitude: 13.174963,
-  },
-  Vasterbotten: {
-    latitude: 64.7629,
-    longitude: 17.803446,
-  },
-  Vasternorrland: {
-    latitude: 63.11344,
-    longitude: 17.840525,
-  },
-  Vastmanland: {
-    latitude: 59.75011,
-    longitude: 16.071447,
-  },
-  "Vastra Gotaland": {
-    latitude: 58.30884,
-    longitude: 12.397789,
-  },
-  "Cherkasy Oblast": {
-    latitude: 49.379414,
-    longitude: 31.625582,
-  },
-  "Chernihiv Oblast": {
-    latitude: 51.36507,
-    longitude: 31.98101,
-  },
-  "Chernivtsi Oblast": {
-    latitude: 48.291225,
-    longitude: 25.95741,
-  },
-  "Crimea Republic*": {
-    latitude: 45.366665,
-    longitude: 34.14096,
-  },
-  "Dnipropetrovsk Oblast": {
-    latitude: 48.12859,
-    longitude: 34.182137,
-  },
-  "Donetsk Oblast": {
-    latitude: 48.036396,
-    longitude: 37.692913,
-  },
-  "Ivano-Frankivsk Oblast": {
-    latitude: 48.717632,
-    longitude: 24.635466,
-  },
-  "Kharkiv Oblast": {
-    latitude: 49.483074,
-    longitude: 36.47482,
-  },
-  "Kherson Oblast": {
-    latitude: 46.84938,
-    longitude: 33.70943,
-  },
-  "Khmelnytskyi Oblast": {
-    latitude: 49.55314,
-    longitude: 26.946136,
-  },
-  Kiev: {
-    latitude: 50.469864,
-    longitude: 30.43197,
-  },
-  "Kiev Oblast": {
-    latitude: 50.12161,
-    longitude: 30.43549,
-  },
-  "Kirovohrad Oblast": {
-    latitude: 48.384884,
-    longitude: 32.224476,
-  },
-  "Luhansk Oblast": {
-    latitude: 48.97829,
-    longitude: 38.995747,
-  },
-  "Lviv Oblast": {
-    latitude: 49.756298,
-    longitude: 23.89557,
-  },
-  "Mykolaiv Oblast": {
-    latitude: 47.273563,
-    longitude: 31.80469,
-  },
-  "Odessa Oblast": {
-    latitude: 46.989372,
-    longitude: 30.480062,
-  },
-  "Poltava Oblast": {
-    latitude: 49.708546,
-    longitude: 33.804527,
-  },
-  "Rivne Oblast": {
-    latitude: 51.218647,
-    longitude: 26.631313,
-  },
-  "Sevastopol*": {
-    latitude: 44.58883,
-    longitude: 33.5224,
-  },
-  "Sumy Oblast": {
-    latitude: 51.097504,
-    longitude: 33.758816,
-  },
-  "Ternopil Oblast": {
-    latitude: 49.373703,
-    longitude: 25.6355,
-  },
-  "Vinnytsia Oblast": {
-    latitude: 48.890835,
-    longitude: 28.710806,
-  },
-  "Volyn Oblast": {
-    latitude: 51.19514,
-    longitude: 24.846998,
-  },
-  "Zakarpattia Oblast": {
-    latitude: 48.429775,
-    longitude: 23.257212,
-  },
-  "Zaporizhia Oblast": {
-    latitude: 47.293537,
-    longitude: 35.594242,
-  },
-  "Zhytomyr Oblast": {
-    latitude: 50.668045,
-    longitude: 28.372244,
-  },
-  England: {
-    latitude: 52.59431,
-    longitude: -1.461208,
-  },
-  "Northern Ireland": {
-    latitude: 54.609676,
-    longitude: -6.693536,
-  },
-  "Saint Helena, Ascension and Tristan da Cunha": {
-    latitude: -15.961264,
-    longitude: -5.708248,
-  },
-  Scotland: {
-    latitude: 56.83301,
-    longitude: -4.180209,
-  },
-  Wales: {
-    latitude: 52.336716,
-    longitude: -3.76532,
-  },
+  geoData: [
+    { place: "North America", latitude: 38.309137, longitude: -101.328273 },
+    { place: "South America", latitude: -12.819233, longitude: -50.657067 },
+    { place: "Asia", latitude: 49.512481, longitude: 94.464337 },
+    { place: "Europe", latitude: 55.859135, longitude: 39.579995 },
+    { place: "Africa", latitude: 21.638471, longitude: 3.924068 },
+    { place: "Australia/Oceania", latitude: -23.992438, longitude: 134.050443 },
+    { place: "California", latitude: 36.531544, longitude: -119.586168 },
+    { place: "Texas", latitude: 31.030974, longitude: -98.326329 },
+    { place: "Florida", latitude: 27.97762, longitude: -81.769611 },
+    { place: "New York", latitude: 40.68295, longitude: -73.9708 },
+    { place: "Illinois", latitude: 40.265028, longitude: -89.191575 },
+    { place: "Georgia", latitude: 32.1656, longitude: -82.9001 },
+    { place: "Pennsylvania", latitude: 40.860198, longitude: -77.838617 },
+    { place: "Ohio", latitude: 40.262259, longitude: -82.883453 },
+    { place: "North Carolina", latitude: 35.387362, longitude: -78.455056 },
+    { place: "New Jersey", latitude: 39.66502, longitude: -74.738208 },
+    { place: "Arizona", latitude: 34.255149, longitude: -111.62621 },
+    { place: "Tennessee", latitude: 35.820245, longitude: -86.343764 },
+    { place: "Michigan", latitude: 43.924812, longitude: -84.633107 },
+    { place: "Indiana", latitude: 39.904493, longitude: -86.250281 },
+    { place: "Massachusetts", latitude: 42.358752, longitude: -71.531484 },
+    { place: "Virginia", latitude: 37.73086, longitude: -78.376655 },
+    { place: "Wisconsin", latitude: 44.356004, longitude: -89.466198 },
+    { place: "Missouri", latitude: 38.353141, longitude: -92.747022 },
+    { place: "South Carolina", latitude: 33.702857, longitude: -80.627523 },
+    { place: "Minnesota", latitude: 46.63636, longitude: -94.579641 },
+    { place: "Alabama", latitude: 32.688053, longitude: -86.810585 },
+    { place: "Colorado", latitude: 38.996664, longitude: -105.547822 },
+    { place: "Louisiana", latitude: 30.542601, longitude: -92.51441 },
+    { place: "Oklahoma", latitude: 35.393761, longitude: -97.602513 },
+    { place: "Kentucky", latitude: 37.696825, longitude: -84.924095 },
+    { place: "Maryland", latitude: 39.038828, longitude: -76.346717 },
+    { place: "Utah", latitude: 39.098999, longitude: -111.878816 },
+    { place: "Iowa", latitude: 42.039943, longitude: -93.500069 },
+    { place: "Washington", latitude: 47.7511, longitude: -120.7401 },
+    { place: "Arkansas", latitude: 34.755883, longitude: -92.640559 },
+    { place: "Connecticut", latitude: 41.580163, longitude: -72.756629 },
+    { place: "Mississippi", latitude: 32.921921, longitude: -89.687118 },
+    { place: "Nevada", latitude: 39.440688, longitude: -116.598569 },
+    { place: "Kansas", latitude: 38.500327, longitude: -98.380429 },
+    { place: "Nebraska", latitude: 41.499671, longitude: -99.810075 },
+    { place: "New Mexico", latitude: 34.498624, longitude: -106.108278 },
+    { place: "Idaho", latitude: 43.764877, longitude: -114.964267 },
+    { place: "Oregon", latitude: 43.854178, longitude: -120.526709 },
+    { place: "West Virginia", latitude: 38.720281, longitude: -80.649428 },
+    { place: "Rhode Island", latitude: 41.587536, longitude: -71.514739 },
+    { place: "South Dakota", latitude: 44.470716, longitude: -100.229958 },
+    { place: "Montana", latitude: 47.001265, longitude: -109.645406 },
+    { place: "North Dakota", latitude: 47.471495, longitude: -100.469096 },
+    { place: "Delaware", latitude: 38.978849, longitude: -75.46014 },
+    { place: "New Hampshire", latitude: 43.644386, longitude: -71.586283 },
+    { place: "Alaska", latitude: 64.724809, longitude: -153.629618 },
+    { place: "Wyoming", latitude: 41.47747, longitude: -105.63666 },
+    { place: "Maine", latitude: 45.243327, longitude: -69.171071 },
+    { place: "Washington DC", latitude: 38.912097, longitude: -77.014683 },
+    { place: "Hawaii", latitude: 19.647634, longitude: -155.533256 },
+    { place: "Vermont", latitude: 44.211857, longitude: -72.681238 },
+    { place: "Puerto Rico", latitude: 18.234668, longitude: -66.481065 },
+    { place: "Guam", latitude: 13.427861, longitude: 144.733813 },
+    {
+      place: "United States Virgin Islands",
+      latitude: 17.73951,
+      longitude: -64.783592,
+    },
+    {
+      place: "Northern Mariana Islands",
+      latitude: 15.193315,
+      longitude: 145.748209,
+    },
+    { place: "American Samoa", latitude: -14.333216, longitude: -170.778926 },
+    { place: "Navajo Nation", latitude: 35.367143, longitude: -110.312547 },
+    { place: "Afghanistan", latitude: 34.159326, longitude: 66.51551 },
+    { place: "Albania", latitude: 40.647186, longitude: 20.127352 },
+    { place: "Algeria", latitude: 27.89689, longitude: 3.379277 },
+    { place: "Andorra", latitude: 42.547076, longitude: 1.576286 },
+    { place: "Angola", latitude: -12.180859, longitude: 17.996347 },
+    { place: "Anguilla", latitude: 18.232135, longitude: -63.042295 },
+    { place: "Antigua and Barbuda", latitude: 17.06938, longitude: -61.809739 },
+    { place: "Argentina", latitude: -29.53605, longitude: -62.26363 },
+    { place: "Armenia", latitude: 40.474724, longitude: 44.80561 },
+    { place: "Aruba", latitude: 12.517399, longitude: -69.972795 },
+    { place: "Australia", latitude: -23.992438, longitude: 134.050443 },
+    { place: "Austria", latitude: 47.522617, longitude: 14.143702 },
+    { place: "Azerbaijan", latitude: 40.402387, longitude: 47.210994 },
+    { place: "Bahamas", latitude: 24.669637, longitude: -78.018505 },
+    { place: "Bahrain", latitude: 26.0845, longitude: 50.550672 },
+    { place: "Bangladesh", latitude: 24.045958, longitude: 90.032723 },
+    { place: "Barbados", latitude: 13.144115, longitude: -59.555728 },
+    { place: "Belarus", latitude: 53.832259, longitude: 28.43651 },
+    { place: "Belgium", latitude: 50.780688, longitude: 4.792712 },
+    { place: "Belize", latitude: 17.206637, longitude: -88.714488 },
+    { place: "Benin", latitude: 9.30769, longitude: 2.31583 },
+    { place: "Bermuda", latitude: 32.296698, longitude: -64.764346 },
+    { place: "Bhutan", latitude: 27.454772, longitude: 89.92561 },
+    { place: "Bolivia", latitude: -16.640652, longitude: -64.661928 },
+    { place: "Bosnia", latitude: 44.091039, longitude: 18.06843 },
+    { place: "Botswana", latitude: -22.108313, longitude: 24.191388 },
+    { place: "Brazil", latitude: -11.928923, longitude: -49.542449 },
+    {
+      place: "British Virgin Islands",
+      latitude: 18.42785,
+      longitude: -64.640814,
+    },
+    { place: "Brunei", latitude: 4.479716, longitude: 114.578687 },
+    { place: "Bulgaria", latitude: 42.501868, longitude: 25.176846 },
+    { place: "Burkina Faso", latitude: 12.655182, longitude: -1.473625 },
+    { place: "Burundi", latitude: -3.397104, longitude: 29.877803 },
+    { place: "Cabo Verde", latitude: 15.04732, longitude: -23.618479 },
+    { place: "Cambodia", latitude: 12.635759, longitude: 104.480812 },
+    { place: "Cameroon", latitude: 4.585076, longitude: 12.473672 },
+    { place: "Canada", latitude: 58.33747, longitude: -112.384858 },
+    {
+      place: "Caribbean Netherlands",
+      latitude: 12.194274,
+      longitude: -68.249092,
+    },
+    { place: "Cayman Islands", latitude: 19.319996, longitude: -81.230744 },
+    {
+      place: "Central African Republic",
+      latitude: 6.986429,
+      longitude: 21.668827,
+    },
+    { place: "Chad", latitude: 15.21002, longitude: 18.76924 },
+    { place: "Channel Islands", latitude: 54.519705, longitude: -130.821156 },
+    { place: "Chile", latitude: -38.165295, longitude: -72.288079 },
+    { place: "China", latitude: 32.529718, longitude: 106.802874 },
+    { place: "Colombia", latitude: 4.6, longitude: -74.51667 },
+    { place: "Comoros", latitude: -11.727683, longitude: 43.318094 },
+    { place: "Congo", latitude: -2.271721, longitude: 23.513592 },
+    { place: "Costa Rica", latitude: 10.068183, longitude: -84.028584 },
+    { place: "Croatia", latitude: 45.805356, longitude: 16.375139 },
+    { place: "Cuba", latitude: 21.329612, longitude: -77.967722 },
+    { place: "Cura\u00e7ao", latitude: 12.150201, longitude: -68.933415 },
+    { place: "Cyprus", latitude: 34.881852, longitude: 33.011051 },
+    { place: "Czechia", latitude: 49.88233, longitude: 15.377705 },
+    { place: "C\u00f4te d'Ivoire", latitude: 7.568978, longitude: -5.495164 },
+    { place: "DRC", latitude: -2.271721, longitude: 23.513592 },
+    { place: "Denmark", latitude: 55.966966, longitude: 9.018163 },
+    { place: "Djibouti", latitude: 11.58901, longitude: 43.14503 },
+    { place: "Dominica", latitude: 15.460196, longitude: -61.356841 },
+    { place: "Dominican Republic", latitude: 19.105937, longitude: -70.804224 },
+    { place: "Ecuador", latitude: -1.241567, longitude: -78.322784 },
+    { place: "Egypt", latitude: 26.42231, longitude: 29.227089 },
+    { place: "El Salvador", latitude: 13.66845, longitude: -89.27004 },
+    { place: "Equatorial Guinea", latitude: 1.586111, longitude: 10.464682 },
+    { place: "Eritrea", latitude: 15.817362, longitude: 38.267404 },
+    { place: "Estonia", latitude: 58.722853, longitude: 25.867131 },
+    { place: "Ethiopia", latitude: 7.996115, longitude: 38.896778 },
+    {
+      place: "Falkland Islands (Malvinas)",
+      latitude: -51.651514,
+      longitude: -58.738304,
+    },
+    { place: "Faroe Islands", latitude: 62.185604, longitude: -7.058429 },
+    { place: "Fiji", latitude: -17.834016, longitude: 177.972004 },
+    { place: "Finland", latitude: 63.252357, longitude: 27.276469 },
+    { place: "France", latitude: 46.698481, longitude: 2.549047 },
+    { place: "French Guiana", latitude: 3.999143, longitude: -53.068214 },
+    { place: "French Polynesia", latitude: -17.642803, longitude: -149.443883 },
+    { place: "Gabon", latitude: -0.586328, longitude: 11.547829 },
+    { place: "Gambia", latitude: 13.505929, longitude: -15.362493 },
+    { place: "Georgia", latitude: 41.870087, longitude: 43.735725 },
+    { place: "Germany", latitude: 50.970097, longitude: 9.687096 },
+    { place: "Ghana", latitude: 7.85125, longitude: -0.982714 },
+    { place: "Gibraltar", latitude: 36.129425, longitude: -5.3467 },
+    { place: "Greece", latitude: 39.78331, longitude: 21.708535 },
+    { place: "Greenland", latitude: 74.319379, longitude: -39.335081 },
+    { place: "Grenada", latitude: 12.11396, longitude: -61.688501 },
+    { place: "Guadeloupe", latitude: 16.24988, longitude: -61.58365 },
+    { place: "Guatemala", latitude: 14.989397, longitude: -90.522408 },
+    { place: "Guinea", latitude: 10.625075, longitude: -9.951975 },
+    { place: "Guinea-Bissau", latitude: 12.157338, longitude: -14.513869 },
+    { place: "Guyana", latitude: 5.121996, longitude: -58.912352 },
+    { place: "Haiti", latitude: 19.251299, longitude: -72.294701 },
+    {
+      place: "Holy See (Vatican City State)",
+      latitude: 41.903542,
+      longitude: 12.453083,
+    },
+    { place: "Honduras", latitude: 14.762778, longitude: -86.920196 },
+    { place: "Hong Kong", latitude: 22.381131, longitude: 114.135572 },
+    { place: "Hungary", latitude: 47.086857, longitude: 19.447899 },
+    { place: "Iceland", latitude: 64.779262, longitude: -18.673522 },
+    { place: "India", latitude: 22.364293, longitude: 79.029432 },
+    { place: "Indonesia", latitude: -1.003189, longitude: 101.972332 },
+    { place: "Iran", latitude: 31.931398, longitude: 55.245317 },
+    { place: "Iraq", latitude: 33.115715, longitude: 43.285188 },
+    { place: "Ireland", latitude: 53.078731, longitude: -7.798618 },
+    { place: "Isle of Man", latitude: 54.255204, longitude: -4.49708 },
+    { place: "Israel", latitude: 30.895128, longitude: 34.874702 },
+    { place: "Italy", latitude: 45.003229, longitude: 11.083693 },
+    { place: "Jamaica", latitude: 18.137123, longitude: -77.318767 },
+    { place: "Japan", latitude: 36.13793, longitude: 138.441899 },
+    { place: "Jordan", latitude: 30.802264, longitude: 36.391527 },
+    { place: "Kazakhstan", latitude: 48.51667, longitude: 66.76667 },
+    { place: "Kenya", latitude: 0.543716, longitude: 37.918308 },
+    { place: "Kuwait", latitude: 29.422226, longitude: 47.330015 },
+    { place: "Kyrgyzstan", latitude: 40.93749, longitude: 73.36083 },
+    {
+      place: "Lao People's Democratic Republic",
+      latitude: 19.43535,
+      longitude: 102.560667,
+    },
+    { place: "Latvia", latitude: 57.06689, longitude: 25.458464 },
+    { place: "Lebanon", latitude: 34.095821, longitude: 35.95655 },
+    { place: "Lesotho", latitude: -29.516751, longitude: 28.163744 },
+    { place: "Liberia", latitude: 6.445025, longitude: -9.449891 },
+    {
+      place: "Libyan Arab Jamahiriya",
+      latitude: 26.666955,
+      longitude: 18.030248,
+    },
+    { place: "Liechtenstein", latitude: 47.111405, longitude: 9.559439 },
+    { place: "Lithuania", latitude: 55.103703, longitude: 24.089932 },
+    { place: "Luxembourg", latitude: 49.759178, longitude: 6.086636 },
+    { place: "MS Zaandam", latitude: 52.443861, longitude: 4.829437 },
+    { place: "Macao", latitude: 22.139833, longitude: 113.563619 },
+    { place: "Macedonia", latitude: 41.569245, longitude: 21.547313 },
+    { place: "Madagascar", latitude: -18.628414, longitude: 46.704055 },
+    { place: "Malawi", latitude: -13.404159, longitude: 33.658495 },
+    { place: "Malaysia", latitude: 2.521947, longitude: 113.833569 },
+    { place: "Maldives", latitude: -0.614771, longitude: 73.093739 },
+    { place: "Mali", latitude: 18.683211, longitude: -2.015109 },
+    { place: "Malta", latitude: 35.888972, longitude: 14.431432 },
+    { place: "Marshall Islands", latitude: 8.710837, longitude: 171.237308 },
+    { place: "Martinique", latitude: 14.711978, longitude: -61.055657 },
+    { place: "Mauritania", latitude: 19.599264, longitude: -9.737341 },
+    { place: "Mauritius", latitude: -20.321973, longitude: 57.534935 },
+    { place: "Mayotte", latitude: -12.774755, longitude: 45.151319 },
+    { place: "Mexico", latitude: 19.371422, longitude: -99.150344 },
+    { place: "Micronesia", latitude: 6.881557, longitude: 158.221135 },
+    { place: "Moldova", latitude: 47.435, longitude: 28.487904 },
+    { place: "Monaco", latitude: 43.733783, longitude: 7.418464 },
+    { place: "Mongolia", latitude: 45.99339, longitude: 104.159557 },
+    { place: "Montenegro", latitude: 42.782845, longitude: 19.157424 },
+    { place: "Montserrat", latitude: 16.73717, longitude: -62.188252 },
+    { place: "Morocco", latitude: 31.649504, longitude: -7.189711 },
+    { place: "Mozambique", latitude: -15.03417, longitude: 40.73583 },
+    { place: "Myanmar", latitude: 21.576814, longitude: 96.06596 },
+    { place: "Namibia", latitude: -20.586347, longitude: 17.119649 },
+    { place: "Nepal", latitude: 27.15, longitude: 85.9 },
+    { place: "Netherlands", latitude: 52.554205, longitude: 5.501896 },
+    { place: "New Caledonia", latitude: -21.097317, longitude: 165.127202 },
+    { place: "New Zealand", latitude: -45.175323, longitude: 169.232531 },
+    { place: "Nicaragua", latitude: 12.793313, longitude: -85.039545 },
+    { place: "Niger", latitude: 17.431408, longitude: 9.521564 },
+    { place: "Nigeria", latitude: 9.404974, longitude: 7.607418 },
+    { place: "Norway", latitude: 61.356908, longitude: 9.680372 },
+    { place: "Oman", latitude: 22.113181, longitude: 57.34568 },
+    { place: "Pakistan", latitude: 29.329836, longitude: 68.560265 },
+    { place: "Palestine", latitude: 32.132392, longitude: 35.262925 },
+    { place: "Panama", latitude: 8.72491, longitude: -80.338454 },
+    { place: "Papua New Guinea", latitude: -5.695438, longitude: 143.910495 },
+    { place: "Paraguay", latitude: -21.686079, longitude: -60.13994 },
+    { place: "Peru", latitude: -12.98078, longitude: -72.876651 },
+    { place: "Philippines", latitude: 16.932122, longitude: 121.387948 },
+    { place: "Poland", latitude: 51.99605, longitude: 19.488789 },
+    { place: "Portugal", latitude: 39.07088, longitude: -8.22931 },
+    { place: "Qatar", latitude: 25.208492, longitude: 51.155983 },
+    { place: "Romania", latitude: 45.727469, longitude: 24.984652 },
+    { place: "Russia", latitude: 63.314401, longitude: 93.884016 },
+    { place: "Rwanda", latitude: -1.89815, longitude: 30.095066 },
+    { place: "R\u00e9union", latitude: -21.06667, longitude: 55.26667 },
+    { place: "S. Korea", latitude: 36.382192, longitude: 128.123986 },
+    {
+      place: "Saint Kitts and Nevis",
+      latitude: 17.340311,
+      longitude: -62.767596,
+    },
+    { place: "Saint Lucia", latitude: 13.896235, longitude: -60.974929 },
+    { place: "Saint Martin", latitude: 18.04235, longitude: -63.058383 },
+    {
+      place: "Saint Pierre Miquelon",
+      latitude: 46.83333,
+      longitude: -56.33333,
+    },
+    {
+      place: "Saint Vincent and the Grenadines",
+      latitude: 13.23357,
+      longitude: -61.199573,
+    },
+    { place: "Samoa", latitude: -13.63914, longitude: -172.438241 },
+    { place: "San Marino", latitude: 43.936245, longitude: 12.447407 },
+    { place: "Sao Tome and Principe", latitude: 0.252119, longitude: 6.600203 },
+    { place: "Saudi Arabia", latitude: 23.801889, longitude: 44.708041 },
+    { place: "Senegal", latitude: 15.13855, longitude: -14.768082 },
+    { place: "Serbia", latitude: 44.251791, longitude: 20.589197 },
+    { place: "Seychelles", latitude: -4.681046, longitude: 55.482794 },
+    { place: "Sierra Leone", latitude: 8.616007, longitude: -11.756202 },
+    { place: "Singapore", latitude: 1.316382, longitude: 103.833828 },
+    { place: "Sint Maarten", latitude: 18.04235, longitude: -63.058383 },
+    { place: "Slovakia", latitude: 48.752408, longitude: 19.201811 },
+    { place: "Slovenia", latitude: 46.068735, longitude: 14.932759 },
+    { place: "Solomon Islands", latitude: -8.078523, longitude: 159.243596 },
+    { place: "Somalia", latitude: 3.568925, longitude: 45.19238 },
+    { place: "South Africa", latitude: -31.3096, longitude: 18.357 },
+    { place: "South Sudan", latitude: 7.170803, longitude: 30.109512 },
+    { place: "Spain", latitude: 40.09095, longitude: -3.464618 },
+    { place: "Sri Lanka", latitude: 7.622919, longitude: 80.68822 },
+    { place: "St. Barth", latitude: 17.900616, longitude: -62.825749 },
+    { place: "Sudan", latitude: 16.34997, longitude: 29.381307 },
+    { place: "Suriname", latitude: 4.165951, longitude: -55.945507 },
+    { place: "Swaziland", latitude: -26.574488, longitude: 31.484912 },
+    { place: "Sweden", latitude: 65.859144, longitude: 19.017205 },
+    { place: "Switzerland", latitude: 46.730219, longitude: 7.509687 },
+    { place: "Syrian Arab Republic", latitude: 35.00845, longitude: 38.288461 },
+    { place: "Taiwan", latitude: 23.798532, longitude: 120.955426 },
+    { place: "Tajikistan", latitude: 38.185311, longitude: 72.571946 },
+    { place: "Tanzania", latitude: -5.869032, longitude: 34.800732 },
+    { place: "Thailand", latitude: 15.512883, longitude: 101.301707 },
+    { place: "Timor-Leste", latitude: -8.801828, longitude: 125.866054 },
+    { place: "Togo", latitude: 8.846267, longitude: 1.073832 },
+    {
+      place: "Trinidad and Tobago",
+      latitude: 10.435364,
+      longitude: -61.264793,
+    },
+    { place: "Tunisia", latitude: 33.687264, longitude: 9.007775 },
+    { place: "Turkey", latitude: 39.339547, longitude: 34.51052 },
+    {
+      place: "Turks and Caicos Islands",
+      latitude: 21.81663,
+      longitude: -71.752704,
+    },
+    { place: "UAE", latitude: -6.230868, longitude: 144.664721 },
+    { place: "United Kingdom", latitude: 52.418788, longitude: -1.247349 },
+    { place: "USA", latitude: 39.715956, longitude: -96.999668 },
+    { place: "Uganda", latitude: 0.90406, longitude: 32.443764 },
+    { place: "Ukraine", latitude: 49.219469, longitude: 33.023452 },
+    { place: "Uruguay", latitude: -32.48333, longitude: -53.51667 },
+    { place: "Uzbekistan", latitude: 37.23583, longitude: 67.31111 },
+    { place: "Vanuatu", latitude: -15.388977, longitude: 166.885687 },
+    { place: "Venezuela", latitude: 7.18646, longitude: -64.568705 },
+    { place: "Vietnam", latitude: 21.732568, longitude: 105.396672 },
+    {
+      place: "Wallis and Futuna",
+      latitude: -14.289278,
+      longitude: -178.140953,
+    },
+    { place: "Western Sahara", latitude: 23.966331, longitude: -12.630321 },
+    { place: "Yemen", latitude: 15.328226, longitude: 45.874382 },
+    { place: "Zambia", latitude: -14.936526, longitude: 25.940824 },
+    { place: "Zimbabwe", latitude: -20.26667, longitude: 30.91667 },
+    {
+      place: "Australian Capital Territory",
+      latitude: -35.470057,
+      longitude: 148.954507,
+    },
+    { place: "New South Wales", latitude: -32.494981, longitude: 146.586903 },
+    {
+      place: "Northern Territory",
+      latitude: -19.488357,
+      longitude: 133.438712,
+    },
+    { place: "Queensland", latitude: -23.033708, longitude: 144.417144 },
+    { place: "South Australia", latitude: -29.467956, longitude: 135.915347 },
+    { place: "Tasmania", latitude: -42.09828, longitude: 146.565017 },
+    { place: "Victoria", latitude: 22.381131, longitude: 114.135572 },
+    { place: "Western Australia", latitude: -26.471618, longitude: 122.065977 },
+    { place: "Antwerp", latitude: 51.222805, longitude: 4.655059 },
+    { place: "Brussels", latitude: 50.843183, longitude: 4.371755 },
+    { place: "East Flanders", latitude: 50.981154, longitude: 3.856605 },
+    { place: "Flemish Brabant", latitude: 50.872858, longitude: 4.575076 },
+    { place: "Hainaut", latitude: 50.513411, longitude: 3.92736 },
+    { place: "Liege", latitude: 50.635755, longitude: 5.554438 },
+    { place: "Limburg", latitude: 51.234821, longitude: 5.938683 },
+    { place: "Luxembourg", latitude: 49.759178, longitude: 6.086636 },
+    { place: "Namur", latitude: 50.465055, longitude: 4.859976 },
+    { place: "Walloon Brabant", latitude: 50.656119, longitude: 4.576695 },
+    { place: "West Flanders", latitude: 51.037182, longitude: 3.066484 },
+    { place: "Acre", latitude: -8.842391, longitude: -71.446526 },
+    { place: "Alagoas", latitude: -9.778524, longitude: -36.51811 },
+    { place: "Amapa", latitude: 2.04999, longitude: -50.800011 },
+    { place: "Amazonas", latitude: -4.249313, longitude: -65.362877 },
+    { place: "Bahia", latitude: -12.964413, longitude: -38.421936 },
+    { place: "Ceara", latitude: -3.739272, longitude: -38.539073 },
+    { place: "Distrito Federal", latitude: 19.254767, longitude: -99.142535 },
+    { place: "Espirito Santo", latitude: -19.23347, longitude: -40.319911 },
+    { place: "Goias", latitude: -15.938274, longitude: -50.145617 },
+    { place: "Maranhao", latitude: -2.527392, longitude: -44.277191 },
+    { place: "Mato Grosso", latitude: -15.25, longitude: -56.73333 },
+    {
+      place: "Mato Grosso do Sul",
+      latitude: -20.147091,
+      longitude: -54.913279,
+    },
+    { place: "Minas Gerais", latitude: -18.509838, longitude: -44.291828 },
+    { place: "Para", latitude: -1.448755, longitude: -48.487867 },
+    { place: "Paraiba", latitude: -7.145337, longitude: -36.005747 },
+    { place: "Parana", latitude: -24.550884, longitude: -52.007195 },
+    { place: "Pernambuco", latitude: -8.78333, longitude: -37.7 },
+    { place: "Piaui", latitude: -8.062802, longitude: -42.96889 },
+    {
+      place: "Rio Grande do Norte",
+      latitude: -5.763863,
+      longitude: -36.646727,
+    },
+    { place: "Rio Grande do Sul", latitude: -29.653676, longitude: -53.379286 },
+    { place: "Rio de Janeiro", latitude: -22.935024, longitude: -43.518246 },
+    { place: "Rondonia", latitude: -10.86667, longitude: -61.95 },
+    { place: "Roraima", latitude: 2.179221, longitude: -61.354988 },
+    { place: "Santa Catarina", latitude: -27.494596, longitude: -48.7136 },
+    { place: "Sao Paulo", latitude: -23.570533, longitude: -46.663713 },
+    { place: "Sergipe", latitude: -10.617799, longitude: -37.35375 },
+    { place: "Tocantins", latitude: -10.501041, longitude: -48.368193 },
+    { place: "Alberta", latitude: 55.44167, longitude: -114.446928 },
+    { place: "British Columbia", latitude: 54.790277, longitude: -124.557003 },
+    { place: "Manitoba", latitude: 55.614438, longitude: -97.960389 },
+    { place: "New Brunswick", latitude: 46.595511, longitude: -66.334856 },
+    {
+      place: "Newfoundland and Labrador",
+      latitude: 54.125069,
+      longitude: -61.783349,
+    },
+    {
+      place: "Northwest Territories",
+      latitude: 66.146924,
+      longitude: -125.335712,
+    },
+    { place: "Nova Scotia", latitude: 45.226989, longitude: -63.509537 },
+    { place: "Nunavut", latitude: 71.082001, longitude: -90.610158 },
+    { place: "Ontario", latitude: 51.451405, longitude: -85.835963 },
+    {
+      place: "Prince Edward Island",
+      latitude: 46.196558,
+      longitude: -62.735184,
+    },
+    { place: "Quebec", latitude: 46.855987, longitude: -71.276271 },
+    {
+      place: "Repatriated Travellers",
+      latitude: 34.968941,
+      longitude: -82.440371,
+    },
+    { place: "Saskatchewan", latitude: 54.499056, longitude: -105.950672 },
+    { place: "Yukon", latitude: 63.505791, longitude: -136.093799 },
+    { place: "Antofagasta", latitude: -23.391472, longitude: -69.093228 },
+    { place: "Araucania", latitude: -38.687801, longitude: -72.300483 },
+    {
+      place: "Arica y Parinacota",
+      latitude: -18.463304,
+      longitude: -70.295559,
+    },
+    { place: "Atacama", latitude: -27.328073, longitude: -69.934421 },
+    { place: "Aysen", latitude: -46.405273, longitude: -72.615612 },
+    { place: "Biobio", latitude: -36.813682, longitude: -72.383423 },
+    { place: "Coquimbo", latitude: -30.650788, longitude: -70.92578 },
+    { place: "Los Lagos", latitude: -38.457881, longitude: -72.414871 },
+    { place: "Los Rios", latitude: -1.523428, longitude: -79.592441 },
+    { place: "Magallanes", latitude: -52.407351, longitude: -71.166983 },
+    { place: "Maule", latitude: -35.617693, longitude: -71.421975 },
+    { place: "Metropolitana", latitude: -33.478992, longitude: -70.693198 },
+    { place: "Nuble", latitude: -36.716443, longitude: -71.880938 },
+    { place: "OHiggins", latitude: -34.488751, longitude: -71.027108 },
+    { place: "Tarapaca", latitude: -20.263434, longitude: -69.414507 },
+    { place: "Valparaiso", latitude: -32.499881, longitude: -70.881318 },
+    { place: "Anhui", latitude: 31.783382, longitude: 117.189163 },
+    { place: "Beijing", latitude: 39.937967, longitude: 116.417592 },
+    { place: "Chongqing", latitude: 29.565015, longitude: 106.548238 },
+    { place: "Fujian", latitude: 24.473793, longitude: 118.420136 },
+    { place: "Gansu", latitude: 35.151482, longitude: 104.145072 },
+    { place: "Guangdong", latitude: 23.76822, longitude: 112.80027 },
+    { place: "Guangxi", latitude: 23.619883, longitude: 108.846147 },
+    { place: "Guizhou", latitude: 26.34054, longitude: 105.99283 },
+    { place: "Hainan", latitude: 19.99916, longitude: 110.341187 },
+    { place: "Hebei", latitude: 40.65813, longitude: 117.78211 },
+    { place: "Heilongjiang", latitude: 47.014329, longitude: 128.42752 },
+    { place: "Henan", latitude: 33.78483, longitude: 112.46077 },
+    { place: "Hong Kong", latitude: 22.381131, longitude: 114.135572 },
+    { place: "Hubei", latitude: 30.996329, longitude: 112.534671 },
+    { place: "Hunan", latitude: 27.958307, longitude: 111.659259 },
+    { place: "Inner Mongolia", latitude: 44.570414, longitude: 117.728454 },
+    { place: "Jiangsu", latitude: 33.668773, longitude: 119.47881 },
+    { place: "Jiangxi", latitude: 28.13841, longitude: 115.06969 },
+    { place: "Jilin", latitude: 43.820559, longitude: 126.535855 },
+    { place: "Liaoning", latitude: 41.397647, longitude: 123.525354 },
+    { place: "Macau", latitude: 22.139833, longitude: 113.563619 },
+    { place: "Ningxia", latitude: 37.136541, longitude: 105.912433 },
+    { place: "Qinghai", latitude: 35.500098, longitude: 94.679515 },
+    { place: "Shaanxi", latitude: 34.040526, longitude: 108.630496 },
+    { place: "Shandong", latitude: 36.334087, longitude: 117.756464 },
+    { place: "Shanghai", latitude: 31.246027, longitude: 121.483385 },
+    { place: "Shanxi", latitude: 40.056622, longitude: 113.285782 },
+    { place: "Sichuan", latitude: 30.738864, longitude: 102.695767 },
+    { place: "Tianjin", latitude: 39.107355, longitude: 117.185182 },
+    { place: "Tibet", latitude: 32.088933, longitude: 86.448392 },
+    { place: "Xinjiang", latitude: 41.600618, longitude: 85.94488 },
+    { place: "Yunnan", latitude: 25.043508, longitude: 102.710316 },
+    { place: "Zhejiang", latitude: 29.059828, longitude: 119.902745 },
+    { place: "Amazonas", latitude: -4.249313, longitude: -65.362877 },
+    { place: "Antioquia", latitude: 6.25184, longitude: -75.56359 },
+    { place: "Arauca", latitude: 7.06852, longitude: -70.771316 },
+    { place: "Atlantico", latitude: 10.663115, longitude: -74.983775 },
+    { place: "Bolivar", latitude: 10.26667, longitude: -75.46667 },
+    { place: "Boyaca", latitude: 5.45372, longitude: -73.3625 },
+    { place: "Caldas", latitude: 5.285408, longitude: -75.423319 },
+    { place: "Capital District", latitude: 10.486633, longitude: -66.982247 },
+    { place: "Caqueta", latitude: 0.65008, longitude: -74.001041 },
+    { place: "Casanare", latitude: 5.42627, longitude: -71.601866 },
+    { place: "Cauca", latitude: 2.57173, longitude: -76.77979 },
+    { place: "Cesar", latitude: 9.882069, longitude: -73.42306 },
+    { place: "Choco", latitude: 5.405297, longitude: -76.782215 },
+    { place: "Cordoba", latitude: -31.4135, longitude: -64.18105 },
+    { place: "Cundinamarca", latitude: 5.089656, longitude: -74.341269 },
+    { place: "Guainia", latitude: 2.727537, longitude: -68.811118 },
+    { place: "Guaviare", latitude: 1.96343, longitude: -72.127059 },
+    { place: "Huila", latitude: -14.708591, longitude: 14.92005 },
+    { place: "La Guajira", latitude: 11.45007, longitude: -72.449429 },
+    { place: "Magdalena", latitude: 10.250191, longitude: -74.446167 },
+    { place: "Meta", latitude: 3.32996, longitude: -73.433265 },
+    { place: "Narino", latitude: 2.04312, longitude: -77.32378 },
+    { place: "Norte de Santander", latitude: 8.188397, longitude: -72.868532 },
+    { place: "Putumayo", latitude: 0.418541, longitude: -75.585028 },
+    { place: "Quindio", latitude: 4.50643, longitude: -75.711043 },
+    { place: "Risaralda", latitude: 5.275739, longitude: -75.987105 },
+    {
+      place: "San Andres y Providencia",
+      latitude: 12.537868,
+      longitude: -81.720548,
+    },
+    { place: "Santander", latitude: 6.676329, longitude: -73.416147 },
+    { place: "Sucre", latitude: 10.264831, longitude: -64.236365 },
+    { place: "Tolima", latitude: 3.54944, longitude: -75.69278 },
+    { place: "Valle del Cauca", latitude: 3.679421, longitude: -76.378822 },
+    { place: "Vaupes", latitude: 0.78945, longitude: -70.779526 },
+    { place: "Vichada", latitude: 4.883522, longitude: -69.231175 },
+    { place: "Faroe Islands", latitude: 62.185604, longitude: -7.058429 },
+    { place: "Greenland", latitude: 74.319379, longitude: -39.335081 },
+    { place: "French Guiana", latitude: 3.999143, longitude: -53.068214 },
+    { place: "French Polynesia", latitude: -17.642803, longitude: -149.443883 },
+    { place: "Guadeloupe", latitude: 16.24988, longitude: -61.58365 },
+    { place: "Martinique", latitude: 14.711978, longitude: -61.055657 },
+    { place: "Mayotte", latitude: -12.774755, longitude: 45.151319 },
+    { place: "New Caledonia", latitude: -21.097317, longitude: 165.127202 },
+    { place: "Reunion", latitude: -21.06667, longitude: 55.26667 },
+    { place: "Saint Barthelemy", latitude: 17.900616, longitude: -62.825749 },
+    {
+      place: "Saint Pierre and Miquelon",
+      latitude: 47.042405,
+      longitude: -56.34943,
+    },
+    { place: "St Martin", latitude: 18.04235, longitude: -63.058383 },
+    {
+      place: "Wallis and Futuna",
+      latitude: -14.289278,
+      longitude: -178.140953,
+    },
+    { place: "Baden-Wurttemberg", latitude: 48.605915, longitude: 9.147881 },
+    { place: "Bayern", latitude: 48.76965, longitude: 11.65861 },
+    { place: "Berlin", latitude: 52.524932, longitude: 13.407032 },
+    { place: "Brandenburg", latitude: 52.421197, longitude: 12.523106 },
+    { place: "Bremen", latitude: 53.029599, longitude: 8.731851 },
+    { place: "Hamburg", latitude: 53.576158, longitude: 10.007046 },
+    { place: "Hessen", latitude: 50.756713, longitude: 9.216672 },
+    {
+      place: "Mecklenburg-Vorpommern",
+      latitude: 53.78593,
+      longitude: 12.788244,
+    },
+    { place: "Niedersachsen", latitude: 52.516702, longitude: 9.941233 },
+    { place: "Nordrhein-Westfalen", latitude: 51.512943, longitude: 7.38701 },
+    { place: "Rheinland-Pfalz", latitude: 50.099567, longitude: 7.268906 },
+    { place: "Saarland", latitude: 49.412571, longitude: 7.004529 },
+    { place: "Sachsen", latitude: 51.042135, longitude: 13.372536 },
+    { place: "Sachsen-Anhalt", latitude: 51.928745, longitude: 11.68147 },
+    { place: "Schleswig-Holstein", latitude: 54.081695, longitude: 9.794596 },
+    { place: "Thuringen", latitude: 50.88813, longitude: 11.003829 },
+    {
+      place: "Andaman and Nicobar Islands",
+      latitude: 13.21409,
+      longitude: 92.94347,
+    },
+    { place: "Andhra Pradesh", latitude: 14.762005, longitude: 78.874889 },
+    { place: "Arunachal Pradesh", latitude: 28.485129, longitude: 94.678982 },
+    { place: "Assam", latitude: 26.272528, longitude: 92.877434 },
+    { place: "Bihar", latitude: 25.708465, longitude: 85.573398 },
+    { place: "Chandigarh", latitude: 30.728092, longitude: 76.7784 },
+    { place: "Chhattisgarh", latitude: 21.65204, longitude: 81.871417 },
+    {
+      place: "Dadra and Nagar Haveli and Daman and Diu",
+      latitude: 20.24168,
+      longitude: 73.0171,
+    },
+    { place: "Delhi", latitude: 28.557163, longitude: 77.163665 },
+    { place: "Goa", latitude: 15.353196, longitude: 74.104396 },
+    { place: "Gujarat", latitude: 23.361661, longitude: 71.64895 },
+    { place: "Haryana", latitude: 28.176846, longitude: 76.711242 },
+    { place: "Himachal Pradesh", latitude: 31.90226, longitude: 77.274759 },
+    { place: "Jammu and Kashmir", latitude: 34.023448, longitude: 77.296374 },
+    { place: "Jharkhand", latitude: 23.663785, longitude: 85.143872 },
+    { place: "Karnataka", latitude: 14.882195, longitude: 75.57454 },
+    { place: "Kerala", latitude: 9.791129, longitude: 76.746728 },
+    { place: "Ladakh", latitude: 34.09712, longitude: 77.34688 },
+    { place: "Lakshadweep", latitude: 11.277142, longitude: 74.043031 },
+    { place: "Madhya Pradesh", latitude: 22.952601, longitude: 78.35788 },
+    { place: "Maharashtra", latitude: 19.405779, longitude: 75.70204 },
+    { place: "Manipur", latitude: 24.649936, longitude: 93.810293 },
+    { place: "Meghalaya", latitude: 25.500167, longitude: 91.457209 },
+    { place: "Mizoram", latitude: 23.543786, longitude: 92.884718 },
+    { place: "Nagaland", latitude: 26.098769, longitude: 94.563688 },
+    { place: "Odisha", latitude: 20.775803, longitude: 84.637724 },
+    { place: "Puducherry", latitude: 10.943987, longitude: 79.796105 },
+    { place: "Punjab", latitude: 31.110484, longitude: 72.384598 },
+    { place: "Rajasthan", latitude: 26.950688, longitude: 73.786591 },
+    { place: "Sikkim", latitude: 27.584537, longitude: 88.468692 },
+    { place: "Tamil Nadu", latitude: 11.052213, longitude: 78.408526 },
+    { place: "Telangana", latitude: 18, longitude: 79.5 },
+    { place: "Tripura", latitude: 23.687391, longitude: 91.587472 },
+    { place: "Uttar Pradesh", latitude: 26.879641, longitude: 80.56982 },
+    { place: "Uttarakhand", latitude: 30.209236, longitude: 79.182055 },
+    { place: "West Bengal", latitude: 23.269974, longitude: 87.815506 },
+    { place: "Abruzzo", latitude: 42.22745, longitude: 13.854871 },
+    { place: "Basilicata", latitude: 40.499761, longitude: 16.0818 },
+    { place: "Calabria", latitude: 39.067571, longitude: 16.347506 },
+    { place: "Campania", latitude: 40.859792, longitude: 14.840307 },
+    { place: "Emilia-Romagna", latitude: 44.525646, longitude: 11.038147 },
+    {
+      place: "Friuli Venezia Giulia",
+      latitude: 46.151494,
+      longitude: 13.055577,
+    },
+    { place: "Lazio", latitude: 41.979989, longitude: 12.766887 },
+    { place: "Liguria", latitude: 44.264728, longitude: 8.704667 },
+    { place: "Lombardia", latitude: 45.620643, longitude: 9.76908 },
+    { place: "Marche", latitude: 43.348225, longitude: 13.137791 },
+    { place: "Molise", latitude: 41.63166, longitude: 14.491629 },
+    { place: "P.A. Bolzano", latitude: 22.34023, longitude: 103.84415 },
+    { place: "P.A. Trento", latitude: 22.34023, longitude: 103.84415 },
+    { place: "Piemonte", latitude: 45.06052, longitude: 7.923222 },
+    { place: "Puglia", latitude: 40.984439, longitude: 16.619622 },
+    { place: "Sardegna", latitude: 40.087837, longitude: 9.030746 },
+    { place: "Sicilia", latitude: 37.588525, longitude: 14.146425 },
+    { place: "Toscana", latitude: 43.450842, longitude: 11.126243 },
+    { place: "Umbria", latitude: 42.965912, longitude: 12.490159 },
+    { place: "Valle d'Aosta", latitude: 45.73014, longitude: 7.387347 },
+    { place: "Veneto", latitude: 45.43816, longitude: 10.86135 },
+    { place: "Aichi", latitude: 35.040169, longitude: 137.259429 },
+    { place: "Akita", latitude: 39.764912, longitude: 140.415133 },
+    { place: "Aomori", latitude: 40.699468, longitude: 140.966552 },
+    { place: "Chiba", latitude: 35.614457, longitude: 140.127845 },
+    { place: "Ehime", latitude: 33.767778, longitude: 132.906995 },
+    { place: "Fukui", latitude: 35.98444, longitude: 136.234931 },
+    { place: "Fukuoka", latitude: 33.568796, longitude: 130.396607 },
+    { place: "Fukushima", latitude: 37.372318, longitude: 140.521022 },
+    { place: "Gifu", latitude: 35.699484, longitude: 137.064236 },
+    { place: "Gunma", latitude: 36.5565, longitude: 139.035028 },
+    { place: "Hiroshima", latitude: 34.397832, longitude: 132.453581 },
+    { place: "Hokkaido", latitude: 43.449217, longitude: 142.777095 },
+    { place: "Hyogo", latitude: 35.034343, longitude: 134.86514 },
+    { place: "Ibaraki", latitude: 36.158025, longitude: 140.307438 },
+    { place: "Ishikawa", latitude: 36.343617, longitude: 136.590271 },
+    { place: "Iwate", latitude: 39.572697, longitude: 141.373403 },
+    { place: "Kagawa", latitude: 34.224037, longitude: 133.973674 },
+    { place: "Kagoshima", latitude: 31.718822, longitude: 131.061401 },
+    { place: "Kanagawa", latitude: 35.455659, longitude: 139.298308 },
+    { place: "Kochi", latitude: 9.956297, longitude: 76.332486 },
+    { place: "Kumamoto", latitude: 32.805964, longitude: 130.739073 },
+    { place: "Kyoto", latitude: 34.986533, longitude: 135.744161 },
+    { place: "Mie", latitude: 34.448957, longitude: 136.414169 },
+    { place: "Miyagi", latitude: 38.573864, longitude: 140.875798 },
+    { place: "Miyazaki", latitude: 32.277512, longitude: 131.337844 },
+    { place: "Nagano", latitude: 36.233925, longitude: 138.053928 },
+    { place: "Nagasaki", latitude: 32.925538, longitude: 130.02718 },
+    { place: "Nara", latitude: 34.327889, longitude: 135.891749 },
+    { place: "Niigata", latitude: 37.909525, longitude: 139.040458 },
+    { place: "Oita", latitude: 33.090764, longitude: 131.428905 },
+    { place: "Okayama", latitude: 34.652841, longitude: 133.910655 },
+    { place: "Okinawa", latitude: 26.59508, longitude: 128.073892 },
+    { place: "Osaka", latitude: 34.691802, longitude: 135.50506 },
+    { place: "Port Quarantine", latitude: 12.023883, longitude: -61.775244 },
+    { place: "Saga", latitude: 33.293482, longitude: 130.088743 },
+    { place: "Saitama", latitude: 35.859414, longitude: 139.606266 },
+    { place: "Shiga", latitude: 35.212375, longitude: 136.128153 },
+    { place: "Shimane", latitude: 35.019795, longitude: 132.512404 },
+    { place: "Shizuoka", latitude: 34.993998, longitude: 138.414277 },
+    { place: "Tochigi", latitude: 36.714324, longitude: 139.825431 },
+    { place: "Tokushima", latitude: 33.920016, longitude: 134.2751 },
+    { place: "Tokyo", latitude: 35.695126, longitude: 139.75391 },
+    { place: "Tottori", latitude: 35.408794, longitude: 133.838924 },
+    { place: "Toyama", latitude: 36.611895, longitude: 137.274304 },
+    { place: "Wakayama", latitude: 33.936215, longitude: 135.417082 },
+    { place: "Yamagata", latitude: 38.624156, longitude: 140.13739 },
+    { place: "Yamaguchi", latitude: 34.252771, longitude: 131.561973 },
+    { place: "Yamanashi", latitude: 35.636944, longitude: 138.72757 },
+    { place: "Aguascalientes", latitude: 21.885071, longitude: -102.284826 },
+    { place: "Baja California", latitude: 32.497748, longitude: -116.962303 },
+    {
+      place: "Baja California Sur",
+      latitude: 24.975947,
+      longitude: -111.566383,
+    },
+    { place: "Campeche", latitude: 19.835017, longitude: -90.519526 },
+    { place: "Chiapas", latitude: 16.371658, longitude: -92.657909 },
+    { place: "Chihuahua", latitude: 28.662926, longitude: -106.099908 },
+    { place: "Ciudad de Mexico", latitude: 19.371422, longitude: -99.150344 },
+    { place: "Coahuila", latitude: 27.723205, longitude: -102.249285 },
+    { place: "Colima", latitude: 19.242918, longitude: -103.709341 },
+    { place: "Durango", latitude: 24.026912, longitude: -104.650288 },
+    { place: "Guanajuato", latitude: 21.017628, longitude: -101.240092 },
+    { place: "Guerrero", latitude: 17.714882, longitude: -99.779131 },
+    { place: "Hidalgo", latitude: 20.530811, longitude: -99.056929 },
+    { place: "Jalisco", latitude: 20.44883, longitude: -103.644011 },
+    { place: "Mexico", latitude: 19.371422, longitude: -99.150344 },
+    { place: "Michoacan", latitude: 19.406545, longitude: -101.754003 },
+    { place: "Morelos", latitude: 19.539508, longitude: -99.046335 },
+    { place: "Nayarit", latitude: 21.830989, longitude: -104.84109 },
+    { place: "Nuevo Leon", latitude: 25.68041, longitude: -100.217239 },
+    { place: "Oaxaca", latitude: 17.025593, longitude: -96.819523 },
+    { place: "Puebla", latitude: 19.051201, longitude: -98.212116 },
+    { place: "Queretaro", latitude: 20.604813, longitude: -100.406992 },
+    { place: "Quintana Roo", latitude: 19.248142, longitude: -88.424983 },
+    { place: "San Luis Potosi", latitude: 22.14266, longitude: -100.983018 },
+    { place: "Sinaloa", latitude: 24.799455, longitude: -107.39945 },
+    { place: "Sonora", latitude: 28.06722, longitude: -110.53361 },
+    { place: "Tabasco", latitude: 18.043119, longitude: -92.617504 },
+    { place: "Tamaulipas", latitude: 24.127808, longitude: -98.618727 },
+    { place: "Tlaxcala", latitude: 19.297607, longitude: -98.240856 },
+    { place: "Veracruz", latitude: 19.182946, longitude: -96.153877 },
+    { place: "Yucatan", latitude: 20.724818, longitude: -88.921234 },
+    { place: "Zacatecas", latitude: 22.732835, longitude: -102.678052 },
+    { place: "Aruba", latitude: 12.517399, longitude: -69.972795 },
+    {
+      place: "Bonaire, Sint Eustatius and Saba",
+      latitude: 12.194274,
+      longitude: -68.249092,
+    },
+    { place: "Curacao", latitude: 12.150201, longitude: -68.933415 },
+    { place: "Drenthe", latitude: 52.887876, longitude: 6.657571 },
+    { place: "Flevoland", latitude: 52.565887, longitude: 5.547632 },
+    { place: "Friesland", latitude: 53.154635, longitude: 5.692145 },
+    { place: "Gelderland", latitude: 52.107152, longitude: 5.875753 },
+    { place: "Groningen", latitude: 53.213331, longitude: 6.562788 },
+    { place: "Limburg", latitude: 51.234821, longitude: 5.938683 },
+    { place: "Noord-Brabant", latitude: 51.515505, longitude: 5.353093 },
+    { place: "Noord-Holland", latitude: 52.827683, longitude: 4.955985 },
+    { place: "Overijssel", latitude: 52.429944, longitude: 6.396928 },
+    { place: "Sint Maarten", latitude: 18.04235, longitude: -63.058383 },
+    { place: "Utrecht", latitude: 52.09153, longitude: 5.11733 },
+    { place: "Zeeland", latitude: 51.491688, longitude: 3.815516 },
+    { place: "Zuid-Holland", latitude: 51.946443, longitude: 4.509113 },
+    {
+      place: "Azad Jammu and Kashmir",
+      latitude: 33.847688,
+      longitude: 73.800556,
+    },
+    { place: "Balochistan", latitude: 27.652247, longitude: 65.154787 },
+    { place: "Gilgit-Baltistan", latitude: 35.982838, longitude: 74.920822 },
+    { place: "Islamabad", latitude: 33.72148, longitude: 73.04329 },
+    { place: "Khyber Pakhtunkhwa", latitude: 34.955162, longitude: 72.484512 },
+    { place: "Punjab", latitude: 31.110484, longitude: 72.384598 },
+    { place: "Sindh", latitude: 25.683735, longitude: 68.736162 },
+    { place: "Amazonas", latitude: -4.249313, longitude: -65.362877 },
+    { place: "Ancash", latitude: -9.36785, longitude: -77.684668 },
+    { place: "Apurimac", latitude: -14.031789, longitude: -72.958196 },
+    { place: "Arequipa", latitude: -16.39889, longitude: -71.535 },
+    { place: "Ayacucho", latitude: -13.175024, longitude: -74.219951 },
+    { place: "Cajamarca", latitude: -7.16378, longitude: -78.50027 },
+    { place: "Callao", latitude: -12.05658, longitude: -77.11814 },
+    { place: "Cusco", latitude: -13.551969, longitude: -72.069168 },
+    { place: "Huancavelica", latitude: -12.78542, longitude: -74.97501 },
+    { place: "Huanuco", latitude: -9.93062, longitude: -76.24223 },
+    { place: "Ica", latitude: -14.061322, longitude: -75.74764 },
+    { place: "Junin", latitude: -11.15895, longitude: -75.99304 },
+    { place: "La Libertad", latitude: -8.062733, longitude: -78.578365 },
+    { place: "Lambayeque", latitude: -6.70111, longitude: -79.90611 },
+    { place: "Lima", latitude: -12.049141, longitude: -77.021217 },
+    { place: "Loreto", latitude: -3.850121, longitude: -75.361017 },
+    { place: "Madre de Dios", latitude: -12.6, longitude: -70.08333 },
+    { place: "Moquegua", latitude: -17.19832, longitude: -70.93567 },
+    { place: "Pasco", latitude: -10.730998, longitude: -76.158703 },
+    { place: "Piura", latitude: -5.190249, longitude: -80.625657 },
+    { place: "Puno", latitude: -15.840646, longitude: -70.027778 },
+    { place: "San Martin", latitude: 18.04235, longitude: -63.058383 },
+    { place: "Tacna", latitude: -18.00556, longitude: -70.24833 },
+    { place: "Tumbes", latitude: -3.56662, longitude: -80.458635 },
+    { place: "Ucayali", latitude: -10.223525, longitude: -72.940554 },
+    { place: "Adygea Republic", latitude: 37.118678, longitude: -93.471658 },
+    { place: "Altai Krai", latitude: 52.166345, longitude: 82.234423 },
+    { place: "Altai Republic", latitude: 52.166345, longitude: 82.234423 },
+    { place: "Amur Oblast", latitude: 53.290834, longitude: 128.368104 },
+    { place: "Arkhangelsk Oblast", latitude: 63.574057, longitude: 43.053416 },
+    { place: "Astrakhan Oblast", latitude: 46.899128, longitude: 47.745926 },
+    {
+      place: "Bashkortostan Republic",
+      latitude: 54.698196,
+      longitude: 55.616705,
+    },
+    { place: "Belgorod Oblast", latitude: 50.682284, longitude: 38.012949 },
+    { place: "Bryansk Oblast", latitude: 53.091895, longitude: 33.728853 },
+    { place: "Buryatia Republic", latitude: 37.118678, longitude: -93.471658 },
+    { place: "Chechen Republic", latitude: 43.29137, longitude: 45.672683 },
+    { place: "Chelyabinsk Oblast", latitude: 55.076704, longitude: 60.957177 },
+    {
+      place: "Chukotka Autonomous Okrug",
+      latitude: 66.196117,
+      longitude: 171.794494,
+    },
+    { place: "Chuvashia Republic", latitude: 55.549735, longitude: 47.067442 },
+    { place: "Dagestan Republic", latitude: 42.465454, longitude: 47.041146 },
+    {
+      place: "Ingushetia Republic",
+      latitude: 37.118678,
+      longitude: -93.471658,
+    },
+    { place: "Irkutsk Oblast", latitude: 55.648107, longitude: 105.565969 },
+    { place: "Ivanovo Oblast", latitude: 56.981661, longitude: 41.525445 },
+    {
+      place: "Jewish Autonomous Okrug",
+      latitude: 61.604669,
+      longitude: 66.754522,
+    },
+    {
+      place: "Kabardino-Balkarian Republic",
+      latitude: 43.414979,
+      longitude: 43.324384,
+    },
+    { place: "Kaliningrad Oblast", latitude: 54.787637, longitude: 21.265133 },
+    { place: "Kalmykia Republic", latitude: 46.541392, longitude: 45.305288 },
+    { place: "Kaluga Oblast", latitude: 54.128039, longitude: 35.258464 },
+    { place: "Kamchatka Krai", latitude: 56.460609, longitude: 159.857452 },
+    {
+      place: "Karachay-Cherkess Republic",
+      latitude: 43.697965,
+      longitude: 41.873044,
+    },
+    { place: "Karelia Republic", latitude: 63.548366, longitude: 33.191894 },
+    { place: "Kemerovo Oblast", latitude: 55.084877, longitude: 87.040012 },
+    { place: "Khabarovsk Krai", latitude: 50.719716, longitude: 136.625146 },
+    { place: "Khakassia Republic", latitude: 53.44815, longitude: 90.231882 },
+    {
+      place: "Khanty-Mansi Autonomous Okrug",
+      latitude: 61.604669,
+      longitude: 66.754522,
+    },
+    { place: "Kirov Oblast", latitude: 58.094628, longitude: 50.088955 },
+    { place: "Komi Republic", latitude: 63.996878, longitude: 54.100989 },
+    { place: "Kostroma Oblast", latitude: 58.350358, longitude: 43.794592 },
+    { place: "Krasnodar Krai", latitude: 45.911909, longitude: 39.300244 },
+    { place: "Krasnoyarsk Krai", latitude: 66.797129, longitude: 95.9815 },
+    { place: "Kurgan Oblast", latitude: 55.392167, longitude: 64.194128 },
+    { place: "Kursk Oblast", latitude: 51.727446, longitude: 36.104712 },
+    { place: "Leningrad Oblast", latitude: 60.129098, longitude: 31.660968 },
+    { place: "Lipetsk Oblast", latitude: 52.750076, longitude: 39.270358 },
+    { place: "Magadan Oblast", latitude: 63.240523, longitude: 154.925431 },
+    { place: "Mari El Republic", latitude: 56.501526, longitude: 48.355628 },
+    { place: "Mordovia Republic", latitude: 54.144869, longitude: 44.239998 },
+    { place: "Moscow", latitude: 55.741469, longitude: 37.615561 },
+    { place: "Moscow Oblast", latitude: 55.313489, longitude: 38.463359 },
+    { place: "Murmansk Oblast", latitude: 67.879451, longitude: 35.019042 },
+    {
+      place: "Nenets Autonomous Okrug",
+      latitude: 67.820497,
+      longitude: 56.138587,
+    },
+    {
+      place: "Nizhny Novgorod Oblast",
+      latitude: 56.056015,
+      longitude: 44.364766,
+    },
+    {
+      place: "North Ossetia - Alania Republic",
+      latitude: 43.056452,
+      longitude: 44.358372,
+    },
+    { place: "Novgorod Oblast", latitude: 58.266678, longitude: 31.988722 },
+    { place: "Novosibirsk Oblast", latitude: 55.360822, longitude: 78.865797 },
+    { place: "Omsk Oblast", latitude: 56.048304, longitude: 73.347341 },
+    { place: "Orel Oblast", latitude: 52.93511, longitude: 36.126542 },
+    { place: "Orenburg Oblast", latitude: 52.136612, longitude: 54.356193 },
+    { place: "Penza Oblast", latitude: 53.187466, longitude: 45.169487 },
+    { place: "Perm Krai", latitude: 58.975773, longitude: 56.151554 },
+    { place: "Primorsky Krai", latitude: 45.237197, longitude: 134.786056 },
+    { place: "Pskov Oblast", latitude: 57.197378, longitude: 29.059062 },
+    { place: "Rostov Oblast", latitude: 47.535649, longitude: 41.012116 },
+    { place: "Ryazan Oblast", latitude: 54.372946, longitude: 40.598413 },
+    { place: "Saint Petersburg", latitude: 59.821127, longitude: 30.388194 },
+    {
+      place: "Sakha (Yakutiya) Republic",
+      latitude: 64.813327,
+      longitude: 124.710016,
+    },
+    { place: "Sakhalin Oblast", latitude: 50.170528, longitude: 142.988288 },
+    { place: "Samara Oblast", latitude: 53.060965, longitude: 50.621725 },
+    { place: "Saratov Oblast", latitude: 51.630401, longitude: 46.796471 },
+    { place: "Smolensk Oblast", latitude: 54.758993, longitude: 32.770796 },
+    { place: "Stavropol Krai", latitude: 44.932711, longitude: 43.392105 },
+    { place: "Sverdlovsk Oblast", latitude: 58.720356, longitude: 61.602867 },
+    { place: "Tambov Oblast", latitude: 52.670766, longitude: 41.618782 },
+    { place: "Tatarstan Republic", latitude: 55.371348, longitude: 50.572525 },
+    { place: "Tomsk Oblast", latitude: 58.448843, longitude: 82.021582 },
+    { place: "Tula Oblast", latitude: 53.963453, longitude: 37.807611 },
+    { place: "Tver Oblast", latitude: 57.07096, longitude: 34.44876 },
+    { place: "Tyumen Oblast", latitude: 57.501313, longitude: 68.622101 },
+    { place: "Tyva Republic", latitude: 51.5, longitude: 95 },
+    { place: "Udmurt Republic", latitude: 57.466766, longitude: 52.821534 },
+    { place: "Ulyanovsk Oblast", latitude: 54.055978, longitude: 47.913984 },
+    { place: "Vladimir Oblast", latitude: 55.890794, longitude: 40.836403 },
+    { place: "Volgograd Oblast", latitude: 49.677658, longitude: 44.089974 },
+    { place: "Vologda Oblast", latitude: 59.653931, longitude: 40.383988 },
+    { place: "Voronezh Oblast", latitude: 50.911328, longitude: 40.197083 },
+    {
+      place: "Yamalo-Nenets Autonomous Okrug",
+      latitude: 65.032527,
+      longitude: 78.360255,
+    },
+    { place: "Yaroslavl Oblast", latitude: 57.907539, longitude: 39.274603 },
+    { place: "Zabaykalsky Krai", latitude: 52.223654, longitude: 116.803591 },
+    { place: "Andalusia", latitude: 37.46335, longitude: -4.575609 },
+    { place: "Aragon", latitude: 41.519528, longitude: -0.659945 },
+    { place: "Asturias", latitude: 43.320572, longitude: -5.973707 },
+    { place: "Baleares", latitude: 39.609284, longitude: 2.964907 },
+    { place: "C. Valenciana", latitude: 39.401429, longitude: -0.55473 },
+    { place: "Canarias", latitude: 28.356151, longitude: -14.031913 },
+    { place: "Cantabria", latitude: 43.211454, longitude: -4.020572 },
+    { place: "Castilla - La Mancha", latitude: 12.95, longitude: 123.83333 },
+    { place: "Castilla y Leon", latitude: 41.754402, longitude: -4.781899 },
+    { place: "Catalonia", latitude: 41.798469, longitude: 1.528745 },
+    { place: "Ceuta", latitude: 35.889873, longitude: -5.327588 },
+    { place: "Extremadura", latitude: 39.191505, longitude: -6.150732 },
+    { place: "Galicia", latitude: 42.756936, longitude: -7.910741 },
+    { place: "La Rioja", latitude: 42.302939, longitude: -2.517555 },
+    { place: "Madrid", latitude: 40.429913, longitude: -3.669245 },
+    { place: "Melilla", latitude: 35.287631, longitude: -2.948249 },
+    { place: "Murcia", latitude: 38.00211, longitude: -1.485228 },
+    { place: "Navarra", latitude: 42.716029, longitude: -1.707935 },
+    { place: "Pais Vasco", latitude: 43.043659, longitude: -2.61669 },
+    { place: "Blekinge", latitude: 56.137244, longitude: 15.518965 },
+    { place: "Dalarna", latitude: 60.916638, longitude: 14.158823 },
+    { place: "Gavleborg", latitude: 61.384906, longitude: 16.901787 },
+    { place: "Gotland", latitude: 57.584383, longitude: 18.671508 },
+    { place: "Halland", latitude: 56.949115, longitude: 12.618513 },
+    { place: "Jamtland Harjedalen", latitude: 62.097659, longitude: 13.81853 },
+    { place: "Jonkoping", latitude: 57.761406, longitude: 14.161369 },
+    { place: "Kalmar", latitude: 56.6827, longitude: 16.344869 },
+    { place: "Kronoberg", latitude: 56.803527, longitude: 14.722244 },
+    { place: "Norrbotten", latitude: 67.032873, longitude: 21.043759 },
+    { place: "Orebro", latitude: 59.278638, longitude: 15.193617 },
+    { place: "Ostergotland", latitude: 58.416364, longitude: 15.662681 },
+    { place: "Skane", latitude: 55.785846, longitude: 13.534299 },
+    { place: "Sormland", latitude: 58.755044, longitude: 17.003363 },
+    { place: "Stockholm", latitude: 59.275254, longitude: 18.035164 },
+    { place: "Uppsala", latitude: 59.85131, longitude: 17.632732 },
+    { place: "Varmland", latitude: 59.744252, longitude: 13.174963 },
+    { place: "Vasterbotten", latitude: 64.762902, longitude: 17.803446 },
+    { place: "Vasternorrland", latitude: 63.113441, longitude: 17.840524 },
+    { place: "Vastmanland", latitude: 59.750109, longitude: 16.071447 },
+    { place: "Vastra Gotaland", latitude: 58.308843, longitude: 12.397789 },
+    { place: "Cherkasy Oblast", latitude: 49.379415, longitude: 31.625581 },
+    { place: "Chernihiv Oblast", latitude: 51.36507, longitude: 31.981011 },
+    { place: "Chernivtsi Oblast", latitude: 48.291224, longitude: 25.95741 },
+    { place: "Crimea Republic*", latitude: 45.366664, longitude: 34.140961 },
+    {
+      place: "Dnipropetrovsk Oblast",
+      latitude: 48.128589,
+      longitude: 34.182137,
+    },
+    { place: "Donetsk Oblast", latitude: 48.036396, longitude: 37.692914 },
+    {
+      place: "Ivano-Frankivsk Oblast",
+      latitude: 48.717632,
+      longitude: 24.635466,
+    },
+    { place: "Kharkiv Oblast", latitude: 49.483074, longitude: 36.474819 },
+    { place: "Kherson Oblast", latitude: 46.84938, longitude: 33.709429 },
+    { place: "Khmelnytskyi Oblast", latitude: 49.553137, longitude: 26.946137 },
+    { place: "Kiev", latitude: 50.469863, longitude: 30.431971 },
+    { place: "Kiev Oblast", latitude: 50.121609, longitude: 30.435489 },
+    { place: "Kirovohrad Oblast", latitude: 48.384882, longitude: 32.224477 },
+    { place: "Luhansk Oblast", latitude: 48.978291, longitude: 38.995746 },
+    { place: "Lviv Oblast", latitude: 49.756298, longitude: 23.89557 },
+    { place: "Mykolaiv Oblast", latitude: 47.273565, longitude: 31.804689 },
+    { place: "Odessa Oblast", latitude: 46.989372, longitude: 30.480063 },
+    { place: "Poltava Oblast", latitude: 49.708546, longitude: 33.804527 },
+    { place: "Rivne Oblast", latitude: 51.218648, longitude: 26.631313 },
+    { place: "Sevastopol*", latitude: 44.58883, longitude: 33.5224 },
+    { place: "Sumy Oblast", latitude: 51.097505, longitude: 33.758817 },
+    { place: "Ternopil Oblast", latitude: 49.373704, longitude: 25.6355 },
+    { place: "Vinnytsia Oblast", latitude: 48.890836, longitude: 28.710806 },
+    { place: "Volyn Oblast", latitude: 51.195141, longitude: 24.846999 },
+    { place: "Zakarpattia Oblast", latitude: 48.429777, longitude: 23.257211 },
+    { place: "Zaporizhia Oblast", latitude: 47.293538, longitude: 35.594244 },
+    { place: "Zhytomyr Oblast", latitude: 50.668045, longitude: 28.372244 },
+    { place: "Anguilla", latitude: 18.232135, longitude: -63.042295 },
+    { place: "Bermuda", latitude: 32.296698, longitude: -64.764346 },
+    {
+      place: "British Virgin Islands",
+      latitude: 18.42785,
+      longitude: -64.640814,
+    },
+    { place: "Cayman Islands", latitude: 19.319996, longitude: -81.230744 },
+    { place: "Channel Islands", latitude: 54.519705, longitude: -130.821156 },
+    { place: "England", latitude: 52.59431, longitude: -1.461208 },
+    {
+      place: "Falkland Islands (Malvinas)",
+      latitude: -51.651514,
+      longitude: -58.738304,
+    },
+    { place: "Gibraltar", latitude: 36.129425, longitude: -5.3467 },
+    { place: "Isle of Man", latitude: 54.255204, longitude: -4.49708 },
+    { place: "Montserrat", latitude: 16.73717, longitude: -62.188252 },
+    { place: "Northern Ireland", latitude: 54.609675, longitude: -6.693536 },
+    {
+      place: "Saint Helena, Ascension and Tristan da Cunha",
+      latitude: -15.961264,
+      longitude: -5.708248,
+    },
+    { place: "Scotland", latitude: 56.83301, longitude: -4.180209 },
+    {
+      place: "Turks and Caicos Islands",
+      latitude: 21.81663,
+      longitude: -71.752704,
+    },
+    { place: "Wales", latitude: 52.336717, longitude: -3.76532 },
+  ],
 };
