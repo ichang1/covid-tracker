@@ -3,9 +3,14 @@ from jsonToFile import jsonToText
 
 
 def getAllGeoData(places):
-    geodata = {}
+    geodata = []
     for place in places:
-        geodata[f'{place}'] = getGeoData(place)
+        placeData = {}
+        placeData['place'] = place
+        geoData = getGeoData(place)
+        placeData['latitude'] = geoData['latitude']
+        placeData['longitude'] = geoData['longitude']
+        geodata.append(placeData)
     print(len(places), len(geodata))
     return geodata
 
@@ -68,6 +73,6 @@ def getGeoData(place):
     return data
 
 
-jason = getAllGeoData()
+jason = {'geoData': getAllGeoData(getAllPlaces())}
 
 jsonToText('./placesGeodata.txt', jason)
