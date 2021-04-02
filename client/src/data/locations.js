@@ -9,7 +9,7 @@ export const locations = {
     { place: "California", latitude: 36.531544, longitude: -119.586168 },
     { place: "Texas", latitude: 31.030974, longitude: -98.326329 },
     { place: "Florida", latitude: 27.97762, longitude: -81.769611 },
-    { place: "New York", latitude: 40.68295, longitude: -73.9708 },
+    { place: "New York", latitude: 43.2994, longitude: -74.9708 },
     { place: "Illinois", latitude: 40.265028, longitude: -89.191575 },
     { place: "Georgia", latitude: 32.1656, longitude: -82.9001 },
     { place: "Pennsylvania", latitude: 40.860198, longitude: -77.838617 },

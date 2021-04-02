@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Map.css";
 import ReactMapGl, { Marker } from "react-map-gl";
-import locations from "../../data/locations";
+import { locations } from "../../data/locations";
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -22,7 +22,26 @@ const Map = () => {
         onViewportChange={(viewport) => {
           setViewport(viewport);
         }}
-      ></ReactMapGl>
+      >
+        {locations.geoData.map((place, idx) => (
+          <Marker
+            key={idx}
+            latitude={place.latitude}
+            longitude={place.longitude}
+          >
+            <button
+              className="marker-btn"
+              id={place.place}
+              onClick={(e) => {
+                e.preventDefault();
+                console.log(e.currentTarget.id);
+              }}
+            >
+              <img src="/map-pin.svg" />
+            </button>
+          </Marker>
+        ))}
+      </ReactMapGl>
     </div>
   );
 };
