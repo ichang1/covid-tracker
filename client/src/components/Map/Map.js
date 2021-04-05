@@ -9,7 +9,7 @@ const Map = () => {
     longitude: 0,
     width: "80vw",
     height: "80vh",
-    zoom: 1.5,
+    zoom: 0,
   });
   const mapbox_style = "mapbox://styles/isaacc/ckmcxu2s609qb17rwla4bcixc";
   const getMarkerLocations = () => {};
@@ -35,6 +35,7 @@ const Map = () => {
               onClick={(e) => {
                 e.preventDefault();
                 console.log(e.currentTarget.id);
+                console.log(viewport.zoom);
               }}
             >
               <img src="/map-pin.svg" />

@@ -5,7 +5,6 @@ export const locations = {
     { place: "Asia", latitude: 49.512481, longitude: 94.464337 },
     { place: "Europe", latitude: 55.859135, longitude: 39.579995 },
     { place: "Africa", latitude: 21.638471, longitude: 3.924068 },
-    { place: "Australia/Oceania", latitude: -23.992438, longitude: 134.050443 },
     { place: "California", latitude: 36.531544, longitude: -119.586168 },
     { place: "Texas", latitude: 31.030974, longitude: -98.326329 },
     { place: "Florida", latitude: 27.97762, longitude: -81.769611 },
