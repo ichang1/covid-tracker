@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def getData():
-    data = {'data': []}
+    data = {}
 
     continents_res = requests.get("https://disease.sh/v3/covid-19/continents")
     for c in continents_res.json():
@@ -16,14 +16,13 @@ def getData():
         longitude = lat_long['longitude']
         area = getSize(continent_name)
         place_data = {
-            'place': continent_name,
             'url': url,
             'api': api,
             'latitude': latitude,
             'longitude': longitude,
             'area': area
         }
-        data['data'].append(place_data)
+        data[continent_name] = place_data
 
     states_res = requests.get("https://disease.sh/v3/covid-19/states")
     states_dont_add = [
@@ -44,14 +43,13 @@ def getData():
             longitude = lat_long['longitude']
             area = getSize(state_name)
             place_data = {
-                'place': state_name,
                 'url': url,
                 'api': api,
                 'latitude': latitude,
                 'longitude': longitude,
                 'area': area
             }
-            data['data'].append(place_data)
+            data[state_name] = place_data
 
     country_res = requests.get("https://disease.sh/v3/covid-19/countries")
     for c in country_res.json():
@@ -65,14 +63,13 @@ def getData():
             longitude = lat_long['longitude']
             area = getSize(country_name)
             place_data = {
-                'place': country_name,
                 'url': url,
                 'api': api,
                 'latitude': latitude,
                 'longitude': longitude,
                 'area': area
             }
-            data['data'].append(place_data)
+            data[country_name] = place_data
         elif 'Princess' in country_name:
             continue
         else:
@@ -81,14 +78,13 @@ def getData():
             longitude = lat_long['longitude']
             area = getSize(country_name)
             place_data = {
-                'place': country_name,
                 'url': url,
                 'api': api,
                 'latitude': latitude,
                 'longitude': longitude,
                 'area': area
             }
-            data['data'].append(place_data)
+            data[country_name] = place_data
 
     province_res = requests.get("https://disease.sh/v3/covid-19/jhucsse")
     for p in province_res.json():
@@ -102,14 +98,13 @@ def getData():
             longitude = lat_long['longitude']
             area = getSize(province)
             place_data = {
-                'place': province,
                 'url': url,
                 'api': api,
                 'latitude': latitude,
                 'longitude': longitude,
                 'area': area
             }
-            data['data'].append(place_data)
+            data[province] = place_data
     return data
 
 
