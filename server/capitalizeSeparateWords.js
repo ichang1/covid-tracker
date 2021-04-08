@@ -6,7 +6,7 @@
  * @param {String} s the string to capitalize all of its words
  */
 const capitalizeSeparateWords = (s) => {
-  const parts = s.split("-");
+  const parts = s.split(" ");
   const newParts = parts.map((w) => capitalize(w));
   const newString = newParts.reduce((acc, s) => {
     if (acc.length == 0) {

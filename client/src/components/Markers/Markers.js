@@ -20,25 +20,30 @@ export const Markers = React.memo(({ data, zoom }) => {
   }, []);
 
   useEffect(() => {
-    try {
-      Promise.all(
-        data.map(([place, { api, url }]) =>
-          axios.get(url).then((res) => {
-            // do something with response
-            let placeCovidData = {};
-            if (api === "Worldometers") {
-              placeCovidData = res.data;
-            } else {
-              placeCovidData = res.data.filter((e) => e.province === place)[0];
-            }
-            markerData.current[`${place}`] = { api, data: placeCovidData };
-          })
-        )
-      );
-    } catch (e) {
-      console.log(e.message);
-    }
-    console.log(markerData.current);
+    const backendBaseUrl = "https://localhost:5000";
+    data.forEach(([place, placeData]) => {
+      const url = encodeURI(`${backendBaseUrl}/${place}`);
+      console.log(url);
+    });
+    // try {
+    //   Promise.all(
+    //     data.map(([place, { api, url }]) =>
+    //       axios.get(url).then((res) => {
+    //         // do something with response
+    //         let placeCovidData = {};
+    //         if (api === "Worldometers") {
+    //           placeCovidData = res.data;
+    //         } else {
+    //           placeCovidData = res.data.filter((e) => e.province === place)[0];
+    //         }
+    //         markerData.current[`${place}`] = { api, data: placeCovidData };
+    //       })
+    //     )
+    //   );
+    // } catch (e) {
+    //   console.log(e.message);
+    // }
+    // console.log(markerData.current);
   }, []);
 
   useEffect(() => {

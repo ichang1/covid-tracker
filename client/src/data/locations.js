@@ -5224,7 +5224,7 @@ export const locations = {
     longitude: 25.95741,
     area: 0,
   },
-  "Crimea Republic*": {
+  "Crimea Republic": {
     url: "https://disease.sh/v3/covid-19/jhucsse",
     api: "JHUCSSE",
     latitude: 45.366664,
@@ -5336,7 +5336,7 @@ export const locations = {
     longitude: 26.631313,
     area: 0,
   },
-  "Sevastopol*": {
+  Sevastopol: {
     url: "https://disease.sh/v3/covid-19/jhucsse",
     api: "JHUCSSE",
     latitude: 44.58883,
