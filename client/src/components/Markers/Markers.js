@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { Marker } from "react-map-gl";
 import "./Markers.css";
-import axios from "axios";
 
-export const Markers = React.memo(({ data, zoom }) => {
+export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
   // const markerData = data.map(([place, placeData]) => {
   //   return { ...placeData, place };
   // });
@@ -17,48 +16,58 @@ export const Markers = React.memo(({ data, zoom }) => {
       initialMarkerRefs[`${place}`] = { style: { display: "" } };
     });
     markerRefs.current = initialMarkerRefs;
-  }, []);
+  }, [data]);
 
-  useEffect(() => {
-    const backendBaseUrl = "https://localhost:5000";
-    data.forEach(([place, placeData]) => {
-      const url = encodeURI(`${backendBaseUrl}/${place}`);
-      console.log(url);
-    });
-    // try {
-    //   Promise.all(
-    //     data.map(([place, { api, url }]) =>
-    //       axios.get(url).then((res) => {
-    //         // do something with response
-    //         let placeCovidData = {};
-    //         if (api === "Worldometers") {
-    //           placeCovidData = res.data;
-    //         } else {
-    //           placeCovidData = res.data.filter((e) => e.province === place)[0];
-    //         }
-    //         markerData.current[`${place}`] = { api, data: placeCovidData };
-    //       })
-    //     )
-    //   );
-    // } catch (e) {
-    //   console.log(e.message);
-    // }
-    // console.log(markerData.current);
-  }, []);
+  // useEffect(() => {
+  //   const backendBaseUrl = "https://localhost:5000";
+  //   // data.forEach(([place, placeData]) => {
+  //   //   const url = encodeURI(`${backendBaseUrl}/${place}`);
+  //   //   console.log(url);
+  //   // });
+  //   try {
+  //     Promise.all(
+  //       data.map(([place, placeData]) => {
+  //         axios.get(encodeURI(`${backendBaseUrl}/${place}`)).then((res) => {
+  //           // console.log(res.data);
+  //           // markerData.current[`${place}`] = { ...res.data };
+  //         });
+  //       })
+  //     ).then((res) => {
+  //       console.log(res.data);
+  //     });
+  //   } catch (e) {
+  //     console.log(e.message);
+  //   }
+  //   console.log(markerData.current);
+  // }, [data]);
+  // useEffect(() => {
+  //   console.log(markerRefs.current);
+  // }, [markerRefs.current]);
 
   useEffect(() => {
     const markers = markerRefs.current;
     data.forEach(([place, placeData], idx) => {
       const area = placeData.area;
       let shouldShow = true;
-      if (area <= 2000000) {
+      if (area <= 1000000) {
         shouldShow = zoom >= 3 ? true : false;
       } else {
         shouldShow = zoom >= 3 ? false : true;
       }
       markers[place].style.display = shouldShow ? "block" : "none";
     });
-  }, [zoom]);
+    // console.log(markers);
+    // console.log("hiding/revealing");
+  });
+
+  // const handleOnClick = useCallback(
+  //   (e) => {
+  //     e.preventDefault();
+  //     // console.log(place);
+  //     handleMarkerClick(place);
+  //   },
+  //   [handleMarkerClick]
+  // );
 
   return (
     <React.Fragment>
@@ -73,13 +82,12 @@ export const Markers = React.memo(({ data, zoom }) => {
             id={`${place}-${idx}`}
             onClick={(e) => {
               e.preventDefault();
-              console.log(e.currentTarget.id);
-              console.log(placeData);
-              console.log(zoom);
+              // console.log(place);
+              handleMarkerClick(place);
             }}
             ref={(el) => (markerRefs.current[`${place}`] = el)}
           >
-            <img src="/map-pin.svg" />
+            <img src="/map-pin.svg" alt="red map location marker" />
           </button>
         </Marker>
       ))}

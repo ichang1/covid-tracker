@@ -1,8 +1,64 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Map.css";
-import ReactMapGl, { Marker } from "react-map-gl";
+import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import { locations } from "../../data/locations";
 import { Markers } from "../Markers/Markers";
+import axios from "axios";
+
+function parseWorldometers(data) {
+  if (Object.keys(data).includes("message")) {
+    const { message } = data;
+    return { message: message };
+  }
+  const {
+    cases,
+    todayCases,
+    deaths,
+    todayDeaths,
+    recovered,
+    todayRecovered,
+    active,
+  } = data;
+  const parsedData = {
+    Cases: cases,
+    "Today Cases": todayCases,
+    Deaths: deaths,
+    "Today Deaths": todayDeaths,
+    Recovered: recovered,
+    "Today Recovered": todayRecovered,
+    Infected: active,
+  };
+  return parsedData;
+}
+
+function parseJHUCSSE(data, place) {
+  // console.log(place);
+  // console.log(data);
+  const filteredPlaces = data.filter(
+    (placeData) => placeData.province === place
+  );
+  if (filteredPlaces.length !== 1) {
+    return { message: `Covid data for ${place} not found.` };
+  }
+
+  const specificPlaceData = filteredPlaces[0];
+  const { confirmed, deaths, recovered } = specificPlaceData.stats;
+  const parsedData = {
+    Confirmed: confirmed,
+    Deaths: deaths,
+    Recovered: recovered,
+  };
+  return parsedData;
+}
+
+function parseData(data, place) {
+  const { api } = locations[place];
+  const parsedData =
+    api === "Worldometers"
+      ? parseWorldometers(data)
+      : parseJHUCSSE(data, place);
+  return parsedData;
+}
 
 const Map = () => {
   const INITIAL_VIEWPORT = {
@@ -13,27 +69,65 @@ const Map = () => {
     zoom: 0,
   };
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
-  const markers = useRef({});
+  // const markers = useRef({});
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  // const [popupDataLoading, setPopupDataLoading] = useState(true);
+  const [{ popupData, loading }, setPopupData] = useState({
+    popupData: null,
+    loading: true,
+  });
 
-  // useEffect(() => {
-  //   const initialMarkers = {};
-  //   Object.entries(locations).forEach(([place, placeData]) => {
-  //     initialMarkers[`${place}`] = null;
-  //   });
-  //   markers.current = initialMarkers;
-  //   console.log(markers);
-  // }, []);
+  const handleMarkerClick = useCallback(
+    (place) => {
+      setSelectedPlace(place);
+      setPopupData({ popupData: null, loading: true });
+    },
+    [setSelectedPlace, setPopupData]
+  );
 
-  // useEffect(() => {
-  //   Object.keys(markers.current).map((placeName) => {
-  //     const placeArea = locations.data[placeName].area;
-  //     console.log(placeName, placeArea);
-  //   });
-  // }, [viewport]);
+  useEffect(() => {
+    if (selectedPlace) {
+      getPopupData(selectedPlace);
+    }
+  }, [selectedPlace]);
+
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === "Escape") {
+        setSelectedPlace(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
+
+  const getPopupInside = (data) => {
+    const dataToShow = [];
+    Object.entries(data).forEach(([statistic, number]) => {
+      dataToShow.push(`${statistic}: ${number}`);
+    });
+
+    return dataToShow.map((row, idx) => <div key={idx}>{row}</div>);
+  };
+
+  const getPopupData = async (place) => {
+    const { url } = locations[selectedPlace];
+    let parsedData;
+    try {
+      const res = await axios.get(url);
+      parsedData = { Place: place, ...parseData(res.data, place) };
+    } catch (err) {
+      parsedData = { Place: place, error: err.message };
+    }
+    console.log(parsedData);
+    setPopupData({ popupData: parsedData, loading: false });
+  };
 
   const mapbox_style =
     "mapbox://styles/isaacc/ckmcxu2s609qb17rwla4bcixc?optimize=true";
-  const getMarkerLocations = () => {};
+
   return (
     <div className="map-container">
       <ReactMapGl
@@ -42,10 +136,25 @@ const Map = () => {
         mapStyle={mapbox_style}
         onViewportChange={(viewport) => {
           setViewport(viewport);
-          console.log(viewport);
+          // console.log(viewport);
         }}
       >
-        <Markers data={Object.entries(locations)} zoom={viewport.zoom} />
+        <Markers
+          data={Object.entries(locations)}
+          zoom={viewport.zoom}
+          handleMarkerClick={handleMarkerClick}
+        />
+        {selectedPlace ? (
+          <Popup
+            latitude={locations[selectedPlace].latitude}
+            longitude={locations[selectedPlace].longitude}
+            onClose={() => {
+              setSelectedPlace(null);
+            }}
+          >
+            {loading ? "Loading..." : getPopupInside(popupData)}
+          </Popup>
+        ) : null}
       </ReactMapGl>
       <button
         value="+"

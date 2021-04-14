@@ -1,13 +1,13 @@
 export const locations = {
   "North America": {
-    url: "https://disease.sh/v3/covid-19/continents/North America",
+    url: "https://disease.sh/v3/covid-19/continents/North%20America",
     api: "Worldometers",
     latitude: 50,
     longitude: -101.328273,
     area: 9540000.0,
   },
   "South America": {
-    url: "https://disease.sh/v3/covid-19/continents/South America",
+    url: "https://disease.sh/v3/covid-19/continents/South%20America",
     api: "Worldometers",
     latitude: -12.819233,
     longitude: -63,
@@ -63,7 +63,7 @@ export const locations = {
     area: 65758.0,
   },
   "New York": {
-    url: "https://disease.sh/v3/covid-19/states/New York",
+    url: "https://disease.sh/v3/covid-19/states/New%20York",
     api: "Worldometers",
     latitude: 43,
     longitude: -75.5,
@@ -98,14 +98,14 @@ export const locations = {
     area: 44825.0,
   },
   "New Jersey": {
-    url: "https://disease.sh/v3/covid-19/states/New Jersey",
+    url: "https://disease.sh/v3/covid-19/states/New%20Jersey",
     api: "Worldometers",
     latitude: 39.66502,
     longitude: -74.738208,
     area: 8729.0,
   },
   "North Carolina": {
-    url: "https://disease.sh/v3/covid-19/states/North Carolina",
+    url: "https://disease.sh/v3/covid-19/states/North%20Carolina",
     api: "Worldometers",
     latitude: 35.387362,
     longitude: -78.455056,
@@ -168,7 +168,7 @@ export const locations = {
     area: 69704.0,
   },
   "South Carolina": {
-    url: "https://disease.sh/v3/covid-19/states/South Carolina",
+    url: "https://disease.sh/v3/covid-19/states/South%20Carolina",
     api: "Worldometers",
     latitude: 33.702857,
     longitude: -80.627523,
@@ -287,7 +287,7 @@ export const locations = {
     area: 77421.0,
   },
   "New Mexico": {
-    url: "https://disease.sh/v3/covid-19/states/New Mexico",
+    url: "https://disease.sh/v3/covid-19/states/New%20Mexico",
     api: "Worldometers",
     latitude: 34.498624,
     longitude: -106.108278,
@@ -308,21 +308,21 @@ export const locations = {
     area: 98466.0,
   },
   "West Virginia": {
-    url: "https://disease.sh/v3/covid-19/states/West Virginia",
+    url: "https://disease.sh/v3/covid-19/states/West%20Virginia",
     api: "Worldometers",
     latitude: 38.720281,
     longitude: -80.649428,
     area: 24038.0,
   },
   "Rhode Island": {
-    url: "https://disease.sh/v3/covid-19/states/Rhode Island",
+    url: "https://disease.sh/v3/covid-19/states/Rhode%20Island",
     api: "Worldometers",
     latitude: 41.587536,
     longitude: -71.514739,
     area: 1214.0,
   },
   "South Dakota": {
-    url: "https://disease.sh/v3/covid-19/states/South Dakota",
+    url: "https://disease.sh/v3/covid-19/states/South%20Dakota",
     api: "Worldometers",
     latitude: 44.470716,
     longitude: -100.229958,
@@ -336,7 +336,7 @@ export const locations = {
     area: 147040.0,
   },
   "North Dakota": {
-    url: "https://disease.sh/v3/covid-19/states/North Dakota",
+    url: "https://disease.sh/v3/covid-19/states/North%20Dakota",
     api: "Worldometers",
     latitude: 47.471495,
     longitude: -100.469096,
@@ -350,7 +350,7 @@ export const locations = {
     area: 2489.0,
   },
   "New Hampshire": {
-    url: "https://disease.sh/v3/covid-19/states/New Hampshire",
+    url: "https://disease.sh/v3/covid-19/states/New%20Hampshire",
     api: "Worldometers",
     latitude: 43.644386,
     longitude: -71.586283,
@@ -377,8 +377,8 @@ export const locations = {
     longitude: -69.171071,
     area: 35385.0,
   },
-  "District Of Columbia": {
-    url: "https://disease.sh/v3/covid-19/states/District Of Columbia",
+  "Washington D.C": {
+    url: "https://disease.sh/v3/covid-19/states/District%20Of%20Columbia",
     api: "Worldometers",
     latitude: 38.912097,
     longitude: -77.014683,
@@ -399,7 +399,7 @@ export const locations = {
     area: 9623.0,
   },
   "Puerto Rico": {
-    url: "https://disease.sh/v3/covid-19/states/Puerto Rico",
+    url: "https://disease.sh/v3/covid-19/states/Puerto%20Rico",
     api: "Worldometers",
     latitude: 18.234668,
     longitude: -66.481065,
@@ -413,28 +413,29 @@ export const locations = {
     area: 212.0,
   },
   "United States Virgin Islands": {
-    url: "https://disease.sh/v3/covid-19/states/United States Virgin Islands",
+    url:
+      "https://disease.sh/v3/covid-19/states/United%20States%20Virgin%20Islands",
     api: "Worldometers",
     latitude: 17.73951,
     longitude: -64.783592,
     area: 133.7,
   },
   "Northern Mariana Islands": {
-    url: "https://disease.sh/v3/covid-19/states/Northern Mariana Islands",
+    url: "https://disease.sh/v3/covid-19/states/Northern%20Mariana%20Islands",
     api: "Worldometers",
     latitude: 15.193315,
     longitude: 145.748209,
     area: 184.2,
   },
   "American Samoa": {
-    url: "https://disease.sh/v3/covid-19/states/American Samoa",
+    url: "https://disease.sh/v3/covid-19/states/American%20Samoa",
     api: "Worldometers",
     latitude: -14.333216,
     longitude: -170.778926,
     area: 76.83,
   },
   "Navajo Nation": {
-    url: "https://disease.sh/v3/covid-19/states/Navajo Nation",
+    url: "https://disease.sh/v3/covid-19/states/Navajo%20Nation",
     api: "Worldometers",
     latitude: 35.367143,
     longitude: -110.312547,
@@ -483,7 +484,7 @@ export const locations = {
     area: 35.14,
   },
   "Antigua and Barbuda": {
-    url: "https://disease.sh/v3/covid-19/countries/Antigua and Barbuda",
+    url: "https://disease.sh/v3/covid-19/countries/Antigua%20and%20Barbuda",
     api: "Worldometers",
     latitude: 17.06938,
     longitude: -61.809739,
@@ -651,7 +652,7 @@ export const locations = {
     area: 42855.0,
   },
   "Burkina Faso": {
-    url: "https://disease.sh/v3/covid-19/countries/Burkina Faso",
+    url: "https://disease.sh/v3/covid-19/countries/Burkina%20Faso",
     api: "Worldometers",
     latitude: 12.655182,
     longitude: -1.473625,
@@ -665,7 +666,7 @@ export const locations = {
     area: 10747.0,
   },
   "Cabo Verde": {
-    url: "https://disease.sh/v3/covid-19/countries/Cabo Verde",
+    url: "https://disease.sh/v3/covid-19/countries/Cabo%20Verde",
     api: "Worldometers",
     latitude: 15.04732,
     longitude: -23.618479,
@@ -693,7 +694,7 @@ export const locations = {
     area: 3855000.0,
   },
   "Caribbean Netherlands": {
-    url: "https://disease.sh/v3/covid-19/countries/Caribbean Netherlands",
+    url: "https://disease.sh/v3/covid-19/countries/Caribbean%20Netherlands",
     api: "Worldometers",
     latitude: 12.194274,
     longitude: -68.249092,
@@ -707,7 +708,8 @@ export const locations = {
     area: 100.0,
   },
   "Central African Republic": {
-    url: "https://disease.sh/v3/covid-19/countries/Central African Republic",
+    url:
+      "https://disease.sh/v3/covid-19/countries/Central%20African%20Republic",
     api: "Worldometers",
     latitude: 6.986429,
     longitude: 21.668827,
@@ -763,7 +765,7 @@ export const locations = {
     area: 905400.0,
   },
   "Costa Rica": {
-    url: "https://disease.sh/v3/covid-19/countries/Costa Rica",
+    url: "https://disease.sh/v3/covid-19/countries/Costa%20Rica",
     api: "Worldometers",
     latitude: 10.068183,
     longitude: -84.028584,
@@ -783,8 +785,8 @@ export const locations = {
     longitude: -77.967722,
     area: 42426.0,
   },
-  "Cura\u00e7ao": {
-    url: "https://disease.sh/v3/covid-19/countries/Cura\u00e7ao",
+  Curacao: {
+    url: "https://disease.sh/v3/covid-19/countries/Curacao",
     api: "Worldometers",
     latitude: 12.150201,
     longitude: -68.933415,
@@ -804,8 +806,8 @@ export const locations = {
     longitude: 15.377705,
     area: 30450.0,
   },
-  "C\u00f4te d'Ivoire": {
-    url: "https://disease.sh/v3/covid-19/countries/C\u00f4te d'Ivoire",
+  "Côte%20d'Ivoire": {
+    url: "https://disease.sh/v3/covid-19/countries/Côte%20d'Ivoire",
     api: "Worldometers",
     latitude: 7.568978,
     longitude: -5.495164,
@@ -840,7 +842,7 @@ export const locations = {
     area: 290.0,
   },
   "Dominican Republic": {
-    url: "https://disease.sh/v3/covid-19/countries/Dominican Republic",
+    url: "https://disease.sh/v3/covid-19/countries/Dominican%20Republic",
     api: "Worldometers",
     latitude: 19.105937,
     longitude: -70.804224,
@@ -861,14 +863,14 @@ export const locations = {
     area: 390100.0,
   },
   "El Salvador": {
-    url: "https://disease.sh/v3/covid-19/countries/El Salvador",
+    url: "https://disease.sh/v3/covid-19/countries/El%20Salvador",
     api: "Worldometers",
     latitude: 13.66845,
     longitude: -89.27004,
     area: 8124.0,
   },
   "Equatorial Guinea": {
-    url: "https://disease.sh/v3/covid-19/countries/Equatorial Guinea",
+    url: "https://disease.sh/v3/covid-19/countries/Equatorial%20Guinea",
     api: "Worldometers",
     latitude: 1.586111,
     longitude: 10.464682,
@@ -1044,7 +1046,7 @@ export const locations = {
   },
   "Holy See (Vatican City State)": {
     url:
-      "https://disease.sh/v3/covid-19/countries/Holy See (Vatican City State)",
+      "https://disease.sh/v3/covid-19/countries/Holy%20See%20(Vatican%20City%20State)",
     api: "Worldometers",
     latitude: 41.903542,
     longitude: 12.453083,
@@ -1185,7 +1187,7 @@ export const locations = {
   },
   "Lao People's Democratic Republic": {
     url:
-      "https://disease.sh/v3/covid-19/countries/Lao People's Democratic Republic",
+      "https://disease.sh/v3/covid-19/countries/Lao%20People%27s%20Democratic%20Republic",
     api: "Worldometers",
     latitude: 19.43535,
     longitude: 102.560667,
@@ -1220,7 +1222,7 @@ export const locations = {
     area: 43000.0,
   },
   "Libyan Arab Jamahiriya": {
-    url: "https://disease.sh/v3/covid-19/countries/Libyan Arab Jamahiriya",
+    url: "https://disease.sh/v3/covid-19/countries/Libyan%20Arab%20Jamahiriya",
     api: "Worldometers",
     latitude: 26.666955,
     longitude: 18.030248,
@@ -1248,7 +1250,7 @@ export const locations = {
     area: 998.0,
   },
   "MS Zaandam": {
-    url: "https://disease.sh/v3/covid-19/countries/MS Zaandam",
+    url: "https://disease.sh/v3/covid-19/countries/MS%20Zaandam",
     api: "Worldometers",
     latitude: 52.443861,
     longitude: 4.829437,
@@ -1311,7 +1313,7 @@ export const locations = {
     area: 122.0,
   },
   "Marshall Islands": {
-    url: "https://disease.sh/v3/covid-19/countries/Marshall Islands",
+    url: "https://disease.sh/v3/covid-19/countries/Marshall%20Islands",
     api: "Worldometers",
     latitude: 8.710837,
     longitude: 171.237308,
@@ -1444,7 +1446,7 @@ export const locations = {
     area: 7172.0,
   },
   "New Zealand": {
-    url: "https://disease.sh/v3/covid-19/countries/New Zealand",
+    url: "https://disease.sh/v3/covid-19/countries/New%20Zealand",
     api: "Worldometers",
     latitude: -45.175323,
     longitude: 169.232531,
@@ -1507,7 +1509,7 @@ export const locations = {
     area: 29157.0,
   },
   "Papua New Guinea": {
-    url: "https://disease.sh/v3/covid-19/countries/Papua New Guinea",
+    url: "https://disease.sh/v3/covid-19/countries/Papua%20New%20Guinea",
     api: "Worldometers",
     latitude: -5.695438,
     longitude: 143.910495,
@@ -1576,43 +1578,43 @@ export const locations = {
     longitude: 30.095066,
     area: 10169.0,
   },
-  "R\u00e9union": {
-    url: "https://disease.sh/v3/covid-19/countries/R\u00e9union",
+  Réunion: {
+    url: "https://disease.sh/v3/covid-19/countries/Reunion",
     api: "Worldometers",
     latitude: -21.06667,
     longitude: 55.26667,
     area: 970.0,
   },
-  "S. Korea": {
-    url: "https://disease.sh/v3/covid-19/countries/S. Korea",
+  "South Korea": {
+    url: "https://disease.sh/v3/covid-19/countries/South%20Korea",
     api: "Worldometers",
     latitude: 36.382192,
     longitude: 128.123986,
     area: 38691.0,
   },
   "Saint Kitts and Nevis": {
-    url: "https://disease.sh/v3/covid-19/countries/Saint Kitts and Nevis",
+    url: "https://disease.sh/v3/covid-19/countries/Saint%20Kitts%20and%20Nevis",
     api: "Worldometers",
     latitude: 17.340311,
     longitude: -62.767596,
     area: 100.8,
   },
   "Saint Lucia": {
-    url: "https://disease.sh/v3/covid-19/countries/Saint Lucia",
+    url: "https://disease.sh/v3/covid-19/countries/Saint%20Lucia",
     api: "Worldometers",
     latitude: 13.896235,
     longitude: -60.974929,
     area: 238.2,
   },
   "Saint Martin": {
-    url: "https://disease.sh/v3/covid-19/countries/Saint Martin",
+    url: "https://disease.sh/v3/covid-19/countries/Saint%20Martin",
     api: "Worldometers",
     latitude: 18.04235,
     longitude: -63.058383,
     area: 33.59,
   },
   "Saint Pierre Miquelon": {
-    url: "https://disease.sh/v3/covid-19/countries/Saint Pierre Miquelon",
+    url: "https://disease.sh/v3/covid-19/countries/Saint%20Pierre%20Miquelon",
     api: "Worldometers",
     latitude: 46.83333,
     longitude: -56.33333,
@@ -1620,7 +1622,7 @@ export const locations = {
   },
   "Saint Vincent and the Grenadines": {
     url:
-      "https://disease.sh/v3/covid-19/countries/Saint Vincent and the Grenadines",
+      "https://disease.sh/v3/covid-19/countries/Saint%20Vincent%20and%20the%20Grenadines",
     api: "Worldometers",
     latitude: 13.23357,
     longitude: -61.199573,
@@ -1634,21 +1636,21 @@ export const locations = {
     area: 1093.0,
   },
   "San Marino": {
-    url: "https://disease.sh/v3/covid-19/countries/San Marino",
+    url: "https://disease.sh/v3/covid-19/countries/San%20Marino",
     api: "Worldometers",
     latitude: 43.936245,
     longitude: 12.447407,
     area: 23.63,
   },
   "Sao Tome and Principe": {
-    url: "https://disease.sh/v3/covid-19/countries/Sao Tome and Principe",
+    url: "https://disease.sh/v3/covid-19/countries/Sao%20Tome%20and%20Principe",
     api: "Worldometers",
     latitude: 0.252119,
     longitude: 6.600203,
     area: 386.0,
   },
   "Saudi Arabia": {
-    url: "https://disease.sh/v3/covid-19/countries/Saudi Arabia",
+    url: "https://disease.sh/v3/covid-19/countries/Saudi%20Arabia",
     api: "Worldometers",
     latitude: 23.801889,
     longitude: 44.708041,
@@ -1676,7 +1678,7 @@ export const locations = {
     area: 177.0,
   },
   "Sierra Leone": {
-    url: "https://disease.sh/v3/covid-19/countries/Sierra Leone",
+    url: "https://disease.sh/v3/covid-19/countries/Sierra%20Leone",
     api: "Worldometers",
     latitude: 8.616007,
     longitude: -11.756202,
@@ -1711,7 +1713,7 @@ export const locations = {
     area: 7827.0,
   },
   "Solomon Islands": {
-    url: "https://disease.sh/v3/covid-19/countries/Solomon Islands",
+    url: "https://disease.sh/v3/covid-19/countries/Solomon%20Islands",
     api: "Worldometers",
     latitude: -8.078523,
     longitude: 159.243596,
@@ -1725,14 +1727,14 @@ export const locations = {
     area: 246201.0,
   },
   "South Africa": {
-    url: "https://disease.sh/v3/covid-19/countries/South Africa",
+    url: "https://disease.sh/v3/covid-19/countries/South%20Africa",
     api: "Worldometers",
     latitude: -31.3096,
     longitude: 18.357,
     area: 470900.0,
   },
   "South Sudan": {
-    url: "https://disease.sh/v3/covid-19/countries/South Sudan",
+    url: "https://disease.sh/v3/covid-19/countries/South%20Sudan",
     api: "Worldometers",
     latitude: 7.170803,
     longitude: 30.109512,
@@ -1746,14 +1748,14 @@ export const locations = {
     area: 195364.0,
   },
   "Sri Lanka": {
-    url: "https://disease.sh/v3/covid-19/countries/Sri Lanka",
+    url: "https://disease.sh/v3/covid-19/countries/Sri%20Lanka",
     api: "Worldometers",
     latitude: 7.622919,
     longitude: 80.68822,
     area: 25332.0,
   },
   "St. Barth": {
-    url: "https://disease.sh/v3/covid-19/countries/St. Barth",
+    url: "https://disease.sh/v3/covid-19/countries/St%2E%20Barth",
     api: "Worldometers",
     latitude: 17.900616,
     longitude: -62.825749,
@@ -1795,7 +1797,7 @@ export const locations = {
     area: 15940.0,
   },
   "Syrian Arab Republic": {
-    url: "https://disease.sh/v3/covid-19/countries/Syrian Arab Republic",
+    url: "https://disease.sh/v3/covid-19/countries/Syrian%20Arab%20Republic",
     api: "Worldometers",
     latitude: 35.00845,
     longitude: 38.288461,
@@ -1830,7 +1832,7 @@ export const locations = {
     area: 198117.0,
   },
   "Timor-Leste": {
-    url: "https://disease.sh/v3/covid-19/countries/Timor-Leste",
+    url: "https://disease.sh/v3/covid-19/countries/Timor%2DLeste",
     api: "Worldometers",
     latitude: -8.801828,
     longitude: 125.866054,
@@ -1844,7 +1846,7 @@ export const locations = {
     area: 21925.0,
   },
   "Trinidad and Tobago": {
-    url: "https://disease.sh/v3/covid-19/countries/Trinidad and Tobago",
+    url: "https://disease.sh/v3/covid-19/countries/Trinidad%20and%20Tobago",
     api: "Worldometers",
     latitude: 10.435364,
     longitude: -61.264793,
@@ -1949,7 +1951,7 @@ export const locations = {
     area: 54.99,
   },
   "Western Sahara": {
-    url: "https://disease.sh/v3/covid-19/countries/Western Sahara",
+    url: "https://disease.sh/v3/covid-19/countries/Western%20Sahara",
     api: "Worldometers",
     latitude: 23.966331,
     longitude: -12.630321,
@@ -4047,13 +4049,6 @@ export const locations = {
     latitude: 12.194274,
     longitude: -68.249092,
     area: 126.6,
-  },
-  Curacao: {
-    url: "https://disease.sh/v3/covid-19/jhucsse",
-    api: "JHUCSSE",
-    latitude: 12.150201,
-    longitude: -68.933415,
-    area: 171.4,
   },
   Drenthe: {
     url: "https://disease.sh/v3/covid-19/jhucsse",
