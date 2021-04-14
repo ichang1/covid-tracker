@@ -10,30 +10,19 @@ function parseWorldometers(data) {
     const { message } = data;
     return { message: message };
   }
-  const {
-    cases,
-    todayCases,
-    deaths,
-    todayDeaths,
-    recovered,
-    todayRecovered,
-    active,
-  } = data;
+  const { cases, todayCases, deaths, todayDeaths, recovered, active } = data;
   const parsedData = {
-    Cases: cases,
-    "Today Cases": todayCases,
-    Deaths: deaths,
-    "Today Deaths": todayDeaths,
-    Recovered: recovered,
-    "Today Recovered": todayRecovered,
-    Infected: active,
+    Cases: cases.toLocaleString(),
+    "Today Cases": todayCases.toLocaleString(),
+    Deaths: deaths.toLocaleString(),
+    "Today Deaths": todayDeaths.toLocaleString(),
+    Recovered: recovered.toLocaleString(),
+    Infected: active.toLocaleString(),
   };
   return parsedData;
 }
 
 function parseJHUCSSE(data, place) {
-  // console.log(place);
-  // console.log(data);
   const filteredPlaces = data.filter(
     (placeData) => placeData.province === place
   );
@@ -44,9 +33,9 @@ function parseJHUCSSE(data, place) {
   const specificPlaceData = filteredPlaces[0];
   const { confirmed, deaths, recovered } = specificPlaceData.stats;
   const parsedData = {
-    Confirmed: confirmed,
-    Deaths: deaths,
-    Recovered: recovered,
+    Confirmed: confirmed.toLocaleString(),
+    Deaths: deaths.toLocaleString(),
+    Recovered: recovered.toLocaleString(),
   };
   return parsedData;
 }
@@ -121,7 +110,6 @@ const Map = () => {
     } catch (err) {
       parsedData = { Place: place, error: err.message };
     }
-    console.log(parsedData);
     setPopupData({ popupData: parsedData, loading: false });
   };
 

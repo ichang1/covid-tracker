@@ -16,7 +16,7 @@ export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
       initialMarkerRefs[`${place}`] = { style: { display: "" } };
     });
     markerRefs.current = initialMarkerRefs;
-  }, [data]);
+  }, []);
 
   // useEffect(() => {
   //   const backendBaseUrl = "https://localhost:5000";
@@ -56,8 +56,8 @@ export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
       }
       markers[place].style.display = shouldShow ? "block" : "none";
     });
-    // console.log(markers);
-    // console.log("hiding/revealing");
+    console.log(markers);
+    console.log("hiding/revealing");
   });
 
   // const handleOnClick = useCallback(
