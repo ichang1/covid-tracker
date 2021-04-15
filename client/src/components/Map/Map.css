@@ -8,3 +8,7 @@
   width: 20px;
   height: 20px;
 }
+
+.hover-name-popup-container .mapboxgl-popup-close-button {
+  display: none;
+}

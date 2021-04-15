@@ -2,47 +2,22 @@ import React, { useEffect, useRef } from "react";
 import { Marker } from "react-map-gl";
 import "./Markers.css";
 
-export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
-  // const markerData = data.map(([place, placeData]) => {
-  //   return { ...placeData, place };
-  // });
-
+const Markers = ({
+  data,
+  zoom,
+  handleMarkerClick,
+  handleMarkerMouseEnter,
+  handleMarkerMouseLeave,
+}) => {
   const markerRefs = useRef({});
-  const markerData = useRef({});
 
   useEffect(() => {
     const initialMarkerRefs = {};
-    data.forEach(([place, placeData]) => {
+    data.forEach(([place]) => {
       initialMarkerRefs[`${place}`] = { style: { display: "" } };
     });
     markerRefs.current = initialMarkerRefs;
   }, []);
-
-  // useEffect(() => {
-  //   const backendBaseUrl = "https://localhost:5000";
-  //   // data.forEach(([place, placeData]) => {
-  //   //   const url = encodeURI(`${backendBaseUrl}/${place}`);
-  //   //   console.log(url);
-  //   // });
-  //   try {
-  //     Promise.all(
-  //       data.map(([place, placeData]) => {
-  //         axios.get(encodeURI(`${backendBaseUrl}/${place}`)).then((res) => {
-  //           // console.log(res.data);
-  //           // markerData.current[`${place}`] = { ...res.data };
-  //         });
-  //       })
-  //     ).then((res) => {
-  //       console.log(res.data);
-  //     });
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  //   console.log(markerData.current);
-  // }, [data]);
-  // useEffect(() => {
-  //   console.log(markerRefs.current);
-  // }, [markerRefs.current]);
 
   useEffect(() => {
     const markers = markerRefs.current;
@@ -56,18 +31,9 @@ export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
       }
       markers[place].style.display = shouldShow ? "block" : "none";
     });
-    console.log(markers);
-    console.log("hiding/revealing");
+    // console.log(markers);
+    // console.log("hiding/revealing");
   });
-
-  // const handleOnClick = useCallback(
-  //   (e) => {
-  //     e.preventDefault();
-  //     // console.log(place);
-  //     handleMarkerClick(place);
-  //   },
-  //   [handleMarkerClick]
-  // );
 
   return (
     <React.Fragment>
@@ -86,6 +52,10 @@ export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
               handleMarkerClick(place);
             }}
             ref={(el) => (markerRefs.current[`${place}`] = el)}
+            onMouseEnter={(e) => {
+              handleMarkerMouseEnter(e, place);
+            }}
+            onMouseLeave={handleMarkerMouseLeave}
           >
             <img src="/map-pin.svg" alt="red map location marker" />
           </button>
@@ -93,4 +63,6 @@ export const Markers = React.memo(({ data, zoom, handleMarkerClick }) => {
       ))}
     </React.Fragment>
   );
-});
+};
+
+export default React.memo(Markers);

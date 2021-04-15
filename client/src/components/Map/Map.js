@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Map.css";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 import { locations } from "../../data/locations";
-import { Markers } from "../Markers/Markers";
+import Markers from "../Markers/Markers";
 import axios from "axios";
 
 function parseWorldometers(data) {
@@ -55,16 +55,16 @@ const Map = () => {
     longitude: 0,
     width: "80vw",
     height: "80vh",
-    zoom: 0,
+    zoom: 0.75,
   };
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
-  // const markers = useRef({});
   const [selectedPlace, setSelectedPlace] = useState(null);
-  // const [popupDataLoading, setPopupDataLoading] = useState(true);
   const [{ popupData, loading }, setPopupData] = useState({
     popupData: null,
     loading: true,
   });
+  const [hoverPlaceName, setHoverPlaceName] = useState("asd");
+  const [showPlaceName, setShowPlaceName] = useState(null);
 
   const handleMarkerClick = useCallback(
     (place) => {
@@ -74,9 +74,22 @@ const Map = () => {
     [setSelectedPlace, setPopupData]
   );
 
+  const handleMarkerMouseEnter = useCallback(
+    (e, place) => {
+      setHoverPlaceName(place);
+      setShowPlaceName(true);
+    },
+    [setHoverPlaceName, setShowPlaceName]
+  );
+
+  const handleMarkerMouseLeave = useCallback(() => {
+    setHoverPlaceName("");
+    setShowPlaceName(false);
+  }, [setHoverPlaceName, setShowPlaceName]);
+
   useEffect(() => {
     if (selectedPlace) {
-      getPopupData(selectedPlace);
+      getPopupBody(selectedPlace);
     }
   }, [selectedPlace]);
 
@@ -92,7 +105,7 @@ const Map = () => {
     };
   }, []);
 
-  const getPopupInside = (data) => {
+  const getPopupBodyHTML = (data) => {
     const dataToShow = [];
     Object.entries(data).forEach(([statistic, number]) => {
       dataToShow.push(`${statistic}: ${number}`);
@@ -101,7 +114,7 @@ const Map = () => {
     return dataToShow.map((row, idx) => <div key={idx}>{row}</div>);
   };
 
-  const getPopupData = async (place) => {
+  const getPopupBody = async (place) => {
     const { url } = locations[selectedPlace];
     let parsedData;
     try {
@@ -131,6 +144,8 @@ const Map = () => {
           data={Object.entries(locations)}
           zoom={viewport.zoom}
           handleMarkerClick={handleMarkerClick}
+          handleMarkerMouseEnter={handleMarkerMouseEnter}
+          handleMarkerMouseLeave={handleMarkerMouseLeave}
         />
         {selectedPlace ? (
           <Popup
@@ -140,9 +155,29 @@ const Map = () => {
               setSelectedPlace(null);
             }}
           >
-            {loading ? "Loading..." : getPopupInside(popupData)}
+            {loading ? "Loading..." : getPopupBodyHTML(popupData)}
           </Popup>
         ) : null}
+        {showPlaceName && !(selectedPlace === hoverPlaceName) ? (
+          <div className={"hover-name-popup-container"}>
+            <Popup
+              latitude={locations[hoverPlaceName].latitude}
+              longitude={locations[hoverPlaceName].longitude}
+              closebutton={false}
+            >
+              {hoverPlaceName}
+            </Popup>
+          </div>
+        ) : // <div
+        //   style={{
+        //     left: `${mouseX}px`,
+        //     top: `${mouseY}px`,
+        //     background: "white",
+        //   }}
+        // >
+        //   {hoverPlaceName}
+        // </div>
+        null}
       </ReactMapGl>
       <button
         value="+"
@@ -173,27 +208,4 @@ const Map = () => {
   );
 };
 
-// {
-//   Object.entries(locations).map(([place, placeData], idx) => (
-//     <Marker
-//       key={idx}
-//       latitude={placeData.latitude}
-//       longitude={placeData.longitude}
-//     >
-//       <button
-//         className="marker-btn"
-//         id={`${place}-${idx}`}
-//         onClick={(e) => {
-//           e.preventDefault();
-//           console.log(e.currentTarget.id);
-//           console.log({ place, ...placeData });
-//           console.log(viewport.zoom);
-//         }}
-//         ref={(el) => (markers.current[`${place}`] = el)}
-//       >
-//         <img src="/map-pin.svg" />
-//       </button>
-//     </Marker>
-//   ));
-// }
 export default Map;
