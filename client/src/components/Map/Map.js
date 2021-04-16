@@ -66,6 +66,44 @@ const Map = () => {
   const [hoverPlaceName, setHoverPlaceName] = useState("asd");
   const [showPlaceName, setShowPlaceName] = useState(null);
 
+  useEffect(() => {
+    console.log(Object.keys(locations).length);
+    //774
+    if (selectedPlace) {
+      getPopupBody(selectedPlace);
+    }
+
+    axios
+      .get("https://disease.sh/v3/covid-19/historical?lastdays=all")
+      .then((res) => res.data)
+      .then((data) => {
+        data.forEach((place) => {
+          const { country, province } = place;
+          if (country && province) {
+            if (!Object.keys(locations).includes(province)) {
+              console.log(province);
+            }
+          } else if (country) {
+            if (!Object.keys(locations).includes(country)) {
+              console.log(country);
+            }
+          }
+        });
+      });
+  }, [selectedPlace]);
+
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === "Escape") {
+        setSelectedPlace(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
+
   const handleMarkerClick = useCallback(
     (place) => {
       setSelectedPlace(place);
@@ -86,24 +124,6 @@ const Map = () => {
     setHoverPlaceName("");
     setShowPlaceName(false);
   }, [setHoverPlaceName, setShowPlaceName]);
-
-  useEffect(() => {
-    if (selectedPlace) {
-      getPopupBody(selectedPlace);
-    }
-  }, [selectedPlace]);
-
-  useEffect(() => {
-    const listener = (e) => {
-      if (e.key === "Escape") {
-        setSelectedPlace(null);
-      }
-    };
-    window.addEventListener("keydown", listener);
-    return () => {
-      window.removeEventListener("keydown", listener);
-    };
-  }, []);
 
   const getPopupBodyHTML = (data) => {
     const dataToShow = [];

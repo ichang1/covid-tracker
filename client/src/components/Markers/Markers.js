@@ -25,14 +25,12 @@ const Markers = ({
       const area = placeData.area;
       let shouldShow = true;
       if (area <= 1000000) {
-        shouldShow = zoom >= 3 ? true : false;
+        shouldShow = zoom >= 1.75 ? true : false;
       } else {
-        shouldShow = zoom >= 3 ? false : true;
+        shouldShow = zoom >= 1.75 ? false : true;
       }
       markers[place].style.display = shouldShow ? "block" : "none";
     });
-    // console.log(markers);
-    // console.log("hiding/revealing");
   });
 
   return (
@@ -46,9 +44,7 @@ const Markers = ({
           <button
             className="marker-btn"
             id={`${place}-${idx}`}
-            onClick={(e) => {
-              e.preventDefault();
-              // console.log(place);
+            onClick={() => {
               handleMarkerClick(place);
             }}
             ref={(el) => (markerRefs.current[`${place}`] = el)}
