@@ -785,7 +785,7 @@ export const locations = {
     longitude: -77.967722,
     area: 42426.0,
   },
-  Curacao: {
+  "Cura\u00e7ao": {
     url: "https://disease.sh/v3/covid-19/countries/Curacao",
     api: "Worldometers",
     latitude: 12.150201,
@@ -806,8 +806,8 @@ export const locations = {
     longitude: 15.377705,
     area: 30450.0,
   },
-  "Côte%20d'Ivoire": {
-    url: "https://disease.sh/v3/covid-19/countries/Côte%20d'Ivoire",
+  "C\u00f4te D'ivoire": {
+    url: "https://disease.sh/v3/covid-19/countries/Côte%20D'ivoire",
     api: "Worldometers",
     latitude: 7.568978,
     longitude: -5.495164,
@@ -1613,7 +1613,7 @@ export const locations = {
     longitude: -63.058383,
     area: 33.59,
   },
-  "Saint Pierre Miquelon": {
+  "Saint Pierre and Miquelon": {
     url: "https://disease.sh/v3/covid-19/countries/Saint%20Pierre%20Miquelon",
     api: "Worldometers",
     latitude: 46.83333,

@@ -11,11 +11,13 @@ def getTimeSeries():
         country = place['country']
         province = place['province']
         if country and province:
+            url = f"https://disease.sh/v3/covid-19/historical/{'%20'.join(country.split(' '))}/{'%20'.join(province.split(' '))}?lastdays=all"
             province = " ".join([capitalize(w) for w in province.split(" ")])
-            places[province] = {'api': url, 'US': False}
+            places[province] = {'api': url}
         elif country:
+            url = f"https://disease.sh/v3/covid-19/historical/{'%20'.join(country.split(' '))}?lastdays=all"
             country = " ".join([capitalize(w) for w in country.split(" ")])
-            places[country] = {'api': url, 'US': False}
+            places[country] = {'api': url}
         else:
             continue
 
@@ -81,10 +83,10 @@ def getTimeSeries():
     for s in states:
         url = f"https://disease.sh/v3/covid-19/historical/usacounties/{'%20'.join(s.split(' '))}?lastdays=all"
         if s == "district of columbia":
-            places["Washington D.C"] = {'api': url, 'US': True}
+            places["Washington D.C"] = {'api': url}
         else:
             state = " ".join([capitalize(w) for w in s.split(" ")])
-            places[state] = {'api': url, 'US': True}
+            places[state] = {'api': url}
 
     return places
 

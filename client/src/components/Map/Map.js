@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Map.css";
-import ReactMapGl, { Marker, Popup } from "react-map-gl";
+import ReactMapGl, { Popup } from "react-map-gl";
 import { locations } from "../../data/locations";
 import Markers from "../Markers/Markers";
 import axios from "axios";
+import { timeSeries } from "../../data/timeSeries";
+import { vaccine } from "../../data/vaccine";
 
 function parseWorldometers(data) {
   if (Object.keys(data).includes("message")) {
@@ -73,23 +75,28 @@ const Map = () => {
       getPopupBody(selectedPlace);
     }
 
-    axios
-      .get("https://disease.sh/v3/covid-19/historical?lastdays=all")
-      .then((res) => res.data)
-      .then((data) => {
-        data.forEach((place) => {
-          const { country, province } = place;
-          if (country && province) {
-            if (!Object.keys(locations).includes(province)) {
-              console.log(province);
-            }
-          } else if (country) {
-            if (!Object.keys(locations).includes(country)) {
-              console.log(country);
-            }
-          }
-        });
-      });
+    // axios
+    //   .get("https://disease.sh/v3/covid-19/historical?lastdays=all")
+    //   .then((res) => res.data)
+    //   .then((data) => {
+    //     data.forEach((place) => {
+    //       const { country, province } = place;
+    //       if (country && province) {
+    //         if (!Object.keys(locations).includes(province)) {
+    //           console.log(province);
+    //         }
+    //       } else if (country) {
+    //         if (!Object.keys(locations).includes(country)) {
+    //           console.log(country);
+    //         }
+    //       }
+    //     });
+    //   });
+    Object.keys(vaccine).forEach((place) => {
+      if (!Object.keys(timeSeries).includes(place)) {
+        console.log(place);
+      }
+    });
   }, [selectedPlace]);
 
   useEffect(() => {
@@ -157,7 +164,6 @@ const Map = () => {
         mapStyle={mapbox_style}
         onViewportChange={(viewport) => {
           setViewport(viewport);
-          // console.log(viewport);
         }}
       >
         <Markers
