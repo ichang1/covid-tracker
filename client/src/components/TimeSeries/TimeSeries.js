@@ -4,10 +4,13 @@ import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
 
-const TimeSeries = (place) => {
+const TimeSeries = ({ place }) => {
   const [showCovidSeries, setShowCovidSeries] = useState(false);
   const [showVaccineSeries, setShowVaccineSeries] = useState(false);
 
+  useEffect(() => {
+    console.log(place);
+  }, []);
   const getCovidSeriesPoints = async () => {
     return;
   };

@@ -25,9 +25,9 @@ const Markers = ({
       const area = placeData.area;
       let shouldShow = true;
       if (area <= 1000000) {
-        shouldShow = zoom >= 1.75 ? true : false;
+        shouldShow = zoom >= 2 ? true : false;
       } else {
-        shouldShow = zoom >= 1.75 ? false : true;
+        shouldShow = zoom >= 2 ? false : true;
       }
       markers[place].style.display = shouldShow ? "block" : "none";
     });
@@ -48,8 +48,8 @@ const Markers = ({
               handleMarkerClick(place);
             }}
             ref={(el) => (markerRefs.current[`${place}`] = el)}
-            onMouseEnter={(e) => {
-              handleMarkerMouseEnter(e, place);
+            onMouseEnter={() => {
+              handleMarkerMouseEnter(place);
             }}
             onMouseLeave={handleMarkerMouseLeave}
           >

@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Map.css";
+
 import ReactMapGl, { Popup } from "react-map-gl";
-import { locations } from "../../data/locations";
+import { Link } from "react-router-dom";
 import Markers from "../Markers/Markers";
-import axios from "axios";
+import TimeSeries from "../TimeSeries/TimeSeries";
+
+import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
+
+import axios from "axios";
 
 function parseWorldometers(data) {
   if (Object.keys(data).includes("message")) {
@@ -61,42 +66,17 @@ const Map = () => {
   };
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
   const [selectedPlace, setSelectedPlace] = useState(null);
-  const [{ popupData, loading }, setPopupData] = useState({
+  const [{ popupData, popupDataLoading }, setPopupData] = useState({
     popupData: null,
-    loading: true,
+    popupDataLoading: true,
   });
   const [hoverPlaceName, setHoverPlaceName] = useState("asd");
   const [showPlaceName, setShowPlaceName] = useState(null);
 
   useEffect(() => {
-    console.log(Object.keys(locations).length);
-    //774
     if (selectedPlace) {
       getPopupBody(selectedPlace);
     }
-
-    // axios
-    //   .get("https://disease.sh/v3/covid-19/historical?lastdays=all")
-    //   .then((res) => res.data)
-    //   .then((data) => {
-    //     data.forEach((place) => {
-    //       const { country, province } = place;
-    //       if (country && province) {
-    //         if (!Object.keys(locations).includes(province)) {
-    //           console.log(province);
-    //         }
-    //       } else if (country) {
-    //         if (!Object.keys(locations).includes(country)) {
-    //           console.log(country);
-    //         }
-    //       }
-    //     });
-    //   });
-    Object.keys(vaccine).forEach((place) => {
-      if (!Object.keys(timeSeries).includes(place)) {
-        console.log(place);
-      }
-    });
   }, [selectedPlace]);
 
   useEffect(() => {
@@ -114,13 +94,13 @@ const Map = () => {
   const handleMarkerClick = useCallback(
     (place) => {
       setSelectedPlace(place);
-      setPopupData({ popupData: null, loading: true });
+      setPopupData({ popupData: null, popupDataLoading: true });
     },
     [setSelectedPlace, setPopupData]
   );
 
   const handleMarkerMouseEnter = useCallback(
-    (e, place) => {
+    (place) => {
       setHoverPlaceName(place);
       setShowPlaceName(true);
     },
@@ -132,13 +112,25 @@ const Map = () => {
     setShowPlaceName(false);
   }, [setHoverPlaceName, setShowPlaceName]);
 
-  const getPopupBodyHTML = (data) => {
+  const getPopupBodyJSX = (parsedData) => {
     const dataToShow = [];
-    Object.entries(data).forEach(([statistic, number]) => {
-      dataToShow.push(`${statistic}: ${number}`);
+    const { Place: place } = parsedData;
+    Object.entries(parsedData).forEach(([key, val]) => {
+      dataToShow.push(`${key}: ${val}`);
     });
-
-    return dataToShow.map((row, idx) => <div key={idx}>{row}</div>);
+    const popupBodyJSX = dataToShow.map((row, idx) => (
+      <div key={idx}>{row}</div>
+    ));
+    if (Object.keys(timeSeries).includes(place)) {
+      console.log(`/${place}`);
+      const link = (
+        <Link key={`${place}-time-series-link`} to={`/${place}`}>
+          TimeSeries
+        </Link>
+      );
+      popupBodyJSX.push(link);
+    }
+    return popupBodyJSX;
   };
 
   const getPopupBody = async (place) => {
@@ -150,7 +142,7 @@ const Map = () => {
     } catch (err) {
       parsedData = { Place: place, error: err.message };
     }
-    setPopupData({ popupData: parsedData, loading: false });
+    setPopupData({ popupData: parsedData, popupDataLoading: false });
   };
 
   const mapbox_style =
@@ -181,7 +173,7 @@ const Map = () => {
               setSelectedPlace(null);
             }}
           >
-            {loading ? "Loading..." : getPopupBodyHTML(popupData)}
+            {popupDataLoading ? "Loading..." : getPopupBodyJSX(popupData)}
           </Popup>
         ) : null}
         {showPlaceName && !(selectedPlace === hoverPlaceName) ? (
@@ -194,16 +186,7 @@ const Map = () => {
               {hoverPlaceName}
             </Popup>
           </div>
-        ) : // <div
-        //   style={{
-        //     left: `${mouseX}px`,
-        //     top: `${mouseY}px`,
-        //     background: "white",
-        //   }}
-        // >
-        //   {hoverPlaceName}
-        // </div>
-        null}
+        ) : null}
       </ReactMapGl>
       <button
         value="+"

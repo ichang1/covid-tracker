@@ -12,3 +12,8 @@
 .hover-name-popup-container .mapboxgl-popup-close-button {
   display: none;
 }
+
+.mapboxgl-popup-content {
+  cursor: text;
+  user-select: text;
+}

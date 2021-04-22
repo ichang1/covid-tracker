@@ -2965,13 +2965,6 @@ export const locations = {
     longitude: -62.825749,
     area: 9.653,
   },
-  "Saint Pierre and Miquelon": {
-    url: "https://disease.sh/v3/covid-19/jhucsse",
-    api: "JHUCSSE",
-    latitude: 47.042405,
-    longitude: -56.34943,
-    area: 93.44,
-  },
   "St Martin": {
     url: "https://disease.sh/v3/covid-19/jhucsse",
     api: "JHUCSSE",
