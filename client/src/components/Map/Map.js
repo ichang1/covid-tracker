@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./Map.css";
 
-import ReactMapGl, { Popup } from "react-map-gl";
+import ReactMapGl, { Popup, Source, Layer } from "react-map-gl";
 import { Link } from "react-router-dom";
 import Markers from "../Markers/Markers";
 import TimeSeries from "../TimeSeries/TimeSeries";
@@ -9,6 +9,7 @@ import TimeSeries from "../TimeSeries/TimeSeries";
 import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
+import { source, layerStyle } from "./covidData";
 
 import axios from "axios";
 
@@ -62,7 +63,7 @@ const Map = () => {
     longitude: 0,
     width: "80vw",
     height: "80vh",
-    zoom: 0.75,
+    zoom: 0.5,
   };
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
   const [selectedPlace, setSelectedPlace] = useState(null);
@@ -70,8 +71,10 @@ const Map = () => {
     popupData: null,
     popupDataLoading: true,
   });
-  const [hoverPlaceName, setHoverPlaceName] = useState("asd");
-  const [showPlaceName, setShowPlaceName] = useState(null);
+  const [hoverPlaceName, setHoverPlaceName] = useState("");
+  const [showPlaceName, setShowPlaceName] = useState(false);
+
+  const mapRef = useRef(null);
 
   useEffect(() => {
     if (selectedPlace) {
@@ -91,26 +94,63 @@ const Map = () => {
     };
   }, []);
 
-  const handleMarkerClick = useCallback(
-    (place) => {
+  const handleClick = (e) => {
+    const covidFeatures = e.features.filter(
+      (feat) => feat.source === "covidData"
+    );
+    if (covidFeatures.length > 0) {
+      const place = covidFeatures[0]?.properties?.name;
       setSelectedPlace(place);
       setPopupData({ popupData: null, popupDataLoading: true });
-    },
-    [setSelectedPlace, setPopupData]
-  );
+    }
+  };
 
-  const handleMarkerMouseEnter = useCallback(
-    (place) => {
-      setHoverPlaceName(place);
+  const handleHover = (e) => {
+    const covidFeatures = e.features.filter(
+      (feat) => feat.source === "covidData"
+    );
+    if (covidFeatures.length > 0 && !e.target.className.includes("popup")) {
+      setHoverPlaceName(covidFeatures[0]?.properties?.name);
       setShowPlaceName(true);
-    },
-    [setHoverPlaceName, setShowPlaceName]
-  );
+    } else {
+      setShowPlaceName(false);
+      setHoverPlaceName("");
+    }
+  };
 
-  const handleMarkerMouseLeave = useCallback(() => {
-    setHoverPlaceName("");
-    setShowPlaceName(false);
-  }, [setHoverPlaceName, setShowPlaceName]);
+  useEffect(() => {
+    const map = mapRef.current.getMap();
+    map.on("load", () => {
+      map.loadImage("/map-pin.png", (error, image) => {
+        if (error) throw error;
+        if (!map.hasImage("map-pin")) {
+          map.addImage("map-pin", image);
+          console.log("image loaded");
+        }
+      });
+    });
+  }, [mapRef]);
+
+  // const handleMarkerClick = useCallback(
+  //   (place) => {
+  //     setSelectedPlace(place);
+  //     setPopupData({ popupData: null, popupDataLoading: true });
+  //   },
+  //   [setSelectedPlace, setPopupData]
+  // );
+
+  // const handleMarkerMouseEnter = useCallback(
+  //   (place) => {
+  //     setHoverPlaceName(place);
+  //     setShowPlaceName(true);
+  //   },
+  //   [setHoverPlaceName, setShowPlaceName]
+  // );
+
+  // const handleMarkerMouseLeave = useCallback(() => {
+  //   setHoverPlaceName("");
+  //   setShowPlaceName(false);
+  // }, [setHoverPlaceName, setShowPlaceName]);
 
   const getPopupBodyJSX = (parsedData) => {
     const dataToShow = [];
@@ -119,12 +159,17 @@ const Map = () => {
       dataToShow.push(`${key}: ${val}`);
     });
     const popupBodyJSX = dataToShow.map((row, idx) => (
-      <div key={idx}>{row}</div>
+      <div key={idx} className="popup-content-row">
+        {row}
+      </div>
     ));
     if (Object.keys(timeSeries).includes(place)) {
-      console.log(`/${place}`);
       const link = (
-        <Link key={`${place}-time-series-link`} to={`/${place}`}>
+        <Link
+          key={`${place}-time-series-link`}
+          to={`/${place}`}
+          className="popup-content-row"
+        >
           TimeSeries
         </Link>
       );
@@ -157,14 +202,15 @@ const Map = () => {
         onViewportChange={(viewport) => {
           setViewport(viewport);
         }}
+        ref={(el) => (mapRef.current = el)}
+        interactiveLayerIds={["covidData"]}
+        onClick={handleClick}
+        onHover={handleHover}
       >
-        <Markers
-          data={Object.entries(locations)}
-          zoom={viewport.zoom}
-          handleMarkerClick={handleMarkerClick}
-          handleMarkerMouseEnter={handleMarkerMouseEnter}
-          handleMarkerMouseLeave={handleMarkerMouseLeave}
-        />
+        <Source {...source}>
+          <Layer {...layerStyle} />
+        </Source>
+        ;
         {selectedPlace ? (
           <Popup
             latitude={locations[selectedPlace].latitude}
@@ -217,4 +263,11 @@ const Map = () => {
   );
 };
 
+// <Markers
+//   data={Object.entries(locations)}
+//   zoom={viewport.zoom}
+//   handleMarkerClick={handleMarkerClick}
+//   handleMarkerMouseEnter={handleMarkerMouseEnter}
+//   handleMarkerMouseLeave={handleMarkerMouseLeave}
+// />;
 export default Map;
