@@ -1,10 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./TimeSeries.css";
 import { customStyles } from "./reactSelectStyle";
+import useWindowDimensions from "../../customHooks/useWindowDimensions";
 
 import Select from "react-select";
+import {
+  LineChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Line,
+  ResponsiveContainer,
+} from "recharts";
 
-import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
 
@@ -48,18 +58,23 @@ const yearOptions = Array.from(
   (val, idx) => FIRST_YEAR_COVID + idx
 );
 
+const BLUE = "#8884d8";
+const GREEN = "#82ca9d";
+const RED = "#E7625F";
+
 const TimeSeries = ({ place }) => {
-  const [showCovidSeries, setShowCovidSeries] = useState(false);
-  const [showVaccineSeries, setShowVaccineSeries] = useState(false);
+  // const [showCovidSeries, setShowCovidSeries] = useState(false);
+  // const [showVaccineSeries, setShowVaccineSeries] = useState(false);
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const [
     { covidSeriesData, covidSeriesDataLoading },
     setCovidSeries,
-  ] = useState({ covidSeriesData: null, covidSeriesDataLoading: false });
+  ] = useState({ covidSeriesData: null, covidSeriesDataLoading: true });
 
   const [
     { vaccineSeriesData, vaccineSeriesDataLoading },
     setVaccineSeries,
-  ] = useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: false });
+  ] = useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: true });
 
   const [
     { selectedStartMonth, selectedStartYear },
@@ -74,16 +89,14 @@ const TimeSeries = ({ place }) => {
     selectedEndYear: today.getFullYear(),
   });
 
-  const selectedEndMonthRef = useRef();
-
-  useEffect(() => {
-    if (Object.keys(timeSeries).includes(place)) {
-      getCovidSeriesData();
-    }
-    if (Object.keys(vaccine).includes(place)) {
-      getVaccineSeriesData();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (Object.keys(timeSeries).includes(place)) {
+  //     getCovidSeriesData();
+  //   }
+  //   if (Object.keys(vaccine).includes(place)) {
+  //     getVaccineSeriesData();
+  //   }
+  // }, []);
 
   // useEffect(() => {
   //   console.log(selectedStartMonth);
@@ -199,11 +212,33 @@ const TimeSeries = ({ place }) => {
     });
   };
 
-  const getCovidSeriesDataYear = (year) => {};
+  const getCovidSeriesPlotPoints = () => {
+    const { cases, deaths, recovered } = covidSeriesData;
+    const orderedDates = Object.keys(cases).sort((a, b) => {
+      const aYear = a.split("/")[2] + 2000;
+      const aMonthIdx = parseInt(a.split("/")[0]) - 1;
+      const aMonth = monthOptions[aMonthIdx];
+      const aDecimal = yearMonthToDecimal(aYear, aMonth);
 
-  const getCovidSeriesDataMonthYear = (month, year) => {};
-
-  const getCovidSeriesPlot = (points) => {};
+      const bYear = b.split("/")[2] + 2000;
+      const bMonthIdx = parseInt(b.split("/")[0]) - 1;
+      const bMonth = monthOptions[bMonthIdx];
+      const bDecimal = yearMonthToDecimal(bYear, bMonth);
+      return aDecimal - bDecimal;
+    });
+    const data = orderedDates.map((date) => {
+      const dateCases = cases[date];
+      const dateDeaths = deaths[date];
+      const dateRecovered = recovered[date];
+      return {
+        date,
+        cases: dateCases,
+        deaths: dateDeaths,
+        recovered: dateRecovered,
+      };
+    });
+    return data;
+  };
 
   const getVaccineSeriesData = async () => {
     const { api: url } = vaccine[place];
@@ -286,7 +321,11 @@ const TimeSeries = ({ place }) => {
   return (
     <div className="time-series">
       {Object.keys(timeSeries).includes(place) && (
-        <div className={`${place}-covid-case-time-series`}>
+        <div
+          className={`${place}-covid-case-time-series`}
+          height={windowHeight}
+          width={windowWidth}
+        >
           <Select
             isMulti={false}
             name="start-month-select"
@@ -340,7 +379,38 @@ const TimeSeries = ({ place }) => {
           <button onClick={getCovidCaseTimeSeries}>
             Get Covid Cases Time Series
           </button>
-          {place}
+          <div className="chart-container">
+            <ResponsiveContainer width="90%" height="100%">
+              <LineChart
+                data={covidSeriesDataLoading ? [] : getCovidSeriesPlotPoints()}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  dot={false}
+                  type="monotone"
+                  dataKey="cases"
+                  stroke={RED}
+                />
+                <Line
+                  dot={false}
+                  type="monotone"
+                  dataKey="deaths"
+                  stroke={BLUE}
+                />
+                <Line
+                  dot={false}
+                  type="monotone"
+                  dataKey="recovered"
+                  stroke={GREEN}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       )}
     </div>
