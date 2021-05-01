@@ -1064,7 +1064,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Turkey?lastdays=all",
     US_State: false,
   },
-  Usa: {
+  USA: {
     api: "https://disease.sh/v3/covid-19/historical/USA?lastdays=all",
     US_State: false,
   },
