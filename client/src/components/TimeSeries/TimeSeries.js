@@ -133,7 +133,7 @@ const TimeSeries = ({ place }) => {
   }, [selectedEndYear]);
 
   useEffect(() => {
-    if (covidSeriesDataLoading) {
+    if (Object.keys(timeSeries).includes(place) && covidSeriesDataLoading) {
       // get covid series data
       getCovidSeriesData();
     }
@@ -200,11 +200,14 @@ const TimeSeries = ({ place }) => {
     let parsedData;
     try {
       const res = await axios.get(url);
+      console.log(res.data);
       const { timeline } = res.data;
       parsedData = timeline;
+      console.log(parsedData);
     } catch (err) {
       parsedData = {};
     }
+    console.log(parsedData);
     const filteredData = filterCovidSeriesData(parsedData);
     setCovidSeries({
       covidSeriesData: filteredData,
