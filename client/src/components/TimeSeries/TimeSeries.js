@@ -63,6 +63,43 @@ const BLUE = "#8884d8";
 const GREEN = "#82ca9d";
 const RED = "#E7625F";
 
+function parseUS_State(data) {
+  const dates = Object.keys(data[0].timeline.cases);
+  const parsedCases = {};
+  const parsedDeaths = {};
+  const parsedRecovered = {};
+  data.forEach((countyData) => {
+    const { cases, deaths, recovered } = countyData.timeline;
+    //apparently recovered is not actually given in the api
+    dates.forEach((date) => {
+      if (Object.keys(parsedCases).includes(date)) {
+        parsedCases[date] += cases[date];
+      } else {
+        parsedCases[date] = cases[date];
+      }
+      if (Object.keys(parsedDeaths).includes(date)) {
+        parsedDeaths[date] += deaths[date];
+      } else {
+        parsedDeaths[date] = deaths[date];
+      }
+      if (recovered == undefined) {
+        parsedRecovered[date] = 0;
+      } else {
+        if (Object.keys(parsedRecovered).includes(date)) {
+          parsedRecovered[date] += recovered[date];
+        } else {
+          parsedRecovered[date] = recovered[date];
+        }
+      }
+    });
+  });
+  return {
+    cases: parsedCases,
+    deaths: parsedDeaths,
+    recovered: parsedRecovered,
+  };
+}
+
 const TimeSeries = ({ place }) => {
   // const [showCovidSeries, setShowCovidSeries] = useState(false);
   // const [showVaccineSeries, setShowVaccineSeries] = useState(false);
@@ -89,31 +126,6 @@ const TimeSeries = ({ place }) => {
     selectedEndMonth: monthOptions[today.getMonth()],
     selectedEndYear: today.getFullYear(),
   });
-
-  // useEffect(() => {
-  //   if (Object.keys(timeSeries).includes(place)) {
-  //     getCovidSeriesData();
-  //   }
-  //   if (Object.keys(vaccine).includes(place)) {
-  //     getVaccineSeriesData();
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(selectedStartMonth);
-  // }, [selectedStartMonth]);
-
-  // useEffect(() => {
-  //   console.log(selectedEndMonth);
-  // }, [selectedEndMonth]);
-
-  useEffect(() => {
-    Object.keys(timeSeries).forEach((place) => {
-      if (!Object.keys(locations).includes(place)) {
-        console.log(place);
-      }
-    });
-  }, []);
 
   useEffect(() => {
     //start month options might be limited based on year
@@ -157,7 +169,6 @@ const TimeSeries = ({ place }) => {
   const filterCovidSeriesData = (parsedData) => {
     //filter data based on time range selected
     const { cases, deaths, recovered } = parsedData;
-    let filteredCases = {};
 
     const dateLowerBound = yearMonthToDecimal(
       selectedStartYear,
@@ -167,6 +178,7 @@ const TimeSeries = ({ place }) => {
       selectedEndYear,
       selectedEndMonth
     );
+    const filteredCases = {};
     Object.entries(cases).forEach(([date, dateCases]) => {
       const dateParts = date.split("/");
       const month = parseInt(dateParts[0]) - 1;
@@ -176,7 +188,7 @@ const TimeSeries = ({ place }) => {
         filteredCases[date] = dateCases;
       }
     });
-    let filteredDeaths = {};
+    const filteredDeaths = {};
     Object.entries(deaths).forEach(([date, dateDeaths]) => {
       const dateParts = date.split("/");
       const month = parseInt(dateParts[0]) - 1;
@@ -186,7 +198,7 @@ const TimeSeries = ({ place }) => {
         filteredDeaths[date] = dateDeaths;
       }
     });
-    let filteredRecovered = {};
+    const filteredRecovered = {};
     Object.entries(recovered).forEach(([date, dateRecovered]) => {
       const dateParts = date.split("/");
       const month = parseInt(dateParts[0]) - 1;
@@ -205,18 +217,15 @@ const TimeSeries = ({ place }) => {
   };
 
   const getCovidSeriesData = async () => {
-    const { api: url } = timeSeries[place];
+    const { api: url, US_State } = timeSeries[place];
     let parsedData;
     try {
       const res = await axios.get(url);
-      console.log(res.data);
-      const { timeline } = res.data;
-      parsedData = timeline;
-      console.log(parsedData);
+      const data = res.data;
+      parsedData = US_State ? parseUS_State(data) : data.timeline;
     } catch (err) {
       parsedData = {};
     }
-    console.log(parsedData);
     const filteredData = filterCovidSeriesData(parsedData);
     setCovidSeries({
       covidSeriesData: filteredData,
