@@ -347,59 +347,73 @@ const TimeSeries = ({ place }) => {
           height={windowHeight}
           width={windowWidth}
         >
-          <Select
-            isMulti={false}
-            name="start-month-select"
-            value={{
-              value: selectedStartMonth,
-              label: selectedStartMonth,
-            }}
-            options={getStartMonthOptions().map((month) => ({
-              value: month,
-              label: month,
-            }))}
-            onChange={handleSelectStartMonth}
-            closeMenuOnSelect={true}
-          />
-          <Select
-            isMulti={false}
-            name="start-year-select"
-            value={{
-              value: selectedStartYear,
-              label: selectedStartYear,
-            }}
-            options={getStartYearOptions().map((year) => ({
-              value: year,
-              label: year,
-            }))}
-            onChange={handleSelectStartYear}
-            closeMenuOnSelect={true}
-          />
-          <Select
-            isMulti={false}
-            name="end-month-select"
-            value={{ value: selectedEndMonth, label: selectedEndMonth }}
-            options={getEndMonthOptions().map((month) => ({
-              value: month,
-              label: month,
-            }))}
-            onChange={handleSelectEndMonth}
-            closeMenuOnSelect={true}
-          />
-          <Select
-            isMulti={false}
-            name="end-year-select"
-            value={{ value: selectedEndYear, label: selectedEndYear }}
-            options={getEndYearOptions().map((year) => ({
-              value: year,
-              label: year,
-            }))}
-            onChange={handleSelectEndYear}
-            closeMenuOnSelect={true}
-          />
-          <button onClick={getCovidCaseTimeSeries}>
-            Get Covid Cases Time Series
-          </button>
+          <div class="date-select-container">
+            <div class="start-date-select-container">
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="start-month-select"
+                value={{
+                  value: selectedStartMonth,
+                  label: selectedStartMonth,
+                }}
+                options={getStartMonthOptions().map((month) => ({
+                  value: month,
+                  label: month,
+                }))}
+                onChange={handleSelectStartMonth}
+                closeMenuOnSelect={true}
+              />
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="start-year-select"
+                value={{
+                  value: selectedStartYear,
+                  label: selectedStartYear,
+                }}
+                options={getStartYearOptions().map((year) => ({
+                  value: year,
+                  label: year,
+                }))}
+                onChange={handleSelectStartYear}
+                closeMenuOnSelect={true}
+              />
+            </div>
+            <div class="end-date-select-container">
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="end-month-select"
+                value={{ value: selectedEndMonth, label: selectedEndMonth }}
+                options={getEndMonthOptions().map((month) => ({
+                  value: month,
+                  label: month,
+                }))}
+                onChange={handleSelectEndMonth}
+                closeMenuOnSelect={true}
+              />
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="end-year-select"
+                value={{ value: selectedEndYear, label: selectedEndYear }}
+                options={getEndYearOptions().map((year) => ({
+                  value: year,
+                  label: year,
+                }))}
+                onChange={handleSelectEndYear}
+                closeMenuOnSelect={true}
+              />
+            </div>
+            <button onClick={getCovidCaseTimeSeries}>
+              Get Covid Cases Time Series
+            </button>
+          </div>
           <div className="chart-container">
             <ResponsiveContainer width="90%" height="100%">
               <LineChart
