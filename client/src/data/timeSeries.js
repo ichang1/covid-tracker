@@ -19,7 +19,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Angola?lastdays=all",
     US_State: false,
   },
-  "Antigua And Barbuda": {
+  "Antigua and Barbuda": {
     api:
       "https://disease.sh/v3/covid-19/historical/Antigua%20and%20Barbuda?lastdays=all",
     US_State: false,
@@ -145,7 +145,7 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/Burkina%20Faso?lastdays=all",
     US_State: false,
   },
-  Burma: {
+  Myanmar: {
     api: "https://disease.sh/v3/covid-19/historical/Burma?lastdays=all",
     US_State: false,
   },
@@ -175,16 +175,6 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/Canada/british%20columbia?lastdays=all",
     US_State: false,
   },
-  "Diamond Princess": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Diamond%20Princess?lastdays=all",
-    US_State: false,
-  },
-  "Grand Princess": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/grand%20princess?lastdays=all",
-    US_State: false,
-  },
   Manitoba: {
     api:
       "https://disease.sh/v3/covid-19/historical/Canada/manitoba?lastdays=all",
@@ -195,7 +185,7 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/Canada/new%20brunswick?lastdays=all",
     US_State: false,
   },
-  "Newfoundland And Labrador": {
+  "Newfoundland and Labrador": {
     api:
       "https://disease.sh/v3/covid-19/historical/Canada/newfoundland%20and%20labrador?lastdays=all",
     US_State: false,
@@ -384,10 +374,6 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/China/tibet?lastdays=all",
     US_State: false,
   },
-  Unknown: {
-    api: "https://disease.sh/v3/covid-19/historical/China/unknown?lastdays=all",
-    US_State: false,
-  },
   Xinjiang: {
     api:
       "https://disease.sh/v3/covid-19/historical/China/xinjiang?lastdays=all",
@@ -414,7 +400,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Congo?lastdays=all",
     US_State: false,
   },
-  Drc: {
+  DRC: {
     api: "https://disease.sh/v3/covid-19/historical/DRC?lastdays=all",
     US_State: false,
   },
@@ -551,7 +537,7 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/France/saint%20barthelemy?lastdays=all",
     US_State: false,
   },
-  "Saint Pierre And Miquelon": {
+  "Saint Pierre and Miquelon": {
     api:
       "https://disease.sh/v3/covid-19/historical/France/saint%20pierre%20and%20miquelon?lastdays=all",
     US_State: false,
@@ -561,7 +547,7 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/France/st%20martin?lastdays=all",
     US_State: false,
   },
-  "Wallis And Futuna": {
+  "Wallis and Futuna": {
     api:
       "https://disease.sh/v3/covid-19/historical/France/wallis%20and%20futuna?lastdays=all",
     US_State: false,
@@ -607,7 +593,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Guinea?lastdays=all",
     US_State: false,
   },
-  "Guinea-bissau": {
+  "Guinea-Bissau": {
     api: "https://disease.sh/v3/covid-19/historical/Guinea-Bissau?lastdays=all",
     US_State: false,
   },
@@ -619,7 +605,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Haiti?lastdays=all",
     US_State: false,
   },
-  "Holy See": {
+  "Holy See (Vatican City State)": {
     api: "https://disease.sh/v3/covid-19/historical/Holy%20See?lastdays=all",
     US_State: false,
   },
@@ -683,12 +669,8 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Kenya?lastdays=all",
     US_State: false,
   },
-  "S. Korea": {
+  "South Korea": {
     api: "https://disease.sh/v3/covid-19/historical/S.%20Korea?lastdays=all",
-    US_State: false,
-  },
-  Kosovo: {
-    api: "https://disease.sh/v3/covid-19/historical/Kosovo?lastdays=all",
     US_State: false,
   },
   Kuwait: {
@@ -737,7 +719,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Luxembourg?lastdays=all",
     US_State: false,
   },
-  "Ms Zaandam": {
+  "MS Zaandam": {
     api: "https://disease.sh/v3/covid-19/historical/MS%20Zaandam?lastdays=all",
     US_State: false,
   },
@@ -823,12 +805,12 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/Netherlands/aruba?lastdays=all",
     US_State: false,
   },
-  "Bonaire, Sint Eustatius And Saba": {
+  "Bonaire, Sint Eustatius and Saba": {
     api:
       "https://disease.sh/v3/covid-19/historical/Netherlands/bonaire,%20sint%20eustatius%20and%20saba?lastdays=all",
     US_State: false,
   },
-  Curacao: {
+  "Cura\u00e7ao": {
     api:
       "https://disease.sh/v3/covid-19/historical/Netherlands/curacao?lastdays=all",
     US_State: false,
@@ -919,7 +901,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Rwanda?lastdays=all",
     US_State: false,
   },
-  "Saint Kitts And Nevis": {
+  "Saint Kitts and Nevis": {
     api:
       "https://disease.sh/v3/covid-19/historical/Saint%20Kitts%20and%20Nevis?lastdays=all",
     US_State: false,
@@ -928,7 +910,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Saint%20Lucia?lastdays=all",
     US_State: false,
   },
-  "Saint Vincent And The Grenadines": {
+  "Saint Vincent and the Grenadines": {
     api:
       "https://disease.sh/v3/covid-19/historical/Saint%20Vincent%20and%20the%20Grenadines?lastdays=all",
     US_State: false,
@@ -941,7 +923,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/San%20Marino?lastdays=all",
     US_State: false,
   },
-  "Sao Tome And Principe": {
+  "Sao Tome and Principe": {
     api:
       "https://disease.sh/v3/covid-19/historical/Sao%20Tome%20and%20Principe?lastdays=all",
     US_State: false,
@@ -1043,7 +1025,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Thailand?lastdays=all",
     US_State: false,
   },
-  "Timor-leste": {
+  "Timor-Leste": {
     api: "https://disease.sh/v3/covid-19/historical/Timor-Leste?lastdays=all",
     US_State: false,
   },
@@ -1051,7 +1033,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Togo?lastdays=all",
     US_State: false,
   },
-  "Trinidad And Tobago": {
+  "Trinidad and Tobago": {
     api:
       "https://disease.sh/v3/covid-19/historical/Trinidad%20and%20Tobago?lastdays=all",
     US_State: false,
@@ -1076,7 +1058,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Ukraine?lastdays=all",
     US_State: false,
   },
-  Uae: {
+  UAE: {
     api: "https://disease.sh/v3/covid-19/historical/UAE?lastdays=all",
     US_State: false,
   },
@@ -1112,7 +1094,7 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/UK/gibraltar?lastdays=all",
     US_State: false,
   },
-  "Isle Of Man": {
+  "Isle of Man": {
     api:
       "https://disease.sh/v3/covid-19/historical/UK/isle%20of%20man?lastdays=all",
     US_State: false,
@@ -1121,17 +1103,17 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/UK/montserrat?lastdays=all",
     US_State: false,
   },
-  "Saint Helena, Ascension And Tristan Da Cunha": {
+  "Saint Helena, Ascension and Tristan da Cunha": {
     api:
       "https://disease.sh/v3/covid-19/historical/UK/saint%20helena,%20ascension%20and%20tristan%20da%20cunha?lastdays=all",
     US_State: false,
   },
-  "Turks And Caicos Islands": {
+  "Turks and Caicos Islands": {
     api:
       "https://disease.sh/v3/covid-19/historical/UK/turks%20and%20caicos%20islands?lastdays=all",
     US_State: false,
   },
-  Uk: {
+  "United Kingdom": {
     api: "https://disease.sh/v3/covid-19/historical/UK?lastdays=all",
     US_State: false,
   },
@@ -1153,11 +1135,6 @@ export const timeSeries = {
   },
   Vietnam: {
     api: "https://disease.sh/v3/covid-19/historical/Vietnam?lastdays=all",
-    US_State: false,
-  },
-  "West Bank And Gaza": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/West%20Bank%20and%20Gaza?lastdays=all",
     US_State: false,
   },
   Yemen: {
@@ -1416,7 +1393,7 @@ export const timeSeries = {
       "https://disease.sh/v3/covid-19/historical/usacounties/vermont?lastdays=all",
     US_State: true,
   },
-  "Virgin Islands": {
+  "United States Virgin Islands": {
     api:
       "https://disease.sh/v3/covid-19/historical/usacounties/virgin%20islands?lastdays=all",
     US_State: true,

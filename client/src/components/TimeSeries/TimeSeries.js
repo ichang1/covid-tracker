@@ -15,6 +15,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
 
@@ -105,6 +106,14 @@ const TimeSeries = ({ place }) => {
   // useEffect(() => {
   //   console.log(selectedEndMonth);
   // }, [selectedEndMonth]);
+
+  useEffect(() => {
+    Object.keys(timeSeries).forEach((place) => {
+      if (!Object.keys(locations).includes(place)) {
+        console.log(place);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     //start month options might be limited based on year
