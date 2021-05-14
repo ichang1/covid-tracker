@@ -104,54 +104,54 @@ const TimeSeries = ({ place }) => {
   // const [showCovidSeries, setShowCovidSeries] = useState(false);
   // const [showVaccineSeries, setShowVaccineSeries] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
-  const [
-    { covidSeriesData, covidSeriesDataLoading },
-    setCovidSeries,
-  ] = useState({ covidSeriesData: null, covidSeriesDataLoading: true });
+
+  const [{ covidSeriesData, covidSeriesDataLoading }, setCovidSeries] =
+    useState({ covidSeriesData: null, covidSeriesDataLoading: true });
 
   const [
-    { vaccineSeriesData, vaccineSeriesDataLoading },
-    setVaccineSeries,
-  ] = useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: true });
-
-  const [
-    { selectedStartMonth, selectedStartYear },
-    setSelectedStartDate,
+    { selectedCovidStartMonth, selectedCovidStartYear },
+    setSelectedCovidStartDate,
   ] = useState({
-    selectedStartMonth: "January",
-    selectedStartYear: FIRST_YEAR_COVID,
+    selectedCovidStartMonth: "January",
+    selectedCovidStartYear: FIRST_YEAR_COVID,
   });
 
-  const [{ selectedEndMonth, selectedEndYear }, setSelectedEndDate] = useState({
-    selectedEndMonth: monthOptions[today.getMonth()],
-    selectedEndYear: today.getFullYear(),
+  const [
+    { selectedCovidEndMonth, selectedCovidEndYear },
+    setSelectedCovidEndDate,
+  ] = useState({
+    selectedCovidEndMonth: monthOptions[today.getMonth()],
+    selectedCovidEndYear: today.getFullYear(),
   });
+
+  const [{ vaccineSeriesData, vaccineSeriesDataLoading }, setVaccineSeries] =
+    useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: true });
 
   useEffect(() => {
     //start month options might be limited based on year
     //make sure selected start month is still valid
-    const selectedStartMonthIdx = monthToNum[selectedStartMonth];
-    if (selectedStartMonthIdx >= getStartMonthOptions().length) {
-      setSelectedStartDate({
-        selectedStartMonth: "January",
-        selectedStartYear,
+    const selectedCovidStartMonthIdx = monthToNum[selectedCovidStartMonth];
+    if (selectedCovidStartMonthIdx >= getStartMonthOptions().length) {
+      setSelectedCovidStartDate({
+        selectedCovidStartMonth: "January",
+        selectedCovidStartYear,
       });
     }
-  }, [selectedStartYear]);
+  }, [selectedCovidStartYear]);
 
   useEffect(() => {
     //end month options might be limited based on year
     //make sure selected end month is still valid
-    const selectedEndMonthIdx = monthToNum[selectedEndMonth];
-    if (selectedEndMonthIdx >= getEndMonthOptions().length) {
+    const selectedCovidEndMonthIdx = monthToNum[selectedCovidEndMonth];
+    if (selectedCovidEndMonthIdx >= getEndMonthOptions().length) {
       const validEndMonths = getEndMonthOptions();
       const lastValidEndMonth = validEndMonths[validEndMonths.length - 1];
-      setSelectedEndDate({
-        selectedEndMonth: lastValidEndMonth,
-        selectedEndYear,
+      setSelectedCovidEndDate({
+        selectedCovidEndMonth: lastValidEndMonth,
+        selectedCovidEndYear,
       });
     }
-  }, [selectedEndYear]);
+  }, [selectedCovidEndYear]);
 
   useEffect(() => {
     if (Object.keys(timeSeries).includes(place) && covidSeriesDataLoading) {
@@ -171,12 +171,12 @@ const TimeSeries = ({ place }) => {
     const { cases, deaths, recovered } = parsedData;
 
     const dateLowerBound = yearMonthToDecimal(
-      selectedStartYear,
-      selectedStartMonth
+      selectedCovidStartYear,
+      selectedCovidStartMonth
     );
     const dateUpperBound = yearMonthToDecimal(
-      selectedEndYear,
-      selectedEndMonth
+      selectedCovidEndYear,
+      selectedCovidEndMonth
     );
     const filteredCases = {};
     Object.entries(cases).forEach(([date, dateCases]) => {
@@ -226,15 +226,17 @@ const TimeSeries = ({ place }) => {
     } catch (err) {
       parsedData = {};
     }
-    const filteredData = filterCovidSeriesData(parsedData);
+    const covidSeriesPlotPoints = getCovidSeriesPlotPoints(
+      filterCovidSeriesData(parsedData)
+    );
     setCovidSeries({
-      covidSeriesData: filteredData,
+      covidSeriesData: covidSeriesPlotPoints,
       covidSeriesDataLoading: false,
     });
   };
 
-  const getCovidSeriesPlotPoints = () => {
-    const { cases, deaths, recovered } = covidSeriesData;
+  const getCovidSeriesPlotPoints = (filteredData) => {
+    const { cases, deaths, recovered } = filteredData;
     const orderedDates = Object.keys(cases).sort((a, b) => {
       const aYear = a.split("/")[2] + 2000;
       const aMonthIdx = parseInt(a.split("/")[0]) - 1;
@@ -282,56 +284,68 @@ const TimeSeries = ({ place }) => {
   };
 
   const getStartMonthOptions = () => {
-    if (selectedStartYear === selectedEndYear) {
+    if (selectedCovidStartYear === selectedCovidEndYear) {
       //start month cannot be later than the end month for same year
-      const selectedEndMonthIdx = monthToNum[selectedEndMonth];
-      return monthOptions.slice(0, selectedEndMonthIdx + 1);
+      const selectedCovidEndMonthIdx = monthToNum[selectedCovidEndMonth];
+      return monthOptions.slice(0, selectedCovidEndMonthIdx + 1);
     } else {
       return monthOptions;
     }
   };
 
   const getEndMonthOptions = () => {
-    if (selectedEndYear === today.getFullYear()) {
+    if (selectedCovidEndYear === today.getFullYear()) {
       const currentMonthIdx = today.getMonth();
       return monthOptions.slice(0, currentMonthIdx + 1);
-    } else if (selectedEndYear === selectedStartYear) {
+    } else if (selectedCovidEndYear === selectedCovidStartYear) {
       // lower bound for end month
-      const selectedStartMonthIdx = monthToNum[selectedStartMonth];
-      return monthOptions.slice(selectedStartMonthIdx);
+      const selectedCovidStartMonthIdx = monthToNum[selectedCovidStartMonth];
+      return monthOptions.slice(selectedCovidStartMonthIdx);
     } else {
       return monthOptions;
     }
   };
 
   const getStartYearOptions = () => {
-    const selectedEndYearIdx = selectedEndYear - FIRST_YEAR_COVID;
-    return yearOptions.slice(0, selectedEndYearIdx + 1);
+    const selectedCovidEndYearIdx = selectedCovidEndYear - FIRST_YEAR_COVID;
+    return yearOptions.slice(0, selectedCovidEndYearIdx + 1);
   };
 
   const getEndYearOptions = () => {
-    const selectedStartYearIdx = selectedStartYear - FIRST_YEAR_COVID;
-    return yearOptions.slice(selectedStartYearIdx);
+    const selectedCovidStartYearIdx = selectedCovidStartYear - FIRST_YEAR_COVID;
+    return yearOptions.slice(selectedCovidStartYearIdx);
   };
 
   const handleSelectStartMonth = (e) => {
     const { value } = e;
-    setSelectedStartDate({ selectedStartMonth: value, selectedStartYear });
+    setSelectedCovidStartDate({
+      selectedCovidStartMonth: value,
+      selectedCovidStartYear,
+    });
   };
 
   const handleSelectEndMonth = (e) => {
     const { value } = e;
-    setSelectedEndDate({ selectedEndMonth: value, selectedEndYear });
+    setSelectedCovidEndDate({
+      selectedCovidEndMonth: value,
+      selectedCovidEndYear,
+    });
   };
 
   const handleSelectStartYear = (e) => {
     const { value } = e;
-    setSelectedStartDate({ selectedStartMonth, selectedStartYear: value });
+    setSelectedCovidStartDate({
+      selectedCovidStartMonth,
+      selectedCovidStartYear: value,
+    });
   };
 
   const handleSelectEndYear = (e) => {
     const { value } = e;
-    setSelectedEndDate({ selectedEndMonth, selectedEndYear: value });
+    setSelectedCovidEndDate({
+      selectedCovidEndMonth,
+      selectedCovidEndYear: value,
+    });
   };
 
   const getCovidCaseTimeSeries = (e) => {
@@ -355,8 +369,8 @@ const TimeSeries = ({ place }) => {
                 isMulti={false}
                 name="start-month-select"
                 value={{
-                  value: selectedStartMonth,
-                  label: selectedStartMonth,
+                  value: selectedCovidStartMonth,
+                  label: selectedCovidStartMonth,
                 }}
                 options={getStartMonthOptions().map((month) => ({
                   value: month,
@@ -371,8 +385,8 @@ const TimeSeries = ({ place }) => {
                 isMulti={false}
                 name="start-year-select"
                 value={{
-                  value: selectedStartYear,
-                  label: selectedStartYear,
+                  value: selectedCovidStartYear,
+                  label: selectedCovidStartYear,
                 }}
                 options={getStartYearOptions().map((year) => ({
                   value: year,
@@ -388,7 +402,10 @@ const TimeSeries = ({ place }) => {
                 width="200px"
                 isMulti={false}
                 name="end-month-select"
-                value={{ value: selectedEndMonth, label: selectedEndMonth }}
+                value={{
+                  value: selectedCovidEndMonth,
+                  label: selectedCovidEndMonth,
+                }}
                 options={getEndMonthOptions().map((month) => ({
                   value: month,
                   label: month,
@@ -401,7 +418,10 @@ const TimeSeries = ({ place }) => {
                 width="200px"
                 isMulti={false}
                 name="end-year-select"
-                value={{ value: selectedEndYear, label: selectedEndYear }}
+                value={{
+                  value: selectedCovidEndYear,
+                  label: selectedCovidEndYear,
+                }}
                 options={getEndYearOptions().map((year) => ({
                   value: year,
                   label: year,
@@ -417,7 +437,7 @@ const TimeSeries = ({ place }) => {
           <div className="chart-container">
             <ResponsiveContainer width="90%" height="100%">
               <LineChart
-                data={covidSeriesDataLoading ? [] : getCovidSeriesPlotPoints()}
+                data={covidSeriesDataLoading ? [] : covidSeriesData}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
@@ -447,6 +467,13 @@ const TimeSeries = ({ place }) => {
             </ResponsiveContainer>
           </div>
         </div>
+      )}
+      {Object.keys(vaccine).includes(place) && (
+        <div
+          className={`${place}-vaccine-time-series`}
+          height={windowHeight}
+          width={windowWidth}
+        ></div>
       )}
     </div>
   );
