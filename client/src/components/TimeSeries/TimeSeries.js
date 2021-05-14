@@ -4,6 +4,7 @@ import { customStyles } from "./reactSelectStyle";
 import useWindowDimensions from "../../customHooks/useWindowDimensions";
 
 import Select from "react-select";
+import CustomSwitch from "../CustomSwitch/CustomSwitch";
 import {
   LineChart,
   CartesianGrid,
@@ -124,8 +125,14 @@ const TimeSeries = ({ place }) => {
     selectedCovidEndYear: today.getFullYear(),
   });
 
+  const [cumulativeCovidSeries, setCumulativeCovidSeries] = useState(true);
+
   const [{ vaccineSeriesData, vaccineSeriesDataLoading }, setVaccineSeries] =
     useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: true });
+
+  useEffect(() => {
+    console.log(cumulativeCovidSeries);
+  }, [cumulativeCovidSeries]);
 
   useEffect(() => {
     //start month options might be limited based on year
@@ -226,11 +233,19 @@ const TimeSeries = ({ place }) => {
     } catch (err) {
       parsedData = {};
     }
-    const covidSeriesPlotPoints = getCovidSeriesPlotPoints(
+    const cumulativeCovidSeriesPlotPoints = getCovidSeriesPlotPoints(
       filterCovidSeriesData(parsedData)
     );
+    const dailyCovidSeriesPlotPoints = getDailyCovidSeriesPlotPoints(
+      cumulativeCovidSeriesPlotPoints
+    );
+
+    console.log(cumulativeCovidSeriesPlotPoints);
     setCovidSeries({
-      covidSeriesData: covidSeriesPlotPoints,
+      covidSeriesData: {
+        cumulative: cumulativeCovidSeriesPlotPoints,
+        daily: dailyCovidSeriesPlotPoints,
+      },
       covidSeriesDataLoading: false,
     });
   };
@@ -260,6 +275,43 @@ const TimeSeries = ({ place }) => {
         recovered: dateRecovered,
       };
     });
+    return data;
+  };
+
+  const getDailyCovidSeriesPlotPoints = (cumulativeData) => {
+    let data = [];
+    data.push(cumulativeData[0]);
+    for (let i = 1; i < cumulativeData.length; i++) {
+      const {
+        cases: yesterdayTotalCases,
+        deaths: yestedayTotalDeaths,
+        recovered: yesterdayTotalRecovered,
+      } = cumulativeData[i - 1];
+      const {
+        date: todayDate,
+        cases: todayTotalCases,
+        deaths: todayTotalDeaths,
+        recovered: todayTotalRecovered,
+      } = cumulativeData[i];
+      const todayNewCases =
+        todayTotalCases - yesterdayTotalCases >= 0
+          ? todayTotalCases - yesterdayTotalCases
+          : 0;
+      const todayNewDeaths =
+        todayTotalDeaths - yestedayTotalDeaths >= 0
+          ? todayTotalDeaths - yestedayTotalDeaths
+          : 0;
+      const todayNewRecovered =
+        todayTotalRecovered - yesterdayTotalRecovered >= 0
+          ? todayTotalRecovered - yesterdayTotalRecovered
+          : 0;
+      data.push({
+        date: todayDate,
+        cases: todayNewCases,
+        deaths: todayNewDeaths,
+        recovered: todayNewRecovered,
+      });
+    }
     return data;
   };
 
@@ -361,8 +413,15 @@ const TimeSeries = ({ place }) => {
           height={windowHeight}
           width={windowWidth}
         >
-          <div class="date-select-container">
-            <div class="start-date-select-container">
+          <div className="date-select-container">
+            <div className="covid-graph-type">
+              <CustomSwitch
+                label={"switch"}
+                state={cumulativeCovidSeries}
+                setState={setCumulativeCovidSeries}
+              />
+            </div>
+            <div className="start-date-select-container">
               <Select
                 styles={customStyles}
                 width="200px"
@@ -396,7 +455,7 @@ const TimeSeries = ({ place }) => {
                 closeMenuOnSelect={true}
               />
             </div>
-            <div class="end-date-select-container">
+            <div className="end-date-select-container">
               <Select
                 styles={customStyles}
                 width="200px"
@@ -437,7 +496,13 @@ const TimeSeries = ({ place }) => {
           <div className="chart-container">
             <ResponsiveContainer width="90%" height="100%">
               <LineChart
-                data={covidSeriesDataLoading ? [] : covidSeriesData}
+                data={
+                  covidSeriesDataLoading
+                    ? []
+                    : cumulativeCovidSeries
+                    ? covidSeriesData.cumulative
+                    : covidSeriesData.daily
+                }
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
