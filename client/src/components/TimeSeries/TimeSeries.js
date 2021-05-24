@@ -16,7 +16,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
 import { vaccine } from "../../data/vaccine";
 
@@ -538,7 +537,9 @@ const TimeSeries = ({ place }) => {
           className={`${place}-vaccine-time-series`}
           height={windowHeight}
           width={windowWidth}
-        ></div>
+        >
+          Vaccine
+        </div>
       )}
     </div>
   );
