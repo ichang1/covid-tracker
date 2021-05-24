@@ -137,7 +137,7 @@ const TimeSeries = ({ place }) => {
     //start month options might be limited based on year
     //make sure selected start month is still valid
     const selectedCovidStartMonthIdx = monthToNum[selectedCovidStartMonth];
-    if (selectedCovidStartMonthIdx >= getStartMonthOptions().length) {
+    if (selectedCovidStartMonthIdx >= getCovidStartMonthOptions().length) {
       setSelectedCovidStartDate({
         selectedCovidStartMonth: "January",
         selectedCovidStartYear,
@@ -149,8 +149,8 @@ const TimeSeries = ({ place }) => {
     //end month options might be limited based on year
     //make sure selected end month is still valid
     const selectedCovidEndMonthIdx = monthToNum[selectedCovidEndMonth];
-    if (selectedCovidEndMonthIdx >= getEndMonthOptions().length) {
-      const validEndMonths = getEndMonthOptions();
+    if (selectedCovidEndMonthIdx >= getCovidEndMonthOptions().length) {
+      const validEndMonths = getCovidEndMonthOptions();
       const lastValidEndMonth = validEndMonths[validEndMonths.length - 1];
       setSelectedCovidEndDate({
         selectedCovidEndMonth: lastValidEndMonth,
@@ -334,7 +334,7 @@ const TimeSeries = ({ place }) => {
     return;
   };
 
-  const getStartMonthOptions = () => {
+  const getCovidStartMonthOptions = () => {
     if (selectedCovidStartYear === selectedCovidEndYear) {
       //start month cannot be later than the end month for same year
       const selectedCovidEndMonthIdx = monthToNum[selectedCovidEndMonth];
@@ -344,7 +344,7 @@ const TimeSeries = ({ place }) => {
     }
   };
 
-  const getEndMonthOptions = () => {
+  const getCovidEndMonthOptions = () => {
     if (selectedCovidEndYear === today.getFullYear()) {
       const currentMonthIdx = today.getMonth();
       return monthOptions.slice(0, currentMonthIdx + 1);
@@ -357,17 +357,17 @@ const TimeSeries = ({ place }) => {
     }
   };
 
-  const getStartYearOptions = () => {
+  const getCovidStartYearOptions = () => {
     const selectedCovidEndYearIdx = selectedCovidEndYear - FIRST_YEAR_COVID;
     return yearOptions.slice(0, selectedCovidEndYearIdx + 1);
   };
 
-  const getEndYearOptions = () => {
+  const getCovidEndYearOptions = () => {
     const selectedCovidStartYearIdx = selectedCovidStartYear - FIRST_YEAR_COVID;
     return yearOptions.slice(selectedCovidStartYearIdx);
   };
 
-  const handleSelectStartMonth = (e) => {
+  const handleSelectCovidStartMonth = (e) => {
     const { value } = e;
     setSelectedCovidStartDate({
       selectedCovidStartMonth: value,
@@ -375,7 +375,7 @@ const TimeSeries = ({ place }) => {
     });
   };
 
-  const handleSelectEndMonth = (e) => {
+  const handleSelectCovidEndMonth = (e) => {
     const { value } = e;
     setSelectedCovidEndDate({
       selectedCovidEndMonth: value,
@@ -383,7 +383,7 @@ const TimeSeries = ({ place }) => {
     });
   };
 
-  const handleSelectStartYear = (e) => {
+  const handleSelectCovidStartYear = (e) => {
     const { value } = e;
     setSelectedCovidStartDate({
       selectedCovidStartMonth,
@@ -391,7 +391,7 @@ const TimeSeries = ({ place }) => {
     });
   };
 
-  const handleSelectEndYear = (e) => {
+  const handleSelectCovidEndYear = (e) => {
     const { value } = e;
     setSelectedCovidEndDate({
       selectedCovidEndMonth,
@@ -430,11 +430,11 @@ const TimeSeries = ({ place }) => {
                   value: selectedCovidStartMonth,
                   label: selectedCovidStartMonth,
                 }}
-                options={getStartMonthOptions().map((month) => ({
+                options={getCovidStartMonthOptions().map((month) => ({
                   value: month,
                   label: month,
                 }))}
-                onChange={handleSelectStartMonth}
+                onChange={handleSelectCovidStartMonth}
                 closeMenuOnSelect={true}
               />
               <Select
@@ -446,11 +446,11 @@ const TimeSeries = ({ place }) => {
                   value: selectedCovidStartYear,
                   label: selectedCovidStartYear,
                 }}
-                options={getStartYearOptions().map((year) => ({
+                options={getCovidStartYearOptions().map((year) => ({
                   value: year,
                   label: year,
                 }))}
-                onChange={handleSelectStartYear}
+                onChange={handleSelectCovidStartYear}
                 closeMenuOnSelect={true}
               />
             </div>
@@ -464,11 +464,11 @@ const TimeSeries = ({ place }) => {
                   value: selectedCovidEndMonth,
                   label: selectedCovidEndMonth,
                 }}
-                options={getEndMonthOptions().map((month) => ({
+                options={getCovidEndMonthOptions().map((month) => ({
                   value: month,
                   label: month,
                 }))}
-                onChange={handleSelectEndMonth}
+                onChange={handleSelectCovidEndMonth}
                 closeMenuOnSelect={true}
               />
               <Select
@@ -480,11 +480,11 @@ const TimeSeries = ({ place }) => {
                   value: selectedCovidEndYear,
                   label: selectedCovidEndYear,
                 }}
-                options={getEndYearOptions().map((year) => ({
+                options={getCovidEndYearOptions().map((year) => ({
                   value: year,
                   label: year,
                 }))}
-                onChange={handleSelectEndYear}
+                onChange={handleSelectCovidEndYear}
                 closeMenuOnSelect={true}
               />
             </div>
