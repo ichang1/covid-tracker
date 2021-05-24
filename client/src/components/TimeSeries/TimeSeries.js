@@ -54,9 +54,15 @@ const monthOptions = [
 const today = new Date();
 
 const FIRST_YEAR_COVID = 2020;
-const yearOptions = Array.from(
+const covidYearOptions = Array.from(
   new Array(today.getFullYear() - FIRST_YEAR_COVID + 1),
   (val, idx) => FIRST_YEAR_COVID + idx
+);
+
+const FIRST_YEAR_VACCINE = 2020;
+const vaccineYearOptions = Array.from(
+  new Array(today.getFullYear() - FIRST_YEAR_VACCINE + 1),
+  (val, idx) => FIRST_YEAR_VACCINE + idx
 );
 
 const BLUE = "#8884d8";
@@ -101,9 +107,9 @@ function parseUS_State(data) {
 }
 
 const TimeSeries = ({ place }) => {
-  // const [showCovidSeries, setShowCovidSeries] = useState(false);
-  // const [showVaccineSeries, setShowVaccineSeries] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
+
+  // state for covid series plot
 
   const [{ covidSeriesData, covidSeriesDataLoading }, setCovidSeries] =
     useState({ covidSeriesData: null, covidSeriesDataLoading: true });
@@ -126,12 +132,31 @@ const TimeSeries = ({ place }) => {
 
   const [cumulativeCovidSeries, setCumulativeCovidSeries] = useState(true);
 
+  // state for vaccine series plot
+
   const [{ vaccineSeriesData, vaccineSeriesDataLoading }, setVaccineSeries] =
     useState({ vaccineSeriesData: null, vaccineSeriesDataLoading: true });
 
-  useEffect(() => {
-    console.log(cumulativeCovidSeries);
-  }, [cumulativeCovidSeries]);
+  const [
+    { selectedVaccineStartMonth, selectedVaccineStartYear },
+    setSelectedVaccineStartDate,
+  ] = useState({
+    selectedVaccineStartMonth: "December",
+    selectedVaccineStartYear: FIRST_YEAR_VACCINE,
+  });
+
+  const [
+    { selectedVaccineEndMonth, selectedVaccineEndYear },
+    setSelectedVaccineEndDate,
+  ] = useState({
+    selectedVaccineEndMonth: monthOptions[today.getMonth()],
+    selectedVaccineEndYear: today.getFullYear(),
+  });
+
+  const [cumulativeVaccineSeries, setCumulativeVaccineSeries] = useState(true);
+
+  //=================================================================================
+  // code pertaining to covid series plot
 
   useEffect(() => {
     //start month options might be limited based on year
@@ -239,7 +264,6 @@ const TimeSeries = ({ place }) => {
       cumulativeCovidSeriesPlotPoints
     );
 
-    console.log(cumulativeCovidSeriesPlotPoints);
     setCovidSeries({
       covidSeriesData: {
         cumulative: cumulativeCovidSeriesPlotPoints,
@@ -314,26 +338,6 @@ const TimeSeries = ({ place }) => {
     return data;
   };
 
-  const getVaccineSeriesData = async () => {
-    const { api: url } = vaccine[place];
-    let parsedData;
-    try {
-      const res = await axios.get(url);
-      const data = res.data;
-      parsedData = data;
-    } catch (err) {
-      parsedData = {};
-    }
-    setVaccineSeries({
-      vaccineSeriesData: parsedData,
-      vaccineSeriesDataLoading: false,
-    });
-  };
-
-  const getVaccineSeriesPlot = (points) => {
-    return;
-  };
-
   const getCovidStartMonthOptions = () => {
     if (selectedCovidStartYear === selectedCovidEndYear) {
       //start month cannot be later than the end month for same year
@@ -345,13 +349,26 @@ const TimeSeries = ({ place }) => {
   };
 
   const getCovidEndMonthOptions = () => {
-    if (selectedCovidEndYear === today.getFullYear()) {
-      const currentMonthIdx = today.getMonth();
-      return monthOptions.slice(0, currentMonthIdx + 1);
+    if (
+      selectedCovidEndYear === selectedCovidStartYear &&
+      selectedCovidEndYear === today.getFullYear()
+    ) {
+      //start and end on same year
+      //same year is current year irl
+      //valid months from selected start month to current month irl
+      const selectedCovidStartMonthIdx = monthToNum[selectedCovidStartMonth];
+      console.log(selectedCovidStartMonthIdx);
+      return monthOptions.slice(
+        selectedCovidStartMonthIdx,
+        today.getMonth() + 1
+      );
     } else if (selectedCovidEndYear === selectedCovidStartYear) {
-      // lower bound for end month
+      // end month cannot be earlier than start month for same year
       const selectedCovidStartMonthIdx = monthToNum[selectedCovidStartMonth];
       return monthOptions.slice(selectedCovidStartMonthIdx);
+    } else if (selectedCovidEndYear === today.getFullYear()) {
+      // end month cannot be later than current month irl
+      return monthOptions.slice(0, today.getMonth() + 1);
     } else {
       return monthOptions;
     }
@@ -359,12 +376,12 @@ const TimeSeries = ({ place }) => {
 
   const getCovidStartYearOptions = () => {
     const selectedCovidEndYearIdx = selectedCovidEndYear - FIRST_YEAR_COVID;
-    return yearOptions.slice(0, selectedCovidEndYearIdx + 1);
+    return covidYearOptions.slice(0, selectedCovidEndYearIdx + 1);
   };
 
   const getCovidEndYearOptions = () => {
     const selectedCovidStartYearIdx = selectedCovidStartYear - FIRST_YEAR_COVID;
-    return yearOptions.slice(selectedCovidStartYearIdx);
+    return covidYearOptions.slice(selectedCovidStartYearIdx);
   };
 
   const handleSelectCovidStartMonth = (e) => {
@@ -404,6 +421,224 @@ const TimeSeries = ({ place }) => {
     setCovidSeries({ covidSeriesData: null, covidSeriesDataLoading: true });
   };
 
+  //=========================================================================================
+  // code pertaining to vaccine series plot
+
+  useEffect(() => {
+    //start month options might be limited based on year
+    //make sure selected start month is still valid
+    const selectedVaccineStartMonthIdx = monthToNum[selectedVaccineStartMonth];
+    if (selectedVaccineStartMonthIdx >= getVaccineStartMonthOptions().length) {
+      setSelectedVaccineStartDate({
+        selectedVaccineStartMonth:
+          selectedVaccineStartYear === FIRST_YEAR_VACCINE
+            ? "December"
+            : "January",
+        selectedVaccineStartYear,
+      });
+    }
+  }, [selectedVaccineStartYear]);
+
+  useEffect(() => {
+    //end month options might be limited based on year
+    //make sure selected end month is still valid
+    const selectedVaccineEndMonthIdx = monthToNum[selectedVaccineEndMonth];
+    if (selectedVaccineEndMonthIdx >= getVaccineEndMonthOptions().length) {
+      const validEndMonths = getVaccineEndMonthOptions();
+      const lastValidEndMonth = validEndMonths[validEndMonths.length - 1];
+      setSelectedVaccineEndDate({
+        selectedVaccineEndMonth: lastValidEndMonth,
+        selectedVaccineEndYear,
+      });
+    }
+  }, [selectedVaccineEndYear]);
+
+  useEffect(() => {
+    if (Object.keys(timeSeries).includes(place) && vaccineSeriesDataLoading) {
+      // get covid series data
+      getVaccineSeriesData();
+    }
+  }, [vaccineSeriesDataLoading]);
+
+  const filterVaccineSeriesData = (parsedData) => {
+    //filter data based on time range selected
+
+    const dateLowerBound = yearMonthToDecimal(
+      selectedVaccineStartYear,
+      selectedVaccineStartMonth
+    );
+    const dateUpperBound = yearMonthToDecimal(
+      selectedVaccineEndYear,
+      selectedVaccineEndMonth
+    );
+
+    const filtered = parsedData.filter((dateStats) => {
+      const dateParts = dateStats.date.split("/");
+      const month = parseInt(dateParts[0]) - 1;
+      const year = parseInt(dateParts[2]) + 2000;
+      const decimalFormat = yearMonthToDecimal(year, monthOptions[month]);
+      return dateLowerBound <= decimalFormat && decimalFormat <= dateUpperBound;
+    });
+
+    return filtered;
+  };
+
+  const getVaccineSeriesData = async () => {
+    const { api: url } = vaccine[place];
+    let parsedData;
+    try {
+      const res = await axios.get(url);
+      parsedData = res.data.timeline;
+    } catch (err) {
+      parsedData = {};
+    }
+    const vaccineData = getVaccineSeriesPlotPoints(
+      filterVaccineSeriesData(parsedData)
+    );
+
+    const cumulativeVaccineSeriesPlotPoints = vaccineData.map(
+      ({ total: doses, date }) => ({ doses, date })
+    );
+
+    const dailyVaccineSeriesPlotPoints = vaccineData.map(
+      ({ daily: doses, date }) => ({ doses, date })
+    );
+
+    setVaccineSeries({
+      vaccineSeriesData: {
+        cumulative: cumulativeVaccineSeriesPlotPoints,
+        daily: dailyVaccineSeriesPlotPoints,
+      },
+      vaccineSeriesDataLoading: false,
+    });
+  };
+
+  const getVaccineSeriesPlotPoints = (filteredData) => {
+    // filtered data is a list of objects
+    // sort the list by date
+    const sortedData = filteredData.sort((a, b) => {
+      const aYear = a.date.split("/")[2] + 2000;
+
+      const aMonthIdx = parseInt(a.date.split("/")[0]) - 1;
+      const aMonth = monthOptions[aMonthIdx];
+      const aDecimal = yearMonthToDecimal(aYear, aMonth);
+
+      const bYear = b.date.split("/")[2] + 2000;
+
+      const bMonthIdx = parseInt(b.date.split("/")[0]) - 1;
+      const bMonth = monthOptions[bMonthIdx];
+      const bDecimal = yearMonthToDecimal(bYear, bMonth);
+      return aDecimal - bDecimal;
+    });
+    const data = sortedData.map((dateData) => {
+      const { total, daily, date } = dateData;
+      return {
+        date,
+        total,
+        daily,
+      };
+    });
+    return data;
+  };
+
+  const getVaccineStartMonthOptions = () => {
+    if (selectedVaccineStartYear === FIRST_YEAR_VACCINE) {
+      return ["December"];
+    } else if (selectedVaccineStartYear === selectedVaccineEndYear) {
+      //start month cannot be later than the end month for same year
+      const selectedVaccineEndMonthIdx = monthToNum[selectedVaccineEndMonth];
+      return monthOptions.slice(0, selectedVaccineEndMonthIdx + 1);
+    } else {
+      return monthOptions;
+    }
+  };
+
+  const getVaccineEndMonthOptions = () => {
+    if (
+      selectedVaccineEndYear === selectedVaccineStartYear &&
+      selectedVaccineEndYear === today.getFullYear()
+    ) {
+      //start and end on same year
+      //same year is current year irl
+      //valid months from selected start month to current month irl
+      const selectedVaccineStartMonthIdx =
+        monthToNum[selectedVaccineStartMonth];
+      console.log(selectedVaccineStartMonthIdx);
+      return monthOptions.slice(
+        selectedVaccineStartMonthIdx,
+        today.getMonth() + 1
+      );
+    } else if (selectedVaccineEndYear === selectedVaccineStartYear) {
+      // end month cannot be earlier than start month for same year
+      const selectedVaccineStartMonthIdx =
+        monthToNum[selectedVaccineStartMonth];
+      return monthOptions.slice(selectedVaccineStartMonthIdx);
+    } else if (selectedVaccineEndYear === today.getFullYear()) {
+      // end month cannot be later than current month irl
+      return monthOptions.slice(0, today.getMonth() + 1);
+    } else {
+      return monthOptions;
+    }
+  };
+
+  const getVaccineStartYearOptions = () => {
+    const selectedVaccineEndYearIdx =
+      selectedVaccineEndYear - FIRST_YEAR_VACCINE;
+    return vaccineYearOptions.slice(0, selectedVaccineEndYearIdx + 1);
+  };
+
+  const getVaccineEndYearOptions = () => {
+    const selectedVaccineStartYearIdx =
+      selectedVaccineStartYear - FIRST_YEAR_VACCINE;
+    return vaccineYearOptions.slice(selectedVaccineStartYearIdx);
+  };
+
+  const handleSelectVaccineStartMonth = (e) => {
+    const { value } = e;
+    setSelectedVaccineStartDate({
+      selectedVaccineStartMonth: value,
+      selectedVaccineStartYear,
+    });
+  };
+
+  const handleSelectVaccineEndMonth = (e) => {
+    const { value } = e;
+    setSelectedVaccineEndDate({
+      selectedVaccineEndMonth: value,
+      selectedVaccineEndYear,
+    });
+  };
+
+  const handleSelectVaccineStartYear = (e) => {
+    const { value } = e;
+    if (value === FIRST_YEAR_VACCINE) {
+      setSelectedVaccineStartDate({
+        selectedVaccineStartMonth,
+        selectedVaccineStartYear: "December",
+      });
+    }
+    setSelectedVaccineStartDate({
+      selectedVaccineStartMonth,
+      selectedVaccineStartYear: value,
+    });
+  };
+
+  const handleSelectVaccineEndYear = (e) => {
+    const { value } = e;
+    setSelectedVaccineEndDate({
+      selectedVaccineEndMonth,
+      selectedVaccineEndYear: value,
+    });
+  };
+
+  const getVaccineTimeSeries = (e) => {
+    e.preventDefault();
+    setVaccineSeries({
+      vaccineSeriesData: null,
+      vaccineSeriesDataLoading: true,
+    });
+  };
+
   return (
     <div className="time-series">
       {Object.keys(timeSeries).includes(place) && (
@@ -412,20 +647,20 @@ const TimeSeries = ({ place }) => {
           height={windowHeight}
           width={windowWidth}
         >
-          <div className="date-select-container">
+          <div className="covid-date-select-container">
             <div className="covid-graph-type">
               <CustomSwitch
-                label={"switch"}
+                label={"Cumulative"}
                 state={cumulativeCovidSeries}
                 setState={setCumulativeCovidSeries}
               />
             </div>
-            <div className="start-date-select-container">
+            <div className="covid-start-date-select-container">
               <Select
                 styles={customStyles}
                 width="200px"
                 isMulti={false}
-                name="start-month-select"
+                name="covid-start-month-select"
                 value={{
                   value: selectedCovidStartMonth,
                   label: selectedCovidStartMonth,
@@ -441,7 +676,7 @@ const TimeSeries = ({ place }) => {
                 styles={customStyles}
                 width="200px"
                 isMulti={false}
-                name="start-year-select"
+                name="covid-start-year-select"
                 value={{
                   value: selectedCovidStartYear,
                   label: selectedCovidStartYear,
@@ -454,12 +689,12 @@ const TimeSeries = ({ place }) => {
                 closeMenuOnSelect={true}
               />
             </div>
-            <div className="end-date-select-container">
+            <div className="covid-end-date-select-container">
               <Select
                 styles={customStyles}
                 width="200px"
                 isMulti={false}
-                name="end-month-select"
+                name="covid-end-month-select"
                 value={{
                   value: selectedCovidEndMonth,
                   label: selectedCovidEndMonth,
@@ -475,7 +710,7 @@ const TimeSeries = ({ place }) => {
                 styles={customStyles}
                 width="200px"
                 isMulti={false}
-                name="end-year-select"
+                name="covid-end-year-select"
                 value={{
                   value: selectedCovidEndYear,
                   label: selectedCovidEndYear,
@@ -492,7 +727,7 @@ const TimeSeries = ({ place }) => {
               Get Covid Cases Time Series
             </button>
           </div>
-          <div className="chart-container">
+          <div className="covid-chart-container">
             <ResponsiveContainer width="90%" height="100%">
               <LineChart
                 data={
@@ -538,7 +773,112 @@ const TimeSeries = ({ place }) => {
           height={windowHeight}
           width={windowWidth}
         >
-          Vaccine
+          <div className="vaccine-date-select-container">
+            <div className="vaccine-graph-type">
+              <CustomSwitch
+                label={"Cumulative"}
+                state={cumulativeVaccineSeries}
+                setState={setCumulativeVaccineSeries}
+              />
+            </div>
+            <div className="vaccine-start-date-select-container">
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="vaccine-start-month-select"
+                value={{
+                  value: selectedVaccineStartMonth,
+                  label: selectedVaccineStartMonth,
+                }}
+                options={getVaccineStartMonthOptions().map((month) => ({
+                  value: month,
+                  label: month,
+                }))}
+                onChange={handleSelectVaccineStartMonth}
+                closeMenuOnSelect={true}
+              />
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="vaccine-start-year-select"
+                value={{
+                  value: selectedVaccineStartYear,
+                  label: selectedVaccineStartYear,
+                }}
+                options={getVaccineStartYearOptions().map((year) => ({
+                  value: year,
+                  label: year,
+                }))}
+                onChange={handleSelectVaccineStartYear}
+                closeMenuOnSelect={true}
+              />
+            </div>
+            <div className="vaccine-end-date-select-container">
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="vaccine-end-month-select"
+                value={{
+                  value: selectedVaccineEndMonth,
+                  label: selectedVaccineEndMonth,
+                }}
+                options={getVaccineEndMonthOptions().map((month) => ({
+                  value: month,
+                  label: month,
+                }))}
+                onChange={handleSelectVaccineEndMonth}
+                closeMenuOnSelect={true}
+              />
+              <Select
+                styles={customStyles}
+                width="200px"
+                isMulti={false}
+                name="end-year-select"
+                value={{
+                  value: selectedVaccineEndYear,
+                  label: selectedVaccineEndYear,
+                }}
+                options={getVaccineEndYearOptions().map((year) => ({
+                  value: year,
+                  label: year,
+                }))}
+                onChange={handleSelectVaccineEndYear}
+                closeMenuOnSelect={true}
+              />
+            </div>
+            <button onClick={getVaccineTimeSeries}>
+              Get Vaccine Doses Time Series
+            </button>
+          </div>
+          <div className="vaccine-chart-container">
+            <ResponsiveContainer width="90%" height="100%">
+              <LineChart
+                data={
+                  vaccineSeriesDataLoading
+                    ? []
+                    : cumulativeVaccineSeries
+                    ? vaccineSeriesData.cumulative
+                    : vaccineSeriesData.daily
+                }
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                  dot={false}
+                  type="monotone"
+                  dataKey={"doses"}
+                  stroke={GREEN}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       )}
     </div>
