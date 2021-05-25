@@ -3,16 +3,18 @@ import "./Map.css";
 
 import ReactMapGl, { Popup, Source, Layer } from "react-map-gl";
 import { Link } from "react-router-dom";
-import Markers from "../Markers/Markers";
-import TimeSeries from "../TimeSeries/TimeSeries";
 
 import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
-import { vaccine } from "../../data/vaccine";
 import { source, layerStyle } from "./covidData";
 
 import axios from "axios";
 
+/**
+ * function parses covid data from Worldometers api
+ * @param {{cases/todayCases/deaths/todayDeaths/recovered/active: Number, ...}} data
+ * @returns Object with total number of cases, current number of deaths/recovered/infected and today cases/deaths
+ */
 function parseWorldometers(data) {
   if (Object.keys(data).includes("message")) {
     const { message } = data;
@@ -30,11 +32,17 @@ function parseWorldometers(data) {
   return parsedData;
 }
 
+/**
+ * function parses covid data from John Hopkins api
+ * @param {Object[]} data list of objects with covid data for all countries and their provinces
+ * @param {String} place  name of the province
+ * @returns
+ */
 function parseJHUCSSE(data, place) {
   const filteredPlaces = data.filter(
     (placeData) => placeData.province === place
   );
-  if (filteredPlaces.length !== 1) {
+  if (filteredPlaces.length < 1) {
     return { message: `Covid data for ${place} not found.` };
   }
 
@@ -48,6 +56,12 @@ function parseJHUCSSE(data, place) {
   return parsedData;
 }
 
+/**
+ *
+ * @param {Object} data
+ * @param {String} place
+ * @returns Object with covid statistics
+ */
 function parseData(data, place) {
   const { api } = locations[place];
   const parsedData =
@@ -56,6 +70,11 @@ function parseData(data, place) {
       : parseJHUCSSE(data, place);
   return parsedData;
 }
+
+const mapbox_style =
+  "mapbox://styles/isaacc/ckmcxu2s609qb17rwla4bcixc?optimize=true";
+
+//============================================================================================================
 
 const Map = () => {
   const INITIAL_VIEWPORT = {
@@ -78,10 +97,13 @@ const Map = () => {
 
   useEffect(() => {
     if (selectedPlace) {
-      getPopupBody(selectedPlace);
+      getPopupBodyData(selectedPlace);
     }
   }, [selectedPlace]);
 
+  /**
+   * Add event listener on mount for popup
+   */
   useEffect(() => {
     const listener = (e) => {
       if (e.key === "Escape") {
@@ -94,10 +116,17 @@ const Map = () => {
     };
   }, []);
 
+  /**
+   * handles clicking on map marker
+   * @param {event} e
+   */
   const handleClick = (e) => {
+    // get the features that are related to our defined covid data
     const covidFeatures = e.features.filter(
       (feat) => feat.source === "covidData"
     );
+
+    // get the first covid data feature and make a popup
     if (covidFeatures.length > 0) {
       const place = covidFeatures[0]?.properties?.name;
       setSelectedPlace(place);
@@ -105,19 +134,32 @@ const Map = () => {
     }
   };
 
+  /**
+   * handles hovering over a map marker
+   * @param {event} e
+   */
   const handleHover = (e) => {
+    // get the features that are related to our defne covid data
     const covidFeatures = e.features.filter(
       (feat) => feat.source === "covidData"
     );
+
+    // get the first covid data feature
     if (covidFeatures.length > 0 && !e.target.className.includes("popup")) {
+      // make sure the target hovered over isn't a popup, but a marker
+      // show the name of the place
       setHoverPlaceName(covidFeatures[0]?.properties?.name);
       setShowPlaceName(true);
     } else {
+      // don't show anything
       setShowPlaceName(false);
       setHoverPlaceName("");
     }
   };
 
+  /**
+   * load the map marker image when the map loads
+   */
   useEffect(() => {
     const map = mapRef.current.getMap();
     map.on("load", () => {
@@ -131,28 +173,12 @@ const Map = () => {
     });
   }, [mapRef]);
 
-  // const handleMarkerClick = useCallback(
-  //   (place) => {
-  //     setSelectedPlace(place);
-  //     setPopupData({ popupData: null, popupDataLoading: true });
-  //   },
-  //   [setSelectedPlace, setPopupData]
-  // );
-
-  // const handleMarkerMouseEnter = useCallback(
-  //   (place) => {
-  //     setHoverPlaceName(place);
-  //     setShowPlaceName(true);
-  //   },
-  //   [setHoverPlaceName, setShowPlaceName]
-  // );
-
-  // const handleMarkerMouseLeave = useCallback(() => {
-  //   setHoverPlaceName("");
-  //   setShowPlaceName(false);
-  // }, [setHoverPlaceName, setShowPlaceName]);
-
-  const getPopupBodyJSX = (parsedData) => {
+  /**
+   * functions returns JSX given the object with the covid statistics
+   * @param {*} parsedData
+   * @returns JSX for the popup with the covid statistics for the clicked placed
+   */
+  const getPopupBodyDataJSX = (parsedData) => {
     const dataToShow = [];
     const { Place: place } = parsedData;
     Object.entries(parsedData).forEach(([key, val]) => {
@@ -178,7 +204,11 @@ const Map = () => {
     return popupBodyJSX;
   };
 
-  const getPopupBody = async (place) => {
+  /**
+   * gets the covid statistics of a place with an api call
+   * @param {String} place name of a place
+   */
+  const getPopupBodyData = async (place) => {
     const { url } = locations[selectedPlace];
     let parsedData;
     try {
@@ -189,9 +219,6 @@ const Map = () => {
     }
     setPopupData({ popupData: parsedData, popupDataLoading: false });
   };
-
-  const mapbox_style =
-    "mapbox://styles/isaacc/ckmcxu2s609qb17rwla4bcixc?optimize=true";
 
   return (
     <div className="map-container">
@@ -219,7 +246,7 @@ const Map = () => {
               setSelectedPlace(null);
             }}
           >
-            {popupDataLoading ? "Loading..." : getPopupBodyJSX(popupData)}
+            {popupDataLoading ? "Loading..." : getPopupBodyDataJSX(popupData)}
           </Popup>
         ) : null}
         {showPlaceName && !(selectedPlace === hoverPlaceName) ? (
@@ -263,11 +290,4 @@ const Map = () => {
   );
 };
 
-// <Markers
-//   data={Object.entries(locations)}
-//   zoom={viewport.zoom}
-//   handleMarkerClick={handleMarkerClick}
-//   handleMarkerMouseEnter={handleMarkerMouseEnter}
-//   handleMarkerMouseLeave={handleMarkerMouseLeave}
-// />;
 export default Map;

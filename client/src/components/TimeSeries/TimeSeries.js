@@ -56,42 +56,55 @@ const today = new Date();
 const FIRST_YEAR_COVID = 2020;
 const covidYearOptions = Array.from(
   new Array(today.getFullYear() - FIRST_YEAR_COVID + 1),
-  (val, idx) => FIRST_YEAR_COVID + idx
+  (_val, idx) => FIRST_YEAR_COVID + idx
 );
 
 const FIRST_YEAR_VACCINE = 2020;
 const vaccineYearOptions = Array.from(
   new Array(today.getFullYear() - FIRST_YEAR_VACCINE + 1),
-  (val, idx) => FIRST_YEAR_VACCINE + idx
+  (_val, idx) => FIRST_YEAR_VACCINE + idx
 );
 
 const BLUE = "#8884d8";
 const GREEN = "#82ca9d";
 const RED = "#E7625F";
 
+/**
+ *
+ * @param {{timeline: {cases: Object, deaths: Object, recovered: Object}[]} data
+ * @returns
+ */
 function parseUS_State(data) {
   const dates = Object.keys(data[0].timeline.cases);
   const parsedCases = {};
   const parsedDeaths = {};
   const parsedRecovered = {};
   data.forEach((countyData) => {
+    // for every county
     const { cases, deaths, recovered } = countyData.timeline;
-    //apparently recovered is not actually given in the api
+
     dates.forEach((date) => {
-      if (Object.keys(parsedCases).includes(date)) {
+      // find total number of cases/deaths/recoverd for this date
+
+      if (parsedCases[date] !== undefined) {
+        // not first time calculating total cases for this date
         parsedCases[date] += cases[date];
       } else {
         parsedCases[date] = cases[date];
       }
-      if (Object.keys(parsedDeaths).includes(date)) {
+      if (parsedDeaths[date] !== undefined) {
+        // not first time calculating total deaths for this date
         parsedDeaths[date] += deaths[date];
       } else {
         parsedDeaths[date] = deaths[date];
       }
-      if (recovered == undefined) {
+      if (recovered === undefined) {
+        // recovered seems to be not provided at this point in the api
+        // make the default value to be 0
         parsedRecovered[date] = 0;
       } else {
-        if (Object.keys(parsedRecovered).includes(date)) {
+        if (parsedRecovered[date] !== undefined) {
+          // not first time calclating total deaths for this date
           parsedRecovered[date] += recovered[date];
         } else {
           parsedRecovered[date] = recovered[date];
@@ -130,7 +143,8 @@ const TimeSeries = ({ place }) => {
     selectedCovidEndYear: today.getFullYear(),
   });
 
-  const [cumulativeCovidSeries, setCumulativeCovidSeries] = useState(true);
+  const [showCumulativeCovidSeries, setShowCumulativeCovidSeries] =
+    useState(true);
 
   // state for vaccine series plot
 
@@ -153,7 +167,8 @@ const TimeSeries = ({ place }) => {
     selectedVaccineEndYear: today.getFullYear(),
   });
 
-  const [cumulativeVaccineSeries, setCumulativeVaccineSeries] = useState(true);
+  const [showCumulativeVaccineSeries, setShowCumulativeVaccineSeries] =
+    useState(true);
 
   //=================================================================================
   // code pertaining to covid series plot
@@ -257,16 +272,16 @@ const TimeSeries = ({ place }) => {
     } catch (err) {
       parsedData = {};
     }
-    const cumulativeCovidSeriesPlotPoints = getCovidSeriesPlotPoints(
+    const showCumulativeCovidSeriesPlotPoints = getCovidSeriesPlotPoints(
       filterCovidSeriesData(parsedData)
     );
     const dailyCovidSeriesPlotPoints = getDailyCovidSeriesPlotPoints(
-      cumulativeCovidSeriesPlotPoints
+      showCumulativeCovidSeriesPlotPoints
     );
 
     setCovidSeries({
       covidSeriesData: {
-        cumulative: cumulativeCovidSeriesPlotPoints,
+        cumulative: showCumulativeCovidSeriesPlotPoints,
         daily: dailyCovidSeriesPlotPoints,
       },
       covidSeriesDataLoading: false,
@@ -651,8 +666,8 @@ const TimeSeries = ({ place }) => {
             <div className="covid-graph-type">
               <CustomSwitch
                 label={"Cumulative"}
-                state={cumulativeCovidSeries}
-                setState={setCumulativeCovidSeries}
+                state={showCumulativeCovidSeries}
+                setState={setShowCumulativeCovidSeries}
               />
             </div>
             <div className="covid-start-date-select-container">
@@ -733,7 +748,7 @@ const TimeSeries = ({ place }) => {
                 data={
                   covidSeriesDataLoading
                     ? []
-                    : cumulativeCovidSeries
+                    : showCumulativeCovidSeries
                     ? covidSeriesData.cumulative
                     : covidSeriesData.daily
                 }
@@ -777,8 +792,8 @@ const TimeSeries = ({ place }) => {
             <div className="vaccine-graph-type">
               <CustomSwitch
                 label={"Cumulative"}
-                state={cumulativeVaccineSeries}
-                setState={setCumulativeVaccineSeries}
+                state={showCumulativeVaccineSeries}
+                setState={setShowCumulativeVaccineSeries}
               />
             </div>
             <div className="vaccine-start-date-select-container">
@@ -859,7 +874,7 @@ const TimeSeries = ({ place }) => {
                 data={
                   vaccineSeriesDataLoading
                     ? []
-                    : cumulativeVaccineSeries
+                    : showCumulativeVaccineSeries
                     ? vaccineSeriesData.cumulative
                     : vaccineSeriesData.daily
                 }

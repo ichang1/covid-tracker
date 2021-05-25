@@ -4,9 +4,7 @@ import Map from "../Map/Map";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TimeSeries from "../TimeSeries/TimeSeries";
 
-import { locations } from "../../data/locations";
 import { timeSeries } from "../../data/timeSeries";
-import { vaccine } from "../../data/vaccine";
 
 function App() {
   return (
@@ -27,7 +25,17 @@ function App() {
               )}
             />
           ))}
-          <Route path="/" render={() => <div>404</div>} />
+          <Route
+            path="*"
+            render={() => (
+              <div className="error-page-container">
+                <h1 style={{ "text-align": "center" }}>404 Error</h1>
+                <h2 style={{ "text-align": "center" }}>
+                  Page not found. Invalid URL.
+                </h2>
+              </div>
+            )}
+          />
         </Switch>
       </div>
     </Router>
