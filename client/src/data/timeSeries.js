@@ -20,8 +20,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Antigua and Barbuda": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Antigua%20and%20Barbuda?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Antigua%20and%20Barbuda?lastdays=all",
     US_State: false,
   },
   Argentina: {
@@ -33,43 +32,35 @@ export const timeSeries = {
     US_State: false,
   },
   "Australian Capital Territory": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/australian%20capital%20territory?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/australian%20capital%20territory?lastdays=all",
     US_State: false,
   },
   "New South Wales": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/new%20south%20wales?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/new%20south%20wales?lastdays=all",
     US_State: false,
   },
   "Northern Territory": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/northern%20territory?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/northern%20territory?lastdays=all",
     US_State: false,
   },
   Queensland: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/queensland?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/queensland?lastdays=all",
     US_State: false,
   },
   "South Australia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/south%20australia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/south%20australia?lastdays=all",
     US_State: false,
   },
   Tasmania: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/tasmania?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/tasmania?lastdays=all",
     US_State: false,
   },
   Victoria: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/victoria?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/victoria?lastdays=all",
     US_State: false,
   },
   "Western Australia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Australia/western%20australia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Australia/western%20australia?lastdays=all",
     US_State: false,
   },
   Austria: {
@@ -141,8 +132,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Burkina Faso": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Burkina%20Faso?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Burkina%20Faso?lastdays=all",
     US_State: false,
   },
   Myanmar: {
@@ -166,53 +156,43 @@ export const timeSeries = {
     US_State: false,
   },
   Alberta: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/alberta?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/alberta?lastdays=all",
     US_State: false,
   },
   "British Columbia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/british%20columbia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/british%20columbia?lastdays=all",
     US_State: false,
   },
   Manitoba: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/manitoba?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/manitoba?lastdays=all",
     US_State: false,
   },
   "New Brunswick": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/new%20brunswick?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/new%20brunswick?lastdays=all",
     US_State: false,
   },
   "Newfoundland and Labrador": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/newfoundland%20and%20labrador?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/newfoundland%20and%20labrador?lastdays=all",
     US_State: false,
   },
   "Northwest Territories": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/northwest%20territories?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/northwest%20territories?lastdays=all",
     US_State: false,
   },
   "Nova Scotia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/nova%20scotia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/nova%20scotia?lastdays=all",
     US_State: false,
   },
   Nunavut: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/nunavut?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/nunavut?lastdays=all",
     US_State: false,
   },
   Ontario: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/ontario?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/ontario?lastdays=all",
     US_State: false,
   },
   "Prince Edward Island": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/prince%20edward%20island?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/prince%20edward%20island?lastdays=all",
     US_State: false,
   },
   Quebec: {
@@ -220,13 +200,11 @@ export const timeSeries = {
     US_State: false,
   },
   "Repatriated Travellers": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/repatriated%20travellers?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/repatriated%20travellers?lastdays=all",
     US_State: false,
   },
   Saskatchewan: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Canada/saskatchewan?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Canada/saskatchewan?lastdays=all",
     US_State: false,
   },
   Yukon: {
@@ -234,8 +212,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Central African Republic": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Central%20African%20Republic?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Central%20African%20Republic?lastdays=all",
     US_State: false,
   },
   Chad: {
@@ -255,8 +232,7 @@ export const timeSeries = {
     US_State: false,
   },
   Chongqing: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/chongqing?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/chongqing?lastdays=all",
     US_State: false,
   },
   Fujian: {
@@ -268,8 +244,7 @@ export const timeSeries = {
     US_State: false,
   },
   Guangdong: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/guangdong?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/guangdong?lastdays=all",
     US_State: false,
   },
   Guangxi: {
@@ -289,8 +264,7 @@ export const timeSeries = {
     US_State: false,
   },
   Heilongjiang: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/heilongjiang?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/heilongjiang?lastdays=all",
     US_State: false,
   },
   Henan: {
@@ -298,8 +272,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Hong Kong": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/hong%20kong?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/hong%20kong?lastdays=all",
     US_State: false,
   },
   Hubei: {
@@ -311,8 +284,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Inner Mongolia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/inner%20mongolia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/inner%20mongolia?lastdays=all",
     US_State: false,
   },
   Jiangsu: {
@@ -328,8 +300,7 @@ export const timeSeries = {
     US_State: false,
   },
   Liaoning: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/liaoning?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/liaoning?lastdays=all",
     US_State: false,
   },
   Macau: {
@@ -349,13 +320,11 @@ export const timeSeries = {
     US_State: false,
   },
   Shandong: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/shandong?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/shandong?lastdays=all",
     US_State: false,
   },
   Shanghai: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/shanghai?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/shanghai?lastdays=all",
     US_State: false,
   },
   Shanxi: {
@@ -375,8 +344,7 @@ export const timeSeries = {
     US_State: false,
   },
   Xinjiang: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/xinjiang?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/xinjiang?lastdays=all",
     US_State: false,
   },
   Yunnan: {
@@ -384,8 +352,7 @@ export const timeSeries = {
     US_State: false,
   },
   Zhejiang: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/China/zhejiang?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/China/zhejiang?lastdays=all",
     US_State: false,
   },
   Colombia: {
@@ -409,8 +376,7 @@ export const timeSeries = {
     US_State: false,
   },
   "C\u00f4te D'ivoire": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/C\u00f4te%20d'Ivoire?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/C\u00f4te%20d'Ivoire?lastdays=all",
     US_State: false,
   },
   Croatia: {
@@ -430,13 +396,11 @@ export const timeSeries = {
     US_State: false,
   },
   "Faroe Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Denmark/faroe%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Denmark/faroe%20islands?lastdays=all",
     US_State: false,
   },
   Greenland: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Denmark/greenland?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Denmark/greenland?lastdays=all",
     US_State: false,
   },
   Denmark: {
@@ -452,8 +416,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Dominican Republic": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Dominican%20Republic?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Dominican%20Republic?lastdays=all",
     US_State: false,
   },
   Ecuador: {
@@ -469,8 +432,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Equatorial Guinea": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Equatorial%20Guinea?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Equatorial%20Guinea?lastdays=all",
     US_State: false,
   },
   Eritrea: {
@@ -498,58 +460,47 @@ export const timeSeries = {
     US_State: false,
   },
   "French Guiana": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/french%20guiana?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/french%20guiana?lastdays=all",
     US_State: false,
   },
   "French Polynesia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/french%20polynesia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/french%20polynesia?lastdays=all",
     US_State: false,
   },
   Guadeloupe: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/guadeloupe?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/guadeloupe?lastdays=all",
     US_State: false,
   },
   Martinique: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/martinique?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/martinique?lastdays=all",
     US_State: false,
   },
   Mayotte: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/mayotte?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/mayotte?lastdays=all",
     US_State: false,
   },
   "New Caledonia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/new%20caledonia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/new%20caledonia?lastdays=all",
     US_State: false,
   },
   Reunion: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/reunion?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/reunion?lastdays=all",
     US_State: false,
   },
   "Saint Barthelemy": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/saint%20barthelemy?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/saint%20barthelemy?lastdays=all",
     US_State: false,
   },
   "Saint Pierre and Miquelon": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/saint%20pierre%20and%20miquelon?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/saint%20pierre%20and%20miquelon?lastdays=all",
     US_State: false,
   },
   "St Martin": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/st%20martin?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/st%20martin?lastdays=all",
     US_State: false,
   },
   "Wallis and Futuna": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/France/wallis%20and%20futuna?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/France/wallis%20and%20futuna?lastdays=all",
     US_State: false,
   },
   France: {
@@ -564,9 +515,8 @@ export const timeSeries = {
     api: "https://disease.sh/v3/covid-19/historical/Gambia?lastdays=all",
     US_State: false,
   },
-  Georgia: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/georgia?lastdays=all",
+  "Georgia (USA)": {
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/georgia?lastdays=all",
     US_State: true,
   },
   Germany: {
@@ -682,8 +632,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Lao People's Democratic Republic": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Lao%20People's%20Democratic%20Republic?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Lao%20People's%20Democratic%20Republic?lastdays=all",
     US_State: false,
   },
   Latvia: {
@@ -703,8 +652,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Libyan Arab Jamahiriya": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Libyan%20Arab%20Jamahiriya?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Libyan%20Arab%20Jamahiriya?lastdays=all",
     US_State: false,
   },
   Liechtenstein: {
@@ -748,8 +696,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Marshall Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Marshall%20Islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Marshall%20Islands?lastdays=all",
     US_State: false,
   },
   Mauritania: {
@@ -801,23 +748,19 @@ export const timeSeries = {
     US_State: false,
   },
   Aruba: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Netherlands/aruba?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Netherlands/aruba?lastdays=all",
     US_State: false,
   },
   "Bonaire, Sint Eustatius and Saba": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Netherlands/bonaire,%20sint%20eustatius%20and%20saba?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Netherlands/bonaire,%20sint%20eustatius%20and%20saba?lastdays=all",
     US_State: false,
   },
   "Cura\u00e7ao": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Netherlands/curacao?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Netherlands/curacao?lastdays=all",
     US_State: false,
   },
   "Sint Maarten": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Netherlands/sint%20maarten?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Netherlands/sint%20maarten?lastdays=all",
     US_State: false,
   },
   Netherlands: {
@@ -861,8 +804,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Papua New Guinea": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Papua%20New%20Guinea?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Papua%20New%20Guinea?lastdays=all",
     US_State: false,
   },
   Paraguay: {
@@ -902,8 +844,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Saint Kitts and Nevis": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Saint%20Kitts%20and%20Nevis?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Saint%20Kitts%20and%20Nevis?lastdays=all",
     US_State: false,
   },
   "Saint Lucia": {
@@ -911,8 +852,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Saint Vincent and the Grenadines": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Saint%20Vincent%20and%20the%20Grenadines?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Saint%20Vincent%20and%20the%20Grenadines?lastdays=all",
     US_State: false,
   },
   Samoa: {
@@ -924,13 +864,11 @@ export const timeSeries = {
     US_State: false,
   },
   "Sao Tome and Principe": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Sao%20Tome%20and%20Principe?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Sao%20Tome%20and%20Principe?lastdays=all",
     US_State: false,
   },
   "Saudi Arabia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Saudi%20Arabia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Saudi%20Arabia?lastdays=all",
     US_State: false,
   },
   Senegal: {
@@ -946,8 +884,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Sierra Leone": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Sierra%20Leone?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Sierra%20Leone?lastdays=all",
     US_State: false,
   },
   Singapore: {
@@ -963,8 +900,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Solomon Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Solomon%20Islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Solomon%20Islands?lastdays=all",
     US_State: false,
   },
   Somalia: {
@@ -972,8 +908,7 @@ export const timeSeries = {
     US_State: false,
   },
   "South Africa": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/South%20Africa?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/South%20Africa?lastdays=all",
     US_State: false,
   },
   "South Sudan": {
@@ -1005,8 +940,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Syrian Arab Republic": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Syrian%20Arab%20Republic?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Syrian%20Arab%20Republic?lastdays=all",
     US_State: false,
   },
   Taiwan: {
@@ -1034,8 +968,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Trinidad and Tobago": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/Trinidad%20and%20Tobago?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/Trinidad%20and%20Tobago?lastdays=all",
     US_State: false,
   },
   Tunisia: {
@@ -1071,23 +1004,19 @@ export const timeSeries = {
     US_State: false,
   },
   "British Virgin Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/british%20virgin%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/british%20virgin%20islands?lastdays=all",
     US_State: false,
   },
   "Cayman Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/cayman%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/cayman%20islands?lastdays=all",
     US_State: false,
   },
   "Channel Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/channel%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/channel%20islands?lastdays=all",
     US_State: false,
   },
   "Falkland Islands (Malvinas)": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/falkland%20islands%20(malvinas)?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/falkland%20islands%20(malvinas)?lastdays=all",
     US_State: false,
   },
   Gibraltar: {
@@ -1095,8 +1024,7 @@ export const timeSeries = {
     US_State: false,
   },
   "Isle of Man": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/isle%20of%20man?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/isle%20of%20man?lastdays=all",
     US_State: false,
   },
   Montserrat: {
@@ -1104,13 +1032,11 @@ export const timeSeries = {
     US_State: false,
   },
   "Saint Helena, Ascension and Tristan da Cunha": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/saint%20helena,%20ascension%20and%20tristan%20da%20cunha?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/saint%20helena,%20ascension%20and%20tristan%20da%20cunha?lastdays=all",
     US_State: false,
   },
   "Turks and Caicos Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/UK/turks%20and%20caicos%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/UK/turks%20and%20caicos%20islands?lastdays=all",
     US_State: false,
   },
   "United Kingdom": {
@@ -1150,277 +1076,222 @@ export const timeSeries = {
     US_State: false,
   },
   Alabama: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/alabama?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/alabama?lastdays=all",
     US_State: true,
   },
   Alaska: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/alaska?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/alaska?lastdays=all",
     US_State: true,
   },
   "American Samoa": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/american%20samoa?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/american%20samoa?lastdays=all",
     US_State: true,
   },
   Arizona: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/arizona?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/arizona?lastdays=all",
     US_State: true,
   },
   Arkansas: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/arkansas?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/arkansas?lastdays=all",
     US_State: true,
   },
   California: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/california?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/california?lastdays=all",
     US_State: true,
   },
   Colorado: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/colorado?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/colorado?lastdays=all",
     US_State: true,
   },
   Connecticut: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/connecticut?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/connecticut?lastdays=all",
     US_State: true,
   },
   Delaware: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/delaware?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/delaware?lastdays=all",
     US_State: true,
   },
   "Washington D.C": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/district%20of%20columbia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/district%20of%20columbia?lastdays=all",
   },
   Florida: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/florida?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/florida?lastdays=all",
     US_State: true,
   },
   Guam: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/guam?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/guam?lastdays=all",
     US_State: true,
   },
   Hawaii: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/hawaii?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/hawaii?lastdays=all",
     US_State: true,
   },
   Idaho: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/idaho?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/idaho?lastdays=all",
     US_State: true,
   },
   Illinois: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/illinois?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/illinois?lastdays=all",
     US_State: true,
   },
   Indiana: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/indiana?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/indiana?lastdays=all",
     US_State: true,
   },
   Iowa: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/iowa?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/iowa?lastdays=all",
     US_State: true,
   },
   Kansas: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/kansas?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/kansas?lastdays=all",
     US_State: true,
   },
   Kentucky: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/kentucky?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/kentucky?lastdays=all",
     US_State: true,
   },
   Louisiana: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/louisiana?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/louisiana?lastdays=all",
     US_State: true,
   },
   Maine: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/maine?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/maine?lastdays=all",
     US_State: true,
   },
   Maryland: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/maryland?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/maryland?lastdays=all",
     US_State: true,
   },
   Massachusetts: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/massachusetts?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/massachusetts?lastdays=all",
     US_State: true,
   },
   Michigan: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/michigan?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/michigan?lastdays=all",
     US_State: true,
   },
   Minnesota: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/minnesota?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/minnesota?lastdays=all",
     US_State: true,
   },
   Mississippi: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/mississippi?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/mississippi?lastdays=all",
     US_State: true,
   },
   Missouri: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/missouri?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/missouri?lastdays=all",
     US_State: true,
   },
   Montana: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/montana?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/montana?lastdays=all",
     US_State: true,
   },
   Nebraska: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/nebraska?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/nebraska?lastdays=all",
     US_State: true,
   },
   Nevada: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/nevada?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/nevada?lastdays=all",
     US_State: true,
   },
   "New Hampshire": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/new%20hampshire?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/new%20hampshire?lastdays=all",
     US_State: true,
   },
   "New Jersey": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/new%20jersey?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/new%20jersey?lastdays=all",
     US_State: true,
   },
   "New Mexico": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/new%20mexico?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/new%20mexico?lastdays=all",
     US_State: true,
   },
   "New York": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/new%20york?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/new%20york?lastdays=all",
     US_State: true,
   },
   "North Carolina": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/north%20carolina?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/north%20carolina?lastdays=all",
     US_State: true,
   },
   "North Dakota": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/north%20dakota?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/north%20dakota?lastdays=all",
     US_State: true,
   },
   "Northern Mariana Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/northern%20mariana%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/northern%20mariana%20islands?lastdays=all",
     US_State: true,
   },
   Ohio: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/ohio?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/ohio?lastdays=all",
     US_State: true,
   },
   Oklahoma: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/oklahoma?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/oklahoma?lastdays=all",
     US_State: true,
   },
   Oregon: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/oregon?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/oregon?lastdays=all",
     US_State: true,
   },
   Pennsylvania: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/pennsylvania?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/pennsylvania?lastdays=all",
     US_State: true,
   },
   "Puerto Rico": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/puerto%20rico?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/puerto%20rico?lastdays=all",
     US_State: true,
   },
   "Rhode Island": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/rhode%20island?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/rhode%20island?lastdays=all",
     US_State: true,
   },
   "South Carolina": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/south%20carolina?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/south%20carolina?lastdays=all",
     US_State: true,
   },
   "South Dakota": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/south%20dakota?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/south%20dakota?lastdays=all",
     US_State: true,
   },
   Tennessee: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/tennessee?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/tennessee?lastdays=all",
     US_State: true,
   },
   Texas: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/texas?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/texas?lastdays=all",
     US_State: true,
   },
   Utah: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/utah?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/utah?lastdays=all",
     US_State: true,
   },
   Vermont: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/vermont?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/vermont?lastdays=all",
     US_State: true,
   },
   "United States Virgin Islands": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/virgin%20islands?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/virgin%20islands?lastdays=all",
     US_State: true,
   },
   Virginia: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/virginia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/virginia?lastdays=all",
     US_State: true,
   },
   Washington: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/washington?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/washington?lastdays=all",
     US_State: true,
   },
   "West Virginia": {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/west%20virginia?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/west%20virginia?lastdays=all",
     US_State: true,
   },
   Wisconsin: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/wisconsin?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/wisconsin?lastdays=all",
     US_State: true,
   },
   Wyoming: {
-    api:
-      "https://disease.sh/v3/covid-19/historical/usacounties/wyoming?lastdays=all",
+    api: "https://disease.sh/v3/covid-19/historical/usacounties/wyoming?lastdays=all",
     US_State: true,
   },
 };

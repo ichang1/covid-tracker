@@ -97,22 +97,78 @@ const Map = () => {
 
   useEffect(() => {
     if (selectedPlace) {
+      /**
+       * gets the covid statistics of a place with an api call
+       * @param {String} place name of a place
+       */
+      const getPopupBodyData = async (place) => {
+        const { url } = locations[selectedPlace];
+        let parsedData;
+        try {
+          const res = await axios.get(url);
+          parsedData = { Place: place, ...parseData(res.data, place) };
+        } catch (err) {
+          parsedData = { Place: place, error: err.message };
+        }
+        setPopupData({ popupData: parsedData, popupDataLoading: false });
+      };
       getPopupBodyData(selectedPlace);
     }
   }, [selectedPlace]);
 
   /**
+   * functions returns JSX given the object with the covid statistics
+   * @param {*} parsedData
+   * @returns JSX for the popup with the covid statistics for the clicked placed
+   */
+  const getPopupBodyDataJSX = function (parsedData) {
+    const dataToShow = [];
+    const { Place: place } = parsedData;
+    Object.entries(parsedData).forEach(([key, val]) => {
+      dataToShow.push(`${key}: ${val}`);
+    });
+    const popupBodyJSX = dataToShow.map((row, idx) => (
+      <div key={idx} className="popup-content-row">
+        {row}
+      </div>
+    ));
+    if (Object.keys(timeSeries).includes(place)) {
+      const link = (
+        <Link
+          key={`${place}-time-series-link`}
+          to={`/${place}`}
+          className="popup-content-row"
+        >
+          TimeSeries
+        </Link>
+      );
+      popupBodyJSX.push(link);
+    }
+    return popupBodyJSX;
+  };
+
+  /**
    * Add event listener on mount for popup
    */
   useEffect(() => {
-    const listener = (e) => {
+    const keydownlistener = (e) => {
       if (e.key === "Escape") {
         setSelectedPlace(null);
       }
     };
-    window.addEventListener("keydown", listener);
+    const clicklistener = (e) => {
+      // need to add listener to close button for popup for closing it
+      // because defining a callback for the onClose prop to close a popup
+      // unfocuses the map for some reason
+      if (e.target.className === "mapboxgl-popup-close-button") {
+        setSelectedPlace(null);
+      }
+    };
+    window.addEventListener("keydown", keydownlistener);
+    window.addEventListener("click", clicklistener);
     return () => {
-      window.removeEventListener("keydown", listener);
+      window.removeEventListener("keydown", keydownlistener);
+      window.removeEventListener("click", clicklistener);
     };
   }, []);
 
@@ -173,53 +229,6 @@ const Map = () => {
     });
   }, [mapRef]);
 
-  /**
-   * functions returns JSX given the object with the covid statistics
-   * @param {*} parsedData
-   * @returns JSX for the popup with the covid statistics for the clicked placed
-   */
-  const getPopupBodyDataJSX = (parsedData) => {
-    const dataToShow = [];
-    const { Place: place } = parsedData;
-    Object.entries(parsedData).forEach(([key, val]) => {
-      dataToShow.push(`${key}: ${val}`);
-    });
-    const popupBodyJSX = dataToShow.map((row, idx) => (
-      <div key={idx} className="popup-content-row">
-        {row}
-      </div>
-    ));
-    if (Object.keys(timeSeries).includes(place)) {
-      const link = (
-        <Link
-          key={`${place}-time-series-link`}
-          to={`/${place}`}
-          className="popup-content-row"
-        >
-          TimeSeries
-        </Link>
-      );
-      popupBodyJSX.push(link);
-    }
-    return popupBodyJSX;
-  };
-
-  /**
-   * gets the covid statistics of a place with an api call
-   * @param {String} place name of a place
-   */
-  const getPopupBodyData = async (place) => {
-    const { url } = locations[selectedPlace];
-    let parsedData;
-    try {
-      const res = await axios.get(url);
-      parsedData = { Place: place, ...parseData(res.data, place) };
-    } catch (err) {
-      parsedData = { Place: place, error: err.message };
-    }
-    setPopupData({ popupData: parsedData, popupDataLoading: false });
-  };
-
   return (
     <div className="map-container">
       <ReactMapGl
@@ -242,14 +251,11 @@ const Map = () => {
           <Popup
             latitude={locations[selectedPlace].latitude}
             longitude={locations[selectedPlace].longitude}
-            onClose={() => {
-              setSelectedPlace(null);
-            }}
           >
             {popupDataLoading ? "Loading..." : getPopupBodyDataJSX(popupData)}
           </Popup>
         ) : null}
-        {showPlaceName && !(selectedPlace === hoverPlaceName) ? (
+        {showPlaceName && selectedPlace !== hoverPlaceName ? (
           <div className={"hover-name-popup-container"}>
             <Popup
               latitude={locations[hoverPlaceName].latitude}

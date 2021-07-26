@@ -469,13 +469,14 @@ const TimeSeries = ({ place }) => {
   }, [selectedVaccineEndYear]);
 
   useEffect(() => {
-    if (Object.keys(timeSeries).includes(place) && vaccineSeriesDataLoading) {
+    if (Object.keys(vaccine).includes(place) && vaccineSeriesDataLoading) {
       // get covid series data
       getVaccineSeriesData();
     }
   }, [vaccineSeriesDataLoading]);
 
   const filterVaccineSeriesData = (parsedData) => {
+    console.log(parsedData);
     //filter data based on time range selected
 
     const dateLowerBound = yearMonthToDecimal(

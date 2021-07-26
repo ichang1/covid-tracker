@@ -563,6 +563,9 @@ export const vaccine = {
   Florida: {
     api: "https://disease.sh/v3/covid-19/vaccine/coverage/states/Florida?lastdays=all&fullData=true",
   },
+  "Georgia (USA)": {
+    api: "https://disease.sh/v3/covid-19/vaccine/coverage/states/Georgia?lastdays=all&fullData=true",
+  },
   Guam: {
     api: "https://disease.sh/v3/covid-19/vaccine/coverage/states/Guam?lastdays=all&fullData=true",
   },

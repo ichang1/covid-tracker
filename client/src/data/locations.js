@@ -76,11 +76,11 @@ export const locations = {
     longitude: -89.191575,
     area: 57915.0,
   },
-  Georgia: {
-    url: "https://disease.sh/v3/covid-19/countries/Georgia",
+  "Georgia (USA)": {
+    url: "https://disease.sh/v3/covid-19/states/Georgia",
     api: "Worldometers",
-    latitude: 41.870087,
-    longitude: 43.735725,
+    latitude: 32.1656,
+    longitude: -82.9001,
     area: 59425.0,
   },
   Pennsylvania: {
@@ -413,8 +413,7 @@ export const locations = {
     area: 212.0,
   },
   "United States Virgin Islands": {
-    url:
-      "https://disease.sh/v3/covid-19/states/United%20States%20Virgin%20Islands",
+    url: "https://disease.sh/v3/covid-19/states/United%20States%20Virgin%20Islands",
     api: "Worldometers",
     latitude: 17.73951,
     longitude: -64.783592,
@@ -708,8 +707,7 @@ export const locations = {
     area: 100.0,
   },
   "Central African Republic": {
-    url:
-      "https://disease.sh/v3/covid-19/countries/Central%20African%20Republic",
+    url: "https://disease.sh/v3/covid-19/countries/Central%20African%20Republic",
     api: "Worldometers",
     latitude: 6.986429,
     longitude: 21.668827,
@@ -1045,8 +1043,7 @@ export const locations = {
     area: 10714.0,
   },
   "Holy See (Vatican City State)": {
-    url:
-      "https://disease.sh/v3/covid-19/countries/Holy%20See%20(Vatican%20City%20State)",
+    url: "https://disease.sh/v3/covid-19/countries/Holy%20See%20(Vatican%20City%20State)",
     api: "Worldometers",
     latitude: 41.903542,
     longitude: 12.453083,
@@ -1186,8 +1183,7 @@ export const locations = {
     area: 77182.0,
   },
   "Lao People's Democratic Republic": {
-    url:
-      "https://disease.sh/v3/covid-19/countries/Lao%20People%27s%20Democratic%20Republic",
+    url: "https://disease.sh/v3/covid-19/countries/Lao%20People%27s%20Democratic%20Republic",
     api: "Worldometers",
     latitude: 19.43535,
     longitude: 102.560667,
@@ -1621,8 +1617,7 @@ export const locations = {
     area: 93.44,
   },
   "Saint Vincent and the Grenadines": {
-    url:
-      "https://disease.sh/v3/covid-19/countries/Saint%20Vincent%20and%20the%20Grenadines",
+    url: "https://disease.sh/v3/covid-19/countries/Saint%20Vincent%20and%20the%20Grenadines",
     api: "Worldometers",
     latitude: 13.23357,
     longitude: -61.199573,
