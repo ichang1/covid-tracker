@@ -258,7 +258,6 @@ provinces = [
   'Ontario',
   'Prince Edward Island',
   'Quebec',
-  'Repatriated Travellers',
   'Saskatchewan',
   'Yukon',
   'Anhui',
