@@ -1,112 +1,7 @@
 import requests
 from jsonToFile import jsonToText
 from bs4 import BeautifulSoup
-
-
-def getData():
-    data = {}
-
-    continents_res = requests.get("https://disease.sh/v3/covid-19/continents")
-    for c in continents_res.json():
-        continent_name = c['continent']
-        url = f'https://disease.sh/v3/covid-19/continents/{continent_name}'
-        api = 'Worldometers'
-        lat_long = getLatLong(continent_name)
-        latitude = lat_long['latitude']
-        longitude = lat_long['longitude']
-        area = getSize(continent_name)
-        place_data = {
-            'url': url,
-            'api': api,
-            'latitude': latitude,
-            'longitude': longitude,
-            'area': area
-        }
-        data[continent_name] = place_data
-
-    states_res = requests.get("https://disease.sh/v3/covid-19/states")
-    states_dont_add = [
-        "US Military",
-        "Veteran Affairs",
-        "Federal Prisons",
-        "Grand Princess Ship",
-        "Wuhan Repatriated",
-        "Diamond Princess Ship",
-    ]
-    for s in states_res.json():
-        state_name = s['state']
-        if state_name not in states_dont_add:
-            url = f"https://disease.sh/v3/covid-19/states/{state_name}"
-            api = 'Worldometers'
-            lat_long = getLatLong(state_name)
-            latitude = lat_long['latitude']
-            longitude = lat_long['longitude']
-            area = getSize(state_name)
-            place_data = {
-                'url': url,
-                'api': api,
-                'latitude': latitude,
-                'longitude': longitude,
-                'area': area
-            }
-            data[state_name] = place_data
-
-    country_res = requests.get("https://disease.sh/v3/covid-19/countries")
-    for c in country_res.json():
-        country_name = c['country']
-        url = f"https://disease.sh/v3/covid-19/countries/{country_name}"
-        api = 'Worldometers'
-        if country_name == 'UK':
-            country_name = 'United Kingdom'
-            lat_long = getLatLong(country_name)
-            latitude = lat_long['latitude']
-            longitude = lat_long['longitude']
-            area = getSize(country_name)
-            place_data = {
-                'url': url,
-                'api': api,
-                'latitude': latitude,
-                'longitude': longitude,
-                'area': area
-            }
-            data[country_name] = place_data
-        elif 'Princess' in country_name:
-            continue
-        else:
-            lat_long = getLatLong(country_name)
-            latitude = lat_long['latitude']
-            longitude = lat_long['longitude']
-            area = getSize(country_name)
-            place_data = {
-                'url': url,
-                'api': api,
-                'latitude': latitude,
-                'longitude': longitude,
-                'area': area
-            }
-            data[country_name] = place_data
-
-    province_res = requests.get("https://disease.sh/v3/covid-19/jhucsse")
-    for p in province_res.json():
-        country = p['country']
-        province = p['province']
-        api = 'JHUCSSE'
-        url = 'https://disease.sh/v3/covid-19/jhucsse'
-        if country != 'US' and province != None and province != 'Unknown' and 'Princess' not in province:
-            lat_long = getLatLong(province)
-            latitude = lat_long['latitude']
-            longitude = lat_long['longitude']
-            area = getSize(province)
-            place_data = {
-                'url': url,
-                'api': api,
-                'latitude': latitude,
-                'longitude': longitude,
-                'area': area
-            }
-            data[province] = place_data
-    return data
-
+from places import places, states, countries, provinces
 
 def getLatLong(place):
     api_key = "ff2748c6dacc003d8c4f83e4aaba7c93"
@@ -163,6 +58,29 @@ def getSize(place):
             return area
     return 0
 
+if __name__ == '__main__':
+    data = {}
+    state_set = set(states)
+    country_set = set(countries)
+    province_set = set(provinces)
+    for place in places:
+        try:
+            place_data = {
+                **getLatLong(place)
+            }
+            place_data['size'] = getSize(place)
+            if place in state_set:
+                place_data['place_type'] = 'state'
+            elif place in country_set:
+                place_data['place_type'] = 'country'
+            elif place in province_set:
+                place_data['place_type'] = 'province'
+            else:
+                raise Exception(f'{place} is not a state, country or province')
+            data[place] = place_data
+        except:
+            #print what we got so far cause something went wrong
+            print(data)
+    jsonToText('./data.txt', data)
 
-jason = getData()
-jsonToText('./data.txt', jason)
+
