@@ -69,9 +69,9 @@ if __name__ == '__main__':
         try:
             print(f'Adding {place}')
             place_data = {
-                'slugs': {
-                    slugify(place): place
-                },
+                'slugs': [
+                    slugify(place)
+                ],
                 **getLatLong(place)
             }
             place_data['size'] = getSize(place)
@@ -89,9 +89,9 @@ if __name__ == '__main__':
             try:
                 print(f'Retry Adding {place}')
                 place_data = {
-                    'slugs': {
-                        slugify(place): place
-                    },
+                    'slugs': [
+                        slugify(place)
+                    ],
                     **getLatLong(place)
                 }
                 place_data['size'] = getSize(place)

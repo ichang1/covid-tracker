@@ -290,7 +290,6 @@ provinces = [
   'Sichuan',
   'Tianjin',
   'Tibet',
-  'Unknown',
   'Xinjiang',
   'Yunnan',
   'Zhejiang',
