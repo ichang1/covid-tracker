@@ -1,1901 +1,2843 @@
 {
    "California": {
+      "slugs": {
+         "california": "California"
+      },
       "latitude": 36.531544,
       "longitude": -119.58617,
       "size": 163696,
       "place_type": "state"
    },
    "Texas": {
+      "slugs": {
+         "texas": "Texas"
+      },
       "latitude": 31.030973,
       "longitude": -98.32633,
       "size": 268597,
       "place_type": "state"
    },
    "Florida": {
+      "slugs": {
+         "florida": "Florida"
+      },
       "latitude": 27.97762,
       "longitude": -81.76961,
       "size": 65758,
       "place_type": "state"
    },
    "New York": {
+      "slugs": {
+         "new-york": "New York"
+      },
       "latitude": 40.68295,
       "longitude": -73.9708,
       "size": 302.6,
       "place_type": "state"
    },
    "Illinois": {
+      "slugs": {
+         "illinois": "Illinois"
+      },
       "latitude": 40.26503,
       "longitude": -89.191574,
       "size": 57915,
       "place_type": "state"
    },
    "Pennsylvania": {
+      "slugs": {
+         "pennsylvania": "Pennsylvania"
+      },
       "latitude": 40.8602,
       "longitude": -77.838615,
       "size": 46055,
       "place_type": "state"
    },
    "Georgia": {
+      "slugs": {
+         "georgia": "Georgia"
+      },
       "latitude": 41.870087,
       "longitude": 43.735725,
       "size": 59425,
       "place_type": "state"
    },
    "Ohio": {
+      "slugs": {
+         "ohio": "Ohio"
+      },
       "latitude": 40.26226,
       "longitude": -82.88345,
       "size": 44825,
       "place_type": "state"
    },
    "New Jersey": {
+      "slugs": {
+         "new-jersey": "New Jersey"
+      },
       "latitude": 39.66502,
       "longitude": -74.738205,
       "size": 8729,
       "place_type": "state"
    },
    "North Carolina": {
+      "slugs": {
+         "north-carolina": "North Carolina"
+      },
       "latitude": 35.387363,
       "longitude": -78.455055,
       "size": 53819,
       "place_type": "state"
    },
    "Michigan": {
+      "slugs": {
+         "michigan": "Michigan"
+      },
       "latitude": 43.924812,
       "longitude": -84.63311,
       "size": 96716,
       "place_type": "state"
    },
    "Arizona": {
+      "slugs": {
+         "arizona": "Arizona"
+      },
       "latitude": 34.25515,
       "longitude": -111.62621,
       "size": 113998,
       "place_type": "state"
    },
    "Tennessee": {
+      "slugs": {
+         "tennessee": "Tennessee"
+      },
       "latitude": 35.820244,
       "longitude": -86.343765,
       "size": 42181,
       "place_type": "state"
    },
    "Indiana": {
+      "slugs": {
+         "indiana": "Indiana"
+      },
       "latitude": 39.90449,
       "longitude": -86.25028,
       "size": 36418,
       "place_type": "state"
    },
    "Massachusetts": {
+      "slugs": {
+         "massachusetts": "Massachusetts"
+      },
       "latitude": 42.358753,
       "longitude": -71.53149,
       "size": 10565,
       "place_type": "state"
    },
    "Virginia": {
+      "slugs": {
+         "virginia": "Virginia"
+      },
       "latitude": 37.73086,
       "longitude": -78.376656,
       "size": 42775,
       "place_type": "state"
    },
    "Wisconsin": {
+      "slugs": {
+         "wisconsin": "Wisconsin"
+      },
       "latitude": 44.356003,
       "longitude": -89.4662,
       "size": 65498,
       "place_type": "state"
    },
    "Minnesota": {
+      "slugs": {
+         "minnesota": "Minnesota"
+      },
       "latitude": 46.63636,
       "longitude": -94.57964,
       "size": 86943,
       "place_type": "state"
    },
    "Missouri": {
+      "slugs": {
+         "missouri": "Missouri"
+      },
       "latitude": 38.35314,
       "longitude": -92.747025,
       "size": 69704,
       "place_type": "state"
    },
    "South Carolina": {
+      "slugs": {
+         "south-carolina": "South Carolina"
+      },
       "latitude": 33.702858,
       "longitude": -80.627525,
       "size": 32020,
       "place_type": "state"
    },
    "Alabama": {
+      "slugs": {
+         "alabama": "Alabama"
+      },
       "latitude": 32.688053,
       "longitude": -86.810585,
       "size": 52419,
       "place_type": "state"
    },
    "Colorado": {
+      "slugs": {
+         "colorado": "Colorado"
+      },
       "latitude": 38.996662,
       "longitude": -105.54782,
       "size": 104185,
       "place_type": "state"
    },
    "Louisiana": {
+      "slugs": {
+         "louisiana": "Louisiana"
+      },
       "latitude": 30.5426,
       "longitude": -92.51441,
       "size": 52378,
       "place_type": "state"
    },
    "Maryland": {
+      "slugs": {
+         "maryland": "Maryland"
+      },
       "latitude": 39.03883,
       "longitude": -76.34672,
       "size": 12407,
       "place_type": "state"
    },
    "Kentucky": {
+      "slugs": {
+         "kentucky": "Kentucky"
+      },
       "latitude": 37.696823,
       "longitude": -84.924095,
       "size": 40409,
       "place_type": "state"
    },
    "Oklahoma": {
+      "slugs": {
+         "oklahoma": "Oklahoma"
+      },
       "latitude": 35.39376,
       "longitude": -97.602516,
-      "size": 69899,
+      "size": 621,
       "place_type": "state"
    },
    "Washington": {
+      "slugs": {
+         "washington": "Washington"
+      },
       "latitude": 38.82652,
       "longitude": -77.01712,
       "size": 71362,
       "place_type": "state"
    },
    "Utah": {
+      "slugs": {
+         "utah": "Utah"
+      },
       "latitude": 39.099,
       "longitude": -111.878815,
       "size": 84899,
       "place_type": "state"
    },
    "Iowa": {
+      "slugs": {
+         "iowa": "Iowa"
+      },
       "latitude": 42.039944,
       "longitude": -93.50007,
       "size": 56272,
       "place_type": "state"
    },
    "Connecticut": {
+      "slugs": {
+         "connecticut": "Connecticut"
+      },
       "latitude": 41.580162,
       "longitude": -72.75663,
       "size": 5543,
       "place_type": "state"
    },
    "Arkansas": {
+      "slugs": {
+         "arkansas": "Arkansas"
+      },
       "latitude": 34.755882,
       "longitude": -92.64056,
       "size": 53179,
       "place_type": "state"
    },
    "Nevada": {
+      "slugs": {
+         "nevada": "Nevada"
+      },
       "latitude": 39.44069,
       "longitude": -116.59857,
       "size": 110567,
       "place_type": "state"
    },
    "Mississippi": {
+      "slugs": {
+         "mississippi": "Mississippi"
+      },
       "latitude": 32.92192,
       "longitude": -89.68712,
       "size": 48430,
       "place_type": "state"
    },
    "Kansas": {
+      "slugs": {
+         "kansas": "Kansas"
+      },
       "latitude": 38.500328,
       "longitude": -98.38043,
       "size": 82277,
       "place_type": "state"
    },
    "Nebraska": {
+      "slugs": {
+         "nebraska": "Nebraska"
+      },
       "latitude": 41.499672,
       "longitude": -99.810074,
       "size": 77421,
       "place_type": "state"
    },
    "New Mexico": {
+      "slugs": {
+         "new-mexico": "New Mexico"
+      },
       "latitude": 34.498623,
       "longitude": -106.10828,
       "size": 121697,
       "place_type": "state"
    },
    "Oregon": {
+      "slugs": {
+         "oregon": "Oregon"
+      },
       "latitude": 43.85418,
       "longitude": -120.52671,
       "size": 98466,
       "place_type": "state"
    },
    "Idaho": {
+      "slugs": {
+         "idaho": "Idaho"
+      },
       "latitude": 43.764877,
       "longitude": -114.964264,
       "size": 83642,
       "place_type": "state"
    },
    "West Virginia": {
+      "slugs": {
+         "west-virginia": "West Virginia"
+      },
       "latitude": 38.72028,
       "longitude": -80.64943,
       "size": 24038,
       "place_type": "state"
    },
    "Rhode Island": {
+      "slugs": {
+         "rhode-island": "Rhode Island"
+      },
       "latitude": 41.587536,
       "longitude": -71.51474,
       "size": 1214,
       "place_type": "state"
    },
    "South Dakota": {
+      "slugs": {
+         "south-dakota": "South Dakota"
+      },
       "latitude": 44.470715,
       "longitude": -100.22996,
       "size": 77184,
       "place_type": "state"
    },
    "Montana": {
+      "slugs": {
+         "montana": "Montana"
+      },
       "latitude": 47.001266,
       "longitude": -109.64541,
       "size": 147040,
       "place_type": "state"
    },
    "North Dakota": {
+      "slugs": {
+         "north-dakota": "North Dakota"
+      },
       "latitude": 47.471497,
       "longitude": -100.46909,
       "size": 70762,
       "place_type": "state"
    },
    "Delaware": {
+      "slugs": {
+         "delaware": "Delaware"
+      },
       "latitude": 38.978848,
       "longitude": -75.46014,
       "size": 1982,
       "place_type": "state"
    },
    "New Hampshire": {
+      "slugs": {
+         "new-hampshire": "New Hampshire"
+      },
       "latitude": 43.644386,
       "longitude": -71.58628,
       "size": 9350,
       "place_type": "state"
    },
    "Maine": {
+      "slugs": {
+         "maine": "Maine"
+      },
       "latitude": 45.24333,
       "longitude": -69.171074,
       "size": 35385,
       "place_type": "state"
    },
    "Alaska": {
+      "slugs": {
+         "alaska": "Alaska"
+      },
       "latitude": 64.72481,
       "longitude": -153.62962,
       "size": 663300,
       "place_type": "state"
    },
    "Wyoming": {
+      "slugs": {
+         "wyoming": "Wyoming"
+      },
       "latitude": 41.47747,
       "longitude": -105.63666,
       "size": 97818,
       "place_type": "state"
    },
    "District Of Columbia": {
+      "slugs": {
+         "district-of-columbia": "District Of Columbia"
+      },
       "latitude": 38.912098,
       "longitude": -77.01469,
       "size": 68.34,
       "place_type": "state"
    },
    "Hawaii": {
+      "slugs": {
+         "hawaii": "Hawaii"
+      },
       "latitude": 19.647635,
       "longitude": -155.53325,
       "size": 10931,
       "place_type": "state"
    },
    "Vermont": {
+      "slugs": {
+         "vermont": "Vermont"
+      },
       "latitude": 44.211857,
       "longitude": -72.68124,
       "size": 9623,
       "place_type": "state"
    },
    "Puerto Rico": {
+      "slugs": {
+         "puerto-rico": "Puerto Rico"
+      },
       "latitude": 18.234669,
       "longitude": -66.481064,
       "size": 3515,
       "place_type": "state"
    },
    "Guam": {
+      "slugs": {
+         "guam": "Guam"
+      },
       "latitude": 13.427861,
       "longitude": 144.73381,
       "size": 212,
       "place_type": "state"
    },
    "Virgin Islands": {
+      "slugs": {
+         "virgin-islands": "Virgin Islands"
+      },
       "latitude": 17.73951,
       "longitude": -64.78359,
       "size": 133.7,
       "place_type": "state"
    },
    "Northern Mariana Islands": {
+      "slugs": {
+         "northern-mariana-islands": "Northern Mariana Islands"
+      },
       "latitude": 15.193315,
       "longitude": 145.74821,
       "size": 184.2,
       "place_type": "state"
    },
    "American Samoa": {
+      "slugs": {
+         "american-samoa": "American Samoa"
+      },
       "latitude": -14.333216,
       "longitude": -170.77893,
       "size": 76.83,
       "place_type": "state"
    },
    "Afghanistan": {
+      "slugs": {
+         "afghanistan": "Afghanistan"
+      },
       "latitude": 34.159325,
       "longitude": 66.51551,
       "size": 252071,
       "place_type": "country"
    },
    "Albania": {
+      "slugs": {
+         "albania": "Albania"
+      },
       "latitude": 40.647186,
       "longitude": 20.127352,
       "size": 11100,
       "place_type": "country"
    },
    "Algeria": {
+      "slugs": {
+         "algeria": "Algeria"
+      },
       "latitude": 27.89689,
       "longitude": 3.379277,
       "size": 919600,
       "place_type": "country"
    },
    "Andorra": {
+      "slugs": {
+         "andorra": "Andorra"
+      },
       "latitude": 42.547077,
       "longitude": 1.576286,
       "size": 180.7,
       "place_type": "country"
    },
    "Angola": {
+      "slugs": {
+         "angola": "Angola"
+      },
       "latitude": -12.180859,
       "longitude": 17.996347,
       "size": 481400,
       "place_type": "country"
    },
    "Antigua And Barbuda": {
+      "slugs": {
+         "antigua-and-barbuda": "Antigua And Barbuda"
+      },
       "latitude": 17.06938,
       "longitude": -61.80974,
       "size": 169.9,
       "place_type": "country"
    },
    "Argentina": {
+      "slugs": {
+         "argentina": "Argentina"
+      },
       "latitude": -29.53605,
       "longitude": -62.26363,
       "size": 1074000,
       "place_type": "country"
    },
    "Armenia": {
+      "slugs": {
+         "armenia": "Armenia"
+      },
       "latitude": 40.474724,
       "longitude": 44.80561,
       "size": 11484,
       "place_type": "country"
    },
    "Australia": {
+      "slugs": {
+         "australia": "Australia"
+      },
       "latitude": -23.992437,
       "longitude": 134.05045,
       "size": 2970000,
       "place_type": "country"
    },
    "Austria": {
+      "slugs": {
+         "austria": "Austria"
+      },
       "latitude": 47.522617,
       "longitude": 14.143702,
       "size": 32386,
       "place_type": "country"
    },
    "Azerbaijan": {
+      "slugs": {
+         "azerbaijan": "Azerbaijan"
+      },
       "latitude": 40.402386,
       "longitude": 47.210995,
       "size": 33436,
       "place_type": "country"
    },
    "Bahamas": {
+      "slugs": {
+         "bahamas": "Bahamas"
+      },
       "latitude": 24.669638,
       "longitude": -78.0185,
       "size": 5359,
       "place_type": "country"
    },
    "Bahrain": {
+      "slugs": {
+         "bahrain": "Bahrain"
+      },
       "latitude": 26.0845,
       "longitude": 50.55067,
       "size": 295.5,
       "place_type": "country"
    },
    "Bangladesh": {
+      "slugs": {
+         "bangladesh": "Bangladesh"
+      },
       "latitude": 24.045958,
       "longitude": 90.03272,
       "size": 57321,
       "place_type": "country"
    },
    "Barbados": {
+      "slugs": {
+         "barbados": "Barbados"
+      },
       "latitude": 13.144115,
       "longitude": -59.55573,
       "size": 166.4,
       "place_type": "country"
    },
    "Belarus": {
+      "slugs": {
+         "belarus": "Belarus"
+      },
       "latitude": 53.83226,
       "longitude": 28.43651,
       "size": 80155,
       "place_type": "country"
    },
    "Belgium": {
+      "slugs": {
+         "belgium": "Belgium"
+      },
       "latitude": 50.78069,
       "longitude": 4.792712,
       "size": 11849,
       "place_type": "country"
    },
    "Belize": {
+      "slugs": {
+         "belize": "Belize"
+      },
       "latitude": 17.206636,
       "longitude": -88.714485,
       "size": 8867,
       "place_type": "country"
    },
    "Benin": {
+      "slugs": {
+         "benin": "Benin"
+      },
       "latitude": 9.30769,
       "longitude": 2.31583,
       "size": 44310,
       "place_type": "country"
    },
    "Bhutan": {
+      "slugs": {
+         "bhutan": "Bhutan"
+      },
       "latitude": 27.454773,
       "longitude": 89.92561,
       "size": 14824,
       "place_type": "country"
    },
    "Bolivia": {
+      "slugs": {
+         "bolivia": "Bolivia"
+      },
       "latitude": -16.640652,
       "longitude": -64.66193,
       "size": 424200,
       "place_type": "country"
    },
    "Bosnia": {
+      "slugs": {
+         "bosnia": "Bosnia"
+      },
       "latitude": 44.091038,
       "longitude": 18.06843,
       "size": 19767,
       "place_type": "country"
    },
    "Botswana": {
+      "slugs": {
+         "botswana": "Botswana"
+      },
       "latitude": -22.108313,
       "longitude": 24.191387,
       "size": 224607,
       "place_type": "country"
    },
    "Brazil": {
+      "slugs": {
+         "brazil": "Brazil"
+      },
       "latitude": -11.928923,
       "longitude": -49.54245,
       "size": 3288000,
       "place_type": "country"
    },
    "Brunei": {
+      "slugs": {
+         "brunei": "Brunei"
+      },
       "latitude": 4.479716,
       "longitude": 114.57869,
       "size": 2226,
       "place_type": "country"
    },
    "Bulgaria": {
+      "slugs": {
+         "bulgaria": "Bulgaria"
+      },
       "latitude": 42.50187,
       "longitude": 25.176846,
       "size": 42855,
       "place_type": "country"
    },
    "Myanmar": {
+      "slugs": {
+         "myanmar": "Myanmar"
+      },
       "latitude": 21.576815,
       "longitude": 96.06596,
       "size": 261227,
       "place_type": "country"
    },
    "Cabo Verde": {
+      "slugs": {
+         "cabo-verde": "Cabo Verde"
+      },
       "latitude": 15.04732,
       "longitude": -23.618479,
       "size": 1557,
       "place_type": "country"
    },
    "Cambodia": {
+      "slugs": {
+         "cambodia": "Cambodia"
+      },
       "latitude": 12.635759,
       "longitude": 104.48081,
       "size": 69898,
       "place_type": "country"
    },
    "Cameroon": {
+      "slugs": {
+         "cameroon": "Cameroon"
+      },
       "latitude": 4.585076,
       "longitude": 12.473672,
       "size": 183569,
       "place_type": "country"
    },
    "Canada": {
+      "slugs": {
+         "canada": "Canada"
+      },
       "latitude": 58.33747,
       "longitude": -112.38486,
       "size": 3855000,
       "place_type": "country"
    },
    "Central African Republic": {
+      "slugs": {
+         "central-african-republic": "Central African Republic"
+      },
       "latitude": 6.986429,
       "longitude": 21.668827,
       "size": 240535,
       "place_type": "country"
    },
    "Chile": {
+      "slugs": {
+         "chile": "Chile"
+      },
       "latitude": -38.165295,
       "longitude": -72.28808,
       "size": 292260,
       "place_type": "country"
    },
    "China": {
+      "slugs": {
+         "china": "China"
+      },
       "latitude": 32.529716,
       "longitude": 106.80287,
       "size": 3705000,
       "place_type": "country"
    },
    "Colombia": {
+      "slugs": {
+         "colombia": "Colombia"
+      },
       "latitude": 4.6,
       "longitude": -74.51667,
       "size": 441200,
       "place_type": "country"
    },
    "Comoros": {
+      "slugs": {
+         "comoros": "Comoros"
+      },
       "latitude": -11.727683,
       "longitude": 43.318092,
-      "size": 719,
+      "size": 0,
       "place_type": "country"
    },
    "Congo": {
+      "slugs": {
+         "congo": "Congo"
+      },
       "latitude": -2.271721,
       "longitude": 23.513592,
       "size": 905400,
       "place_type": "country"
    },
    "Drc": {
+      "slugs": {
+         "drc": "Drc"
+      },
       "latitude": -2.271721,
       "longitude": 23.513592,
       "size": 905400,
       "place_type": "country"
    },
    "Costa Rica": {
+      "slugs": {
+         "costa-rica": "Costa Rica"
+      },
       "latitude": 10.068183,
       "longitude": -84.02859,
       "size": 19761,
       "place_type": "country"
    },
    "Côte D'Ivoire": {
+      "slugs": {
+         "cote-d-ivoire": "Côte D'Ivoire"
+      },
       "latitude": 7.568978,
       "longitude": -5.495164,
       "size": 124504,
       "place_type": "country"
    },
    "Croatia": {
+      "slugs": {
+         "croatia": "Croatia"
+      },
       "latitude": 45.805355,
       "longitude": 16.37514,
       "size": 21851,
       "place_type": "country"
    },
    "Cuba": {
-       "latitude": 21.329612,
-       "longitude": -77.967722,
-       "size": 42426,
-       "place_type": "country"
+      "slugs": {
+         "cuba": "Cuba"
+      },
+      "latitude": 21.329613,
+      "longitude": -77.96772,
+      "size": 42426,
+      "place_type": "country"
    },
    "Cyprus": {
+      "slugs": {
+         "cyprus": "Cyprus"
+      },
       "latitude": 34.88185,
       "longitude": 33.01105,
       "size": 3572,
       "place_type": "country"
    },
    "Czechia": {
+      "slugs": {
+         "czechia": "Czechia"
+      },
       "latitude": 49.88233,
       "longitude": 15.377705,
       "size": 30452,
       "place_type": "country"
    },
    "Denmark": {
+      "slugs": {
+         "denmark": "Denmark"
+      },
       "latitude": 55.966965,
       "longitude": 9.018163,
       "size": 16577,
       "place_type": "country"
    },
    "Djibouti": {
+      "slugs": {
+         "djibouti": "Djibouti"
+      },
       "latitude": 11.58901,
       "longitude": 43.14503,
       "size": 8958,
       "place_type": "country"
    },
    "Dominica": {
+      "slugs": {
+         "dominica": "Dominica"
+      },
       "latitude": 15.460196,
       "longitude": -61.356842,
       "size": 290,
       "place_type": "country"
    },
    "Dominican Republic": {
+      "slugs": {
+         "dominican-republic": "Dominican Republic"
+      },
       "latitude": 19.105936,
       "longitude": -70.80422,
       "size": 18704,
       "place_type": "country"
    },
    "Ecuador": {
+      "slugs": {
+         "ecuador": "Ecuador"
+      },
       "latitude": -1.241567,
       "longitude": -78.322784,
       "size": 109483,
       "place_type": "country"
    },
    "Egypt": {
+      "slugs": {
+         "egypt": "Egypt"
+      },
       "latitude": 26.42231,
       "longitude": 29.227089,
       "size": 390100,
       "place_type": "country"
    },
    "El Salvador": {
+      "slugs": {
+         "el-salvador": "El Salvador"
+      },
       "latitude": 13.66845,
       "longitude": -89.27004,
       "size": 8124,
       "place_type": "country"
    },
    "Equatorial Guinea": {
+      "slugs": {
+         "equatorial-guinea": "Equatorial Guinea"
+      },
       "latitude": 1.586111,
       "longitude": 10.464682,
       "size": 10830,
       "place_type": "country"
    },
    "Estonia": {
+      "slugs": {
+         "estonia": "Estonia"
+      },
       "latitude": 58.722855,
       "longitude": 25.86713,
       "size": 17505,
       "place_type": "country"
    },
    "Swaziland": {
+      "slugs": {
+         "swaziland": "Swaziland"
+      },
       "latitude": -26.574488,
       "longitude": 31.484913,
       "size": 6704,
       "place_type": "country"
    },
    "Ethiopia": {
+      "slugs": {
+         "ethiopia": "Ethiopia"
+      },
       "latitude": 7.996115,
       "longitude": 38.89678,
       "size": 426400,
       "place_type": "country"
    },
    "Fiji": {
+      "slugs": {
+         "fiji": "Fiji"
+      },
       "latitude": -17.834017,
       "longitude": 177.972,
       "size": 7078,
       "place_type": "country"
    },
    "Finland": {
+      "slugs": {
+         "finland": "Finland"
+      },
       "latitude": 63.252357,
       "longitude": 27.276468,
       "size": 130672,
       "place_type": "country"
    },
    "France": {
+      "slugs": {
+         "france": "France"
+      },
       "latitude": 46.698483,
       "longitude": 2.549047,
       "size": 248573,
       "place_type": "country"
    },
    "Gabon": {
+      "slugs": {
+         "gabon": "Gabon"
+      },
       "latitude": -0.586328,
       "longitude": 11.547829,
       "size": 103347,
       "place_type": "country"
    },
    "Gambia": {
+      "slugs": {
+         "gambia": "Gambia"
+      },
       "latitude": 13.505929,
       "longitude": -15.362493,
       "size": 4361,
       "place_type": "country"
    },
    "Germany": {
+      "slugs": {
+         "germany": "Germany"
+      },
       "latitude": 50.970097,
       "longitude": 9.687096,
       "size": 137988,
       "place_type": "country"
    },
    "Ghana": {
+      "slugs": {
+         "ghana": "Ghana"
+      },
       "latitude": 7.85125,
       "longitude": -0.982714,
       "size": 92099,
       "place_type": "country"
    },
    "Greece": {
+      "slugs": {
+         "greece": "Greece"
+      },
       "latitude": 39.78331,
       "longitude": 21.708534,
       "size": 50949,
       "place_type": "country"
    },
    "Grenada": {
+      "slugs": {
+         "grenada": "Grenada"
+      },
       "latitude": 12.11396,
       "longitude": -61.6885,
       "size": 134.6,
       "place_type": "country"
    },
    "Guatemala": {
+      "slugs": {
+         "guatemala": "Guatemala"
+      },
       "latitude": 14.989397,
       "longitude": -90.52241,
       "size": 42042,
       "place_type": "country"
    },
    "Guinea": {
+      "slugs": {
+         "guinea": "Guinea"
+      },
       "latitude": 10.625075,
       "longitude": -9.951975,
       "size": 94926,
       "place_type": "country"
    },
    "Guinea-Bissau": {
+      "slugs": {
+         "guinea-bissau": "Guinea-Bissau"
+      },
       "latitude": 12.157338,
       "longitude": -14.513869,
       "size": 13948,
       "place_type": "country"
    },
    "Guyana": {
+      "slugs": {
+         "guyana": "Guyana"
+      },
       "latitude": 5.121996,
       "longitude": -58.912354,
       "size": 83000,
       "place_type": "country"
    },
    "Honduras": {
+      "slugs": {
+         "honduras": "Honduras"
+      },
       "latitude": 14.762778,
       "longitude": -86.9202,
       "size": 43433,
       "place_type": "country"
    },
    "Hungary": {
+      "slugs": {
+         "hungary": "Hungary"
+      },
       "latitude": 47.086857,
       "longitude": 19.447899,
       "size": 35919,
       "place_type": "country"
    },
    "Iceland": {
+      "slugs": {
+         "iceland": "Iceland"
+      },
       "latitude": 64.77926,
       "longitude": -18.673523,
       "size": 39769,
       "place_type": "country"
    },
    "India": {
+      "slugs": {
+         "india": "India"
+      },
       "latitude": 22.364292,
       "longitude": 79.029434,
       "size": 1269000,
       "place_type": "country"
    },
    "Indonesia": {
+      "slugs": {
+         "indonesia": "Indonesia"
+      },
       "latitude": -1.003189,
       "longitude": 101.97233,
       "size": 735400,
       "place_type": "country"
    },
    "Iran": {
+      "slugs": {
+         "iran": "Iran"
+      },
       "latitude": 31.931398,
       "longitude": 55.245316,
       "size": 636400,
       "place_type": "country"
    },
    "Iraq": {
+      "slugs": {
+         "iraq": "Iraq"
+      },
       "latitude": 33.115715,
       "longitude": 43.285187,
       "size": 169235,
       "place_type": "country"
    },
    "Ireland": {
+      "slugs": {
+         "ireland": "Ireland"
+      },
       "latitude": 53.07873,
       "longitude": -7.798618,
       "size": 32595,
       "place_type": "country"
    },
    "Israel": {
+      "slugs": {
+         "israel": "Israel"
+      },
       "latitude": 30.895128,
       "longitude": 34.874702,
       "size": 8550,
       "place_type": "country"
    },
    "Italy": {
+      "slugs": {
+         "italy": "Italy"
+      },
       "latitude": 45.003227,
       "longitude": 11.083693,
       "size": 0,
       "place_type": "country"
    },
    "Jamaica": {
+      "slugs": {
+         "jamaica": "Jamaica"
+      },
       "latitude": 18.137123,
       "longitude": -77.31876,
       "size": 4244,
       "place_type": "country"
    },
    "Japan": {
+      "slugs": {
+         "japan": "Japan"
+      },
       "latitude": 36.13793,
       "longitude": 138.4419,
       "size": 145937,
       "place_type": "country"
    },
    "Jordan": {
+      "slugs": {
+         "jordan": "Jordan"
+      },
       "latitude": 30.802263,
       "longitude": 36.391525,
       "size": 34495,
       "place_type": "country"
    },
    "Kazakhstan": {
+      "slugs": {
+         "kazakhstan": "Kazakhstan"
+      },
       "latitude": 48.51667,
       "longitude": 66.76667,
       "size": 1052000,
       "place_type": "country"
    },
    "Kenya": {
+      "slugs": {
+         "kenya": "Kenya"
+      },
       "latitude": 0.543716,
       "longitude": 37.91831,
       "size": 224081,
       "place_type": "country"
    },
    "South Korea": {
+      "slugs": {
+         "south-korea": "South Korea"
+      },
       "latitude": 36.38219,
       "longitude": 128.124,
       "size": 38691,
       "place_type": "country"
    },
    "Kuwait": {
+      "slugs": {
+         "kuwait": "Kuwait"
+      },
       "latitude": 29.422226,
       "longitude": 47.330013,
       "size": 6880,
       "place_type": "country"
    },
    "Kyrgyzstan": {
+      "slugs": {
+         "kyrgyzstan": "Kyrgyzstan"
+      },
       "latitude": 40.93749,
       "longitude": 73.36083,
       "size": 77182,
       "place_type": "country"
    },
    "Lao People'S Democratic Republic": {
+      "slugs": {
+         "lao-people-s-democratic-republic": "Lao People'S Democratic Republic"
+      },
       "latitude": 19.43535,
       "longitude": 102.56067,
       "size": 91429,
       "place_type": "country"
    },
    "Latvia": {
+      "slugs": {
+         "latvia": "Latvia"
+      },
       "latitude": 57.06689,
       "longitude": 25.458464,
       "size": 24938,
       "place_type": "country"
    },
    "Lebanon": {
+      "slugs": {
+         "lebanon": "Lebanon"
+      },
       "latitude": 34.09582,
       "longitude": 35.95655,
       "size": 4036,
       "place_type": "country"
    },
    "Lesotho": {
+      "slugs": {
+         "lesotho": "Lesotho"
+      },
       "latitude": -29.51675,
       "longitude": 28.163744,
       "size": 11720,
       "place_type": "country"
    },
    "Liberia": {
+      "slugs": {
+         "liberia": "Liberia"
+      },
       "latitude": 6.445025,
       "longitude": -9.449891,
       "size": 43000,
       "place_type": "country"
    },
    "Libyan Arab Jamahiriya": {
+      "slugs": {
+         "libyan-arab-jamahiriya": "Libyan Arab Jamahiriya"
+      },
       "latitude": 26.666956,
       "longitude": 18.030249,
       "size": 679400,
       "place_type": "country"
    },
    "Liechtenstein": {
+      "slugs": {
+         "liechtenstein": "Liechtenstein"
+      },
       "latitude": 47.111404,
       "longitude": 9.559439,
       "size": 61.78,
       "place_type": "country"
    },
    "Lithuania": {
+      "slugs": {
+         "lithuania": "Lithuania"
+      },
       "latitude": 55.103703,
       "longitude": 24.089931,
       "size": 25212,
       "place_type": "country"
    },
    "Luxembourg": {
+      "slugs": {
+         "luxembourg": "Luxembourg"
+      },
       "latitude": 49.75918,
       "longitude": 6.086636,
       "size": 998,
       "place_type": "country"
    },
    "Madagascar": {
+      "slugs": {
+         "madagascar": "Madagascar"
+      },
       "latitude": -18.628414,
       "longitude": 46.704056,
       "size": 226658,
       "place_type": "country"
    },
    "Malawi": {
+      "slugs": {
+         "malawi": "Malawi"
+      },
       "latitude": -13.404159,
       "longitude": 33.658497,
       "size": 45747,
       "place_type": "country"
    },
    "Malaysia": {
+      "slugs": {
+         "malaysia": "Malaysia"
+      },
       "latitude": 2.521947,
       "longitude": 113.83357,
       "size": 127355,
       "place_type": "country"
    },
    "Maldives": {
+      "slugs": {
+         "maldives": "Maldives"
+      },
       "latitude": -0.614771,
       "longitude": 73.09374,
       "size": 115.8,
       "place_type": "country"
    },
    "Mali": {
+      "slugs": {
+         "mali": "Mali"
+      },
       "latitude": 18.68321,
       "longitude": -2.015109,
       "size": 478800,
       "place_type": "country"
    },
    "Malta": {
+      "slugs": {
+         "malta": "Malta"
+      },
       "latitude": 35.888973,
       "longitude": 14.431432,
       "size": 122,
       "place_type": "country"
    },
    "Mauritania": {
+      "slugs": {
+         "mauritania": "Mauritania"
+      },
       "latitude": 19.599264,
       "longitude": -9.737341,
       "size": 397700,
       "place_type": "country"
    },
    "Mauritius": {
+      "slugs": {
+         "mauritius": "Mauritius"
+      },
       "latitude": -20.321974,
       "longitude": 57.534935,
       "size": 788,
       "place_type": "country"
    },
    "Mexico": {
+      "slugs": {
+         "mexico": "Mexico"
+      },
       "latitude": 19.371422,
       "longitude": -99.150345,
       "size": 761600,
       "place_type": "country"
    },
    "Moldova": {
+      "slugs": {
+         "moldova": "Moldova"
+      },
       "latitude": 47.435,
       "longitude": 28.487904,
       "size": 13068,
       "place_type": "country"
    },
    "Monaco": {
+      "slugs": {
+         "monaco": "Monaco"
+      },
       "latitude": 43.733784,
       "longitude": 7.418464,
       "size": 499,
       "place_type": "country"
    },
    "Mongolia": {
+      "slugs": {
+         "mongolia": "Mongolia"
+      },
       "latitude": 45.99339,
       "longitude": 104.15955,
       "size": 604600,
       "place_type": "country"
    },
    "Montenegro": {
+      "slugs": {
+         "montenegro": "Montenegro"
+      },
       "latitude": 42.782845,
       "longitude": 19.157425,
       "size": 5333,
       "place_type": "country"
    },
    "Morocco": {
+      "slugs": {
+         "morocco": "Morocco"
+      },
       "latitude": 31.649504,
       "longitude": -7.189711,
       "size": 172414,
       "place_type": "country"
    },
    "Mozambique": {
+      "slugs": {
+         "mozambique": "Mozambique"
+      },
       "latitude": -15.03417,
       "longitude": 40.73583,
       "size": 309496,
       "place_type": "country"
    },
    "Namibia": {
+      "slugs": {
+         "namibia": "Namibia"
+      },
       "latitude": -20.586348,
       "longitude": 17.11965,
       "size": 318261,
       "place_type": "country"
    },
    "Nepal": {
+      "slugs": {
+         "nepal": "Nepal"
+      },
       "latitude": 27.15,
       "longitude": 85.9,
       "size": 56956,
       "place_type": "country"
    },
    "Netherlands": {
+      "slugs": {
+         "netherlands": "Netherlands"
+      },
       "latitude": 52.554207,
       "longitude": 5.501896,
       "size": 16040,
       "place_type": "country"
    },
    "New Zealand": {
+      "slugs": {
+         "new-zealand": "New Zealand"
+      },
       "latitude": -45.175323,
       "longitude": 169.23253,
       "size": 103483,
       "place_type": "country"
    },
    "Nicaragua": {
+      "slugs": {
+         "nicaragua": "Nicaragua"
+      },
       "latitude": 12.793313,
       "longitude": -85.03954,
       "size": 50336,
       "place_type": "country"
    },
    "Niger": {
+      "slugs": {
+         "niger": "Niger"
+      },
       "latitude": 17.431408,
       "longitude": 9.521564,
       "size": 489200,
       "place_type": "country"
    },
    "Nigeria": {
+      "slugs": {
+         "nigeria": "Nigeria"
+      },
       "latitude": 9.404974,
       "longitude": 7.607418,
       "size": 356669,
       "place_type": "country"
    },
    "Macedonia": {
+      "slugs": {
+         "macedonia": "Macedonia"
+      },
       "latitude": 41.569244,
       "longitude": 21.547314,
       "size": 9928,
       "place_type": "country"
    },
    "Norway": {
+      "slugs": {
+         "norway": "Norway"
+      },
       "latitude": 61.356907,
       "longitude": 9.680372,
       "size": 148729,
       "place_type": "country"
    },
    "Oman": {
+      "slugs": {
+         "oman": "Oman"
+      },
       "latitude": 22.11318,
       "longitude": 57.34568,
       "size": 119499,
       "place_type": "country"
    },
    "Pakistan": {
+      "slugs": {
+         "pakistan": "Pakistan"
+      },
       "latitude": 29.329836,
       "longitude": 68.560265,
       "size": 340509,
       "place_type": "country"
    },
    "Panama": {
+      "slugs": {
+         "panama": "Panama"
+      },
       "latitude": 8.72491,
       "longitude": -80.338455,
       "size": 29157,
       "place_type": "country"
    },
    "Papua New Guinea": {
+      "slugs": {
+         "papua-new-guinea": "Papua New Guinea"
+      },
       "latitude": -5.695438,
       "longitude": 143.91049,
       "size": 178704,
       "place_type": "country"
    },
    "Paraguay": {
+      "slugs": {
+         "paraguay": "Paraguay"
+      },
       "latitude": -21.686079,
       "longitude": -60.13994,
       "size": 157048,
       "place_type": "country"
    },
    "Peru": {
+      "slugs": {
+         "peru": "Peru"
+      },
       "latitude": -12.98078,
       "longitude": -72.87665,
       "size": 496200,
       "place_type": "country"
    },
    "Philippines": {
+      "slugs": {
+         "philippines": "Philippines"
+      },
       "latitude": 16.932121,
       "longitude": 121.38795,
       "size": 115831,
       "place_type": "country"
    },
    "Poland": {
+      "slugs": {
+         "poland": "Poland"
+      },
       "latitude": 51.99605,
       "longitude": 19.488789,
       "size": 120726,
       "place_type": "country"
    },
    "Portugal": {
+      "slugs": {
+         "portugal": "Portugal"
+      },
       "latitude": 39.07088,
       "longitude": -8.22931,
       "size": 35603,
       "place_type": "country"
    },
    "Qatar": {
+      "slugs": {
+         "qatar": "Qatar"
+      },
       "latitude": 25.208492,
       "longitude": 51.155983,
       "size": 4468,
       "place_type": "country"
    },
    "Romania": {
+      "slugs": {
+         "romania": "Romania"
+      },
       "latitude": 45.72747,
       "longitude": 24.984652,
       "size": 92046,
       "place_type": "country"
    },
    "Russia": {
+      "slugs": {
+         "russia": "Russia"
+      },
       "latitude": 63.3144,
       "longitude": 93.88402,
       "size": 6612000,
       "place_type": "country"
    },
    "Rwanda": {
+      "slugs": {
+         "rwanda": "Rwanda"
+      },
       "latitude": -1.89815,
       "longitude": 30.095066,
       "size": 10169,
       "place_type": "country"
    },
    "Saint Kitts And Nevis": {
+      "slugs": {
+         "saint-kitts-and-nevis": "Saint Kitts And Nevis"
+      },
       "latitude": 17.340311,
       "longitude": -62.767597,
       "size": 100.8,
       "place_type": "country"
    },
    "Saint Lucia": {
+      "slugs": {
+         "saint-lucia": "Saint Lucia"
+      },
       "latitude": 13.896235,
       "longitude": -60.97493,
       "size": 238.2,
       "place_type": "country"
    },
    "Saint Vincent And The Grenadines": {
+      "slugs": {
+         "saint-vincent-and-the-grenadines": "Saint Vincent And The Grenadines"
+      },
       "latitude": 13.23357,
       "longitude": -61.199574,
       "size": 150.2,
       "place_type": "country"
    },
    "Samoa": {
+      "slugs": {
+         "samoa": "Samoa"
+      },
       "latitude": -13.63914,
       "longitude": -172.43825,
       "size": 1093,
       "place_type": "country"
    },
    "San Marino": {
+      "slugs": {
+         "san-marino": "San Marino"
+      },
       "latitude": 43.936245,
       "longitude": 12.447407,
       "size": 23.63,
       "place_type": "country"
    },
    "Sao Tome And Principe": {
+      "slugs": {
+         "sao-tome-and-principe": "Sao Tome And Principe"
+      },
       "latitude": 0.252119,
       "longitude": 6.600203,
       "size": 386,
       "place_type": "country"
    },
    "Saudi Arabia": {
+      "slugs": {
+         "saudi-arabia": "Saudi Arabia"
+      },
       "latitude": 23.80189,
       "longitude": 44.708042,
       "size": 830000,
       "place_type": "country"
    },
    "Senegal": {
+      "slugs": {
+         "senegal": "Senegal"
+      },
       "latitude": 15.13855,
       "longitude": -14.768082,
       "size": 75955,
       "place_type": "country"
    },
    "Serbia": {
+      "slugs": {
+         "serbia": "Serbia"
+      },
       "latitude": 44.25179,
       "longitude": 20.589197,
       "size": 34116,
       "place_type": "country"
    },
    "Seychelles": {
+      "slugs": {
+         "seychelles": "Seychelles"
+      },
       "latitude": -4.681046,
       "longitude": 55.482796,
       "size": 177.2,
       "place_type": "country"
    },
    "Sierra Leone": {
+      "slugs": {
+         "sierra-leone": "Sierra Leone"
+      },
       "latitude": 8.616007,
       "longitude": -11.756202,
       "size": 27699,
       "place_type": "country"
    },
    "Singapore": {
+      "slugs": {
+         "singapore": "Singapore"
+      },
       "latitude": 1.316382,
       "longitude": 103.83383,
       "size": 281.3,
       "place_type": "country"
    },
    "Slovakia": {
+      "slugs": {
+         "slovakia": "Slovakia"
+      },
       "latitude": 48.752407,
       "longitude": 19.20181,
       "size": 18933,
       "place_type": "country"
    },
    "Slovenia": {
+      "slugs": {
+         "slovenia": "Slovenia"
+      },
       "latitude": 46.068733,
       "longitude": 14.932759,
       "size": 7827,
       "place_type": "country"
    },
    "Solomon Islands": {
+      "slugs": {
+         "solomon-islands": "Solomon Islands"
+      },
       "latitude": -8.078523,
       "longitude": 159.24359,
       "size": 10965,
       "place_type": "country"
    },
    "Somalia": {
+      "slugs": {
+         "somalia": "Somalia"
+      },
       "latitude": 3.568925,
       "longitude": 45.19238,
       "size": 246201,
       "place_type": "country"
    },
    "South Africa": {
+      "slugs": {
+         "south-africa": "South Africa"
+      },
       "latitude": -31.3096,
       "longitude": 18.357,
       "size": 470900,
       "place_type": "country"
    },
    "South Sudan": {
+      "slugs": {
+         "south-sudan": "South Sudan"
+      },
       "latitude": 7.170803,
       "longitude": 30.109512,
       "size": 248777,
       "place_type": "country"
    },
    "Spain": {
+      "slugs": {
+         "spain": "Spain"
+      },
       "latitude": 40.09095,
       "longitude": -3.464618,
       "size": 195364,
       "place_type": "country"
    },
    "Sri Lanka": {
+      "slugs": {
+         "sri-lanka": "Sri Lanka"
+      },
       "latitude": 7.622919,
       "longitude": 80.68822,
       "size": 25332,
       "place_type": "country"
    },
    "Sudan": {
+      "slugs": {
+         "sudan": "Sudan"
+      },
       "latitude": 16.34997,
       "longitude": 29.381308,
       "size": 728200,
       "place_type": "country"
    },
    "Suriname": {
+      "slugs": {
+         "suriname": "Suriname"
+      },
       "latitude": 4.165951,
       "longitude": -55.945507,
       "size": 63251,
       "place_type": "country"
    },
    "Sweden": {
+      "slugs": {
+         "sweden": "Sweden"
+      },
       "latitude": 65.859146,
       "longitude": 19.017204,
       "size": 173860,
       "place_type": "country"
    },
    "Switzerland": {
+      "slugs": {
+         "switzerland": "Switzerland"
+      },
       "latitude": 46.73022,
       "longitude": 7.509687,
       "size": 15940,
       "place_type": "country"
    },
    "Syrian Arab Republic": {
+      "slugs": {
+         "syrian-arab-republic": "Syrian Arab Republic"
+      },
       "latitude": 35.00845,
       "longitude": 38.28846,
       "size": 71498,
       "place_type": "country"
    },
    "Taiwan": {
+      "slugs": {
+         "taiwan": "Taiwan"
+      },
       "latitude": 23.798532,
       "longitude": 120.95543,
       "size": 13974,
       "place_type": "country"
    },
    "Tajikistan": {
+      "slugs": {
+         "tajikistan": "Tajikistan"
+      },
       "latitude": 38.18531,
       "longitude": 72.571945,
       "size": 55251,
       "place_type": "country"
    },
    "Thailand": {
+      "slugs": {
+         "thailand": "Thailand"
+      },
       "latitude": 15.512883,
       "longitude": 101.301704,
       "size": 198117,
       "place_type": "country"
    },
    "Timor-Leste": {
+      "slugs": {
+         "timor-leste": "Timor-Leste"
+      },
       "latitude": -8.801828,
       "longitude": 125.86605,
       "size": 5794,
       "place_type": "country"
    },
    "Togo": {
+      "slugs": {
+         "togo": "Togo"
+      },
       "latitude": 8.846267,
       "longitude": 1.073832,
       "size": 21925,
       "place_type": "country"
    },
    "Trinidad And Tobago": {
+      "slugs": {
+         "trinidad-and-tobago": "Trinidad And Tobago"
+      },
       "latitude": 10.435364,
       "longitude": -61.264793,
       "size": 1981,
       "place_type": "country"
    },
    "Tunisia": {
+      "slugs": {
+         "tunisia": "Tunisia"
+      },
       "latitude": 33.687263,
       "longitude": 9.007775,
       "size": 63170,
       "place_type": "country"
    },
    "Turkey": {
+      "slugs": {
+         "turkey": "Turkey"
+      },
       "latitude": 39.339546,
       "longitude": 34.51052,
       "size": 302535,
       "place_type": "country"
    },
    "United States": {
+      "slugs": {
+         "united-states": "United States"
+      },
       "latitude": 39.715958,
       "longitude": -96.999664,
       "size": 3797000,
       "place_type": "country"
    },
    "Uganda": {
+      "slugs": {
+         "uganda": "Uganda"
+      },
       "latitude": 0.90406,
       "longitude": 32.443764,
       "size": 93065,
       "place_type": "country"
    },
    "Ukraine": {
-       "latitude": 49.219469,
-       "longitude": 33.023452,
-       "size": 233062,
-       "place_type": "country"
+      "slugs": {
+         "ukraine": "Ukraine"
+      },
+      "latitude": 49.219467,
+      "longitude": 33.023453,
+      "size": 233062,
+      "place_type": "country"
    },
    "United Arab Emirates": {
+      "slugs": {
+         "united-arab-emirates": "United Arab Emirates"
+      },
       "latitude": 23.755129,
       "longitude": 54.705517,
       "size": 32278,
       "place_type": "country"
    },
    "United Kingdom": {
+      "slugs": {
+         "united-kingdom": "United Kingdom"
+      },
       "latitude": 52.41879,
       "longitude": -1.247349,
       "size": 93628,
       "place_type": "country"
    },
    "Uruguay": {
+      "slugs": {
+         "uruguay": "Uruguay"
+      },
       "latitude": -32.48333,
       "longitude": -53.51667,
       "size": 68037,
       "place_type": "country"
    },
    "Uzbekistan": {
+      "slugs": {
+         "uzbekistan": "Uzbekistan"
+      },
       "latitude": 37.23583,
       "longitude": 67.31111,
       "size": 173351,
       "place_type": "country"
    },
    "Venezuela": {
+      "slugs": {
+         "venezuela": "Venezuela"
+      },
       "latitude": 7.18646,
       "longitude": -64.5687,
       "size": 353841,
       "place_type": "country"
    },
    "Vietnam": {
+      "slugs": {
+         "vietnam": "Vietnam"
+      },
       "latitude": 21.732569,
       "longitude": 105.396675,
       "size": 127882,
       "place_type": "country"
    },
    "Yemen": {
+      "slugs": {
+         "yemen": "Yemen"
+      },
       "latitude": 15.328226,
       "longitude": 45.874382,
       "size": 214287,
       "place_type": "country"
    },
    "Zambia": {
+      "slugs": {
+         "zambia": "Zambia"
+      },
       "latitude": -14.936526,
       "longitude": 25.940825,
       "size": 290587,
       "place_type": "country"
    },
    "Zimbabwe": {
+      "slugs": {
+         "zimbabwe": "Zimbabwe"
+      },
       "latitude": -20.26667,
       "longitude": 30.91667,
       "size": 150872,
       "place_type": "country"
    },
    "Australian Capital Territory": {
+      "slugs": {
+         "australian-capital-territory": "Australian Capital Territory"
+      },
       "latitude": -35.47006,
       "longitude": 148.95451,
       "size": 910,
       "place_type": "province"
    },
    "New South Wales": {
+      "slugs": {
+         "new-south-wales": "New South Wales"
+      },
       "latitude": -32.49498,
       "longitude": 146.5869,
       "size": 309326,
       "place_type": "province"
    },
    "Northern Territory": {
+      "slugs": {
+         "northern-territory": "Northern Territory"
+      },
       "latitude": -19.488358,
       "longitude": 133.4387,
       "size": 548100,
       "place_type": "province"
    },
    "Queensland": {
+      "slugs": {
+         "queensland": "Queensland"
+      },
       "latitude": -23.033709,
       "longitude": 144.41714,
       "size": 715300,
       "place_type": "province"
    },
    "South Australia": {
+      "slugs": {
+         "south-australia": "South Australia"
+      },
       "latitude": -29.467957,
       "longitude": 135.91534,
       "size": 379725,
       "place_type": "province"
    },
    "Tasmania": {
+      "slugs": {
+         "tasmania": "Tasmania"
+      },
       "latitude": -42.09828,
       "longitude": 146.56502,
       "size": 26410,
       "place_type": "province"
    },
    "Victoria": {
+      "slugs": {
+         "victoria": "Victoria"
+      },
       "latitude": 22.38113,
       "longitude": 114.135574,
       "size": 87817,
       "place_type": "province"
    },
    "Western Australia": {
+      "slugs": {
+         "western-australia": "Western Australia"
+      },
       "latitude": -26.471619,
       "longitude": 122.06598,
       "size": 1021000,
       "place_type": "province"
    },
    "Alberta": {
+      "slugs": {
+         "alberta": "Alberta"
+      },
       "latitude": 55.44167,
       "longitude": -114.44693,
       "size": 255541,
       "place_type": "province"
    },
    "British Columbia": {
+      "slugs": {
+         "british-columbia": "British Columbia"
+      },
       "latitude": 54.790276,
       "longitude": -124.557,
       "size": 364764,
       "place_type": "province"
    },
    "Manitoba": {
+      "slugs": {
+         "manitoba": "Manitoba"
+      },
       "latitude": 55.614437,
       "longitude": -97.96039,
       "size": 250116,
       "place_type": "province"
    },
    "New Brunswick": {
+      "slugs": {
+         "new-brunswick": "New Brunswick"
+      },
       "latitude": 46.595512,
       "longitude": -66.334854,
       "size": 28150,
       "place_type": "province"
    },
    "Newfoundland And Labrador": {
+      "slugs": {
+         "newfoundland-and-labrador": "Newfoundland And Labrador"
+      },
       "latitude": 54.12507,
       "longitude": -61.783348,
       "size": 156453,
       "place_type": "province"
    },
    "Northwest Territories": {
+      "slugs": {
+         "northwest-territories": "Northwest Territories"
+      },
       "latitude": 66.14693,
       "longitude": -125.33571,
       "size": 519700,
       "place_type": "province"
    },
    "Nova Scotia": {
+      "slugs": {
+         "nova-scotia": "Nova Scotia"
+      },
       "latitude": 45.22699,
       "longitude": -63.509537,
       "size": 21345,
       "place_type": "province"
    },
    "Nunavut": {
+      "slugs": {
+         "nunavut": "Nunavut"
+      },
       "latitude": 71.082,
       "longitude": -90.61016,
       "size": 808200,
       "place_type": "province"
    },
    "Ontario": {
+      "slugs": {
+         "ontario": "Ontario"
+      },
       "latitude": 51.451405,
       "longitude": -85.83596,
       "size": 415600,
       "place_type": "province"
    },
    "Prince Edward Island": {
+      "slugs": {
+         "prince-edward-island": "Prince Edward Island"
+      },
       "latitude": 46.19656,
       "longitude": -62.735184,
       "size": 2185,
       "place_type": "province"
    },
    "Quebec": {
+      "slugs": {
+         "quebec": "Quebec"
+      },
       "latitude": 46.855988,
       "longitude": -71.27627,
       "size": 644000,
       "place_type": "province"
    },
    "Saskatchewan": {
+      "slugs": {
+         "saskatchewan": "Saskatchewan"
+      },
       "latitude": 54.499058,
       "longitude": -105.95067,
       "size": 251700,
       "place_type": "province"
    },
    "Yukon": {
+      "slugs": {
+         "yukon": "Yukon"
+      },
       "latitude": 63.50579,
       "longitude": -136.0938,
       "size": 186272,
       "place_type": "province"
    },
    "Anhui": {
+      "slugs": {
+         "anhui": "Anhui"
+      },
       "latitude": 31.783382,
       "longitude": 117.18916,
       "size": 54132,
       "place_type": "province"
    },
    "Beijing": {
+      "slugs": {
+         "beijing": "Beijing"
+      },
       "latitude": 39.937965,
       "longitude": 116.417595,
       "size": 0,
       "place_type": "province"
    },
    "Chongqing": {
+      "slugs": {
+         "chongqing": "Chongqing"
+      },
       "latitude": 29.565016,
       "longitude": 106.54824,
       "size": 31776,
       "place_type": "province"
    },
    "Fujian": {
+      "slugs": {
+         "fujian": "Fujian"
+      },
       "latitude": 24.473793,
       "longitude": 118.420135,
       "size": 46873,
       "place_type": "province"
    },
    "Gansu": {
+      "slugs": {
+         "gansu": "Gansu"
+      },
       "latitude": 35.15148,
       "longitude": 104.14507,
       "size": 164402,
       "place_type": "province"
    },
    "Guangdong": {
+      "slugs": {
+         "guangdong": "Guangdong"
+      },
       "latitude": 23.76822,
       "longitude": 112.80027,
       "size": 68688,
       "place_type": "province"
    },
    "Guangxi": {
+      "slugs": {
+         "guangxi": "Guangxi"
+      },
       "latitude": 23.619883,
       "longitude": 108.846146,
       "size": 91738,
       "place_type": "province"
    },
    "Guizhou": {
+      "slugs": {
+         "guizhou": "Guizhou"
+      },
       "latitude": 26.34054,
       "longitude": 105.99283,
       "size": 68018,
       "place_type": "province"
    },
    "Hainan": {
+      "slugs": {
+         "hainan": "Hainan"
+      },
       "latitude": 19.99916,
       "longitude": 110.34119,
       "size": 12822,
       "place_type": "province"
    },
    "Hebei": {
+      "slugs": {
+         "hebei": "Hebei"
+      },
       "latitude": 40.65813,
       "longitude": 117.78211,
       "size": 72471,
       "place_type": "province"
    },
    "Heilongjiang": {
+      "slugs": {
+         "heilongjiang": "Heilongjiang"
+      },
       "latitude": 47.014328,
       "longitude": 128.42752,
       "size": 175599,
       "place_type": "province"
    },
    "Henan": {
+      "slugs": {
+         "henan": "Henan"
+      },
       "latitude": 33.78483,
       "longitude": 112.46077,
       "size": 64479,
       "place_type": "province"
    },
    "Hong Kong": {
+      "slugs": {
+         "hong-kong": "Hong Kong"
+      },
       "latitude": 22.38113,
       "longitude": 114.135574,
       "size": 427,
       "place_type": "province"
    },
    "Hubei": {
+      "slugs": {
+         "hubei": "Hubei"
+      },
       "latitude": 30.996328,
       "longitude": 112.53467,
       "size": 71776,
       "place_type": "province"
    },
    "Hunan": {
+      "slugs": {
+         "hunan": "Hunan"
+      },
       "latitude": 27.958307,
       "longitude": 111.659256,
       "size": 81081,
       "place_type": "province"
    },
    "Inner Mongolia": {
+      "slugs": {
+         "inner-mongolia": "Inner Mongolia"
+      },
       "latitude": 44.570415,
       "longitude": 117.728455,
       "size": 456800,
       "place_type": "province"
    },
    "Jiangsu": {
+      "slugs": {
+         "jiangsu": "Jiangsu"
+      },
       "latitude": 33.668774,
       "longitude": 119.47881,
       "size": 39614,
       "place_type": "province"
    },
    "Jiangxi": {
+      "slugs": {
+         "jiangxi": "Jiangxi"
+      },
       "latitude": 28.13841,
       "longitude": 115.06969,
       "size": 64440,
       "place_type": "province"
    },
    "Jilin": {
+      "slugs": {
+         "jilin": "Jilin"
+      },
       "latitude": 43.82056,
       "longitude": 126.53586,
       "size": 72356,
       "place_type": "province"
    },
    "Liaoning": {
+      "slugs": {
+         "liaoning": "Liaoning"
+      },
       "latitude": 41.397648,
       "longitude": 123.52535,
       "size": 56332,
       "place_type": "province"
    },
    "Macau": {
+      "slugs": {
+         "macau": "Macau"
+      },
       "latitude": 22.139833,
       "longitude": 113.56362,
       "size": 44.52,
       "place_type": "province"
    },
    "Ningxia": {
+      "slugs": {
+         "ningxia": "Ningxia"
+      },
       "latitude": 37.13654,
       "longitude": 105.91243,
       "size": 25637,
       "place_type": "province"
    },
    "Qinghai": {
+      "slugs": {
+         "qinghai": "Qinghai"
+      },
       "latitude": 35.5001,
       "longitude": 94.67951,
       "size": 277994,
       "place_type": "province"
    },
    "Shaanxi": {
+      "slugs": {
+         "shaanxi": "Shaanxi"
+      },
       "latitude": 34.040527,
       "longitude": 108.63049,
       "size": 79460,
       "place_type": "province"
    },
    "Shandong": {
+      "slugs": {
+         "shandong": "Shandong"
+      },
       "latitude": 36.334087,
       "longitude": 117.75646,
       "size": 60657,
       "place_type": "province"
    },
    "Shanghai": {
+      "slugs": {
+         "shanghai": "Shanghai"
+      },
       "latitude": 31.246027,
       "longitude": 121.48338,
       "size": 2448,
       "place_type": "province"
    },
    "Shanxi": {
+      "slugs": {
+         "shanxi": "Shanxi"
+      },
       "latitude": 40.05662,
       "longitude": 113.28578,
       "size": 60232,
       "place_type": "province"
    },
    "Sichuan": {
+      "slugs": {
+         "sichuan": "Sichuan"
+      },
       "latitude": 30.738865,
       "longitude": 102.69577,
       "size": 187260,
       "place_type": "province"
    },
    "Tianjin": {
+      "slugs": {
+         "tianjin": "Tianjin"
+      },
       "latitude": 39.107353,
       "longitude": 117.18518,
       "size": 4541,
       "place_type": "province"
    },
    "Tibet": {
+      "slugs": {
+         "tibet": "Tibet"
+      },
       "latitude": 32.088932,
       "longitude": 86.448395,
       "size": 474300,
       "place_type": "province"
    },
-   "Unknown": {
-      "latitude": 36.9,
-      "longitude": 7.76667,
-      "size": 0,
-      "place_type": "province"
-   },
    "Xinjiang": {
+      "slugs": {
+         "xinjiang": "Xinjiang"
+      },
       "latitude": 41.600616,
       "longitude": 85.94488,
       "size": 642800,
       "place_type": "province"
    },
    "Yunnan": {
+      "slugs": {
+         "yunnan": "Yunnan"
+      },
       "latitude": 25.043509,
       "longitude": 102.71032,
       "size": 152124,
       "place_type": "province"
    },
    "Zhejiang": {
+      "slugs": {
+         "zhejiang": "Zhejiang"
+      },
       "latitude": 29.059828,
       "longitude": 119.90275,
       "size": 39305,
       "place_type": "province"
    },
    "Faroe Islands": {
+      "slugs": {
+         "faroe-islands": "Faroe Islands"
+      },
       "latitude": 62.185604,
       "longitude": -7.058429,
       "size": 540,
       "place_type": "province"
    },
    "Greenland": {
+      "slugs": {
+         "greenland": "Greenland"
+      },
       "latitude": 74.31938,
       "longitude": -39.33508,
       "size": 836300,
       "place_type": "province"
    },
    "French Guiana": {
+      "slugs": {
+         "french-guiana": "French Guiana"
+      },
       "latitude": 3.999143,
       "longitude": -53.068214,
       "size": 32373,
       "place_type": "province"
    },
    "French Polynesia": {
+      "slugs": {
+         "french-polynesia": "French Polynesia"
+      },
       "latitude": -17.642803,
       "longitude": -149.44388,
       "size": 1609,
       "place_type": "province"
    },
    "Guadeloupe": {
+      "slugs": {
+         "guadeloupe": "Guadeloupe"
+      },
       "latitude": 16.24988,
       "longitude": -61.58365,
       "size": 629,
       "place_type": "province"
    },
    "Martinique": {
+      "slugs": {
+         "martinique": "Martinique"
+      },
       "latitude": 14.711978,
       "longitude": -61.055656,
       "size": 436,
       "place_type": "province"
    },
    "Mayotte": {
+      "slugs": {
+         "mayotte": "Mayotte"
+      },
       "latitude": -12.774755,
       "longitude": 45.151318,
       "size": 144.4,
       "place_type": "province"
    },
    "New Caledonia": {
+      "slugs": {
+         "new-caledonia": "New Caledonia"
+      },
       "latitude": -21.097317,
       "longitude": 165.1272,
       "size": 7172,
       "place_type": "province"
    },
    "Reunion": {
+      "slugs": {
+         "reunion": "Reunion"
+      },
       "latitude": -21.06667,
       "longitude": 55.26667,
       "size": 970,
       "place_type": "province"
    },
    "Saint Barthelemy": {
+      "slugs": {
+         "saint-barthelemy": "Saint Barthelemy"
+      },
       "latitude": 17.900616,
       "longitude": -62.82575,
       "size": 9.266,
       "place_type": "province"
    },
    "Saint Pierre And Miquelon": {
+      "slugs": {
+         "saint-pierre-and-miquelon": "Saint Pierre And Miquelon"
+      },
       "latitude": 47.042404,
       "longitude": -56.34943,
       "size": 93.44,
       "place_type": "province"
    },
    "St Martin": {
+      "slugs": {
+         "st-martin": "St Martin"
+      },
       "latitude": 18.04235,
       "longitude": -63.058384,
       "size": 33.59,
       "place_type": "province"
    },
    "Wallis And Futuna": {
+      "slugs": {
+         "wallis-and-futuna": "Wallis And Futuna"
+      },
       "latitude": -14.289278,
       "longitude": -178.14095,
       "size": 54.99,
       "place_type": "province"
    },
    "Aruba": {
+      "slugs": {
+         "aruba": "Aruba"
+      },
       "latitude": 12.517399,
       "longitude": -69.97279,
       "size": 69.5,
       "place_type": "province"
    },
    "Bonaire, Sint Eustatius And Saba": {
+      "slugs": {
+         "bonaire-sint-eustatius-and-saba": "Bonaire, Sint Eustatius And Saba"
+      },
       "latitude": 12.194274,
       "longitude": -68.24909,
       "size": 124.3,
       "place_type": "province"
    },
    "Curacao": {
+      "slugs": {
+         "curacao": "Curacao"
+      },
       "latitude": 12.150201,
       "longitude": -68.93342,
       "size": 171.4,
       "place_type": "province"
    },
    "Sint Maarten": {
+      "slugs": {
+         "sint-maarten": "Sint Maarten"
+      },
       "latitude": 18.04235,
       "longitude": -63.058384,
       "size": 13.13,
       "place_type": "province"
    },
    "Cook Islands": {
+      "slugs": {
+         "cook-islands": "Cook Islands"
+      },
       "latitude": -21.232115,
       "longitude": -159.77972,
       "size": 91.39,
       "place_type": "province"
    },
    "Anguilla": {
+      "slugs": {
+         "anguilla": "Anguilla"
+      },
       "latitude": 18.232136,
       "longitude": -63.042294,
       "size": 39.38,
       "place_type": "province"
    },
    "Bermuda": {
+      "slugs": {
+         "bermuda": "Bermuda"
+      },
       "latitude": 32.2967,
       "longitude": -64.76434,
       "size": 20.54,
       "place_type": "province"
    },
    "British Virgin Islands": {
+      "slugs": {
+         "british-virgin-islands": "British Virgin Islands"
+      },
       "latitude": 18.42785,
       "longitude": -64.640816,
       "size": 59.07,
       "place_type": "province"
    },
    "Cayman Islands": {
+      "slugs": {
+         "cayman-islands": "Cayman Islands"
+      },
       "latitude": 19.319996,
       "longitude": -81.23074,
       "size": 100,
       "place_type": "province"
    },
    "Channel Islands": {
+      "slugs": {
+         "channel-islands": "Channel Islands"
+      },
       "latitude": 54.519707,
       "longitude": -130.82115,
       "size": 76.45,
       "place_type": "province"
    },
    "Falkland Islands (Malvinas)": {
+      "slugs": {
+         "falkland-islands-malvinas": "Falkland Islands (Malvinas)"
+      },
       "latitude": -51.651512,
       "longitude": -58.738304,
       "size": 4700,
       "place_type": "province"
    },
    "Gibraltar": {
+      "slugs": {
+         "gibraltar": "Gibraltar"
+      },
       "latitude": 36.129425,
       "longitude": -5.3467,
       "size": 2.625,
       "place_type": "province"
    },
    "Isle Of Man": {
+      "slugs": {
+         "isle-of-man": "Isle Of Man"
+      },
       "latitude": 54.255203,
       "longitude": -4.49708,
       "size": 220.9,
       "place_type": "province"
    },
    "Montserrat": {
+      "slugs": {
+         "montserrat": "Montserrat"
+      },
       "latitude": 16.73717,
       "longitude": -62.18825,
       "size": 39.38,
       "place_type": "province"
    },
    "Saint Helena, Ascension And Tristan Da Cunha": {
+      "slugs": {
+         "saint-helena-ascension-and-tristan-da-cunha": "Saint Helena, Ascension And Tristan Da Cunha"
+      },
       "latitude": -15.961264,
       "longitude": -5.708248,
       "size": 162.2,
       "place_type": "province"
    },
    "Turks And Caicos Islands": {
+      "slugs": {
+         "turks-and-caicos-islands": "Turks And Caicos Islands"
+      },
       "latitude": 21.81663,
       "longitude": -71.7527,
       "size": 161,

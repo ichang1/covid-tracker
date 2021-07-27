@@ -2,6 +2,8 @@ import requests
 from jsonToFile import jsonToText
 from bs4 import BeautifulSoup
 from places import places, states, countries, provinces
+from slugify import slugify
+import sys
 
 def getLatLong(place):
     api_key = "ff2748c6dacc003d8c4f83e4aaba7c93"
@@ -65,7 +67,11 @@ if __name__ == '__main__':
     province_set = set(provinces)
     for place in places:
         try:
+            print(f'Adding {place}')
             place_data = {
+                'slugs': {
+                    slugify(place): place
+                },
                 **getLatLong(place)
             }
             place_data['size'] = getSize(place)
@@ -78,9 +84,29 @@ if __name__ == '__main__':
             else:
                 raise Exception(f'{place} is not a state, country or province')
             data[place] = place_data
+            print(f'Finished {place}\n')
         except:
-            #print what we got so far cause something went wrong
-            print(data)
+            try:
+                print(f'Retry Adding {place}')
+                place_data = {
+                    'slugs': {
+                        slugify(place): place
+                    },
+                    **getLatLong(place)
+                }
+                place_data['size'] = getSize(place)
+                if place in state_set:
+                    place_data['place_type'] = 'state'
+                elif place in country_set:
+                    place_data['place_type'] = 'country'
+                elif place in province_set:
+                    place_data['place_type'] = 'province'
+                else:
+                    raise Exception(f'{place} is not a state, country or province')
+                data[place] = place_data
+                print(f'Finished retry {place}\n')
+            except (KeyboardInterrupt):
+                sys.exit(0)
     jsonToText('./data.txt', data)
 
 
