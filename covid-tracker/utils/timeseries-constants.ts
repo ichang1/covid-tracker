@@ -1,33 +1,3 @@
-export const monthToNum = {
-  January: 0,
-  Feburary: 1,
-  March: 2,
-  April: 3,
-  May: 4,
-  June: 5,
-  July: 6,
-  August: 7,
-  September: 8,
-  October: 9,
-  November: 10,
-  December: 11,
-};
-
-export const monthOptions = [
-  "January",
-  "Feburary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 export const BLUE = "#8884d8";
 export const GREEN = "#82ca9d";
 export const RED = "#E7625F";
@@ -56,6 +26,40 @@ function dateParts(date: Date) {
     dayStr,
     monthStr,
   };
+}
+
+export function YYYYMMDD_MMDDYYYY(date: string) {
+  const [yearStr, monthStr, dayStr] = date.split("-");
+  return `${monthStr}-${dayStr}-${yearStr}`;
+}
+
+function dateToNumber(date: string) {
+  //date: MM-DD-YYYY
+  const [month, day, year] = date.split("-").map((num) => parseInt(num));
+  const monthStr = month < 10 ? `0${month}` : `${month}`;
+  const dayStr = day < 10 ? `0${day}` : `${day}`;
+  //YYYYMMMDDDD
+  return parseInt(`${year}${monthStr}${dayStr}`);
+}
+interface Data {
+  [key: string]: {
+    [key: string]: number;
+  };
+}
+export function formatData(data: Data) {
+  const keys = Object.keys(data);
+  const dates = Object.keys(data[keys[0]]);
+  const datesSorted = dates.sort(
+    (date1, date2) => dateToNumber(date1) - dateToNumber(date2)
+  );
+  const formattedData = datesSorted.map((date) => {
+    const dateData = keys.reduce(
+      (_dateData, key) => ({ ..._dateData, [`${key}`]: data[key][date] }),
+      {}
+    );
+    return { ...dateData, date };
+  });
+  return formattedData;
 }
 
 export const MIN_COVID_DATE = "2020-01-22";
