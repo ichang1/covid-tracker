@@ -1,0 +1,28 @@
+.time-series-label {
+  position: relative;
+  left: 5%;
+}
+
+.time-series-buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.start-date-selector-container,
+.end-date-selector-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.time-series-graph-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.date-selector,
+.date-selector-label {
+  position: relative;
+  right: 0.5%;
+}

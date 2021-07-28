@@ -17,7 +17,6 @@ export default function useAxios(url: string | null) {
         } catch (error) {
           data = { error };
         }
-        console.log(data);
         setDataCache((dataCache) => ({ ...dataCache, [`${url}`]: data }));
         setIsLoading(false);
       }
