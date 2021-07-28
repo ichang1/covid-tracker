@@ -1,4 +1,14 @@
-export const places = {
+interface Places {
+  [key: string]: {
+    slugs: string[];
+    latitude: number;
+    longitude: number;
+    size: number;
+    place_type: "state" | "country" | "province";
+  };
+}
+
+export const places: Places = {
   California: {
     slugs: ["california"],
     latitude: 36.531544,
@@ -815,7 +825,7 @@ export const places = {
     slugs: ["georgia-eu"],
     latitude: 42.3154,
     longitude: 43.3569,
-    area: 26911,
+    size: 26911,
     place_type: "country",
   },
   Germany: {
