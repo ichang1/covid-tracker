@@ -1,0 +1,9 @@
+.switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  position: relative;
+  left: 0.5%;
+}
