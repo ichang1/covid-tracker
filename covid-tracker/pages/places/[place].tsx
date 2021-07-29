@@ -41,8 +41,17 @@ const covidChartStyle = {
   },
 };
 
+const vaccineChartStyle = {
+  XAxis: { dataKey: "date" },
+  YAxis: {
+    Line: [{ dataKey: "doses", strokeColor: GREEN }],
+  },
+};
+
 export default function Place({ place }: PlaceProps) {
   const [showCumulativeCovidSeries, setShowCumulativeCovidSeries] =
+    useState(true);
+  const [showCumulativeVaccineSeries, setShowCumulativeVaccineSeries] =
     useState(true);
 
   const placeName = slugsToPlaces[place];
@@ -50,7 +59,8 @@ export default function Place({ place }: PlaceProps) {
 
   const baseCovidCumulativeEndpoint = `http://localhost:4000/covid-19/${placeType}/${placeName}/cumulative`;
   const baseCovidDailyEndpoint = `http://localhost:4000/covid-19/${placeType}/${placeName}/daily`;
-  const baseVaccineEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}`;
+  const baseVaccineCumulativeEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/cumulative`;
+  const baseVaccineDailyEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/daily`;
 
   return (
     <div>
@@ -73,6 +83,26 @@ export default function Place({ place }: PlaceProps) {
             label={showCumulativeCovidSeries ? "Cumulative" : "Daily"}
             state={showCumulativeCovidSeries}
             setState={setShowCumulativeCovidSeries}
+          />
+        </div>
+        <div className={`${place}-vaccine-time-series`}>
+          <TimeSeries
+            label={`${placeName} Vaccine Dosage Time Series`}
+            data={[]}
+            minDate={MIN_VACCINE_DATE}
+            maxDate={MAX_VACCINE_DATE}
+            chartStyle={vaccineChartStyle}
+            baseEndpoint={
+              showCumulativeVaccineSeries
+                ? baseVaccineCumulativeEndpoint
+                : baseVaccineDailyEndpoint
+            }
+            formatData={formatData}
+          />
+          <CustomSwitch
+            label={showCumulativeVaccineSeries ? "Cumulative" : "Daily"}
+            state={showCumulativeVaccineSeries}
+            setState={setShowCumulativeVaccineSeries}
           />
         </div>
       </div>
