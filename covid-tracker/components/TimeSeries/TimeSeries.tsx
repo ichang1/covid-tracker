@@ -4,6 +4,8 @@ import { Data, LineStyle } from "./utils/types";
 import styles from "./TimeSeries.module.css";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import useAxios from "../../customHooks/useAxios";
+import axios from "axios";
+import { useQuery } from "react-query";
 
 interface TimeSeriesProps {
   label: string;
@@ -22,6 +24,18 @@ interface TimeSeriesProps {
   formatData: (data: any) => any;
 }
 
+function getFullEndpoint(
+  baseEndpoint: string,
+  startDate: string,
+  endDate: string
+) {
+  //YYYY-MM-DD -> MM-DD-YYYY
+  const startDateFormatted = YYYYMMDD_MMDDYYYY(startDate);
+  const endDateFormatted = YYYYMMDD_MMDDYYYY(endDate);
+  const fullEndpoint = `${baseEndpoint}?start=${startDateFormatted}&end=${endDateFormatted}`;
+  return fullEndpoint;
+}
+
 export default function TimeSeries({
   label,
   minDate,
@@ -32,15 +46,14 @@ export default function TimeSeries({
 }: TimeSeriesProps) {
   const [startDate, setStartDate] = useState(minDate);
   const [endDate, setEndDate] = useState(maxDate);
-  const [endpoint, setEndpoint] = useState<string | null>(null);
+  const [endpoint, setEndpoint] = useState<string>(
+    getFullEndpoint(baseEndpoint, startDate, endDate)
+  );
 
-  const { data, isLoading } = useAxios(endpoint);
-  // console.log(formatData(data), isLoading);
+  const { data, isLoading, isSuccess } = useAxios(endpoint, endpoint);
+
   useEffect(() => {
-    //YYYY-MM-DD -> MM-DD-YYYY
-    const startDateFormatted = YYYYMMDD_MMDDYYYY(startDate);
-    const endDateFormatted = YYYYMMDD_MMDDYYYY(endDate);
-    const fullEndpoint = `${baseEndpoint}?start=${startDateFormatted}&end=${endDateFormatted}`;
+    const fullEndpoint = getFullEndpoint(baseEndpoint, startDate, endDate);
     setEndpoint(fullEndpoint);
   }, [startDate, endDate, baseEndpoint]);
 
@@ -49,15 +62,18 @@ export default function TimeSeries({
       <span className={styles["time-series-label"]}>{label}</span>
       <div className={styles["time-series-graph-container"]}>
         <TimeSeriesGraph
-          data={!isLoading && data ? formatData(data) : []}
+          data={!isLoading && isSuccess ? formatData(data) : []}
           chartStyle={chartStyle}
         />
       </div>
       <div className={styles["time-series-buttons-container"]}>
         <div className={styles["start-date-selector-container"]}>
-          <span className={styles["date-selector-label"]} id="start-date">
+          <label
+            className={styles["date-selector-label"]}
+            htmlFor="start-date-selector"
+          >
             Start Date:
-          </span>
+          </label>
           <input
             className={styles["date-selector"]}
             name="start-date-selector"
@@ -69,12 +85,16 @@ export default function TimeSeries({
             value={startDate}
             min={minDate}
             max={endDate}
+            id="start-date-selector"
           />
         </div>
         <div className={styles["end-date-selector-container"]}>
-          <span className={styles["date-selector-label"]} id="start-date">
+          <label
+            className={styles["date-selector-label"]}
+            htmlFor={"end-date-selector"}
+          >
             End Date:
-          </span>
+          </label>
           <input
             className={styles["date-selector"]}
             name="end-date-selector"
@@ -86,6 +106,7 @@ export default function TimeSeries({
             value={endDate}
             min={startDate}
             max={maxDate}
+            id="end-date-selector"
           />
         </div>
         <button>Get {label} Data</button>
