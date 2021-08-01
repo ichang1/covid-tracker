@@ -50,7 +50,7 @@ export default function TimeSeries({
     getFullEndpoint(baseEndpoint, startDate, endDate)
   );
 
-  const { data, isLoading, isSuccess } = useAxios(endpoint, endpoint);
+  const { data, isLoading, isSuccess } = useAxios(endpoint, endpoint, true);
 
   useEffect(() => {
     const fullEndpoint = getFullEndpoint(baseEndpoint, startDate, endDate);
