@@ -20,5 +20,8 @@ export default function useAxios(
     queryFn: fetchPromise(url),
     enabled,
   });
+  if (!enabled) {
+    return { data: {}, isLoading: false, isSuccess: true };
+  }
   return { data, isLoading, isSuccess };
 }
