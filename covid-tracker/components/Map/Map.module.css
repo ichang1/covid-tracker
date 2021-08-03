@@ -1,0 +1,29 @@
+/* .marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 20px;
+  height: 20px;
+} */
+
+.hover-name-popup-container :global(.mapboxgl-popup-close-button) {
+  display: none;
+}
+
+.popup :global(.mapboxgl-popup-content) {
+  cursor: text;
+  user-select: text;
+}
+
+.popup-place-name-container {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-date-selector-container {
+  display: flex;
+  justify-content: space-around;
+}
