@@ -3,11 +3,8 @@ import axios from "axios";
 axios.defaults.timeout = 15000;
 
 function fetchPromise(url: string) {
-  return async () => {
-    axios
-      .get(url)
-      .then((res) => res.data)
-      .catch((error) => error);
+  return () => {
+    axios.get(url).then((res) => res.data);
   };
 }
 export default function useAxios(
