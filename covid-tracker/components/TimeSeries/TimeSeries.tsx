@@ -62,7 +62,7 @@ export default function TimeSeries({
       <span className={styles["time-series-label"]}>{label}</span>
       <div className={styles["time-series-graph-container"]}>
         <TimeSeriesGraph
-          data={!isLoading && isSuccess ? formatData(data) : []}
+          data={!isLoading && isSuccess && data ? formatData(data) : []}
           chartStyle={chartStyle}
         />
       </div>
