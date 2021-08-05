@@ -25,5 +25,10 @@
 
 .popup-date-selector-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
+}
+
+.popup-date-selector {
+  position: relative;
+  left: 3%;
 }
