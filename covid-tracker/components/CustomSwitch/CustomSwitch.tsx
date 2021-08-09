@@ -1,6 +1,6 @@
 import React from "react";
 import Switch from "react-switch";
-import styles from "./CustomSwitch.module.css";
+import styles from "../../styles/CustomSwitch.module.css";
 
 interface CustomSwitchProps {
   label: string;

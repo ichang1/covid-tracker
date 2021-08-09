@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Select, { StylesConfig } from "react-select";
 import { randAlphaNum } from "../../utils/misc";
-import styles from "./CustomSelect.module.css";
+import styles from "../../styles/CustomSelect.module.css";
 
-type Option = {
+export type Option = {
   value: string;
   label: string;
 };
@@ -11,6 +11,7 @@ type Option = {
 interface CustomSelectProps {
   options: Option[];
   setValue: (value: string) => void;
+  isMulti: boolean;
 }
 
 const customStyles: StylesConfig<Option, boolean> = {
@@ -40,7 +41,11 @@ const customStyles: StylesConfig<Option, boolean> = {
   },
 };
 
-export default function CustomSelect({ options, setValue }: CustomSelectProps) {
+export default function CustomSelect({
+  options,
+  setValue,
+  isMulti,
+}: CustomSelectProps) {
   const [selectValue, setSelectValue] = useState<Option | null>(null);
 
   const handleChange = (option: any) => {
@@ -58,6 +63,9 @@ export default function CustomSelect({ options, setValue }: CustomSelectProps) {
         instanceId={`custom-select-${randAlphaNum(3)}`}
         onChange={handleChange}
         styles={customStyles}
+        backspaceRemovesValue={false}
+        noOptionsMessage={(e) => (e.inputValue ? "No options" : null)}
+        isMulti={isMulti}
       />
     </>
   );

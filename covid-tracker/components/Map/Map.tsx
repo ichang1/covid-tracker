@@ -10,7 +10,7 @@ import ReactMapGl, {
 } from "react-map-gl";
 import useAxiosAll from "../../customHooks/useAxiosAll";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
-import styles from "./Map.module.css";
+import styles from "../../styles/Map.module.css";
 
 interface Places {
   [key: string]: {
@@ -62,8 +62,6 @@ type HoverPlaceAction = { type: "show"; place: string } | { type: "hide" };
 const INITIAL_VIEWPORT: Viewport = {
   latitude: 0,
   longitude: 0,
-  width: "80vw",
-  height: "80vh",
   zoom: 0.5,
 };
 
@@ -77,8 +75,6 @@ function getFullEndpoint(baseEndpoint: string, date: string) {
 export default function Map({
   places,
   mapStyle: { points },
-  // handleMapClick,
-  // handleMapHover,
   popupDataToJSX,
   getPlaceBaseEndpoints,
   minDate,
@@ -242,6 +238,8 @@ export default function Map({
         interactiveLayerIds={Object.keys(points)}
         onClick={handleMapClick}
         onHover={handleMapHover}
+        height="80vh"
+        width="100vw"
       >
         {Object.values(points).map(({ source, layer }) => (
           <Source {...source} key={`${source.id}-${layer.id}`}>

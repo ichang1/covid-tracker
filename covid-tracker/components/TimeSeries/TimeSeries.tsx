@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TimeSeriesGraph from "./TimeSeriesGraph/TimeSeriesGraph";
 import { Data, LineStyle } from "./utils/types";
-import styles from "./TimeSeries.module.css";
+import styles from "../../styles/TimeSeries.module.css";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import useAxios from "../../customHooks/useAxios";
-import axios from "axios";
-import { useQuery } from "react-query";
 
 interface TimeSeriesProps {
   label: string;

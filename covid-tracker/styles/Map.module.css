@@ -1,14 +1,3 @@
-/* .marker-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.marker-btn img {
-  width: 20px;
-  height: 20px;
-} */
-
 .hover-name-popup-container :global(.mapboxgl-popup-close-button) {
   display: none;
 }
