@@ -24,6 +24,7 @@ export default function NavBar() {
           src={logo}
           alt="Icon of globe wearing a face mask"
           objectFit="contain"
+          height="60px"
           width="60px"
         />
       </NavLink>
