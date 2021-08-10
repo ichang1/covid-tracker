@@ -10,7 +10,7 @@ export type Option = {
 
 interface CustomSelectProps {
   options: Option[];
-  setValue: (value: string) => void;
+  setValue: (value: string | null) => void;
   isMulti: boolean;
 }
 
@@ -49,9 +49,14 @@ export default function CustomSelect({
   const [selectValue, setSelectValue] = useState<Option | null>(null);
 
   const handleChange = (option: any) => {
-    const { value = null } = option;
-    setValue(value);
-    setSelectValue(option);
+    if (option) {
+      const { value = null } = option;
+      setValue(value);
+      setSelectValue(option);
+    } else {
+      setValue(null);
+      setSelectValue(null);
+    }
   };
 
   return (
@@ -63,9 +68,10 @@ export default function CustomSelect({
         instanceId={`custom-select-${randAlphaNum(3)}`}
         onChange={handleChange}
         styles={customStyles}
-        backspaceRemovesValue={false}
+        backspaceRemovesValue={true}
         noOptionsMessage={(e) => (e.inputValue ? "No options" : null)}
         isMulti={isMulti}
+        isClearable={true}
       />
     </>
   );
