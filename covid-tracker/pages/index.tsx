@@ -138,10 +138,6 @@ const placeOptions = Object.keys(places).map((p) => ({ value: p, label: p }));
 export default function Home() {
   const [searchPlace, setSearchPlace] = useState<string | null>(null);
 
-  useEffect(() => {
-    console.log(searchPlace);
-  }, [searchPlace]);
-
   return (
     <div className={styles.container}>
       <Head>
