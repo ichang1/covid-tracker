@@ -5,6 +5,9 @@ import Map from "../components/Map/Map";
 import { places } from "../utils/places";
 import { SourceProps, LayerProps } from "react-map-gl";
 import { MIN_COVID_DATE, MAX_COVID_DATE } from "../utils/timeseries-constants";
+import { useState } from "react";
+import CustomSelect from "../components/CustomSelect/CustomSelect";
+import { useEffect } from "react";
 
 const covidPlacesSource: SourceProps = {
   id: "covidPlaces",
@@ -130,7 +133,15 @@ function popupDataToJSX(data: { [key: string]: any }): JSX.Element {
   );
 }
 
+const placeOptions = Object.keys(places).map((p) => ({ value: p, label: p }));
+
 export default function Home() {
+  const [searchPlace, setSearchPlace] = useState<string | null>(null);
+
+  useEffect(() => {
+    console.log(searchPlace);
+  }, [searchPlace]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -145,9 +156,17 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      <div className="page-select-search">
+        <CustomSelect
+          options={placeOptions}
+          isMulti={false}
+          setValue={setSearchPlace}
+        />
+      </div>
 
       <main className={styles.main}>
         <Map
+          searchPlace={searchPlace}
           places={places}
           mapStyle={mapStyle}
           popupDataToJSX={popupDataToJSX}

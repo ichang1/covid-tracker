@@ -22,6 +22,7 @@ interface Places {
 
 interface MapProps {
   places: Places;
+  searchPlace: string | null;
   mapStyle: {
     points: {
       [key: string]: {
@@ -74,6 +75,7 @@ function getFullEndpoint(baseEndpoint: string, date: string) {
 
 export default function Map({
   places,
+  searchPlace,
   mapStyle: { points },
   popupDataToJSX,
   getPlaceBaseEndpoints,
@@ -155,8 +157,24 @@ export default function Map({
   }, [mapRef]);
 
   useEffect(() => {
+    if (searchPlace && selectedPlace !== searchPlace) {
+      const { latitude, longitude } = places[searchPlace];
+      dispatchSelectedPlaceState({ type: "set_place", place: searchPlace });
+      setViewport((viewport) => ({
+        ...viewport,
+        zoom: 4,
+        latitude,
+        longitude,
+      }));
+    }
+  }, [searchPlace]);
+  useEffect(() => {
     const keydownlistener = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      const target = e.target as Element;
+      if (
+        e.key === "Escape" &&
+        target?.id !== "react-select-custom-select-___-input"
+      ) {
         dispatchSelectedPlaceState({ type: "clear" });
       }
     };
@@ -243,7 +261,7 @@ export default function Map({
       >
         {Object.values(points).map(({ source, layer }) => (
           <Source {...source} key={`${source.id}-${layer.id}`}>
-            <Layer {...layer} />
+            <Layer {...layer} key={`${layer.id}`} />
           </Source>
         ))}
         {selectedPlace ? (
@@ -251,6 +269,8 @@ export default function Map({
             className={styles["popup"]}
             latitude={places[selectedPlace].latitude}
             longitude={places[selectedPlace].longitude}
+            anchor="left"
+            dynamicPosition={true}
           >
             <div className={styles["popup-place-name-container"]}>
               <span className="popup-place-name">{selectedPlace}</span>

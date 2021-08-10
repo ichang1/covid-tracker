@@ -22,3 +22,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.page-select-search {
+  position: absolute;
+  z-index: 20;
+  top: 0.7rem;
+  right: 15%;
+}

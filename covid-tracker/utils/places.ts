@@ -53,8 +53,8 @@ export const places: Places = {
   },
   Georgia: {
     slugs: ["georgia"],
-    latitude: 41.870087,
-    longitude: 43.735725,
+    latitude: 32.1656,
+    longitude: -82.9001,
     size: 59425.0,
     place_type: "state",
   },
