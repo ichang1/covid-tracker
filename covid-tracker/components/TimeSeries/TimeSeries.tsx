@@ -6,7 +6,6 @@ import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import useAxios from "../../customHooks/useAxios";
 
 interface TimeSeriesProps {
-  label: string;
   data?: Data[];
   minDate: string;
   maxDate: string;
@@ -35,7 +34,6 @@ function getFullEndpoint(
 }
 
 export default function TimeSeries({
-  label,
   minDate,
   maxDate,
   baseEndpoint,
@@ -57,7 +55,6 @@ export default function TimeSeries({
 
   return (
     <div className="time-series-container">
-      <span className={styles["time-series-label"]}>{label}</span>
       <div className={styles["time-series-graph-container"]}>
         <TimeSeriesGraph
           data={!isLoading && isSuccess && data ? formatData(data) : []}
@@ -107,7 +104,7 @@ export default function TimeSeries({
             id="end-date-selector"
           />
         </div>
-        <button>Get {label} Data</button>
+        {/* <button>Get {label} Data</button> */}
       </div>
     </div>
   );

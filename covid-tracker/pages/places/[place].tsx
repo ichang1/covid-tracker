@@ -1,7 +1,6 @@
-import React, { FC, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { places } from "../../utils/places";
-import useWindowDimensions from "../../customHooks/useWindowDimensions";
 import CustomSwitch from "../../components/CustomSwitch/CustomSwitch";
 import {
   MIN_COVID_DATE,
@@ -14,6 +13,8 @@ import {
   formatData,
 } from "../../utils/timeseries-constants";
 import TimeSeries from "../../components/TimeSeries/TimeSeries";
+import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import styles from "../../styles/[places].module.scss";
 
 const slugsToPlaces: { [key: string]: string } = Object.entries(places).reduce(
   (obj, [place, { slugs }]) => {
@@ -48,11 +49,15 @@ const vaccineChartStyle = {
   },
 };
 
+const placeOptions = Object.keys(places).map((p) => ({ value: p, label: p }));
+
 export default function Place({ place }: PlaceProps) {
+  const router = useRouter();
   const [showCumulativeCovidSeries, setShowCumulativeCovidSeries] =
     useState(true);
   const [showCumulativeVaccineSeries, setShowCumulativeVaccineSeries] =
     useState(true);
+  const [searchPlace, setSearchPlace] = useState<string | null>(null);
 
   const placeName = slugsToPlaces[place];
   const { place_type: placeType } = places[placeName];
@@ -62,12 +67,37 @@ export default function Place({ place }: PlaceProps) {
   const baseVaccineCumulativeEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/cumulative`;
   const baseVaccineDailyEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/daily`;
 
+  useEffect(() => {
+    if (searchPlace && searchPlace !== placeName) {
+      const searchPlaceSlug = places[searchPlace].slugs[0];
+      router.push(`/places/${searchPlaceSlug}`);
+    }
+  }, [searchPlace]);
+
   return (
     <div>
-      <div className="time-series">
+      <div className="page-select-search">
+        <CustomSelect
+          options={placeOptions}
+          isMulti={false}
+          setValue={setSearchPlace}
+        />
+      </div>
+      <div className={styles["covid-case-time-series"]}>
+        <div className={styles["time-series-heading"]}>
+          <span
+            className={styles["time-series-label"]}
+          >{`${placeName} Covid Time Series`}</span>
+          <div className={styles["time-series-data-toggle-container"]}>
+            <CustomSwitch
+              label={showCumulativeCovidSeries ? "Cumulative" : "Daily"}
+              state={showCumulativeCovidSeries}
+              setState={setShowCumulativeCovidSeries}
+            />
+          </div>
+        </div>
         <div className={`${place}-covid-case-time-series`}>
           <TimeSeries
-            label={`${placeName} Covid Time Series`}
             data={[]}
             minDate={MIN_COVID_DATE}
             maxDate={MAX_COVID_DATE}
@@ -79,15 +109,23 @@ export default function Place({ place }: PlaceProps) {
             }
             formatData={formatData}
           />
-          <CustomSwitch
-            label={showCumulativeCovidSeries ? "Cumulative" : "Daily"}
-            state={showCumulativeCovidSeries}
-            setState={setShowCumulativeCovidSeries}
-          />
+        </div>
+      </div>
+      <div className={styles["vaccine-time-series"]}>
+        <div className={styles["time-series-heading"]}>
+          <span
+            className={styles["time-series-label"]}
+          >{`${placeName} Vaccine Dosage Time Series`}</span>
+          <div className={styles["time-series-data-toggle-container"]}>
+            <CustomSwitch
+              label={showCumulativeVaccineSeries ? "Cumulative" : "Daily"}
+              state={showCumulativeVaccineSeries}
+              setState={setShowCumulativeVaccineSeries}
+            />
+          </div>
         </div>
         <div className={`${place}-vaccine-time-series`}>
           <TimeSeries
-            label={`${placeName} Vaccine Dosage Time Series`}
             data={[]}
             minDate={MIN_VACCINE_DATE}
             maxDate={MAX_VACCINE_DATE}
@@ -98,11 +136,6 @@ export default function Place({ place }: PlaceProps) {
                 : baseVaccineDailyEndpoint
             }
             formatData={formatData}
-          />
-          <CustomSwitch
-            label={showCumulativeVaccineSeries ? "Cumulative" : "Daily"}
-            state={showCumulativeVaccineSeries}
-            setState={setShowCumulativeVaccineSeries}
           />
         </div>
       </div>

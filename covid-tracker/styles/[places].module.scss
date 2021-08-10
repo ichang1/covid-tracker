@@ -1,0 +1,22 @@
+.covid-case-time-series,
+.vaccine-time-series {
+  position: relative;
+  margin-top: 1%;
+}
+
+.time-series-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.time-series-label {
+  position: relative;
+  margin-left: 10%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.time-series-data-toggle-container {
+  position: relative;
+  margin-left: 3%;
+}
