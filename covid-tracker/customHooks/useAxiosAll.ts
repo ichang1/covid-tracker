@@ -12,12 +12,16 @@ interface QueryOptions {
   enabled: boolean;
 }
 
+//24 hours
+const staleTime = 8.64 * 10 ** 7;
+
 export default function useAxios(queryOptions: QueryOptions[]) {
   const queryResults = useQueries(
     queryOptions.map(({ key, url, enabled }) => ({
       queryKey: key,
       queryFn: fetchPromise(url),
       enabled,
+      staleTime,
     }))
   );
   const enabled = !queryOptions.some((queryOpt) => !queryOpt.enabled);
