@@ -31,7 +31,9 @@ a {
 }
 
 .popup-data-container {
-  // border-radius: var(--border-radius);
+  white-space: nowrap;
+  position: relative;
+  top: 1%;
   padding: 1%;
   &:hover {
     background-color: lightgray;

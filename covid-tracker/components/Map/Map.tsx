@@ -11,6 +11,7 @@ import ReactMapGl, {
 import useAxiosAll from "../../customHooks/useAxiosAll";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import styles from "../../styles/Map.module.scss";
+import Link from "next/link";
 
 interface Places {
   [key: string]: {
@@ -301,6 +302,15 @@ export default function Map({
                 max={maxDate}
                 id="popup-date-selector"
               />
+            </div>
+            <div className={styles["popup-time-series-link-container"]}>
+              <Link
+                href={
+                  selectedPlace ? `/${places[selectedPlace].slugs[0]}` : "/"
+                }
+              >
+                Time Series
+              </Link>
             </div>
           </Popup>
         ) : null}

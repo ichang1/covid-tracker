@@ -2229,3 +2229,13 @@ export const places: Places = {
     place_type: "province",
   },
 };
+
+export const slugsToPlaces: { [key: string]: string } = Object.entries(
+  places
+).reduce((obj, [place, { slugs }]) => {
+  const placeSlugsToPlace = slugs.reduce(
+    (_obj, slug) => ({ ..._obj, [`${slug}`]: place }),
+    obj
+  );
+  return placeSlugsToPlace;
+}, {});

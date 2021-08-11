@@ -1,3 +1,29 @@
+.popup {
+  .popup-date-selector-container {
+    display: flex;
+    justify-content: left;
+    margin-top: 0.25em;
+    .popup-date-selector {
+      position: relative;
+      left: 3%;
+    }
+  }
+  .popup-time-series-link-container {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0.4em;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+    border-radius: 5px;
+    &:hover {
+      background-color: green;
+      color: white;
+    }
+  }
+}
+
 .popup :global(.mapboxgl-popup-content) {
   cursor: text;
   user-select: text;
@@ -26,8 +52,6 @@
     border: var(--border);
     border-radius: var(--border-radius);
     font-size: 20px;
-    height: 30px;
-    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,15 +67,5 @@
 .popup-place-name-container {
   display: flex;
   justify-content: center;
-}
-
-.popup-date-selector-container {
-  display: flex;
-  justify-content: left;
-  margin-top: 1%;
-}
-
-.popup-date-selector {
-  position: relative;
-  left: 3%;
+  font-weight: bold;
 }

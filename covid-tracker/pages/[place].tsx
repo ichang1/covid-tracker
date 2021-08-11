@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { places } from "../utils/places";
+import { places, slugsToPlaces } from "../utils/places";
 import CustomSwitch from "../components/CustomSwitch/CustomSwitch";
 import {
   MIN_COVID_DATE,
@@ -15,17 +15,6 @@ import {
 import TimeSeries from "../components/TimeSeries/TimeSeries";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
 import styles from "../styles/Place.module.scss";
-
-const slugsToPlaces: { [key: string]: string } = Object.entries(places).reduce(
-  (obj, [place, { slugs }]) => {
-    const placeSlugsToPlace = slugs.reduce(
-      (_obj, slug) => ({ ..._obj, [`${slug}`]: place }),
-      obj
-    );
-    return placeSlugsToPlace;
-  },
-  {}
-);
 
 interface PlaceProps {
   place: string;
