@@ -10,7 +10,7 @@ import ReactMapGl, {
 } from "react-map-gl";
 import useAxiosAll from "../../customHooks/useAxiosAll";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
-import styles from "../../styles/Map.module.css";
+import styles from "../../styles/Map.module.scss";
 
 interface Places {
   [key: string]: {
@@ -31,8 +31,6 @@ interface MapProps {
       };
     };
   };
-  // handleMapClick: (e: MapEvent) => void;
-  // handleMapHover: (e: MapEvent) => void;
   popupDataToJSX: (data: any) => JSX.Element;
   getPlaceBaseEndpoints: (place: string) => string[];
   minDate: string;
@@ -318,31 +316,35 @@ export default function Map({
           </div>
         ) : null}
       </ReactMapGl>
-      <button
-        value="+"
-        onClick={(e) => {
-          e.preventDefault();
-          const newZoom = viewport.zoom + 1;
-          const max = viewport.maxZoom;
-          setViewport({
-            ...viewport,
-            zoom: newZoom >= max ? viewport.maxZoom : newZoom,
-          });
-        }}
-      >
-        +
-      </button>
-      <button
-        value="-"
-        onClick={(e) => {
-          e.preventDefault();
-          const newZoom = viewport.zoom - 1;
-          const min = viewport.minZoom;
-          setViewport({ ...viewport, zoom: newZoom <= min ? min : newZoom });
-        }}
-      >
-        -
-      </button>
+      <div className={styles["zoom-buttons-container"]}>
+        <button
+          className={styles["zoom-in-button"]}
+          value="+"
+          onClick={(e) => {
+            e.preventDefault();
+            const newZoom = viewport.zoom + 1;
+            const max = viewport.maxZoom;
+            setViewport({
+              ...viewport,
+              zoom: newZoom >= max ? viewport.maxZoom : newZoom,
+            });
+          }}
+        >
+          +
+        </button>
+        <button
+          className={styles["zoom-out-button"]}
+          value="-"
+          onClick={(e) => {
+            e.preventDefault();
+            const newZoom = viewport.zoom - 1;
+            const min = viewport.minZoom;
+            setViewport({ ...viewport, zoom: newZoom <= min ? min : newZoom });
+          }}
+        >
+          {"\u2012"}
+        </button>
+      </div>
     </>
   );
 }

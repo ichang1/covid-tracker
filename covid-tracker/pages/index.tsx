@@ -157,6 +157,7 @@ export default function Home() {
           options={placeOptions}
           isMulti={false}
           setValue={setSearchPlace}
+          placeholder={"Select a place..."}
         />
       </div>
 

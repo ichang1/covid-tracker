@@ -6,6 +6,7 @@
 .time-series-buttons-container {
   display: flex;
   justify-content: space-around;
+  margin-top: 1%;
 }
 
 .start-date-selector-container,

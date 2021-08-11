@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEventHandler } from "react";
 import TimeSeriesGraph from "./TimeSeriesGraph/TimeSeriesGraph";
 import { Data, LineStyle } from "./utils/types";
 import styles from "../../styles/TimeSeries.module.css";
@@ -48,10 +48,16 @@ export default function TimeSeries({
 
   const { data, isLoading, isSuccess } = useAxios(endpoint, endpoint, true);
 
+  function handleGetData(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    const fullEndpoint = getFullEndpoint(baseEndpoint, startDate, endDate);
+    setEndpoint(fullEndpoint);
+  }
+
   useEffect(() => {
     const fullEndpoint = getFullEndpoint(baseEndpoint, startDate, endDate);
     setEndpoint(fullEndpoint);
-  }, [startDate, endDate, baseEndpoint]);
+  }, [baseEndpoint]);
 
   return (
     <div className="time-series-container">
@@ -104,7 +110,7 @@ export default function TimeSeries({
             id="end-date-selector"
           />
         </div>
-        {/* <button>Get {label} Data</button> */}
+        <button onClick={handleGetData}>Get Data</button>
       </div>
     </div>
   );

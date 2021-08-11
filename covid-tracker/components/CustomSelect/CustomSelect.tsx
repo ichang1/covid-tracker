@@ -89,6 +89,7 @@ export default function CustomSelect({
         noOptionsMessage={(e) => (e.inputValue ? "No options" : null)}
         isMulti={isMulti}
         isClearable={true}
+        maxMenuHeight={200}
         {...css}
       />
     </>

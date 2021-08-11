@@ -1,0 +1,50 @@
+.hover-name-popup-container :global(.mapboxgl-popup-close-button) {
+  display: none;
+}
+
+.popup :global(.mapboxgl-popup-content) {
+  cursor: text;
+  user-select: text;
+}
+
+.zoom-buttons-container {
+  position: absolute;
+  right: 2%;
+  top: 80%;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    &:hover {
+      font-weight: bold;
+      background-color: lightgray;
+    }
+  }
+}
+
+.popup-place-name-container {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-date-selector-container {
+  display: flex;
+  justify-content: left;
+}
+
+.popup-date-selector {
+  position: relative;
+  left: 3%;
+}
