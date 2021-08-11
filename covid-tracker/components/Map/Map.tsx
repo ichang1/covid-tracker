@@ -255,7 +255,7 @@ export default function Map({
         interactiveLayerIds={Object.keys(points)}
         onClick={handleMapClick}
         onHover={handleMapHover}
-        height="80vh"
+        height="calc(100vh - var(--nav-height))"
         width="100vw"
       >
         {Object.values(points).map(({ source, layer }) => (
