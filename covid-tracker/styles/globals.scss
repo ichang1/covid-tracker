@@ -29,3 +29,11 @@ a {
   top: 0.7rem;
   right: 15%;
 }
+
+.popup-data-container {
+  // border-radius: var(--border-radius);
+  padding: 1%;
+  &:hover {
+    background-color: lightgray;
+  }
+}
