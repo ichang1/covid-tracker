@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { places } from "../../utils/places";
-import CustomSwitch from "../../components/CustomSwitch/CustomSwitch";
+import { places } from "../utils/places";
+import CustomSwitch from "../components/CustomSwitch/CustomSwitch";
 import {
   MIN_COVID_DATE,
   MAX_COVID_DATE,
@@ -11,10 +11,10 @@ import {
   GREEN,
   BLUE,
   formatData,
-} from "../../utils/timeseries-constants";
-import TimeSeries from "../../components/TimeSeries/TimeSeries";
-import CustomSelect from "../../components/CustomSelect/CustomSelect";
-import styles from "../../styles/[places].module.scss";
+} from "../utils/timeseries-constants";
+import TimeSeries from "../components/TimeSeries/TimeSeries";
+import CustomSelect from "../components/CustomSelect/CustomSelect";
+import styles from "../styles/Place.module.scss";
 
 const slugsToPlaces: { [key: string]: string } = Object.entries(places).reduce(
   (obj, [place, { slugs }]) => {
@@ -70,17 +70,18 @@ export default function Place({ place }: PlaceProps) {
   useEffect(() => {
     if (searchPlace && searchPlace !== placeName) {
       const searchPlaceSlug = places[searchPlace].slugs[0];
-      router.push(`/places/${searchPlaceSlug}`);
+      router.push(`/${searchPlaceSlug}`);
     }
   }, [searchPlace]);
 
   return (
-    <div>
+    <div className={styles["place-time-series-container"]}>
       <div className="page-select-search">
         <CustomSelect
           options={placeOptions}
           isMulti={false}
           setValue={setSearchPlace}
+          placeholder={"Select a place..."}
         />
       </div>
       <div className={styles["covid-case-time-series"]}>
