@@ -30,7 +30,6 @@ export default function NavBar() {
       </NavLink>
       <NavMenu>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/places">Places</NavLink>
         <NavLink to="/api">Api</NavLink>
       </NavMenu>
       <Dropdown icon={<FaBars className="dropdown-icon" />}>
@@ -41,14 +40,6 @@ export default function NavBar() {
               rightIcon={<NavBarIcon src={MapIcon} />}
             >
               Home
-            </DropdownMenuItem>
-          </Link>
-          <Link href="/places" passHref>
-            <DropdownMenuItem
-              leftIcon={<NavBarIcon src={PlaceIcon} />}
-              rightIcon={<NavBarIcon src={PlaceIcon} />}
-            >
-              Places
             </DropdownMenuItem>
           </Link>
           <Link href="/api" passHref>
