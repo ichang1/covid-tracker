@@ -1,0 +1,19 @@
+.legend-item {
+  display: flex;
+  justify-content: center;
+}
+
+.chart-legend-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+
+  .chart-legend-item-wrapper {
+    padding: 0.75%;
+    margin-left: 1%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+}

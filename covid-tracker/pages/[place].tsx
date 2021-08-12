@@ -21,8 +21,8 @@ interface PlaceProps {
 }
 
 const covidChartStyle = {
-  XAxis: { dataKey: "date" },
-  YAxis: {
+  xAxis: { dataKey: "date" },
+  yAxis: {
     Line: [
       { dataKey: "cases", strokeColor: RED },
       { dataKey: "deaths", strokeColor: BLUE },
@@ -32,8 +32,8 @@ const covidChartStyle = {
 };
 
 const vaccineChartStyle = {
-  XAxis: { dataKey: "date" },
-  YAxis: {
+  xAxis: { dataKey: "date" },
+  yAxis: {
     Line: [{ dataKey: "doses", strokeColor: GREEN }],
   },
 };

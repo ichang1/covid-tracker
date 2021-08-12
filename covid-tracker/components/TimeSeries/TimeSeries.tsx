@@ -11,11 +11,14 @@ interface TimeSeriesProps {
   maxDate: string;
   baseEndpoint: string;
   chartStyle: {
-    XAxis: {
+    xAxis: {
       dataKey: string;
     };
-    YAxis: {
+    yAxis: {
       Line: LineStyle[];
+    };
+    legend?: {
+      [key: string]: any;
     };
   };
   formatData: (data: any) => any;
