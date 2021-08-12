@@ -11,9 +11,15 @@
   margin: 0; /* Remove margins */
 
   .chart-legend-item-wrapper {
-    padding: 0.75%;
     margin-left: 1%;
+    padding: 0.75%;
     border-radius: var(--border-radius);
     cursor: pointer;
+    .chart-legend-item {
+      color: inherit;
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+    }
   }
 }

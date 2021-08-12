@@ -1,7 +1,7 @@
 import React, { useState, useEffect, MouseEventHandler } from "react";
 import TimeSeriesGraph from "./TimeSeriesGraph/TimeSeriesGraph";
 import { Data, LineStyle } from "./utils/types";
-import styles from "../../styles/TimeSeries.module.css";
+import styles from "../../styles/TimeSeries.module.scss";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import useAxios from "../../customHooks/useAxios";
 
@@ -113,7 +113,12 @@ export default function TimeSeries({
             id="end-date-selector"
           />
         </div>
-        <button onClick={handleGetData}>Get Data</button>
+        <button
+          className={styles["time-series-get-data-button"]}
+          onClick={handleGetData}
+        >
+          Get Data
+        </button>
       </div>
     </div>
   );

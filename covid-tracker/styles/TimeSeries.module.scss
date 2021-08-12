@@ -5,14 +5,17 @@
 
 .time-series-buttons-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 1%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .start-date-selector-container,
 .end-date-selector-container {
   display: flex;
   justify-content: space-around;
+  margin-right: 1%;
 }
 
 .time-series-graph-container {
