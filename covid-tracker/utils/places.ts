@@ -674,7 +674,7 @@ export const places: Places = {
     size: 19761.0,
     place_type: "country",
   },
-  "C\u00f4te D'Ivoire": {
+  "CôTe D'Ivoire": {
     slugs: ["cote-d-ivoire"],
     latitude: 7.568978,
     longitude: -5.495164,
@@ -2123,13 +2123,13 @@ export const places: Places = {
     size: 69.5,
     place_type: "province",
   },
-  "Bonaire, Sint Eustatius And Saba": {
-    slugs: ["bonaire-sint-eustatius-and-saba"],
-    latitude: 12.194274,
-    longitude: -68.249092,
-    size: 124.3,
-    place_type: "province",
-  },
+  // "Bonaire, Sint Eustatius And Saba": {
+  //   slugs: ["bonaire-sint-eustatius-and-saba"],
+  //   latitude: 12.194274,
+  //   longitude: -68.249092,
+  //   size: 124.3,
+  //   place_type: "province",
+  // },
   Curacao: {
     slugs: ["curacao"],
     latitude: 12.150201,
@@ -2214,13 +2214,13 @@ export const places: Places = {
     size: 39.38,
     place_type: "province",
   },
-  "Saint Helena, Ascension And Tristan Da Cunha": {
-    slugs: ["saint-helena-ascension-and-tristan-da-cunha"],
-    latitude: -15.961264,
-    longitude: -5.708248,
-    size: 162.2,
-    place_type: "province",
-  },
+  // "Saint Helena, Ascension And Tristan Da Cunha": {
+  //   slugs: ["saint-helena-ascension-and-tristan-da-cunha"],
+  //   latitude: -15.961264,
+  //   longitude: -5.708248,
+  //   size: 162.2,
+  //   place_type: "province",
+  // },
   "Turks And Caicos Islands": {
     slugs: ["turks-and-caicos-islands"],
     latitude: 21.81663,
