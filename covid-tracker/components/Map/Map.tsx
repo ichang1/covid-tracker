@@ -214,6 +214,7 @@ export default function Map({
   };
 
   const handleMapHover = (e: MapEvent) => {
+    console.log(e.target.className);
     const { features } = e;
     if (!features) {
       // for some reason there are no features
@@ -281,7 +282,7 @@ export default function Map({
               : `Error getting data for ${selectedPlace}`}
             <div className={styles["popup-date-selector-container"]}>
               <label
-                className={styles["popup-date-selector-label"]}
+                className="popup-date-selector-label"
                 htmlFor="popup-date-selector"
               >
                 Date:
@@ -303,15 +304,11 @@ export default function Map({
                 id="popup-date-selector"
               />
             </div>
-            <div className={styles["popup-time-series-link-container"]}>
-              <Link
-                href={
-                  selectedPlace ? `/${places[selectedPlace].slugs[0]}` : "/"
-                }
-              >
-                Time Series
-              </Link>
-            </div>
+            <Link
+              href={selectedPlace ? `/${places[selectedPlace].slugs[0]}` : "/"}
+            >
+              <a className={styles["popup-time-series-link"]}>Time Series</a>
+            </Link>
           </Popup>
         ) : null}
         {showHoverPlace && selectedPlace !== hoverPlace ? (
