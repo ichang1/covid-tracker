@@ -3,7 +3,14 @@ import axios from "axios";
 axios.defaults.timeout = 15000;
 
 function fetchPromise(url: string) {
-  return () => axios.get(url).then((res) => res.data);
+  return async () => {
+    try {
+      const { data } = await axios.get(url);
+      return data;
+    } catch (err) {
+      return err;
+    }
+  };
 }
 
 interface QueryOptions {
@@ -33,6 +40,9 @@ export default function useAxios(queryOptions: QueryOptions[]) {
     (_data, query, idx) => ({ ..._data, [queryOptions[idx].url]: query.data }),
     {}
   );
-  const isSuccess = !queryResults.some((query) => !query.isSuccess);
-  return { data, isLoading, isSuccess };
+  const isSuccess = queryResults.every((query) => query.isSuccess);
+  const allError = queryResults.some((query) => query.isError);
+  const someError = !isSuccess;
+  console.log(data);
+  return { data, isLoading, isSuccess, allError, someError };
 }

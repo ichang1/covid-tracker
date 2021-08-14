@@ -3,7 +3,14 @@ import axios from "axios";
 axios.defaults.timeout = 15000;
 
 function fetchPromise(url: string) {
-  return () => axios.get(url).then((res) => res.data);
+  return async () => {
+    try {
+      const { data } = await axios.get(url);
+      return data;
+    } catch (err) {
+      return err;
+    }
+  };
 }
 //24 hours
 const staleTime = 8.64 * 10 ** 7;
