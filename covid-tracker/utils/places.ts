@@ -32,8 +32,8 @@ export const places: Places = {
   },
   "New York": {
     slugs: ["new-york"],
-    latitude: 40.68295,
-    longitude: -73.9708,
+    latitude: 43.2994,
+    longitude: -74.9,
     size: 302.6,
     place_type: "state",
   },
@@ -193,8 +193,8 @@ export const places: Places = {
   },
   Washington: {
     slugs: ["washington"],
-    latitude: 38.82652,
-    longitude: -77.01712,
+    latitude: 47.7511,
+    longitude: -120.7401,
     size: 71362.0,
     place_type: "state",
   },
@@ -1607,8 +1607,8 @@ export const places: Places = {
   },
   Uzbekistan: {
     slugs: ["uzbekistan"],
-    latitude: 37.23583,
-    longitude: 67.31111,
+    latitude: 41.3775,
+    longitude: 64.5853,
     size: 173351.0,
     place_type: "country",
   },
