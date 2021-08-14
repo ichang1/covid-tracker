@@ -58,8 +58,8 @@ function getPlaceBaseEndpoints(place: string): string[] {
     return [];
   }
   const { place_type: placeType } = places[place];
-  const baseCovidDateEndpoint = `http://localhost:4000/covid-19/${placeType}/${place}/date`;
-  const baseVaccineDateEndpoint = `http://localhost:4000/vaccine/${placeType}/${place}/date`;
+  const baseCovidDateEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/covid-19/${placeType}/${place}/date`;
+  const baseVaccineDateEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${place}/date`;
   return [baseCovidDateEndpoint, baseVaccineDateEndpoint];
 }
 

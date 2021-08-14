@@ -51,10 +51,10 @@ export default function Place({ place }: PlaceProps) {
   const placeName = slugsToPlaces[place];
   const { place_type: placeType } = places[placeName];
 
-  const baseCovidCumulativeEndpoint = `http://localhost:4000/covid-19/${placeType}/${placeName}/cumulative`;
-  const baseCovidDailyEndpoint = `http://localhost:4000/covid-19/${placeType}/${placeName}/daily`;
-  const baseVaccineCumulativeEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/cumulative`;
-  const baseVaccineDailyEndpoint = `http://localhost:4000/vaccine/${placeType}/${placeName}/daily`;
+  const baseCovidCumulativeEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/covid-19/${placeType}/${placeName}/cumulative`;
+  const baseCovidDailyEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/covid-19/${placeType}/${placeName}/daily`;
+  const baseVaccineCumulativeEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/cumulative`;
+  const baseVaccineDailyEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/daily`;
 
   useEffect(() => {
     if (searchPlace && searchPlace !== placeName) {
