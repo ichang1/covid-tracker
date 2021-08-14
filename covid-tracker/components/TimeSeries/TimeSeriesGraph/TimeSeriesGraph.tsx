@@ -90,21 +90,28 @@ export default function TimeSeriesGraph({
           } = entry;
           return (
             <li
-              key={`item-${index}`}
+              key={`chart-legend-item-${index}`}
               className={styles["chart-legend-item-wrapper"]}
-              style={{
-                color: lineShowState[dataKey] ? "white" : stroke,
-                backgroundColor: lineShowState[dataKey] ? stroke : "white",
-                border: `1px solid ${stroke}`,
-              }}
+              // style={{
+              //   color: lineShowState[dataKey] ? "white" : stroke,
+              //   backgroundColor: lineShowState[dataKey] ? stroke : "white",
+              //   border: `1px solid ${stroke}`,
+              // }}
+              // onClick={handleLegendClick}
+              // data-datakey={dataKey}
             >
-              <span
+              <button
+                className={styles["chart-legend-item"]}
+                style={{
+                  color: lineShowState[dataKey] ? "white" : stroke,
+                  backgroundColor: lineShowState[dataKey] ? stroke : "white",
+                  border: `1px solid ${stroke}`,
+                }}
                 onClick={handleLegendClick}
-                className={"chart-legend-item"}
                 data-datakey={dataKey}
               >
                 {value}
-              </span>
+              </button>
             </li>
           );
         })}

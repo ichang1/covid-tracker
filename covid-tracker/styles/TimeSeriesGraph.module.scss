@@ -12,10 +12,10 @@
 
   .chart-legend-item-wrapper {
     margin-left: 1%;
-    padding: 0.75%;
-    border-radius: var(--border-radius);
-    cursor: pointer;
     .chart-legend-item {
+      border-radius: var(--border-radius);
+      padding: 5px;
+      cursor: pointer;
       color: inherit;
       background-color: inherit;
       border: none;
