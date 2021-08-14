@@ -7,6 +7,7 @@ import ReactMapGl, {
   SourceProps,
   LayerProps,
   MapEvent,
+  FlyToInterpolator,
 } from "react-map-gl";
 import useAxiosAll from "../../customHooks/useAxiosAll";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
@@ -72,6 +73,8 @@ function getFullEndpoint(baseEndpoint: string, date: string) {
   return fullEndpoint;
 }
 
+const IS_CLIENT = typeof window !== "undefined";
+
 export default function Map({
   places,
   searchPlace,
@@ -81,7 +84,9 @@ export default function Map({
   minDate,
   maxDate,
 }: MapProps) {
-  const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
+  const [viewport, setViewport] = useState(
+    IS_CLIENT ? getViewportFromSession() : INITIAL_VIEWPORT
+  );
 
   const selectedPlaceReducer = (
     state: SelectedPlaceState,
@@ -101,11 +106,13 @@ export default function Map({
 
   const [{ place: selectedPlace, date }, dispatchSelectedPlaceState] =
     useReducer(selectedPlaceReducer, {
-      place: null,
+      place: IS_CLIENT
+        ? getSelectedPlaceFromSession(Object.keys(places))
+        : null,
       date: maxDate,
     });
 
-  const { data, isLoading, isSuccess } = useAxiosAll(
+  const { data, isLoading, isSuccess, allError } = useAxiosAll(
     getPlaceBaseEndpoints(selectedPlace!).map((url) => ({
       key: [url, date],
       url: getFullEndpoint(url, date),
@@ -135,6 +142,18 @@ export default function Map({
     showPlace: false,
   });
 
+  /**
+   * handles when user changes viewport by dragging, etc...
+   * set to new viewport and save in session
+   * @param viewport current viewport object
+   */
+  const handleViewportChange = (newViewport: Viewport) => {
+    if (mapRef?.current?.getMap()) {
+      setViewport(newViewport);
+      sessionStorage.setItem("viewport", JSON.stringify(viewport));
+    }
+  };
+
   const mapRef = useRef<MapRef | null>(null);
 
   /**
@@ -159,7 +178,7 @@ export default function Map({
     if (searchPlace && selectedPlace !== searchPlace) {
       const { latitude, longitude } = places[searchPlace];
       dispatchSelectedPlaceState({ type: "set_place", place: searchPlace });
-      setViewport((viewport) => ({
+      setViewport((viewport: Viewport) => ({
         ...viewport,
         zoom: 4,
         latitude,
@@ -167,7 +186,23 @@ export default function Map({
       }));
     }
   }, [searchPlace]);
+
   useEffect(() => {
+    const sessionViewport = getViewportFromSession();
+    setViewport({
+      ...sessionViewport,
+      transitionInterpolator: new FlyToInterpolator(),
+    });
+    const sessionSelectedPlace = getSelectedPlaceFromSession(
+      Object.keys(places)
+    );
+    console.log(sessionSelectedPlace);
+    if (sessionSelectedPlace) {
+      dispatchSelectedPlaceState({
+        type: "set_place",
+        place: sessionSelectedPlace,
+      });
+    }
     const keydownlistener = (e: KeyboardEvent) => {
       const target = e.target as Element;
       if (
@@ -175,6 +210,7 @@ export default function Map({
         target?.id !== "react-select-custom-select-___-input"
       ) {
         dispatchSelectedPlaceState({ type: "clear" });
+        sessionStorage.removeItem("selectedPlace");
       }
     };
     const clicklistener = (e: MouseEvent) => {
@@ -184,6 +220,7 @@ export default function Map({
       const target = e.target as Element;
       if (target?.className == "mapboxgl-popup-close-button") {
         dispatchSelectedPlaceState({ type: "clear" });
+        sessionStorage.removeItem("selectedPlace");
       }
     };
     window.addEventListener("keydown", keydownlistener);
@@ -210,11 +247,11 @@ export default function Map({
     if (firstFeatPlace !== selectedPlace) {
       // if the clicked place isn't the same as the current selected place
       dispatchSelectedPlaceState({ type: "set_place", place: firstFeatPlace });
+      sessionStorage.setItem("selectedPlace", firstFeatPlace);
     }
   };
 
   const handleMapHover = (e: MapEvent) => {
-    console.log(e.target.className);
     const { features } = e;
     if (!features) {
       // for some reason there are no features
@@ -249,9 +286,7 @@ export default function Map({
         {...viewport}
         mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE}
-        onViewportChange={(viewport: Viewport) => {
-          setViewport(viewport);
-        }}
+        onViewportChange={handleViewportChange}
         ref={(el) => (mapRef.current = el)}
         interactiveLayerIds={Object.keys(points)}
         onClick={handleMapClick}
@@ -277,7 +312,7 @@ export default function Map({
             </div>
             {isLoading
               ? "Loading..."
-              : isSuccess
+              : !allError
               ? popupDataToJSX(data)
               : `Error getting data for ${selectedPlace}`}
             <div className={styles["popup-date-selector-container"]}>
@@ -354,4 +389,42 @@ export default function Map({
       </div>
     </>
   );
+}
+
+function getSelectedPlaceFromSession(validPlaces: string[]) {
+  const selectedPlace = sessionStorage.getItem("selectedPlace");
+  // null
+  if (!selectedPlace) return null;
+  // valid string but not valid place
+  if (!validPlaces.includes(selectedPlace)) return null;
+  // valid place
+  return selectedPlace;
+}
+
+function getViewportFromSession() {
+  const viewportJson = sessionStorage.getItem("viewport");
+  // no viewport in session
+  if (!viewportJson) return INITIAL_VIEWPORT;
+  // not falsy
+  // validate it
+  const viewport = JSON.parse(viewportJson);
+  if (typeof viewport !== "object") return INITIAL_VIEWPORT;
+  if (
+    !viewport.hasOwnProperty("zoom") ||
+    !viewport.hasOwnProperty("latitude") ||
+    !viewport.hasOwnProperty("longitude")
+  ) {
+    return INITIAL_VIEWPORT;
+  }
+  // has zoom, lat and long
+  // validate those as well
+  const { zoom, latitude, longitude } = viewport;
+  if (
+    typeof zoom !== "number" ||
+    typeof latitude !== "number" ||
+    typeof longitude !== "number"
+  ) {
+    return INITIAL_VIEWPORT;
+  }
+  return viewport;
 }

@@ -43,6 +43,5 @@ export default function useAxios(queryOptions: QueryOptions[]) {
   const isSuccess = queryResults.every((query) => query.isSuccess);
   const allError = queryResults.some((query) => query.isError);
   const someError = !isSuccess;
-  console.log(data);
   return { data, isLoading, isSuccess, allError, someError };
 }

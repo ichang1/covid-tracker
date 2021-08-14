@@ -92,13 +92,6 @@ export default function TimeSeriesGraph({
             <li
               key={`chart-legend-item-${index}`}
               className={styles["chart-legend-item-wrapper"]}
-              // style={{
-              //   color: lineShowState[dataKey] ? "white" : stroke,
-              //   backgroundColor: lineShowState[dataKey] ? stroke : "white",
-              //   border: `1px solid ${stroke}`,
-              // }}
-              // onClick={handleLegendClick}
-              // data-datakey={dataKey}
             >
               <button
                 className={styles["chart-legend-item"]}
