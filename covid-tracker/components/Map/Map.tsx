@@ -55,7 +55,6 @@ type SelectedPlaceAction =
 
 interface HoverPlaceState {
   place: string | null;
-  showPlace: boolean;
 }
 
 type HoverPlaceAction = { type: "show"; place: string } | { type: "hide" };
@@ -126,21 +125,20 @@ export default function Map({
   ) => {
     switch (action.type) {
       case "show":
-        return { place: action.place, showPlace: true };
+        return { place: action.place };
       case "hide":
-        return { place: null, showPlace: false };
+        return { place: null };
       default:
         return state;
     }
   };
 
-  const [
-    { place: hoverPlace, showPlace: showHoverPlace },
-    dispatchHoverPlaceState,
-  ] = useReducer(hoverPlaceReducer, {
-    place: null,
-    showPlace: false,
-  });
+  const [{ place: hoverPlace }, dispatchHoverPlaceState] = useReducer(
+    hoverPlaceReducer,
+    {
+      place: null,
+    }
+  );
 
   /**
    * handles when user changes viewport by dragging, etc...
@@ -267,13 +265,13 @@ export default function Map({
       // there is a valid feature and not hovering over the popoup
       const { properties: { name: firstFeatPlace } = { name: null } } =
         firstFeat;
-      if (hoverPlace !== firstFeatPlace || !showHoverPlace) {
+      if (hoverPlace !== firstFeatPlace || !hoverPlace) {
         // showing different place name or not showing anything at all
         dispatchHoverPlaceState({ type: "show", place: firstFeatPlace });
       }
     } else {
       // no valid feature or hovering over popup
-      if (showHoverPlace) {
+      if (hoverPlace) {
         // currently showing a place, hide it else don't need to dispatch anything
         dispatchHoverPlaceState({ type: "hide" });
       }
@@ -299,7 +297,7 @@ export default function Map({
             <Layer {...layer} key={`${layer.id}`} />
           </Source>
         ))}
-        {selectedPlace ? (
+        {selectedPlace && (
           <Popup
             className={styles["popup"]}
             latitude={places[selectedPlace].latitude}
@@ -308,7 +306,9 @@ export default function Map({
             dynamicPosition={true}
           >
             <div className={styles["popup-place-name-container"]}>
-              <span className="popup-place-name">{selectedPlace}</span>
+              <span className="popup-place-name">
+                {`${selectedPlace} ${places[selectedPlace].flag}`.trim()}
+              </span>
             </div>
             {isLoading
               ? "Loading..."
@@ -345,15 +345,15 @@ export default function Map({
               <a className={styles["popup-time-series-link"]}>Time Series</a>
             </Link>
           </Popup>
-        ) : null}
-        {showHoverPlace && selectedPlace !== hoverPlace ? (
+        )}
+        {hoverPlace && selectedPlace !== hoverPlace ? (
           <div className={styles["hover-name-popup-container"]}>
             <Popup
               latitude={places[hoverPlace!].latitude}
               longitude={places[hoverPlace!].longitude}
               closeButton={false}
             >
-              {hoverPlace}
+              {`${hoverPlace} ${places[hoverPlace].flag}`.trim()}
             </Popup>
           </div>
         ) : null}

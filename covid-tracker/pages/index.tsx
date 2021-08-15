@@ -141,7 +141,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Global Covid-19 Tracker</title>
+        <title>Global Covid-19 Tracker | Interactive Map</title>
         <meta
           name="description"
           content="Interactive Global Covid-19 Tracker"

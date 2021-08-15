@@ -15,6 +15,7 @@ import {
 import TimeSeries from "../components/TimeSeries/TimeSeries";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
 import styles from "../styles/Place.module.scss";
+import Head from "next/head";
 
 interface PlaceProps {
   place: string;
@@ -65,6 +66,9 @@ export default function Place({ place }: PlaceProps) {
 
   return (
     <div className={styles["place-time-series-container"]}>
+      <Head>
+        <title>{`Global Covid-19 Tracker | ${placeName} Time Series`}</title>
+      </Head>
       <div className="page-select-search">
         <CustomSelect
           options={placeOptions}
@@ -75,9 +79,13 @@ export default function Place({ place }: PlaceProps) {
       </div>
       <div className={styles["covid-case-time-series"]}>
         <div className={styles["time-series-heading"]}>
-          <span
-            className={styles["time-series-label"]}
-          >{`${placeName} Covid Time Series`}</span>
+          <span className={styles["time-series-label"]}>
+            {[
+              `${places[placeName].flag}`,
+              `${placeName}`,
+              `Covid Time Series`,
+            ].join(" ")}
+          </span>
           <div className={styles["time-series-data-toggle-container"]}>
             <CustomSwitch
               label={showCumulativeCovidSeries ? "Cumulative" : "Daily"}
@@ -103,9 +111,14 @@ export default function Place({ place }: PlaceProps) {
       </div>
       <div className={styles["vaccine-time-series"]}>
         <div className={styles["time-series-heading"]}>
-          <span
-            className={styles["time-series-label"]}
-          >{`${placeName} Vaccine Dosage Time Series`}</span>
+          <span className={styles["time-series-label"]}>
+            {" "}
+            {[
+              `${places[placeName].flag}`,
+              `${placeName}`,
+              "Vaccine Time Series",
+            ].join(" ")}
+          </span>
           <div className={styles["time-series-data-toggle-container"]}>
             <CustomSwitch
               label={showCumulativeVaccineSeries ? "Cumulative" : "Daily"}
