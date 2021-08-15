@@ -307,7 +307,7 @@ provinces = [
   'St Martin',
   'Wallis And Futuna',
   'Aruba',
-  'Bonaire, Sint Eustatius And Saba',
+  # 'Bonaire, Sint Eustatius And Saba',
   'Curacao',
   'Sint Maarten',
   'Cook Islands',
@@ -320,7 +320,7 @@ provinces = [
   'Gibraltar',
   'Isle Of Man',
   'Montserrat',
-  'Saint Helena, Ascension And Tristan Da Cunha',
+  # 'Saint Helena, Ascension And Tristan Da Cunha',
   'Turks And Caicos Islands'
 ]
 

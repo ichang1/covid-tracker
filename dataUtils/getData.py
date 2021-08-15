@@ -5,12 +5,13 @@ from places import places, states, countries, provinces
 from slugify import slugify
 import sys
 
-def getLatLong(place):
+def getLatLongAndFlag(place):
     api_key = "ff2748c6dacc003d8c4f83e4aaba7c93"
     res = requests.get("http://api.positionstack.com/v1/forward", params={
         'access_key': api_key,
         'query': place,
         'limit': 1,
+        'country_module': 1,
         'fields': ["results.longitude", "results.latitude"],
     })
     # position stack api is weird, sometimes empty data is returned
@@ -19,13 +20,14 @@ def getLatLong(place):
         res = requests.get("http://api.positionstack.com/v1/forward", params={
             'access_key': api_key,
             'query': place,
+            'country_module': 1,
             'limit': 1,
             'fields': ["results.longitude", "results.latitude"],
         })
-
     latitude = res.json()['data'][0]['latitude']
     longitude = res.json()['data'][0]['longitude']
-    data = {'latitude': latitude, 'longitude': longitude}
+    flag = res.json()['data'][0]['country_module']['flag']
+    data = {'latitude': latitude, 'longitude': longitude, 'flag':flag}
     return data
 
 
@@ -72,9 +74,9 @@ if __name__ == '__main__':
                 'slugs': [
                     slugify(place)
                 ],
-                **getLatLong(place)
+                **getLatLongAndFlag(place)
             }
-            place_data['size'] = getSize(place)
+            # place_data['size'] = getSize(place)
             if place in state_set:
                 place_data['place_type'] = 'state'
             elif place in country_set:
@@ -92,9 +94,9 @@ if __name__ == '__main__':
                     'slugs': [
                         slugify(place)
                     ],
-                    **getLatLong(place)
+                    **getLatLongAndFlag(place)
                 }
-                place_data['size'] = getSize(place)
+                # place_data['size'] = getSize(place)
                 if place in state_set:
                     place_data['place_type'] = 'state'
                 elif place in country_set:
