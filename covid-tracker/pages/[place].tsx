@@ -69,14 +69,14 @@ export default function Place({ place, url }: PlaceProps) {
   return (
     <div className={styles["place-time-series-container"]}>
       <Head>
-        <title>{`Global Covid-19 Tracker \u2012 ${[
+        <title>{`Global Coronavirus Tracker \u2012 ${[
           `${places[placeName].flag}`,
           `${placeName}`,
           `Time Series`,
         ].join(" ")}`}</title>
         <meta
           name="title"
-          content={`Global Covid-19 Tracker \u2012 ${[
+          content={`Global Coronavirus Tracker \u2012 ${[
             `${places[placeName].flag}`,
             `${placeName}`,
             `Time Series`,
@@ -84,17 +84,14 @@ export default function Place({ place, url }: PlaceProps) {
         />
         <meta
           name="description"
-          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+          content="Interactive Global Time Series Plots for tracking Coronavirus statistics for any day since the start of the Covid-19 pandemic"
         />
 
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"}
-        />
+        <meta property="og:url" content={url} />
         <meta
           property="og:title"
-          content={`Global Covid-19 Tracker \u2012 ${[
+          content={`Global Coronavirus Tracker \u2012 ${[
             `${places[placeName].flag}`,
             `${placeName}`,
             `Time Series`,
@@ -102,15 +99,15 @@ export default function Place({ place, url }: PlaceProps) {
         />
         <meta
           property="og:description"
-          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+          content="Interactive Global Time Series Plots for tracking Coronavirus statistics for any day since the start of the Covid-19 pandemic"
         />
-        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image" content={`${baseUrl}/logo.png`} />
 
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:url" content={baseUrl} />
+        <meta property="twitter:url" content={url} />
         <meta
           property="twitter:title"
-          content={`Global Covid-19 Tracker \u2012 ${[
+          content={`Global Coronavirus Tracker \u2012 ${[
             `${places[placeName].flag}`,
             `${placeName}`,
             `Time Series`,
@@ -118,9 +115,9 @@ export default function Place({ place, url }: PlaceProps) {
         />
         <meta
           property="twitter:description"
-          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+          content="Interactive Global Time Series Plots for tracking Coronavirus statistics for any day since the start of the Covid-19 pandemic"
         />
-        <meta property="twitter:image" content="/logo.png" />
+        <meta property="twitter:image" content={`${baseUrl}/logo.png`} />
       </Head>
       <div className="page-select-search">
         <CustomSelect
@@ -136,7 +133,7 @@ export default function Place({ place, url }: PlaceProps) {
             {[
               `${places[placeName].flag}`,
               `${placeName}`,
-              `Covid Time Series`,
+              `Coronavirus Time Series`,
             ].join(" ")}
           </span>
           <div className={styles["time-series-data-toggle-container"]}>
