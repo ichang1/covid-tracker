@@ -1,4 +1,4 @@
-.popup {
+.data-popup {
   .popup-date-selector-container {
     display: flex;
     justify-content: left;
@@ -24,19 +24,24 @@
   }
 }
 
-.popup :global(.mapboxgl-popup-content) {
+.data-popup :global(.mapboxgl-popup-content) {
   cursor: text;
   user-select: text;
   border-radius: var(--border-radius);
 }
 
-.popup :global(.mapboxgl-popup-close-button) {
+.data-popup :global(.mapboxgl-popup-close-button) {
   font-size: 20px;
   &:hover {
     background-color: lightgray;
     font-weight: bold;
     border-radius: var(--border-radius);
   }
+}
+
+.hover-popup :global(.mapboxgl-popup-content) {
+  border-radius: var(--border-radius);
+  padding: 8px;
 }
 
 .zoom-buttons-container {

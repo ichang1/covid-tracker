@@ -194,7 +194,6 @@ export default function Map({
     const sessionSelectedPlace = getSelectedPlaceFromSession(
       Object.keys(places)
     );
-    console.log(sessionSelectedPlace);
     if (sessionSelectedPlace) {
       dispatchSelectedPlaceState({
         type: "set_place",
@@ -299,7 +298,7 @@ export default function Map({
         ))}
         {selectedPlace && (
           <Popup
-            className={styles["popup"]}
+            className={styles["data-popup"]}
             latitude={places[selectedPlace].latitude}
             longitude={places[selectedPlace].longitude}
             anchor="left"
@@ -346,17 +345,16 @@ export default function Map({
             </Link>
           </Popup>
         )}
-        {hoverPlace && selectedPlace !== hoverPlace ? (
-          <div className={styles["hover-name-popup-container"]}>
-            <Popup
-              latitude={places[hoverPlace!].latitude}
-              longitude={places[hoverPlace!].longitude}
-              closeButton={false}
-            >
-              {`${hoverPlace} ${places[hoverPlace].flag}`.trim()}
-            </Popup>
-          </div>
-        ) : null}
+        {hoverPlace && selectedPlace !== hoverPlace && (
+          <Popup
+            className={styles["hover-popup"]}
+            latitude={places[hoverPlace!].latitude}
+            longitude={places[hoverPlace!].longitude}
+            closeButton={false}
+          >
+            {`${hoverPlace} ${places[hoverPlace].flag}`.trim()}
+          </Popup>
+        )}
       </ReactMapGl>
       <div className={styles["zoom-buttons-container"]}>
         <button

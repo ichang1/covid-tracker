@@ -340,8 +340,8 @@ export const places: Places = {
   },
   Wyoming: {
     slugs: ["wyoming"],
-    latitude: 41.47747,
-    longitude: -105.63666,
+    latitude: 43,
+    longitude: -107,
     flag: "\ud83c\uddfa\ud83c\uddf8",
     place_type: "state",
   },
