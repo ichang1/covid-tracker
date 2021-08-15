@@ -38,3 +38,5 @@ function randIntFromRange(min: number, max: number) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000";

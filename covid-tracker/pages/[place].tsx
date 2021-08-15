@@ -16,9 +16,11 @@ import TimeSeries from "../components/TimeSeries/TimeSeries";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
 import styles from "../styles/Place.module.scss";
 import Head from "next/head";
+import { baseUrl } from "../utils/misc";
 
 interface PlaceProps {
   place: string;
+  url: string;
 }
 
 const covidChartStyle = {
@@ -41,7 +43,7 @@ const vaccineChartStyle = {
 
 const placeOptions = Object.keys(places).map((p) => ({ value: p, label: p }));
 
-export default function Place({ place }: PlaceProps) {
+export default function Place({ place, url }: PlaceProps) {
   const router = useRouter();
   const [showCumulativeCovidSeries, setShowCumulativeCovidSeries] =
     useState(true);
@@ -67,7 +69,58 @@ export default function Place({ place }: PlaceProps) {
   return (
     <div className={styles["place-time-series-container"]}>
       <Head>
-        <title>{`Global Covid-19 Tracker | ${placeName} Time Series`}</title>
+        <title>{`Global Covid-19 Tracker \u2012 ${[
+          `${places[placeName].flag}`,
+          `${placeName}`,
+          `Time Series`,
+        ].join(" ")}`}</title>
+        <meta
+          name="title"
+          content={`Global Covid-19 Tracker \u2012 ${[
+            `${places[placeName].flag}`,
+            `${placeName}`,
+            `Time Series`,
+          ].join(" ")}`}
+        />
+        <meta
+          name="description"
+          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"}
+        />
+        <meta
+          property="og:title"
+          content={`Global Covid-19 Tracker \u2012 ${[
+            `${places[placeName].flag}`,
+            `${placeName}`,
+            `Time Series`,
+          ].join(" ")}`}
+        />
+        <meta
+          property="og:description"
+          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+        />
+        <meta property="og:image" content="/logo.png" />
+
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:url" content={baseUrl} />
+        <meta
+          property="twitter:title"
+          content={`Global Covid-19 Tracker \u2012 ${[
+            `${places[placeName].flag}`,
+            `${placeName}`,
+            `Time Series`,
+          ].join(" ")}`}
+        />
+        <meta
+          property="twitter:description"
+          content="Interactive Global Time Series Plots for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+        />
+        <meta property="twitter:image" content="/logo.png" />
       </Head>
       <div className="page-select-search">
         <CustomSelect
@@ -154,7 +207,7 @@ interface Request {
 export async function getStaticProps({ params }: Request) {
   const { place } = params;
   return {
-    props: { place },
+    props: { place, url: `${baseUrl}/${place}` },
   };
 }
 

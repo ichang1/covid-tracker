@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Map from "../components/Map/Map";
 import { places } from "../utils/places";
@@ -7,7 +6,7 @@ import { SourceProps, LayerProps } from "react-map-gl";
 import { MIN_COVID_DATE, MAX_COVID_DATE } from "../utils/timeseries-constants";
 import { useState } from "react";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
-import { useEffect } from "react";
+import { baseUrl } from "../utils/misc";
 
 const covidPlacesSource: SourceProps = {
   id: "covidPlaces",
@@ -141,11 +140,42 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Global Covid-19 Tracker | Interactive Map</title>
+        <title>{"Global Covid-19 Tracker \u2012 Interactive Map"}</title>
+        <meta
+          name="title"
+          content={"Global Covid-19 Tracker \u2012 Interactive Map"}
+        />
         <meta
           name="description"
-          content="Interactive Global Covid-19 Tracker"
+          content="Interactive Global Map for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
         />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"}
+        />
+        <meta
+          property="og:title"
+          content={"Global Covid-19 Tracker \u2012 Interactive Map"}
+        />
+        <meta
+          property="og:description"
+          content="Interactive Global Map for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+        />
+        <meta property="og:image" content="/logo.png" />
+
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:url" content={baseUrl} />
+        <meta
+          property="twitter:title"
+          content={"Global Covid-19 Tracker \u2012 Interactive Map"}
+        />
+        <meta
+          property="twitter:description"
+          content="Interactive Global Map for tracking Covid-19 statistics for any day since the start of the Covid-19 pandemic"
+        />
+        <meta property="twitter:image" content="/logo.png" />
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
