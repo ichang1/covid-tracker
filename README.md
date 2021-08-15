@@ -1,11 +1,10 @@
 The site is live at [https://global-coronavirus-tracker.vercel.app/](https://global-coronavirus-tracker.vercel.app/)
-This site was inspired by the global coronavirus pandemic and the havoc
-it has caused all around the world.
 
 The site's main page consists of an interactive map similar to google maps
-with clickable predetermined locations where you can see coronavirus related
-statistics popup for that place for a certain day within a valid time
-frame when clicked on.
+with clickable predetermined locations. When these locations are clicked on
+you are able to see a coronavirus related statistics popup for that
+place for a certain day within a valid time frame. Within each popup, there
+is a date input allowing you to view the statistics for another day.
 
 Each place also has a corresponding page accessible from its corresponding
 popup from the map. These pages consist of timeseries plots detailing the
