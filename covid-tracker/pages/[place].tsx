@@ -59,6 +59,7 @@ export default function Place({ place, url }: PlaceProps) {
   const baseVaccineCumulativeEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/cumulative`;
   const baseVaccineDailyEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/daily`;
 
+  const placeFlag = flagEmojiToPNG(places[placeName].flag);
   useEffect(() => {
     if (searchPlace && searchPlace !== placeName) {
       const searchPlaceSlug = places[searchPlace].slugs[0];
@@ -119,9 +120,9 @@ export default function Place({ place, url }: PlaceProps) {
       </div>
       <div className={styles["covid-case-time-series"]}>
         <div className={styles["time-series-heading"]}>
-          <div className={styles["time-series-place-flag"]}>
-            {flagEmojiToPNG(places[placeName].flag)}
-          </div>
+          {placeFlag && (
+            <div className={styles["time-series-place-flag"]}>{placeFlag}</div>
+          )}
           <span className={styles["time-series-label"]}>
             {`${placeName} Coronavirus Time Series`}
           </span>
@@ -150,9 +151,9 @@ export default function Place({ place, url }: PlaceProps) {
       </div>
       <div className={styles["vaccine-time-series"]}>
         <div className={styles["time-series-heading"]}>
-          <div className={styles["time-series-place-flag"]}>
-            {flagEmojiToPNG(places[placeName].flag)}
-          </div>
+          {placeFlag && (
+            <div className={styles["time-series-place-flag"]}>{placeFlag}</div>
+          )}
           <span className={styles["time-series-label"]}>
             {`${placeName} Vaccine Time Series`}
           </span>

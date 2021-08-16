@@ -141,6 +141,17 @@ export default function Map({
     }
   );
 
+  const selectedPlaceFlag = selectedPlace
+    ? flagEmojiToPNG(places[selectedPlace].flag, {
+        className: "popup-place-flag",
+      })
+    : null;
+  const hoverPlaceFlag = hoverPlace
+    ? flagEmojiToPNG(places[hoverPlace].flag, {
+        className: "hover-popup-place-flag",
+      })
+    : null;
+
   /**
    * handles when user changes viewport by dragging, etc...
    * set to new viewport and save in session
@@ -307,11 +318,11 @@ export default function Map({
           >
             <div className={styles["popup-place-name-container"]}>
               <span className="popup-place-name">{`${selectedPlace}`}</span>
-              <div className={styles["popup-place-flag-container"]}>
-                {flagEmojiToPNG(places[selectedPlace].flag, {
-                  className: "popup-place-flag",
-                })}
-              </div>
+              {selectedPlaceFlag && (
+                <div className={styles["popup-place-flag-container"]}>
+                  {selectedPlaceFlag}
+                </div>
+              )}
             </div>
             {isLoading
               ? "Loading..."
@@ -360,11 +371,11 @@ export default function Map({
               <div
                 className={styles["hover-popup-place-name"]}
               >{`${hoverPlace}`}</div>
-              <div className={styles["hover-popup-place-flag-container"]}>
-                {flagEmojiToPNG(places[hoverPlace].flag, {
-                  className: "hover-popup-place-flag",
-                })}
-              </div>
+              {hoverPlaceFlag && (
+                <div className={styles["hover-popup-place-flag-container"]}>
+                  {hoverPlaceFlag}
+                </div>
+              )}
             </div>
           </Popup>
         )}
