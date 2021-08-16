@@ -39,4 +39,29 @@ function randIntFromRange(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+export function flagEmojiToPNG(
+  flag: string,
+  options: any = {}
+): JSX.Element | null {
+  if (flag.length === 0) {
+    return null;
+  }
+  try {
+    const countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt(0))
+      .map((char) => String.fromCharCode(char! - 127397).toLowerCase())
+      .join("");
+    return (
+      <img
+        {...options}
+        src={`https://flagcdn.com/24x18/${countryCode}.png`}
+        alt="flag"
+        height="18px"
+        width="25px"
+      />
+    );
+  } catch (err) {
+    return null;
+  }
+}
+
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000";

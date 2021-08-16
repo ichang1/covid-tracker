@@ -16,7 +16,7 @@ import TimeSeries from "../components/TimeSeries/TimeSeries";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
 import styles from "../styles/Place.module.scss";
 import Head from "next/head";
-import { baseUrl } from "../utils/misc";
+import { flagEmojiToPNG, baseUrl } from "../utils/misc";
 
 interface PlaceProps {
   place: string;
@@ -69,18 +69,13 @@ export default function Place({ place, url }: PlaceProps) {
   return (
     <div className={styles["place-time-series-container"]}>
       <Head>
-        <title>{`Global Coronavirus Tracker \u2012 ${[
-          `${places[placeName].flag}`,
-          `${placeName}`,
-          `Time Series`,
-        ].join(" ")}`}</title>
+        <title>{`Global Coronavirus Tracker \u2012 
+          ${placeName}
+          Time Series`}</title>
         <meta
           name="title"
-          content={`Global Coronavirus Tracker \u2012 ${[
-            `${places[placeName].flag}`,
-            `${placeName}`,
-            `Time Series`,
-          ].join(" ")}`}
+          content={`Global Coronavirus Tracker \u2012
+            ${placeName} Time Series`}
         />
         <meta
           name="description"
@@ -91,11 +86,9 @@ export default function Place({ place, url }: PlaceProps) {
         <meta property="og:url" content={url} />
         <meta
           property="og:title"
-          content={`Global Coronavirus Tracker \u2012 ${[
-            `${places[placeName].flag}`,
-            `${placeName}`,
-            `Time Series`,
-          ].join(" ")}`}
+          content={`Global Coronavirus Tracker \u2012
+            ${placeName}
+            Time Series`}
         />
         <meta
           property="og:description"
@@ -107,11 +100,8 @@ export default function Place({ place, url }: PlaceProps) {
         <meta property="twitter:url" content={url} />
         <meta
           property="twitter:title"
-          content={`Global Coronavirus Tracker \u2012 ${[
-            `${places[placeName].flag}`,
-            `${placeName}`,
-            `Time Series`,
-          ].join(" ")}`}
+          content={`Global Coronavirus Tracker \u2012
+            ${placeName} Time Series`}
         />
         <meta
           property="twitter:description"
@@ -129,12 +119,11 @@ export default function Place({ place, url }: PlaceProps) {
       </div>
       <div className={styles["covid-case-time-series"]}>
         <div className={styles["time-series-heading"]}>
+          <div className={styles["time-series-place-flag"]}>
+            {flagEmojiToPNG(places[placeName].flag)}
+          </div>
           <span className={styles["time-series-label"]}>
-            {[
-              `${places[placeName].flag}`,
-              `${placeName}`,
-              `Coronavirus Time Series`,
-            ].join(" ")}
+            {`${placeName} Coronavirus Time Series`}
           </span>
           <div className={styles["time-series-data-toggle-container"]}>
             <CustomSwitch
@@ -161,13 +150,11 @@ export default function Place({ place, url }: PlaceProps) {
       </div>
       <div className={styles["vaccine-time-series"]}>
         <div className={styles["time-series-heading"]}>
+          <div className={styles["time-series-place-flag"]}>
+            {flagEmojiToPNG(places[placeName].flag)}
+          </div>
           <span className={styles["time-series-label"]}>
-            {" "}
-            {[
-              `${places[placeName].flag}`,
-              `${placeName}`,
-              "Vaccine Time Series",
-            ].join(" ")}
+            {`${placeName} Vaccine Time Series`}
           </span>
           <div className={styles["time-series-data-toggle-container"]}>
             <CustomSwitch

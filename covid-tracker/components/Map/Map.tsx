@@ -13,6 +13,7 @@ import useAxiosAll from "../../customHooks/useAxiosAll";
 import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
 import styles from "../../styles/Map.module.scss";
 import Link from "next/link";
+import { flagEmojiToPNG } from "../../utils/misc";
 
 interface Places {
   [key: string]: {
@@ -305,9 +306,12 @@ export default function Map({
             dynamicPosition={true}
           >
             <div className={styles["popup-place-name-container"]}>
-              <span className="popup-place-name">
-                {`${selectedPlace} ${places[selectedPlace].flag}`.trim()}
-              </span>
+              <span className="popup-place-name">{`${selectedPlace}`}</span>
+              <div className={styles["popup-place-flag-container"]}>
+                {flagEmojiToPNG(places[selectedPlace].flag, {
+                  className: "popup-place-flag",
+                })}
+              </div>
             </div>
             {isLoading
               ? "Loading..."
@@ -352,7 +356,16 @@ export default function Map({
             longitude={places[hoverPlace!].longitude}
             closeButton={false}
           >
-            {`${hoverPlace} ${places[hoverPlace].flag}`.trim()}
+            <div className={styles["hover-popup-place-container"]}>
+              <div
+                className={styles["hover-popup-place-name"]}
+              >{`${hoverPlace}`}</div>
+              <div className={styles["hover-popup-place-flag-container"]}>
+                {flagEmojiToPNG(places[hoverPlace].flag, {
+                  className: "hover-popup-place-flag",
+                })}
+              </div>
+            </div>
           </Popup>
         )}
       </ReactMapGl>

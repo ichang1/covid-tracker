@@ -908,7 +908,7 @@ export const places: Places = {
   Indonesia: {
     slugs: ["indonesia"],
     latitude: -1.003189,
-    longitude: 101.972332,
+    longitude: 113.9213,
     flag: "\ud83c\uddee\ud83c\udde9",
     place_type: "country",
   },
@@ -1082,8 +1082,8 @@ export const places: Places = {
   },
   Malaysia: {
     slugs: ["malaysia"],
-    latitude: 2.521947,
-    longitude: 113.833569,
+    latitude: 4.2105,
+    longitude: 101.9758,
     flag: "\ud83c\uddf2\ud83c\uddfe",
     place_type: "country",
   },
@@ -1684,8 +1684,8 @@ export const places: Places = {
   },
   Victoria: {
     slugs: ["victoria"],
-    latitude: 22.381131,
-    longitude: 114.135572,
+    latitude: -36.9848,
+    longitude: 143.3906,
     flag: "\ud83c\udded\ud83c\uddf0",
     place_type: "province",
   },
@@ -1810,8 +1810,8 @@ export const places: Places = {
   },
   Fujian: {
     slugs: ["fujian"],
-    latitude: 24.473793,
-    longitude: 118.420136,
+    latitude: 26.4837,
+    longitude: 117.9249,
     flag: "\ud83c\uddf9\ud83c\uddfc",
     place_type: "province",
   },

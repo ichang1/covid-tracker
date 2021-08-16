@@ -39,6 +39,14 @@
   }
 }
 
+.hover-popup-place-container {
+  display: flex;
+  justify-content: center;
+  .hover-popup-place-flag-container {
+    margin-left: 5px;
+  }
+}
+
 .hover-popup :global(.mapboxgl-popup-content) {
   border-radius: var(--border-radius);
   padding: 8px;
@@ -72,5 +80,11 @@
 .popup-place-name-container {
   display: flex;
   justify-content: center;
-  // font-weight: normal;
+  font-weight: bold;
+  .popup-place-flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+  }
 }

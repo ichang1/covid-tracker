@@ -9,20 +9,23 @@
   display: flex;
   align-items: center;
   flex-flow: row wrap;
+  margin-left: 15%;
   @media screen and (max-width: 768px) {
     .time-series-data-toggle-container {
       left: 10%;
     }
   }
-}
-.time-series-label {
-  position: relative;
-  margin-left: 10%;
-  font-size: 20px;
-  // font-weight: normal;
-}
+  .time-series-place-flag {
+    margin-right: 10px;
+  }
+  .time-series-label {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-.time-series-data-toggle-container {
-  position: relative;
-  margin-left: 3%;
+  .time-series-data-toggle-container {
+    position: relative;
+    margin-left: 3%;
+  }
 }
