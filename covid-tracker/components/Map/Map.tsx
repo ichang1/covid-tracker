@@ -377,11 +377,6 @@ export default function Map({
                 id="popup-date-selector"
               />
             </div>
-            <Link
-              href={selectedPlace ? `/${places[selectedPlace].slugs[0]}` : "/"}
-            >
-              <a className={styles["popup-time-series-link"]}>Time Series</a>
-            </Link>
             <button
               className={styles["popup-time-series-modal-button"]}
               onClick={handleTimeSeriesButtonClick}
@@ -420,7 +415,10 @@ export default function Map({
           }}
         >
           <div
-            className={styles["time-series-modal-container"]}
+            className={
+              styles["time-series-modal-container"] +
+              " time-series-modal-container"
+            }
             style={timeSeriesModalStyles}
           >
             <Link href={`/${places[selectedPlace].slugs[0]}`}>

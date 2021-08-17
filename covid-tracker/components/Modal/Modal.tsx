@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "../../styles/Modal.module.scss";
 
 interface ModalProps {
@@ -10,28 +10,24 @@ export default function Modal({ children, setIsOpen }: ModalProps) {
   const handleCloseClick = (_: React.MouseEvent) => {
     setIsOpen(false);
   };
-  const modalRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    const keydownListener = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement;
-      console.log(e);
-      if (
-        e.key === "Escape" &&
-        target.className === modalRef?.current?.className
-      ) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("keydown", keydownListener);
-    return () => {
-      window.removeEventListener("keydown", keydownListener);
-    };
-  }, []);
-  //   if (!isOpen) {
-  //     return null;
-  //   }
+  const modalRef = useRef<HTMLDivElement>(null);
+  const keydownListener = (e: React.KeyboardEvent) => {
+    const target = e.target as HTMLElement;
+    if (
+      e.key === "Escape" &&
+      (target.className === modalRef?.current?.className ||
+        target.className.toLowerCase().includes("modal"))
+    ) {
+      setIsOpen(false);
+    }
+  };
   return (
-    <>
+    <div
+      className="modal-container"
+      ref={modalRef}
+      onKeyDown={keydownListener}
+      tabIndex={-1}
+    >
       <div className={styles["modal-nav"]}>
         <button
           className={styles["modal-close-button"]}
@@ -40,9 +36,7 @@ export default function Modal({ children, setIsOpen }: ModalProps) {
           ×
         </button>
       </div>
-      <div className={styles["modal-container"]} ref={modalRef}>
-        {children}
-      </div>
-    </>
+      <div className={styles["modal-content-container"]}>{children}</div>
+    </div>
   );
 }
