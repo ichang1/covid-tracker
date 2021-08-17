@@ -10,10 +10,15 @@ import ReactMapGl, {
   FlyToInterpolator,
 } from "react-map-gl";
 import useAxiosAll from "../../customHooks/useAxiosAll";
-import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
+import {
+  formatData,
+  YYYYMMDD_MMDDYYYY,
+} from "../../utils/timeseries-constants";
 import styles from "../../styles/Map.module.scss";
 import Link from "next/link";
 import { flagEmojiToPNG } from "../../utils/misc";
+import Modal from "../Modal/Modal";
+import PlaceTimeSeries from "../PlaceTimeSeries/PlaceTimeSeries";
 
 interface Places {
   [key: string]: {
@@ -75,6 +80,21 @@ function getFullEndpoint(baseEndpoint: string, date: string) {
 
 const IS_CLIENT = typeof window !== "undefined";
 
+const MAP_HEIGHT = "calc(100vh - var(--nav-height))";
+const MAP_WIDTH = "100vw";
+
+const MODAL_TB_BORDER_ROOM = "5vh";
+const MODAL_LR_BORDER_ROOM = "2vw";
+const timeSeriesModalStyles = {
+  top: MODAL_TB_BORDER_ROOM,
+  right: MODAL_TB_BORDER_ROOM,
+  bottom: MODAL_TB_BORDER_ROOM,
+  left: MODAL_LR_BORDER_ROOM,
+  backgroundColor: "white",
+  height: `calc(${MAP_HEIGHT}-2*${MODAL_TB_BORDER_ROOM})`,
+  width: `calc(${MAP_WIDTH}-2*${MODAL_LR_BORDER_ROOM})`,
+};
+
 export default function Map({
   places,
   searchPlace,
@@ -87,6 +107,8 @@ export default function Map({
   const [viewport, setViewport] = useState(
     IS_CLIENT ? getViewportFromSession() : INITIAL_VIEWPORT
   );
+
+  const [showTimeSeriesModal, setShowTimeSeriesModal] = useState(false);
 
   const selectedPlaceReducer = (
     state: SelectedPlaceState,
@@ -186,6 +208,7 @@ export default function Map({
 
   useEffect(() => {
     if (searchPlace && selectedPlace !== searchPlace) {
+      setShowTimeSeriesModal(false);
       const { latitude, longitude } = places[searchPlace];
       dispatchSelectedPlaceState({ type: "set_place", place: searchPlace });
       setViewport((viewport: Viewport) => ({
@@ -213,12 +236,11 @@ export default function Map({
       });
     }
     const keydownlistener = (e: KeyboardEvent) => {
-      const target = e.target as Element;
-      if (
-        e.key === "Escape" &&
-        target?.id !== "react-select-custom-select-___-input"
-      ) {
+      const target = e.target as HTMLElement;
+      const firstGrandChild = target?.firstChild?.firstChild as HTMLElement;
+      if (e.key === "Escape" && firstGrandChild?.className === "mapboxgl-map") {
         dispatchSelectedPlaceState({ type: "clear" });
+        setShowTimeSeriesModal(false);
         sessionStorage.removeItem("selectedPlace");
       }
     };
@@ -269,11 +291,8 @@ export default function Map({
     // have array of features
     const sourcesSet = new Set(Object.keys(points));
     const firstFeat = features.find(({ source }) => sourcesSet.has(source));
-    if (
-      firstFeat !== (null || undefined) &&
-      !e.target.className.includes("popup")
-    ) {
-      // there is a valid feature and not hovering over the popoup
+    if (firstFeat && e.target.className.includes("overlay")) {
+      // there is a valid feature and hovering over the map
       const { properties: { name: firstFeatPlace } = { name: null } } =
         firstFeat;
       if (hoverPlace !== firstFeatPlace || !hoverPlace) {
@@ -289,6 +308,11 @@ export default function Map({
     }
   };
 
+  const handleTimeSeriesButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowTimeSeriesModal(true);
+  };
+
   return (
     <>
       <ReactMapGl
@@ -300,8 +324,8 @@ export default function Map({
         interactiveLayerIds={Object.keys(points)}
         onClick={handleMapClick}
         onHover={handleMapHover}
-        height="calc(100vh - var(--nav-height))"
-        width="100vw"
+        height={MAP_HEIGHT}
+        width={MAP_WIDTH}
       >
         {Object.values(points).map(({ source, layer }) => (
           <Source {...source} key={`${source.id}-${layer.id}`}>
@@ -358,6 +382,12 @@ export default function Map({
             >
               <a className={styles["popup-time-series-link"]}>Time Series</a>
             </Link>
+            <button
+              className={styles["popup-time-series-modal-button"]}
+              onClick={handleTimeSeriesButtonClick}
+            >
+              Time Series
+            </button>
           </Popup>
         )}
         {hoverPlace && selectedPlace !== hoverPlace && (
@@ -380,6 +410,25 @@ export default function Map({
           </Popup>
         )}
       </ReactMapGl>
+      {selectedPlace && showTimeSeriesModal && (
+        <div
+          className={styles["time-series-model-screen"]}
+          style={{
+            top: "var(--nav-height)",
+            height: MAP_HEIGHT,
+            width: MAP_WIDTH,
+          }}
+        >
+          <div
+            className={styles["time-series-modal-container"]}
+            style={timeSeriesModalStyles}
+          >
+            <Modal setIsOpen={setShowTimeSeriesModal}>
+              <div>{selectedPlace}</div>
+            </Modal>
+          </div>
+        </div>
+      )}
       <div className={styles["zoom-buttons-container"]}>
         <button
           className={styles["zoom-in-button"]}

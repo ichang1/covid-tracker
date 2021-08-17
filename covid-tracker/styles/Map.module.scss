@@ -22,6 +22,24 @@
       color: white;
     }
   }
+  .popup-time-series-modal-button {
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 0.4em;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: white;
+    user-select: none;
+    &:hover {
+      background-color: green;
+      color: white;
+    }
+  }
 }
 
 .data-popup :global(.mapboxgl-popup-content) {
@@ -86,5 +104,16 @@
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+  }
+}
+
+.time-series-model-screen {
+  position: absolute;
+  z-index: 80;
+  // way to have opacity for only parent and not children
+  background-color: rgba(255, 255, 255, 0.3);
+  .time-series-modal-container {
+    position: absolute;
+    z-index: 20;
   }
 }
