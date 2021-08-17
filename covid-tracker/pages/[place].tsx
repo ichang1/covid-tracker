@@ -1,63 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { places, slugsToPlaces } from "../utils/places";
-import CustomSwitch from "../components/CustomSwitch/CustomSwitch";
-import {
-  MIN_COVID_DATE,
-  MAX_COVID_DATE,
-  MIN_VACCINE_DATE,
-  MAX_VACCINE_DATE,
-  RED,
-  GREEN,
-  BLUE,
-  formatData,
-} from "../utils/timeseries-constants";
-import TimeSeries from "../components/TimeSeries/TimeSeries";
+import { formatData } from "../utils/timeseries-constants";
 import CustomSelect from "../components/CustomSelect/CustomSelect";
 import styles from "../styles/Place.module.scss";
 import Head from "next/head";
-import { flagEmojiToPNG, baseUrl } from "../utils/misc";
+import { baseUrl } from "../utils/misc";
+import PlaceTimeSeries from "../components/PlaceTimeSeries/PlaceTimeSeries";
 
 interface PlaceProps {
   place: string;
   url: string;
 }
 
-const covidChartStyle = {
-  xAxis: { dataKey: "date" },
-  yAxis: {
-    Line: [
-      { dataKey: "cases", strokeColor: RED },
-      { dataKey: "deaths", strokeColor: BLUE },
-      { dataKey: "recovered", strokeColor: GREEN },
-    ],
-  },
-};
-
-const vaccineChartStyle = {
-  xAxis: { dataKey: "date" },
-  yAxis: {
-    Line: [{ dataKey: "doses", strokeColor: GREEN }],
-  },
-};
-
 const placeOptions = Object.keys(places).map((p) => ({ value: p, label: p }));
 
 export default function Place({ place, url }: PlaceProps) {
   const router = useRouter();
-  const [showCumulativeCovidSeries, setShowCumulativeCovidSeries] =
-    useState(true);
-  const [showCumulativeVaccineSeries, setShowCumulativeVaccineSeries] =
-    useState(true);
   const [searchPlace, setSearchPlace] = useState<string | null>(null);
 
   const placeName = slugsToPlaces[place];
-  const { place_type: placeType } = places[placeName];
-
-  const baseCovidCumulativeEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/covid-19/${placeType}/${placeName}/cumulative`;
-  const baseCovidDailyEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/covid-19/${placeType}/${placeName}/daily`;
-  const baseVaccineCumulativeEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/cumulative`;
-  const baseVaccineDailyEndpoint = `${process.env.NEXT_PUBLIC_DATA_SOURCE_URL}/vaccine/${placeType}/${placeName}/daily`;
+  const { place_type: placeType, flag } = places[placeName];
 
   useEffect(() => {
     if (searchPlace && searchPlace !== placeName) {
@@ -117,68 +80,13 @@ export default function Place({ place, url }: PlaceProps) {
           placeholder={"Select a place..."}
         />
       </div>
-      <div className={styles["covid-case-time-series"]}>
-        <div className={styles["time-series-heading"]}>
-          <div className={styles["time-series-place-flag"]}>
-            {flagEmojiToPNG(places[placeName].flag)}
-          </div>
-          <span className={styles["time-series-label"]}>
-            {`${placeName} Coronavirus Time Series`}
-          </span>
-          <div className={styles["time-series-data-toggle-container"]}>
-            <CustomSwitch
-              label={showCumulativeCovidSeries ? "Cumulative" : "Daily"}
-              state={showCumulativeCovidSeries}
-              setState={setShowCumulativeCovidSeries}
-            />
-          </div>
-        </div>
-        <div className={`${place}-covid-case-time-series`}>
-          <TimeSeries
-            data={[]}
-            minDate={MIN_COVID_DATE}
-            maxDate={MAX_COVID_DATE}
-            chartStyle={covidChartStyle}
-            baseEndpoint={
-              showCumulativeCovidSeries
-                ? baseCovidCumulativeEndpoint
-                : baseCovidDailyEndpoint
-            }
-            formatData={formatData}
-          />
-        </div>
-      </div>
-      <div className={styles["vaccine-time-series"]}>
-        <div className={styles["time-series-heading"]}>
-          <div className={styles["time-series-place-flag"]}>
-            {flagEmojiToPNG(places[placeName].flag)}
-          </div>
-          <span className={styles["time-series-label"]}>
-            {`${placeName} Vaccine Time Series`}
-          </span>
-          <div className={styles["time-series-data-toggle-container"]}>
-            <CustomSwitch
-              label={showCumulativeVaccineSeries ? "Cumulative" : "Daily"}
-              state={showCumulativeVaccineSeries}
-              setState={setShowCumulativeVaccineSeries}
-            />
-          </div>
-        </div>
-        <div className={`${place}-vaccine-time-series`}>
-          <TimeSeries
-            data={[]}
-            minDate={MIN_VACCINE_DATE}
-            maxDate={MAX_VACCINE_DATE}
-            chartStyle={vaccineChartStyle}
-            baseEndpoint={
-              showCumulativeVaccineSeries
-                ? baseVaccineCumulativeEndpoint
-                : baseVaccineDailyEndpoint
-            }
-            formatData={formatData}
-          />
-        </div>
-      </div>
+      <PlaceTimeSeries
+        placeName={placeName}
+        placeSlug={place}
+        placeType={placeType}
+        flagEmoji={flag}
+        formatData={formatData}
+      />
     </div>
   );
 }

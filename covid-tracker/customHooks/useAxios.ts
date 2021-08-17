@@ -14,6 +14,7 @@ function fetchPromise(url: string) {
 }
 //24 hours
 const staleTime = 8.64 * 10 ** 7;
+const retry = 5;
 export default function useAxios(
   key: string | any[],
   url: string,
@@ -24,6 +25,7 @@ export default function useAxios(
     queryFn: fetchPromise(url),
     enabled,
     staleTime,
+    retry,
   });
   if (!enabled) {
     return { data: {}, isLoading: false, isSuccess: true };
