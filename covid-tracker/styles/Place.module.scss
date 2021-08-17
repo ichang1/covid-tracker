@@ -1,31 +1,4 @@
-.covid-case-time-series,
-.vaccine-time-series {
-  position: relative;
-  margin: 2% 0 2% 0;
-}
-
-.time-series-heading {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
-  margin-left: 15%;
-  @media screen and (max-width: 768px) {
-    .time-series-data-toggle-container {
-      left: 10%;
-    }
-  }
-  .time-series-place-flag {
-    margin-right: 10px;
-  }
-  .time-series-label {
-    position: relative;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .time-series-data-toggle-container {
-    position: relative;
-    margin-left: 3%;
-  }
+.place-time-series-container {
+  height: 100%;
+  width: 100%;
 }
