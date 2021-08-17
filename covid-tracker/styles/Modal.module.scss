@@ -1,13 +1,25 @@
 .modal-container {
+  height: calc(100% - 25px);
+  width: 100%;
   position: absolute;
   overflow-y: auto;
   z-index: 20;
 }
 
-.modal-close-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: 0;
-  cursor: pointer;
+.modal-nav {
+  background-color: lightgray;
+  height: 26px;
+  .modal-close-button {
+    z-index: 50;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: var(--border);
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+      background-color: lightgray;
+    }
+  }
 }

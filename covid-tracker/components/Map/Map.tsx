@@ -423,8 +423,19 @@ export default function Map({
             className={styles["time-series-modal-container"]}
             style={timeSeriesModalStyles}
           >
+            <Link href={`/${places[selectedPlace].slugs[0]}`}>
+              <a className={styles["time-series-modal-link"]}>
+                View on separate page
+              </a>
+            </Link>
             <Modal setIsOpen={setShowTimeSeriesModal}>
-              <div>{selectedPlace}</div>
+              <PlaceTimeSeries
+                placeName={selectedPlace}
+                placeSlug={places[selectedPlace].slugs[0]}
+                placeType={places[selectedPlace].place_type}
+                flagEmoji={places[selectedPlace].flag}
+                formatData={formatData}
+              />
             </Modal>
           </div>
         </div>

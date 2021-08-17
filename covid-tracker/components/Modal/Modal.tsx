@@ -32,12 +32,14 @@ export default function Modal({ children, setIsOpen }: ModalProps) {
   //   }
   return (
     <>
-      <button
-        className={styles["modal-close-button"]}
-        onClick={handleCloseClick}
-      >
-        ×
-      </button>
+      <div className={styles["modal-nav"]}>
+        <button
+          className={styles["modal-close-button"]}
+          onClick={handleCloseClick}
+        >
+          ×
+        </button>
+      </div>
       <div className={styles["modal-container"]} ref={modalRef}>
         {children}
       </div>

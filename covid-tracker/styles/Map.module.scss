@@ -113,7 +113,23 @@
   // way to have opacity for only parent and not children
   background-color: rgba(255, 255, 255, 0.3);
   .time-series-modal-container {
+    // border-radius: var(--border-radius);
     position: absolute;
     z-index: 20;
+  }
+  .time-series-modal-link {
+    top: 0;
+    height: 26px;
+    width: 15%;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+    &:hover {
+      background-color: green;
+      color: white;
+    }
   }
 }
