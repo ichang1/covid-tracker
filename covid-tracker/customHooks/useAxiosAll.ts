@@ -21,6 +21,7 @@ interface QueryOptions {
 
 //24 hours
 const staleTime = 8.64 * 10 ** 7;
+const retry = 5;
 
 export default function useAxios(queryOptions: QueryOptions[]) {
   const queryResults = useQueries(
@@ -29,6 +30,7 @@ export default function useAxios(queryOptions: QueryOptions[]) {
       queryFn: fetchPromise(url),
       enabled,
       staleTime,
+      retry,
     }))
   );
   const enabled = !queryOptions.some((queryOpt) => !queryOpt.enabled);
