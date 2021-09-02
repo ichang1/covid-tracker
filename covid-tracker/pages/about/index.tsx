@@ -45,14 +45,14 @@ export default function About() {
       <h1>About the Global Coronavirus Tracker</h1>
       <div className={styles["paragraph-container"]}>
         <p>
-          The site's main page consists of an interactive map similar to google
-          maps with clickable predetermined locations. When these locations are
-          clicked on, there will be a coronavirus related statistics popup.
-          Within each popup, there is a date input allowing you to view the
-          statistics for another day. Each place also has an additional
-          timeseries popup/page which is accessible from its corresponding popup
-          from the map. These consist of timeseries plots detailing the
-          cumulative/daily change in the number of
+          The site&apos;s main page consists of an interactive map similar to
+          google maps with clickable predetermined locations. When these
+          locations are clicked on, there will be a coronavirus related
+          statistics popup. Within each popup, there is a date input allowing
+          you to view the statistics for another day. Each place also has an
+          additional timeseries popup/page which is accessible from its
+          corresponding popup from the map. These consist of timeseries plots
+          detailing the cumulative/daily change in the number of
           cases/deaths/recovered/vaccine dosages for that place.
         </p>
       </div>
@@ -77,10 +77,10 @@ export default function About() {
       <h1>Disclaimers</h1>
       <div className={styles["paragraph-container"]}>
         <p>
-          Note that the data source the data comes from doesn't always provide
-          valid data. These statistics will be labeled as 0 or some other
-          invalid number. Also, vaccine dosages refer to a single shot not the
-          number of vaccinated people.
+          Note that the data source the data comes from doesn&apos;t always
+          provide valid data. These statistics will be labeled as 0 or some
+          other invalid number. Also, vaccine dosages refer to a single shot not
+          the number of vaccinated people.
         </p>
       </div>
     </div>
