@@ -1,0 +1,17 @@
+.about-container {
+  h1 {
+    text-align: center;
+  }
+}
+
+.paragraph-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  p {
+    padding: 0 3em 0 3em;
+    max-width: 70em;
+    min-width: 10em;
+    line-height: 2;
+  }
+}

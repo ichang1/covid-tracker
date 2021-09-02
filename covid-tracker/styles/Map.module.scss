@@ -23,7 +23,7 @@
     }
   }
   .popup-time-series-modal-button {
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
     position: relative;
     margin-top: 0.4em;
@@ -49,7 +49,7 @@
 }
 
 .data-popup :global(.mapboxgl-popup-close-button) {
-  font-size: 20px;
+  font-size: 1em;
   &:hover {
     background-color: lightgray;
     font-weight: bold;
@@ -60,6 +60,7 @@
 .hover-popup-place-container {
   display: flex;
   justify-content: center;
+  font-size: 1em;
   .hover-popup-place-flag-container {
     margin-left: 5px;
   }
@@ -82,7 +83,7 @@
   button {
     border: var(--border);
     border-radius: var(--border-radius);
-    font-size: 20px;
+    font-size: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,6 +100,7 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
+  font-size: 1em;
   .popup-place-flag-container {
     display: flex;
     justify-content: center;
