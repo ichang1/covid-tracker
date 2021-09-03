@@ -32,7 +32,9 @@ export default function NavBar() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/api">
-          <a target="_blank">Api</a>
+          <a target="_blank" rel="noreferrer">
+            Api
+          </a>
         </NavLink>
       </NavMenu>
       <Dropdown icon={<FaBars className="dropdown-icon" />}>

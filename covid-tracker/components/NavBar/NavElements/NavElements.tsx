@@ -96,6 +96,7 @@ export function DropdownMenuItem({
       href={href}
       className={styles["dropdown-menu-item-container"]}
       target={external ? "_blank" : "_self"}
+      rel={external ? "noreferrer" : ""}
     >
       <div className={styles["dropdown-menu-item"]}>
         {leftIcon}
