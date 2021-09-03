@@ -83,7 +83,7 @@ export default function About() {
           other invalid number. Also, vaccine dosages refer to a single shot not
           the number of vaccinated people. Lastly, all icons are from the
           corona-virus-precautions-3 icon set on{" "}
-          <a target="_blank" href="https://freeicons.io/">
+          <a target="_blank" href="https://freeicons.io/" rel="noreferrer">
             https://freeicons.io/
           </a>
         </p>
