@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl } from "../../utils/misc";
 import styles from "../../styles/About.module.scss";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -80,7 +81,11 @@ export default function About() {
           Note that the data source the data comes from doesn&apos;t always
           provide valid data. These statistics will be labeled as 0 or some
           other invalid number. Also, vaccine dosages refer to a single shot not
-          the number of vaccinated people.
+          the number of vaccinated people. Lastly, all icons are from the
+          corona-virus-precautions-3 icon set on{" "}
+          <a target="_blank" href="https://freeicons.io/">
+            https://freeicons.io/
+          </a>
         </p>
       </div>
     </div>

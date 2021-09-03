@@ -30,8 +30,10 @@ export default function NavBar() {
       </NavLink>
       <NavMenu>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/api">Api</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/api">
+          <a target="_blank">Api</a>
+        </NavLink>
       </NavMenu>
       <Dropdown icon={<FaBars className="dropdown-icon" />}>
         <DropdownMenu>
@@ -43,20 +45,21 @@ export default function NavBar() {
               Home
             </DropdownMenuItem>
           </Link>
-          <Link href="/api" passHref>
-            <DropdownMenuItem
-              leftIcon={<NavBarIcon src={TimeSeriesIcon} />}
-              rightIcon={<NavBarIcon src={TimeSeriesIcon} />}
-            >
-              Api
-            </DropdownMenuItem>
-          </Link>
           <Link href="/about" passHref>
             <DropdownMenuItem
               leftIcon={<NavBarIcon src={AboutIcon} />}
               rightIcon={<NavBarIcon src={AboutIcon} />}
             >
               About
+            </DropdownMenuItem>
+          </Link>
+          <Link href="/api" passHref>
+            <DropdownMenuItem
+              leftIcon={<NavBarIcon src={TimeSeriesIcon} />}
+              rightIcon={<NavBarIcon src={TimeSeriesIcon} />}
+              external={true}
+            >
+              Api
             </DropdownMenuItem>
           </Link>
         </DropdownMenu>

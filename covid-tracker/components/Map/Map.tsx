@@ -199,7 +199,7 @@ export default function Map({
           if (error) throw error;
           if (!map.hasImage("map-pin")) {
             map.addImage("map-pin", image);
-            console.log("image loaded");
+            // console.log("image loaded");
           }
         });
       });
@@ -208,7 +208,6 @@ export default function Map({
 
   useEffect(() => {
     if (searchPlace && selectedPlace !== searchPlace) {
-      setShowTimeSeriesModal(false);
       const { latitude, longitude } = places[searchPlace];
       dispatchSelectedPlaceState({ type: "set_place", place: searchPlace });
       setViewport((viewport: Viewport) => ({
@@ -217,6 +216,7 @@ export default function Map({
         latitude,
         longitude,
       }));
+      sessionStorage.setItem("selectedPlace", searchPlace);
     }
   }, [searchPlace]);
 
