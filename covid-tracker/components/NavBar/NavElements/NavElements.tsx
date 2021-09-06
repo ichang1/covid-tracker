@@ -91,12 +91,20 @@ export function DropdownMenuItem({
   href,
   external,
 }: DropdownMenuItemProps) {
+  const externalAttr = (() => {
+    if (external) {
+      return {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      };
+    }
+    return {};
+  })();
   return (
     <a
+      {...externalAttr}
       href={href}
       className={styles["dropdown-menu-item-container"]}
-      target={external ? "_blank" : "_self"}
-      rel={external ? "noopener noreferrer" : ""}
     >
       <div className={styles["dropdown-menu-item"]}>
         {leftIcon}
