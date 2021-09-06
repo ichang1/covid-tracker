@@ -83,11 +83,11 @@ const IS_CLIENT = typeof window !== "undefined";
 const MAP_HEIGHT = "calc(100vh - var(--nav-height))";
 const MAP_WIDTH = "100vw";
 
-const MODAL_TB_BORDER_ROOM = "5vh";
-const MODAL_LR_BORDER_ROOM = "2vw";
+const MODAL_TB_BORDER_ROOM = "4vh";
+const MODAL_LR_BORDER_ROOM = "4vw";
 const timeSeriesModalStyles = {
   top: MODAL_TB_BORDER_ROOM,
-  right: MODAL_TB_BORDER_ROOM,
+  right: MODAL_LR_BORDER_ROOM,
   bottom: MODAL_TB_BORDER_ROOM,
   left: MODAL_LR_BORDER_ROOM,
   backgroundColor: "white",
