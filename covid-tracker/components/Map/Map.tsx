@@ -83,11 +83,11 @@ const IS_CLIENT = typeof window !== "undefined";
 const MAP_HEIGHT = "calc(100vh - var(--nav-height))";
 const MAP_WIDTH = "100vw";
 
-const MODAL_TB_BORDER_ROOM = "5vh";
-const MODAL_LR_BORDER_ROOM = "2vw";
+const MODAL_TB_BORDER_ROOM = "4vh";
+const MODAL_LR_BORDER_ROOM = "4vw";
 const timeSeriesModalStyles = {
   top: MODAL_TB_BORDER_ROOM,
-  right: MODAL_TB_BORDER_ROOM,
+  right: MODAL_LR_BORDER_ROOM,
   bottom: MODAL_TB_BORDER_ROOM,
   left: MODAL_LR_BORDER_ROOM,
   backgroundColor: "white",
@@ -199,7 +199,7 @@ export default function Map({
           if (error) throw error;
           if (!map.hasImage("map-pin")) {
             map.addImage("map-pin", image);
-            console.log("image loaded");
+            // console.log("image loaded");
           }
         });
       });
@@ -208,7 +208,6 @@ export default function Map({
 
   useEffect(() => {
     if (searchPlace && selectedPlace !== searchPlace) {
-      setShowTimeSeriesModal(false);
       const { latitude, longitude } = places[searchPlace];
       dispatchSelectedPlaceState({ type: "set_place", place: searchPlace });
       setViewport((viewport: Viewport) => ({
@@ -217,6 +216,7 @@ export default function Map({
         latitude,
         longitude,
       }));
+      sessionStorage.setItem("selectedPlace", searchPlace);
     }
   }, [searchPlace]);
 

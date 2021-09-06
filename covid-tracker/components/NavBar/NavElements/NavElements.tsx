@@ -25,12 +25,15 @@ export function NavBarIcon({ src }: NavBarIcon) {
 interface NavLinkProps {
   to: string;
   children: React.ReactElement | string;
+  external?: boolean;
 }
 
 export function NavLink({ to, children }: NavLinkProps) {
   return (
     <div className={styles["nav-link"]}>
-      <Link href={to}>{children}</Link>
+      <Link href={to} passHref>
+        {children}
+      </Link>
     </div>
   );
 }
@@ -78,6 +81,7 @@ interface DropdownMenuItemProps {
   rightIcon?: React.ReactElement;
   children?: React.ReactElement | string;
   href?: string;
+  external?: boolean;
 }
 
 export function DropdownMenuItem({
@@ -85,9 +89,23 @@ export function DropdownMenuItem({
   rightIcon,
   children,
   href,
+  external,
 }: DropdownMenuItemProps) {
+  const externalAttr = (() => {
+    if (external) {
+      return {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      };
+    }
+    return {};
+  })();
   return (
-    <a href={href} className={styles["dropdown-menu-item-container"]}>
+    <a
+      {...externalAttr}
+      href={href}
+      className={styles["dropdown-menu-item-container"]}
+    >
       <div className={styles["dropdown-menu-item"]}>
         {leftIcon}
         {children}

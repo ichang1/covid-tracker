@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl } from "../../utils/misc";
 import styles from "../../styles/About.module.scss";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -68,10 +69,18 @@ export default function About() {
       <h1>About the Data</h1>
       <div className={styles["paragraph-container"]}>
         <p>
-          The data comes from the disease.sh API which gets the data from Johns
-          Hopkins and is updated every 24 hours. Some of the numbers are rough
-          estimates because daily data from every place is not readily
-          available.
+          The data comes from the
+          <a
+            target="_blank"
+            href="https://disease.sh/"
+            rel="noopener noreferrer"
+            className={styles["icon-site"]}
+          >
+            disease.sh API
+          </a>
+          which gets the data from Johns Hopkins and is updated every 24 hours.
+          Some of the numbers are rough estimates because daily data from every
+          place is not readily available.
         </p>
       </div>
       <h1>Disclaimers</h1>
@@ -80,7 +89,16 @@ export default function About() {
           Note that the data source the data comes from doesn&apos;t always
           provide valid data. These statistics will be labeled as 0 or some
           other invalid number. Also, vaccine dosages refer to a single shot not
-          the number of vaccinated people.
+          the number of vaccinated people. Lastly, all icons are from the
+          corona-virus-precautions-3 icon set on
+          <a
+            target="_blank"
+            href="https://freeicons.io/"
+            rel="noopener noreferrer"
+            className={styles["icon-site"]}
+          >
+            https://freeicons.io/
+          </a>
         </p>
       </div>
     </div>
