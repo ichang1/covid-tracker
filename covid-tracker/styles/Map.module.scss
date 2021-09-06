@@ -22,6 +22,24 @@
       color: white;
     }
   }
+  .popup-time-series-modal-button {
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    margin-top: 0.4em;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: white;
+    user-select: none;
+    &:hover {
+      background-color: green;
+      color: white;
+    }
+  }
 }
 
 .data-popup :global(.mapboxgl-popup-content) {
@@ -31,7 +49,7 @@
 }
 
 .data-popup :global(.mapboxgl-popup-close-button) {
-  font-size: 20px;
+  font-size: 1em;
   &:hover {
     background-color: lightgray;
     font-weight: bold;
@@ -42,6 +60,7 @@
 .hover-popup-place-container {
   display: flex;
   justify-content: center;
+  font-size: 1em;
   .hover-popup-place-flag-container {
     margin-left: 5px;
   }
@@ -64,7 +83,7 @@
   button {
     border: var(--border);
     border-radius: var(--border-radius);
-    font-size: 20px;
+    font-size: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,10 +100,38 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
+  font-size: 1em;
   .popup-place-flag-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 5px;
+  }
+}
+
+.time-series-model-screen {
+  position: absolute;
+  z-index: 80;
+  // way to have opacity for only parent and not children
+  background-color: rgba(255, 255, 255, 0.3);
+  .time-series-modal-container {
+    position: absolute;
+    z-index: 20;
+    .time-series-modal-link {
+      user-select: none;
+      top: 0;
+      height: 26px;
+      width: 175px;
+      cursor: pointer;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid green;
+      &:hover {
+        background-color: green;
+        color: white;
+      }
+    }
   }
 }

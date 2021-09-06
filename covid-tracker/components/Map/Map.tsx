@@ -10,10 +10,15 @@ import ReactMapGl, {
   FlyToInterpolator,
 } from "react-map-gl";
 import useAxiosAll from "../../customHooks/useAxiosAll";
-import { YYYYMMDD_MMDDYYYY } from "../../utils/timeseries-constants";
+import {
+  formatData,
+  YYYYMMDD_MMDDYYYY,
+} from "../../utils/timeseries-constants";
 import styles from "../../styles/Map.module.scss";
 import Link from "next/link";
 import { flagEmojiToPNG } from "../../utils/misc";
+import Modal from "../Modal/Modal";
+import PlaceTimeSeries from "../PlaceTimeSeries/PlaceTimeSeries";
 
 interface Places {
   [key: string]: {
@@ -75,6 +80,21 @@ function getFullEndpoint(baseEndpoint: string, date: string) {
 
 const IS_CLIENT = typeof window !== "undefined";
 
+const MAP_HEIGHT = "calc(100vh - var(--nav-height))";
+const MAP_WIDTH = "100vw";
+
+const MODAL_TB_BORDER_ROOM = "4vh";
+const MODAL_LR_BORDER_ROOM = "4vw";
+const timeSeriesModalStyles = {
+  top: MODAL_TB_BORDER_ROOM,
+  right: MODAL_LR_BORDER_ROOM,
+  bottom: MODAL_TB_BORDER_ROOM,
+  left: MODAL_LR_BORDER_ROOM,
+  backgroundColor: "white",
+  height: `calc(${MAP_HEIGHT}-2*${MODAL_TB_BORDER_ROOM})`,
+  width: `calc(${MAP_WIDTH}-2*${MODAL_LR_BORDER_ROOM})`,
+};
+
 export default function Map({
   places,
   searchPlace,
@@ -87,6 +107,8 @@ export default function Map({
   const [viewport, setViewport] = useState(
     IS_CLIENT ? getViewportFromSession() : INITIAL_VIEWPORT
   );
+
+  const [showTimeSeriesModal, setShowTimeSeriesModal] = useState(false);
 
   const selectedPlaceReducer = (
     state: SelectedPlaceState,
@@ -141,6 +163,17 @@ export default function Map({
     }
   );
 
+  const selectedPlaceFlag = selectedPlace
+    ? flagEmojiToPNG(places[selectedPlace].flag, {
+        className: "popup-place-flag",
+      })
+    : null;
+  const hoverPlaceFlag = hoverPlace
+    ? flagEmojiToPNG(places[hoverPlace].flag, {
+        className: "hover-popup-place-flag",
+      })
+    : null;
+
   /**
    * handles when user changes viewport by dragging, etc...
    * set to new viewport and save in session
@@ -166,7 +199,7 @@ export default function Map({
           if (error) throw error;
           if (!map.hasImage("map-pin")) {
             map.addImage("map-pin", image);
-            console.log("image loaded");
+            // console.log("image loaded");
           }
         });
       });
@@ -183,6 +216,7 @@ export default function Map({
         latitude,
         longitude,
       }));
+      sessionStorage.setItem("selectedPlace", searchPlace);
     }
   }, [searchPlace]);
 
@@ -202,12 +236,11 @@ export default function Map({
       });
     }
     const keydownlistener = (e: KeyboardEvent) => {
-      const target = e.target as Element;
-      if (
-        e.key === "Escape" &&
-        target?.id !== "react-select-custom-select-___-input"
-      ) {
+      const target = e.target as HTMLElement;
+      const firstGrandChild = target?.firstChild?.firstChild as HTMLElement;
+      if (e.key === "Escape" && firstGrandChild?.className === "mapboxgl-map") {
         dispatchSelectedPlaceState({ type: "clear" });
+        setShowTimeSeriesModal(false);
         sessionStorage.removeItem("selectedPlace");
       }
     };
@@ -258,11 +291,8 @@ export default function Map({
     // have array of features
     const sourcesSet = new Set(Object.keys(points));
     const firstFeat = features.find(({ source }) => sourcesSet.has(source));
-    if (
-      firstFeat !== (null || undefined) &&
-      !e.target.className.includes("popup")
-    ) {
-      // there is a valid feature and not hovering over the popoup
+    if (firstFeat && e.target.className.includes("overlay")) {
+      // there is a valid feature and hovering over the map
       const { properties: { name: firstFeatPlace } = { name: null } } =
         firstFeat;
       if (hoverPlace !== firstFeatPlace || !hoverPlace) {
@@ -278,6 +308,11 @@ export default function Map({
     }
   };
 
+  const handleTimeSeriesButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowTimeSeriesModal(true);
+  };
+
   return (
     <>
       <ReactMapGl
@@ -289,8 +324,8 @@ export default function Map({
         interactiveLayerIds={Object.keys(points)}
         onClick={handleMapClick}
         onHover={handleMapHover}
-        height="calc(100vh - var(--nav-height))"
-        width="100vw"
+        height={MAP_HEIGHT}
+        width={MAP_WIDTH}
       >
         {Object.values(points).map(({ source, layer }) => (
           <Source {...source} key={`${source.id}-${layer.id}`}>
@@ -307,11 +342,11 @@ export default function Map({
           >
             <div className={styles["popup-place-name-container"]}>
               <span className="popup-place-name">{`${selectedPlace}`}</span>
-              <div className={styles["popup-place-flag-container"]}>
-                {flagEmojiToPNG(places[selectedPlace].flag, {
-                  className: "popup-place-flag",
-                })}
-              </div>
+              {selectedPlaceFlag && (
+                <div className={styles["popup-place-flag-container"]}>
+                  {selectedPlaceFlag}
+                </div>
+              )}
             </div>
             {isLoading
               ? "Loading..."
@@ -342,11 +377,12 @@ export default function Map({
                 id="popup-date-selector"
               />
             </div>
-            <Link
-              href={selectedPlace ? `/${places[selectedPlace].slugs[0]}` : "/"}
+            <button
+              className={styles["popup-time-series-modal-button"]}
+              onClick={handleTimeSeriesButtonClick}
             >
-              <a className={styles["popup-time-series-link"]}>Time Series</a>
-            </Link>
+              Time Series
+            </button>
           </Popup>
         )}
         {hoverPlace && selectedPlace !== hoverPlace && (
@@ -360,15 +396,48 @@ export default function Map({
               <div
                 className={styles["hover-popup-place-name"]}
               >{`${hoverPlace}`}</div>
-              <div className={styles["hover-popup-place-flag-container"]}>
-                {flagEmojiToPNG(places[hoverPlace].flag, {
-                  className: "hover-popup-place-flag",
-                })}
-              </div>
+              {hoverPlaceFlag && (
+                <div className={styles["hover-popup-place-flag-container"]}>
+                  {hoverPlaceFlag}
+                </div>
+              )}
             </div>
           </Popup>
         )}
       </ReactMapGl>
+      {selectedPlace && showTimeSeriesModal && (
+        <div
+          className={styles["time-series-model-screen"]}
+          style={{
+            top: "var(--nav-height)",
+            height: MAP_HEIGHT,
+            width: MAP_WIDTH,
+          }}
+        >
+          <div
+            className={
+              styles["time-series-modal-container"] +
+              " time-series-modal-container"
+            }
+            style={timeSeriesModalStyles}
+          >
+            <Link href={`/${places[selectedPlace].slugs[0]}`}>
+              <a className={styles["time-series-modal-link"]}>
+                View on separate page
+              </a>
+            </Link>
+            <Modal setIsOpen={setShowTimeSeriesModal}>
+              <PlaceTimeSeries
+                placeName={selectedPlace}
+                placeSlug={places[selectedPlace].slugs[0]}
+                placeType={places[selectedPlace].place_type}
+                flagEmoji={places[selectedPlace].flag}
+                formatData={formatData}
+              />
+            </Modal>
+          </div>
+        </div>
+      )}
       <div className={styles["zoom-buttons-container"]}>
         <button
           className={styles["zoom-in-button"]}

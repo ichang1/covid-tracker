@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import logo from "../../public/logo.png";
 import MapIcon from "../../public/map-icon.svg";
-import PlaceIcon from "../../public/places-icon.svg";
 import TimeSeriesIcon from "../../public/time-series-icon.svg";
+import AboutIcon from "../../public/about-icon.svg";
 import {
   Nav,
   NavBarIcon,
@@ -30,7 +30,12 @@ export default function NavBar() {
       </NavLink>
       <NavMenu>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/api">Api</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/api">
+          <a target="_blank" rel="noopener noreferrer">
+            Api
+          </a>
+        </NavLink>
       </NavMenu>
       <Dropdown icon={<FaBars className="dropdown-icon" />}>
         <DropdownMenu>
@@ -42,10 +47,19 @@ export default function NavBar() {
               Home
             </DropdownMenuItem>
           </Link>
+          <Link href="/about" passHref>
+            <DropdownMenuItem
+              leftIcon={<NavBarIcon src={AboutIcon} />}
+              rightIcon={<NavBarIcon src={AboutIcon} />}
+            >
+              About
+            </DropdownMenuItem>
+          </Link>
           <Link href="/api" passHref>
             <DropdownMenuItem
               leftIcon={<NavBarIcon src={TimeSeriesIcon} />}
               rightIcon={<NavBarIcon src={TimeSeriesIcon} />}
+              external={true}
             >
               Api
             </DropdownMenuItem>
