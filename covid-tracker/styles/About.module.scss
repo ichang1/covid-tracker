@@ -1,0 +1,36 @@
+.about-container {
+  h1 {
+    text-align: center;
+  }
+}
+
+.paragraph-container {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  p {
+    padding: 0 3em 0 3em;
+    max-width: 70em;
+    min-width: 10em;
+    line-height: 2;
+  }
+}
+
+.icon-site,
+.data-source-site {
+  &::before {
+    content: " ";
+  }
+  &::after {
+    content: "";
+    background: url("../public/external-link.svg");
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    left: 3px;
+    margin-right: 0.5em;
+    text-align: center;
+    object-fit: contain;
+  }
+}
